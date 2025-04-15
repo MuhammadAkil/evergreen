@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 
-type BlogPageProps = {
+type Props = {
   params: {
     slug: string;
   };
 };
+
 async function getPost(slug: string) {
   const posts: Record<string, { title: string; description: string }> = {
     "first-post": {
@@ -19,7 +20,14 @@ async function getPost(slug: string) {
   return posts[slug] || { title: "Not Found", description: "Post not found" };
 }
 
-export async function generateMetadata({ params }: BlogPageProps): Promise<Metadata> {
+export async function generateStaticParams() {
+  return [
+    { slug: "first-post" },
+    { slug: "second-post" },
+  ];
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getPost(params.slug);
   return {
     title: post.title,
@@ -27,7 +35,7 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
   };
 }
 
-export default async function BlogPost({ params }: BlogPageProps) {
+export default async function BlogPost({ params }: Props) {
   const post = await getPost(params.slug);
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-4">
