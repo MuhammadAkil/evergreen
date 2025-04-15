@@ -1,5 +1,5 @@
 "use client";
-
+import Banner from '../components/Banner'
 import React from 'react';
 import FAQ from '../components/Faq'
 import Navbar from '../components/Navbar'
@@ -9,6 +9,7 @@ import Industries from '../components/Industries'
 import About from '../components/About'
 import Pricing from '../components/Pricing'
 import Footer from '../components/Footer'
+import PricingPage from '../components/PeiceDetail';
 export default function HomePage() {
     return (
         <>
@@ -17,7 +18,9 @@ export default function HomePage() {
             <Services />
             <About />
             <Industries />
-              <Pricing />
+            <Pricing />
+            <PricingPage />
+            <Banner />
             <FAQ />
 <Footer />
         </>
