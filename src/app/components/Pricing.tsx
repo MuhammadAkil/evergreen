@@ -1,5 +1,6 @@
 import { Check, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Mail, Phone, CheckSquare } from "lucide-react"
 
 export default function Home() {
   return (
@@ -114,6 +115,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
     </main>
+    
   )
 }
