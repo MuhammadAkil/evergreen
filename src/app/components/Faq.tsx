@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-
+import { Button } from "@/components/ui/button"
+import Link from "next/link";
 const FAQSection = () => {
     const [open, setOpen] = useState(null);
 
@@ -60,6 +61,26 @@ const FAQSection = () => {
                         ))}
                     </div>
                 </div>
+
+                 <div className=" flex items-center justify-center  bg-[#F2F2F2]  p-4">
+      <div className="w-full max-w-7xl bg-white rounded-lg shadow-sm p-6 md:p-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="text-left">
+            <h2 className="text-xl font-semibold text-gray-800">Didn't find your answer?</h2>
+            <p className="text-gray-600 mt-1">We are here to help!</p>
+            <p className="text-gray-700 mt-2">
+              email us at{" "}
+              <Link href="mailto:info@evergreenseptics.com" className="text-gray-900 hover:underline">
+                info@evergreenseptics.com
+              </Link>
+            </p>
+          </div>
+          <Button className="bg-red-500 hover:bg-red-600 text-white font-medium px-6 py-2 rounded w-full md:w-auto">
+            CONTACT CUSTOMER CARE
+          </Button>
+        </div>
+      </div>
+    </div>
             </section>
         </>
     );
