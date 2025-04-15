@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function Footer() {
   return (
-    <footer className="bg-[#2a3b2a] text-white py-8">
+    <footer className="bg-[#2a3b2a] text-white px-8 py-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row gap-8">
           {/* Left section - Logo, description and social icons */}
