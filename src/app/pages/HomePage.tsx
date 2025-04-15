@@ -8,6 +8,7 @@ import Services from '../components/Services'
 import Industries from '../components/Industries'
 import About from '../components/About'
 import Pricing from '../components/Pricing'
+import Footer from '../components/Footer'
 export default function HomePage() {
     return (
         <>
@@ -18,7 +19,7 @@ export default function HomePage() {
             <Industries />
               <Pricing />
             <FAQ />
-
+<Footer />
         </>
     )
 }
