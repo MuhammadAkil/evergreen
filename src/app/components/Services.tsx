@@ -3,22 +3,22 @@ import { FaPlus } from "react-icons/fa";
 
 const services = [
     {
-        title: "Septic Pumping",
+        title: "Septic Tank Pumping",
         description: "Efficient and timely septic tank pumping to keep your system clean and operational.",
         image: "/assets/PNG/image-3.png",
     },
     {
-        title: "System Inspections",
+        title: "Septic System Inspections",
         description: "Thorough inspections to ensure your septic system meets local regulations and safety standards.",
         image: "/assets/PNG/image-4.png",
     },
     {
-        title: "Septic Repairs",
+        title: "Emergency Septic Services",
         description: "Professional repairs to address any issues and extend the life of your septic system.",
         image: "/assets/PNG/image-5.png",
     },
     {
-        title: "Drain Cleaning",
+        title: "Drain Field Repair",
         description: "Quick and efficient drain cleaning to prevent backups and system failures.",
         image: "/assets/PNG/image-6.png",
     },
