@@ -46,7 +46,7 @@ export default function About() {
                                 <div className="bg-white p-2 rounded-l-md shadow-md">
                                     <MdAccessTime className="text-[#3F503B] text-lg" />
                                 </div>
-                                <div className="bg-[#5D7757] text-white font-semibold text-sm px-4 py-2 rounded-r-md shadow">
+                                <div className="bg-[#5D7757] text-white font-semibold text-sm px-4 py-2 rounded-r-md shadow h-[33px]">
                                     Experienced & Trusted Team
                                 </div>
                             </div>
@@ -55,7 +55,7 @@ export default function About() {
                                 <div className="bg-white p-2 rounded-l-md shadow-md">
                                     <MdAccessTime className="text-[#3F503B] text-lg" />
                                 </div>
-                                <div className="bg-[#5D7757] text-white font-semibold text-sm px-4 py-2 rounded-r-md shadow">
+                                <div className="bg-[#5D7757] text-white font-semibold text-sm px-4 py-2 rounded-r-md shadow h-[33px]">
                                     24/7 Assistance
                                 </div>
                             </div>
@@ -66,7 +66,7 @@ export default function About() {
                                 <div className="bg-white p-2 rounded-l-md shadow-md">
                                     <MdAccessTime className="text-[#3F503B] text-lg" />
                                 </div>
-                                <div className="bg-[#5D7757] text-white font-semibold text-sm px-4 py-2 rounded-r-md shadow">
+                                <div className="bg-[#5D7757] text-white font-semibold text-sm px-4 py-2 rounded-r-md shadow h-[33px]">
                                     Fast & Affordable Services
                                 </div>
                             </div>
@@ -75,7 +75,7 @@ export default function About() {
                                 <div className="bg-white p-2 rounded-l-md shadow-md">
                                     <MdAccessTime className="text-[#3F503B] text-lg" />
                                 </div>
-                                <div className="bg-[#5D7757] text-white font-semibold text-sm px-4 py-2 rounded-r-md shadow">
+                                <div className="bg-[#5D7757] h-[33px] text-white font-semibold text-sm px-4 py-2 rounded-r-md shadow">
                                     Brilliant Ideas
                                 </div>
                             </div>

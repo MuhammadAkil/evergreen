@@ -59,7 +59,7 @@ export default function Navbar() {
 
             <div className="hidden md:flex max-w-screen-xl mx-auto justify-between items-center h-[36px] bg-[#3F503B] rounded-md relative top-[13px]">
                 <div className="flex text-white text-[14px] font-medium divide-x divide-[#5D7757]">
-                    <a href="#" className="px-6 py-2 hover:bg-[#5D7757]">Home</a>
+                    <a href="/" className="px-6 py-2 hover:bg-[#5D7757]">Home</a>
                     <a href="/about-us" className="px-6 py-2 bg-[#2f462f]">About Us</a>
                     <a href="/our-services" className="px-6 py-2 hover:bg-[#5D7757]">Our Services</a>
                     <a href="/testimonial" className="px-6 py-2 hover:bg-[#5D7757]">Testimonials</a>

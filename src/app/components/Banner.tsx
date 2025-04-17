@@ -5,17 +5,15 @@ import { Button } from "@/components/ui/button"
 export default function SepticHero() {
   return (
     <div className="relative">
-      {/* Hero Background Image */}
       <div className="relative h-[500px] w-full">
         <Image
-                  src="/assets/PNG/Group 39285.png"
+          src="/assets/PNG/Group 39285.png"
           alt="Septic system maintenance"
           fill
           className="object-cover brightness-[0.85]"
           priority
         />
 
-        {/* Calendar Icon Overlay (faint) */}
         <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-20 hidden md:block">
           <svg width="200" height="200" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
