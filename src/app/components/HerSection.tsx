@@ -4,7 +4,7 @@ import { FaCheckCircle, FaPhone } from "react-icons/fa";
 export default function HerSection() {
     return (
         <>
-            <div className="w-full min-h-screen flex items-center justify-center bg-cover bg-center px-4 py-10 md:py-20"
+            <div className="w-full min-h-screen flex items-center justify-center bg-cover bg-center px-4 py-25 md:pb-20 md:pt-50"
                 style={{ backgroundImage: "url('/assets/PNG/HeroSection.png')" }}
             >
                 <div className="max-w-screen-xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">

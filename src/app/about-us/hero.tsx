@@ -3,14 +3,13 @@ import { MdAccessTime } from "react-icons/md";
 import { FaPumpSoap, FaTools, FaSearch, FaHardHat, FaLeaf, FaBell, FaQuoteLeft } from 'react-icons/fa';
 import { Mail, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { } from "react-icons/fa";
 
 import { Rocket } from "lucide-react"
 
 export default function Hero() {
     return (
         <>
-            <div className="relative w-full h-[300px] overflow-hidden">
+            <div className="relative w-full h-[400px] overflow-hidden">
                 <img
                     src="/assets/PNG/Rectangle 30139.png"
                     alt="Background Image"
@@ -359,7 +358,7 @@ export default function Hero() {
                             </p>
                             <div className="flex items-center gap-3">
                                 <img
-                                    src="/assets/PNG/user1.png"
+                                    src="https://randomuser.me/api/portraits/women/65.jpg"
                                     className="w-10 h-10 rounded-full"
                                     alt="Giovanni C"
                                 />
@@ -379,7 +378,7 @@ export default function Hero() {
                             </p>
                             <div className="flex items-center gap-3">
                                 <img
-                                    src="/assets/PNG/user1.png"
+                                    src="https://randomuser.me/api/portraits/women/65.jpg"
                                     className="w-10 h-10 rounded-full"
                                     alt="Giovanni C"
                                 />
@@ -399,7 +398,7 @@ export default function Hero() {
                             </p>
                             <div className="flex items-center gap-3">
                                 <img
-                                    src="/assets/PNG/user1.png"
+                                    src="https://randomuser.me/api/portraits/women/65.jpg"
                                     className="w-10 h-10 rounded-full"
                                     alt="Giovanni C"
                                 />

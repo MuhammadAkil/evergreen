@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 export default function Hero() {
     return (
         <>
-            <div className="relative w-full h-[300px] overflow-hidden">
+            <div className="relative w-full h-[400px] overflow-hidden">
                 <img
                     src="/assets/PNG/Rectangle 30139.png"
                     alt="Background Image"
@@ -24,10 +24,14 @@ export default function Hero() {
                 </div>
             </div>
 
+            <section className="py-16 bg-white relative overflow-hidden">
+                <img
+                    src="/assets/PNG/Union.png"
+                    alt="Background Graphic"
+                    className="absolute top-0 left-0 w-40 h-auto object-contain z-0"
+                />
 
-
-            <section className="py-16 bg-white relative">
-                <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-6">
+                <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-6 relative z-10">
                     <div className="bg-[#F7FAFF] border border-[#E5EAF1] rounded-lg p-6 shadow-sm">
                         <div className="mb-4 text-[#3F503B] text-3xl">
                             <HiOutlineLocationMarker />
@@ -106,8 +110,7 @@ export default function Hero() {
                 </div>
             </section>
 
-
-            <section className="relative w-full overflow-hidden">
+            <section className="relative w-full overflow-hidden h-[500px]">
                 <img
                     src="/assets/PNG/Rectangle 30139.png"
                     alt="Background Image"
@@ -116,7 +119,7 @@ export default function Hero() {
                 <img
                     src="/assets/PNG/Mask group.png"
                     alt="Mask Overlay"
-                    className="w-[50%] h-[161%] object-cover absolute top-4 left-0 z-10"
+                    className="w-[50%] h-[161%] object-cover absolute top-15 left-0 z-10"
                 />
                 <div className="absolute inset-0 flex flex-col items-start justify-center md:ml-10 text-white z-20 px-4 md:px-0 py-20 w-full">
                     <h1 className="text-3xl md:text-6xl font-bold uppercase tracking-wide text-center md:text-left">Live Clean and Worry-Free</h1>
@@ -127,14 +130,12 @@ export default function Hero() {
 
                     <div className="w-full mt-10">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-                            {/* Column 1: Button */}
                             <div className="flex justify-center md:justify-start">
                                 <Button className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md flex items-center">
                                     <Rocket className="mr-2 h-5 w-5" />GET A FREE QUOTE
                                 </Button>
                             </div>
 
-                            {/* Column 2: User Info */}
                             <div className="flex items-center gap-3 justify-center md:justify-start">
                                 <img src="/assets/PNG/Person.png" className="w-10 h-10 rounded-full" alt="Sophia Moore" />
                                 <div className="flex flex-col justify-start">
@@ -143,7 +144,6 @@ export default function Hero() {
                                 </div>
                             </div>
 
-                            {/* Column 3: Phone */}
                             <div className="flex items-center gap-3 justify-center md:justify-start">
                                 <p className="text-2xl md:text-4xl text-white font-semibold">+1 262-248-4711</p>
                             </div>
@@ -152,8 +152,34 @@ export default function Hero() {
                 </div>
             </section>
 
+            <section className="bg-[#4CAF50] py-16 px-4">
+                <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
+                    <div className="md:w-1/2 text-white text-center md:text-left">
+                        <h2 className="text-3xl sm:text-4xl mb-2">Subscribe Our Newsletter</h2>
+                        <p className="text-sm sm:text-base">
+                            stay in touch with us to get latest news. maximus mattis est facilisi. In sed pretium Proin pretium id urna sit amet tincidunt.
+                        </p>
+                    </div>
+
+                    <div className="md:w-1/2 w-full">
+                        <form className="flex w-full max-w-md">
+                            <input
+                                type="email"
+                                placeholder="your mail address here"
+                                className="flex-1 p-3 border border-white focus:outline-none placeholder-white text-white bg-transparent"
+                            />
+                            <button
+                                type="submit"
+                                className="bg-white text-[#3F503B] font-semibold px-6 py-3-r-md border border-l-0 border-white hover:bg-gray-100 transition"
+                            >
+                                Subscribe
+                            </button>
+                        </form>
 
 
+                    </div>
+                </div>
+            </section>
 
         </>
     );

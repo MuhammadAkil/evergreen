@@ -3,7 +3,7 @@ import React from 'react';
 export default function Hero() {
     return (
         <>
-            <div className="relative w-full h-[300px] overflow-hidden">
+            <div className="relative w-full h-[400px] overflow-hidden">
                 <img 
                     src="/assets/PNG/Rectangle 30139.png" 
                     alt="Background Image" 

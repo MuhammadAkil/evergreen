@@ -6,13 +6,27 @@ import {
     FaPhone, FaBars, FaTimes
 } from "react-icons/fa";
 import { HiOutlineMail, HiOutlineLocationMarker } from "react-icons/hi";
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const pathname = usePathname();
+
+    const navLinks = [
+        { name: 'Home', path: '/' },
+        { name: 'About Us', path: '/about-us' },
+        { name: 'Our Services', path: '/our-services' },
+        { name: 'Testimonials', path: '/testimonial' },
+        { name: 'Contact', path: '/contact-us' }
+    ];
 
     return (
-        <div className="w-full bg-white relative z-10 shadow-sm">
-            <div className="max-w-screen-xl mx-auto px-4 py-4 flex justify-between items-center text-sm text-gray-800">
+        <div
+            className="w-full bg-white z-50 shadow-sm"
+            style={{ position: 'fixed', top: 0, left: 0, width: '100%' }}
+        >
+
+            <div className="top-0 z-50 bg-white max-w-screen-xl mx-auto px-4 py-4 flex justify-between items-center text-sm text-gray-800">
                 <div className="flex items-center gap-3">
                     <FaTree className="w-10 h-10 text-[#3F503B]" />
                     <div className="leading-tight">
@@ -41,7 +55,6 @@ export default function Navbar() {
                         <div className="bg-[#E9F4E6] w-[36px] h-[36px] flex items-center justify-center rounded-[8px]">
                             <HiOutlineMail className="text-[#3F503B] text-xl" />
                         </div>
-
                         <div>
                             <div className="font-medium text-sm">info@evergreenseptic.com</div>
                             <div className="text-gray-500 text-xs">Lake Geneva, Wisconsin.</div>
@@ -57,13 +70,17 @@ export default function Navbar() {
                 </div>
             </div>
 
-            <div className="hidden md:flex max-w-screen-xl mx-auto justify-between items-center h-[36px] bg-[#3F503B] rounded-md relative top-[13px]">
+            <div className="hidden md:flex max-w-screen-xl mx-auto justify-between items-center h-[36px] bg-[#3F503B] rounded-md relative top-[13px] border border-[#5D7757]">
                 <div className="flex text-white text-[14px] font-medium divide-x divide-[#5D7757]">
-                    <a href="/" className="px-6 py-2 hover:bg-[#5D7757]">Home</a>
-                    <a href="/about-us" className="px-6 py-2 bg-[#2f462f]">About Us</a>
-                    <a href="/our-services" className="px-6 py-2 hover:bg-[#5D7757]">Our Services</a>
-                    <a href="/testimonial" className="px-6 py-2 hover:bg-[#5D7757]">Testimonials</a>
-                    <a href="/contact-us" className="px-6 py-2 hover:bg-[#5D7757]">Contact</a>
+                    {navLinks.map(({ name, path }, i) => (
+                        <a
+                            key={i}
+                            href={path}
+                            className={`px-6 py-2 ${pathname === path ? 'bg-[#2f462f] rounded-sm' : 'hover:bg-[#5D7757]'}`}
+                        >
+                            {name}
+                        </a>
+                    ))}
                 </div>
 
                 <div className="bg-[#EF4444] text-white px-5 py-2.5 rounded-md font-bold text-[20px] flex items-center gap-2 shadow-md">
@@ -75,8 +92,14 @@ export default function Navbar() {
             {menuOpen && (
                 <div className="md:hidden bg-[#3F503B] text-white w-full">
                     <div className="flex flex-col divide-y divide-[#5D7757] font-medium text-[14px]">
-                        {['Home', 'About Us', 'Our Services', 'Testimonials', 'Contact'].map((item, i) => (
-                            <a key={i} href="#" className="px-6 py-4 hover:bg-[#5D7757]">{item}</a>
+                        {navLinks.map(({ name, path }, i) => (
+                            <a
+                                key={i}
+                                href={path}
+                                className={`px-6 py-4 ${pathname === path ? 'bg-[#2f462f]' : 'hover:bg-[#5D7757]'}`}
+                            >
+                                {name}
+                            </a>
                         ))}
                     </div>
 
