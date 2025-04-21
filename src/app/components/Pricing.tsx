@@ -2,12 +2,48 @@ import { Check, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+
+const pricingData = {
+  holding: {
+    3000: 150,
+    3200: 155,
+    3400: 160,
+    3600: 165,
+    3800: 170,
+    4000: 175,
+    4200: 180,
+  },
+  septic: {
+    1000: 250,
+    1200: 270,
+    1400: 290,
+    1600: 310,
+    1800: 330,
+    2000: 350,
+    2200: 370,
+  },
+};
 
 export default function Home() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: false });
   }, []);
+
+  const [category, setCategory] = useState('holding');
+  const [quantity, setQuantity] = useState('');
+  const [price, setPrice] = useState<number | null>(null);
+
+  const handleEstimate = () => {
+    const qty = parseInt(quantity);
+    if (!qty) return setPrice(null);
+
+    const table = pricingData[category as 'holding' | 'septic'];
+
+    const matched = Object.entries(table).find(([gallons]) => parseInt(gallons) >= qty);
+    setPrice(matched ? matched[1] : null);
+  };
+
   return (
     <main className="min-h-screen bg-[#3F503B]" data-aos="fade-up"
       data-aos-anchor-placement="top-bottom">
@@ -20,38 +56,52 @@ export default function Home() {
         </div>
 
         {/* Estimate Card */}
-        <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 max-w-3xl mx-auto mb-12">
+        <div className="">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-            <div className="space-y-4 flex-1">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#3b5741]">Get Your Estimate!</h2>
-              <p className="text-gray-600">Get your own estimate by finding best offer for you!</p>
+            <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 max-w-3xl mx-auto mb-12">
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                <div className="space-y-4 flex-1">
+                  <h2 className="text-2xl md:text-3xl font-bold text-[#3b5741]">Get Your Estimate!</h2>
+                  <p className="text-gray-600">Get your own estimate by finding best offer for you!</p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <p className="font-medium">Category</p>
-                  <div className="flex items-center gap-2 bg-gray-100 rounded-md p-3">
-                    <span className="flex-1">Holding</span>
-                    <div className="h-6 w-6 rounded-full bg-green-500 flex items-center justify-center">
-                      <Check className="h-4 w-4 text-white" />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <p className="font-medium">Category</p>
+                      <select
+                        value={category}
+                        onChange={(e) => setCategory(e.target.value)}
+                        className="w-full p-3 rounded-md bg-gray-100"
+                      >
+                        <option value="holding">Holding Tanks</option>
+                        <option value="septic">Septic Tanks</option>
+                      </select>
+                    </div>
+
+                    <div className="space-y-2">
+                      <p className="font-medium">Quantity (Gallons)</p>
+                      <input
+                        type="number"
+                        value={quantity}
+                        onChange={(e) => setQuantity(e.target.value)}
+                        className="w-full p-3 rounded-md bg-gray-100"
+                        placeholder="Enter gallons"
+                      />
                     </div>
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                  <p className="font-medium">Quantity</p>
-                  <div className="flex items-center gap-2 bg-gray-100 rounded-md p-3">
-                    <span className="flex-1">3600 Gallons</span>
-                    <div className="h-6 w-6 rounded-full bg-green-500 flex items-center justify-center">
-                      <Check className="h-4 w-4 text-white" />
-                    </div>
+                <div className="flex flex-col items-center gap-4">
+                  <div className="text-[#4CAF50] text-3xl md:text-4xl font-bold">
+                    {price !== null ? `$ ${price.toFixed(2)}` : '--'}
                   </div>
+                  <Button
+                    onClick={handleEstimate}
+                    className="bg-[#4CAF50] hover:bg-green-600 text-white px-8"
+                  >
+                    Get Now
+                  </Button>
                 </div>
               </div>
-            </div>
-
-            <div className="flex flex-col items-center gap-4">
-              <div className="text-[#4CAF50] text-3xl md:text-4xl font-bold">$ 195.00</div>
-              <Button className="bg-[#4CAF50] hover:bg-green-600 text-white px-8">Get Now</Button>
             </div>
           </div>
         </div>
