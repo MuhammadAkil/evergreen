@@ -10,6 +10,8 @@ import About from '../components/About'
 import Pricing from '../components/Pricing'
 import Footer from '../components/Footer'
 import PricingPage from '../components/PeiceDetail';
+import Slider from '../components/Slider';
+
 export default function HomePage() {
     return (
         <>
@@ -21,6 +23,7 @@ export default function HomePage() {
             <Pricing />
             <PricingPage />
             <Banner />
+            <Slider />
             <FAQ />
 <Footer />
         </>

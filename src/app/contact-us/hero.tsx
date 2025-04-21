@@ -1,10 +1,19 @@
-import React from 'react';
+'use client';
+
+import React, {useEffect} from 'react';
 import { HiOutlineLocationMarker, HiOutlineMail } from "react-icons/hi";
 import { FiPhone } from "react-icons/fi";
 import { Rocket } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Hero() {
+    useEffect(() => {
+        AOS.init({ duration: 1000, once: false });
+      }, []);
+    
+
     return (
         <>
             <div className="relative w-full h-[400px] overflow-hidden">
@@ -24,7 +33,7 @@ export default function Hero() {
                 </div>
             </div>
 
-            <section className="py-16 bg-white relative overflow-hidden">
+            <section className="py-16 bg-white relative overflow-hidden" data-aos="fade-up">
                 <img
                     src="/assets/PNG/Union.png"
                     alt="Background Graphic"
@@ -58,7 +67,7 @@ export default function Hero() {
                 </div>
             </section>
 
-            <section className='pt-13 mt-13'>
+            <section className='pt-13 mt-13' data-aos="fade-up">
                 <div className="md:w-1/2">
                     <div className="text-black mb-4 px-9">
                         <p className="text-xs mb-2 text-[#3F503B] md:relative md:top-0 relative top-[-10em]">
@@ -110,7 +119,7 @@ export default function Hero() {
                 </div>
             </section>
 
-            <section className="relative w-full overflow-hidden h-[500px]">
+            <section className="relative w-full overflow-hidden h-[500px]" data-aos="fade-up">
                 <img
                     src="/assets/PNG/Rectangle 30139.png"
                     alt="Background Image"
@@ -152,7 +161,7 @@ export default function Hero() {
                 </div>
             </section>
 
-            <section className="bg-[#4CAF50] py-16 px-4">
+            <section className="bg-[#4CAF50] py-16 px-4" data-aos="fade-up">
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
                     <div className="md:w-1/2 text-white text-center md:text-left">
                         <h2 className="text-3xl sm:text-4xl mb-2">Subscribe Our Newsletter</h2>

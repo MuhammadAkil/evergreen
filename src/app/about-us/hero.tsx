@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { MdAccessTime } from "react-icons/md";
-import { FaPumpSoap, FaTools, FaSearch, FaHardHat, FaLeaf, FaBell, FaQuoteLeft } from 'react-icons/fa';
+import { FaPumpSoap, FaTools, FaSearch, FaHardHat, FaLeaf, FaBell } from 'react-icons/fa';
 import { Mail, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
-
 import { Rocket } from "lucide-react"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Hero() {
+
+    useEffect(() => {
+        AOS.init({ duration: 1000, once: false });
+    }, []);
+
+
     return (
         <>
             <div className="relative w-full h-[400px] overflow-hidden">
@@ -26,7 +33,7 @@ export default function Hero() {
                 </div>
             </div>
 
-            <section className="bg-white py-12">
+            <section className="bg-white py-12" data-aos="zoom-in">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="flex flex-col md:flex-row gap-6 items-start md:items-stretch">
                         <div className="w-full md:w-2/3 flex flex-col">
@@ -112,7 +119,7 @@ export default function Hero() {
                 </div>
             </section>
 
-            <section className="relative bg-[#374932] text-white py-16 md:pb-[120px] overflow-hidden">
+            <section className="relative bg-[#374932] text-white py-16 md:pb-[120px] overflow-hidden" data-aos="zoom-in-up">
                 <img
                     src="/assets/PNG/3rdsection.png"
                     alt="Layout Background"
@@ -143,7 +150,7 @@ export default function Hero() {
                 </div>
             </section>
 
-            <section className="bg-white py-16">
+            <section className="bg-white py-16" data-aos="zoom-in-down">
                 <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
                     <img src="/assets/PNG/AboutUSImage.png" alt="Team working" className="rounded-lg" />
 
@@ -181,7 +188,9 @@ export default function Hero() {
                 </div>
             </section>
 
-            <section className="bg-[#3F503B] py-16">
+            <section className="bg-[#3F503B] py-16" data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1500">
                 <div className="max-w-7xl mx-auto px-4">
                     <h2 className="text-4xl text-center text-white mb-10">What We Do</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center text-center">
@@ -225,7 +234,8 @@ export default function Hero() {
                 </div>
             </section>
 
-            <section className="bg-white py-16">
+            <section className="bg-white py-16" data-aos="fade-up"
+                data-aos-duration="3000">
                 <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
                     <div>
                         <h2 className="text-3xl mb-4">Why Choose Us</h2>
@@ -290,7 +300,8 @@ export default function Hero() {
 
             </section>
 
-            <section className='max-w-4xl mx-auto p-6 mt-10 mb-10 font-sans'>
+            <section className='max-w-4xl mx-auto p-6 mt-10 mb-10 font-sans' data-aos="fade-up"
+                data-aos-duration="3000">
                 <div className="bg-[#F0F0F0] rounded-lg p-4 mb-6">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                         <div className="flex items-center p-3 rounded-md">
@@ -325,7 +336,10 @@ export default function Hero() {
                 </div>
             </section>
 
-            <section className="relative bg-cover bg-center bg-no-repeat h-[400px] flex items-center justify-center text-center mb-5"
+            <section data-aos="fade-zoom-in"
+                data-aos-easing="ease-in-back"
+                data-aos-delay="300"
+                data-aos-offset="0" className="relative bg-cover bg-center bg-no-repeat h-[400px] flex items-center justify-center text-center mb-5"
                 style={{ backgroundImage: "url('/assets/PNG/thirdsectionleftimage.png')" }}
             >
                 <div className=" p-6 rounded-md">
@@ -339,7 +353,8 @@ export default function Hero() {
                 </div>
             </section>
 
-            <section className="relative bg-white py-16">
+            <section className="relative bg-white py-16" data-aos="fade-up"
+                data-aos-anchor-placement="bottom-bottom">
                 <div className="absolute top-0 right-0 z-0">
                     <img src="/assets/PNG/Union.png" alt="Design" className="w-[300px] md:h-[165px]" />
                 </div>

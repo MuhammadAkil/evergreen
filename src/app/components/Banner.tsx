@@ -1,10 +1,17 @@
 import Image from "next/image"
 import { Rocket } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import React, { useEffect } from 'react';
 
 export default function SepticHero() {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: false });
+  }, []);
   return (
-    <div className="relative">
+    <div className="relative" data-aos="fade-up"
+      data-aos-anchor-placement="top-bottom">
       <div className="relative h-[500px] w-full">
         <Image
           src="/assets/PNG/Group 39285.png"

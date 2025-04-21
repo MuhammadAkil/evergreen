@@ -1,7 +1,16 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { MdAccessTime } from "react-icons/md";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 export default function Hero() {
+
+    useEffect(() => {
+        AOS.init({ duration: 1000, once: false });
+    }, []);
+
+
     return (
         <>
             <div className="relative w-full h-[400px] overflow-hidden">
@@ -21,7 +30,7 @@ export default function Hero() {
                 </div>
             </div>
 
-            <section className="py-16 bg-white relative overflow-hidden">
+            <section className="py-16 bg-white relative overflow-hidden" data-aos="fade-right">
                 <img
                     src="/assets/PNG/Union.png"
                     alt="Background Graphic"
@@ -34,7 +43,7 @@ export default function Hero() {
                 </div>
             </section>
 
-            <section className="pt-10 bg-white">
+            <section className="pt-10 bg-white" data-aos="fade-right">
                 <div className="max-w-4xl mx-auto px-4 grid md:grid-cols-2 gap-6">
 
                     <div className="rounded-lg overflow-hidden border shadow-sm">
@@ -100,7 +109,7 @@ export default function Hero() {
                 </div>
             </section>
 
-            <section className="py-10 bg-white">
+            <section className="py-10 bg-white" data-aos="fade-right">
                 <div className="max-w-4xl mx-auto px-4 grid md:grid-cols-2 gap-6">
 
                     <div className="rounded-lg overflow-hidden border shadow-sm">
@@ -175,7 +184,7 @@ export default function Hero() {
 
             </section>
 
-            <section>
+            <section data-aos="fade-up">
                 <div className="relative w-full bg-[#3F503B] py-10">
                     <div className="relative mx-auto max-w-4xl -mt-16 px-4">
                         <div className="bg-white rounded-lg shadow-[0_-20px_22px_rgba(0,0,0,0.1)] p-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
@@ -202,7 +211,7 @@ export default function Hero() {
                     </div>
 
                 </div>
-                <div className="relative w-full bg-[#3F503B] py-10 text-white">
+                <div className="relative w-full bg-[#3F503B] py-10 text-white"  data-aos="fade-up">
                     <div className="max-w-2xl mx-auto px-4 text-center">
                         <h2 className="text-4xl my-2">Project Completed</h2>
                         <p className="text-sm mb-8">
@@ -226,7 +235,7 @@ export default function Hero() {
                 </div>
             </section>
 
-            <section className="bg-white py-16">
+            <section className="bg-white py-16" data-aos="zoom-in-up">
 
                 <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
                     <div>

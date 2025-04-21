@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { Button } from "@/components/ui/button"
 import Link from "next/link";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const FAQSection = () => {
     const [open, setOpen] = useState(null);
 
@@ -28,10 +31,15 @@ const FAQSection = () => {
         },
     ];
 
+    useEffect(() => {
+        AOS.init({ duration: 1000, once: false });
+    }, []);
+
 
     return (
         <>
-            <section className="w-full bg-[#F2F2F2] py-16 px-4">
+            <section className="w-full bg-[#F2F2F2] py-16 px-4" data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom">
                 <div className="max-w-screen-xl mx-auto text-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-[#3F503B] mb-6">FAQ</h2>
 
@@ -62,25 +70,25 @@ const FAQSection = () => {
                     </div>
                 </div>
 
-                 <div className=" flex items-center justify-center  bg-[#F2F2F2]  p-4">
-      <div className="w-full max-w-7xl bg-white rounded-lg shadow-sm p-6 md:p-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="text-left">
-            <h2 className="text-xl font-semibold text-gray-800">Didn't find your answer?</h2>
-            <p className="text-gray-600 mt-1">We are here to help!</p>
-            <p className="text-gray-700 mt-2">
-              email us at{" "}
-              <Link href="mailto:info@evergreenseptics.com" className="text-gray-900 hover:underline">
-                info@evergreenseptics.com
-              </Link>
-            </p>
-          </div>
-          <Button className="bg-red-500 hover:bg-red-600 text-white font-medium px-6 py-2 rounded w-full md:w-auto">
-            CONTACT CUSTOMER CARE
-          </Button>
-        </div>
-      </div>
-    </div>
+                <div className=" flex items-center justify-center  bg-[#F2F2F2]  p-4">
+                    <div className="w-full max-w-7xl bg-white rounded-lg shadow-sm p-6 md:p-8">
+                        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                            <div className="text-left">
+                                <h2 className="text-xl font-semibold text-gray-800">Didn't find your answer?</h2>
+                                <p className="text-gray-600 mt-1">We are here to help!</p>
+                                <p className="text-gray-700 mt-2">
+                                    email us at{" "}
+                                    <Link href="mailto:info@evergreenseptics.com" className="text-gray-900 hover:underline">
+                                        info@evergreenseptics.com
+                                    </Link>
+                                </p>
+                            </div>
+                            <Button className="bg-red-500 hover:bg-red-600 text-white font-medium px-6 py-2 rounded w-full md:w-auto">
+                                CONTACT CUSTOMER CARE
+                            </Button>
+                        </div>
+                    </div>
+                </div>
             </section>
         </>
     );

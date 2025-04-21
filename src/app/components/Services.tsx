@@ -1,5 +1,7 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { FaPlus } from "react-icons/fa";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const services = [
     {
@@ -35,8 +37,13 @@ const services = [
 ];
 
 export default function Services() {
+     useEffect(() => {
+            AOS.init({ duration: 1000, once: false });
+        }, []);
+
     return (
-        <section className="w-full px-4 py-16 bg-gray-50">
+        <section className="w-full px-4 py-16 bg-gray-50" data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom">
             <div className="max-w-screen-xl mx-auto text-center">
                 <h3 className="text-[#3F503B] text-sm font-semibold uppercase tracking-wider mb-2">
                     What We Do

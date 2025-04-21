@@ -1,10 +1,17 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { MdAccessTime } from "react-icons/md";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function About() {
+    useEffect(() => {
+        AOS.init({ duration: 1000, once: false });
+    }, []);
+
     return (
         <>
-            <section className="w-full bg-[#3F503B] py-16  relative overflow-hidden">
+            <section className="w-full bg-[#3F503B] py-16  relative overflow-hidden" data-aos="fade-up"
+                data-aos-anchor-placement="center-bottom">
                 <div className="max-w-screen-xl grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative z-10">
 
                     <div className="flex flex-row gap-4">

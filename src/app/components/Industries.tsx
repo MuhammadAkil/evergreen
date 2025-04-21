@@ -1,5 +1,7 @@
-import React from 'react'
 import { FaBuilding, FaHotel, FaSchool, FaHome } from "react-icons/fa";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import React, { useEffect } from 'react';
 
 const industryData = [
     { title: "Residential", icon: <FaHome /> },
@@ -9,9 +11,13 @@ const industryData = [
 ];
 
 export default function Industries() {
+    useEffect(() => {
+        AOS.init({ duration: 1000, once: false });
+    }, []);
     return (
         <>
-            <section className="relative bg-white py-16 px-4">
+            <section className="relative bg-white py-16 px-4" data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom">
                 <img
                     src="/assets/PNG/fourthSection.svg"
                     alt="Industry Illustration"
