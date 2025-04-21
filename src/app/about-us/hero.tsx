@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Rocket } from "lucide-react"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Link from "next/link"
 
 export default function Hero() {
 
@@ -325,11 +326,12 @@ export default function Hero() {
                             </div>
                         </div>
 
-                        <Button className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md">
-                            <Rocket className="mr-2 h-5 w-5" />GET A FREE QUOTE</Button>
+                        <Link href='/contact-us'>
+                            <Button className="bg-red-500 cursor-pointer hover:bg-red-600 text-white px-4 py-2 rounded-md">
+                                <Rocket className="mr-2 h-5 w-5" />GET A FREE QUOTE</Button>
+                        </Link>
                     </div>
                 </div>
-
                 <div className="text-center text-sm font-semibold">
                     <p>Phone: 262-248-4711 (during normal business hours, Monday-Friday, 8 AM to 4 PM)</p>
                     <p>Emergency Number: 262-949-3555</p>
@@ -347,9 +349,12 @@ export default function Hero() {
                         Maintain your septic system <br />
                         with our reliable and efficient solutions.
                     </h2>
-                    <Button className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md">
-                        <Rocket className="mr-2 h-5 w-5" />
-                        GET A FREE QUOTE</Button>
+
+                    <Link href='/contact-us'>
+                        <Button className="bg-red-500 cursor-pointer hover:bg-red-600 text-white px-4 py-2 rounded-md">
+                            <Rocket className="mr-2 h-5 w-5" />
+                            GET A FREE QUOTE</Button>
+                    </Link>
                 </div>
             </section>
 

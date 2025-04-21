@@ -5,15 +5,16 @@ export default function Footer() {
     <footer className="bg-[#2a3b2a] text-white px-8 py-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row gap-8">
-          {/* Left section - Logo, description and social icons */}
           <div className="md:w-1/3">
             <div className="flex items-center gap-2 mb-4">
               <svg viewBox="0 0 24 24" className="w-10 h-10 fill-white">
                 <path d="M12 2L4 9v12h16V9l-8-7zm0 2.5L17 9v10h-2v-6h-6v6H7V9l5-4.5z" />
               </svg>
               <div>
-                <div className="text-xl font-bold tracking-wide">EVERGREEN</div>
-                <div className="text-sm">Septic Services LLC</div>
+                <Link href='/'>
+                  <div className="text-xl font-bold tracking-wide">EVERGREEN</div>
+                  <div className="text-sm">Septic Services LLC</div>
+                </Link>
               </div>
             </div>
 
@@ -174,27 +175,27 @@ export default function Footer() {
               <h3 className="text-lg font-medium mb-4">Explore</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="#" className="hover:underline">
+                  <Link href="/about-us" className="hover:underline">
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:underline">
+                  <Link href="/" className="hover:underline">
                     Gallery
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:underline">
+                  <Link href="/" className="hover:underline">
                     Offers
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:underline">
+                  <Link href="/" className="hover:underline">
                     Pricing
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:underline">
+                  <Link href="/" className="hover:underline">
                     FAQ
                   </Link>
                 </li>
@@ -204,27 +205,27 @@ export default function Footer() {
               <h3 className="text-lg font-medium mb-4">Quick Links</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="#" className="hover:underline">
+                  <Link href="/our-services" className="hover:underline">
                     Services
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:underline">
-                    Blog
+                  <Link href="/testimonial" className="hover:underline">
+                    Testimonial
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:underline">
+                  <Link href="/contact-us" className="hover:underline">
                     Contact Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:underline">
+                  <Link href="/" className="hover:underline">
                     Service Request
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:underline">
+                  <Link href="/" className="hover:underline">
                     Estimation Calculator
                   </Link>
                 </li>

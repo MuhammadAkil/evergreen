@@ -4,6 +4,7 @@ import { Rocket } from "lucide-react"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import React, { useEffect } from 'react';
+import Link from "next/link";
 
 export default function PricingPage() {
   useEffect(() => {
@@ -76,8 +77,10 @@ export default function PricingPage() {
               </div>
             </div>
 
-            <Button className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md">
-              <Rocket className="mr-2 h-5 w-5" />GET A FREE QUOTE</Button>
+            <Link href='/contact-us'>
+              <Button className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md cursor-pointer">
+                <Rocket className="mr-2 h-5 w-5" />GET A FREE QUOTE</Button>
+            </Link>
           </div>
         </div>
 

@@ -1,12 +1,10 @@
 'use client';
 
 import React, { useState } from "react";
-import {
-    FaTree, FaInstagram, FaFacebookF, FaTwitter, FaYelp,
-    FaPhone, FaBars, FaTimes
-} from "react-icons/fa";
+import { FaTree, FaInstagram, FaFacebookF, FaTwitter, FaYelp, FaPhone, FaBars, FaTimes } from "react-icons/fa";
 import { HiOutlineMail, HiOutlineLocationMarker } from "react-icons/hi";
 import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -83,10 +81,12 @@ export default function Navbar() {
                     ))}
                 </div>
 
-                <div className="bg-[#EF4444] text-white px-5 py-2.5 rounded-md font-bold text-[20px] flex items-center gap-2 shadow-md">
-                    <FaPhone className="text-[20px]" />
-                    <span>262-248-4711</span>
-                </div>
+                <Link href="/contact-us">
+                    <div className="cursor-pointer bg-[#EF4444] text-white px-5 py-2.5 rounded-md font-bold text-[20px] flex items-center gap-2 shadow-md">
+                        <FaPhone className="text-[20px]" />
+                        <span>262-248-4711</span>
+                    </div>
+                </Link>
             </div>
 
             {menuOpen && (
@@ -111,12 +111,14 @@ export default function Navbar() {
                         ))}
                     </div>
 
-                    <div className="flex justify-center py-4">
-                        <div className="bg-[#EF4444] text-white px-5 py-3 rounded-md font-bold text-[16px] flex items-center gap-2 shadow-md">
-                            <FaPhone className="text-[18px]" />
-                            <span>262-248-4711</span>
+                    <Link href="/about-us">
+                        <div className="flex justify-center py-4">
+                            <div className="bg-[#EF4444] text-white px-5 py-3 rounded-md font-bold text-[16px] flex items-center gap-2 shadow-md">
+                                <FaPhone className="text-[18px]" />
+                                <span>262-248-4711</span>
+                            </div>
                         </div>
-                    </div>
+                    </Link>
                 </div>
             )}
         </div>

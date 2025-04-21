@@ -3,7 +3,6 @@ import React from 'react';
 export default function Hero() {
     return (
         <>
-
             <section data-aos="fade-up">
                 <div className="relative w-full bg-[#3F503B] py-10">
                     <div className="relative mx-auto max-w-4xl -mt-16 px-4">

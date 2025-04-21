@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import React, { useEffect } from 'react';
+import Link from 'next/link';
 
 export default function SepticHero() {
   useEffect(() => {
@@ -46,16 +47,17 @@ export default function SepticHero() {
             Maintain your septic system with our reliable and efficient solutions.
           </h1>
 
-          <div className="mt-8">
-            <Button className="bg-red-500 hover:bg-red-600 text-white px-6 py-6 rounded-md text-lg font-medium">
-              <Rocket className="mr-2 h-5 w-5" />
-              GET A FREE QUOTE
-            </Button>
-          </div>
+          <Link href="/contact-us">
+            <div className="mt-8">
+              <Button className="bg-red-500 cursor-pointer hover:bg-red-600 text-white px-6 py-6 rounded-md text-lg font-medium">
+                <Rocket className="mr-2 h-5 w-5" />
+                GET A FREE QUOTE
+              </Button>
+            </div>
+          </Link>
         </div>
       </div>
 
-      {/* Stats Section */}
       <div className="relative mx-auto max-w-4xl -mt-16 px-4">
         <div className="bg-white rounded-lg shadow-lg p-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           <div className="flex flex-col">

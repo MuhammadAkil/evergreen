@@ -1,18 +1,19 @@
 'use client';
 
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { HiOutlineLocationMarker, HiOutlineMail } from "react-icons/hi";
 import { FiPhone } from "react-icons/fi";
 import { Rocket } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Link from "next/link"
 
 export default function Hero() {
     useEffect(() => {
         AOS.init({ duration: 1000, once: false });
-      }, []);
-    
+    }, []);
+
 
     return (
         <>
@@ -140,9 +141,11 @@ export default function Hero() {
                     <div className="w-full mt-10">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
                             <div className="flex justify-center md:justify-start">
-                                <Button className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md flex items-center">
-                                    <Rocket className="mr-2 h-5 w-5" />GET A FREE QUOTE
-                                </Button>
+                                <Link href='/contact-us'>
+                                    <Button className="bg-red-500 cursor-pointer hover:bg-red-600 text-white px-4 py-2 rounded-md flex items-center">
+                                        <Rocket className="mr-2 h-5 w-5" />GET A FREE QUOTE
+                                    </Button>
+                                </Link>
                             </div>
 
                             <div className="flex items-center gap-3 justify-center md:justify-start">

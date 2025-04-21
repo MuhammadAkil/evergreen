@@ -5,6 +5,7 @@ import Link from "next/link";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+
 const FAQSection = () => {
     const [open, setOpen] = useState(null);
 
@@ -83,9 +84,11 @@ const FAQSection = () => {
                                     </Link>
                                 </p>
                             </div>
-                            <Button className="bg-red-500 hover:bg-red-600 text-white font-medium px-6 py-2 rounded w-full md:w-auto">
-                                CONTACT CUSTOMER CARE
-                            </Button>
+                            <Link href='/contact-us'>
+                                <Button className="bg-red-500 cursor-pointer hover:bg-red-600 text-white font-medium px-6 py-2 rounded w-full md:w-auto">
+                                    CONTACT CUSTOMER CARE
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </div>
