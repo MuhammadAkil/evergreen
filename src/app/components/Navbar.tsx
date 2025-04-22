@@ -56,7 +56,7 @@ export default function Navbar() {
                             <HiOutlineMail className="text-[#3F503B] text-xl" />
                         </div>
                         <div>
-                            <div className="font-medium text-sm">info@evergreenseptic.com</div>
+                            <div className="font-medium text-sm"><a href="mailto:info@evergreenseptic.com">info@evergreenseptic.com</a></div>
                             <div className="text-gray-500 text-xs">Lake Geneva, Wisconsin.</div>
                         </div>
                     </div>
@@ -73,36 +73,37 @@ export default function Navbar() {
             <div className="hidden md:flex max-w-screen-xl mx-auto justify-between items-center h-[36px] bg-[#3F503B] rounded-md relative top-[13px] border border-[#5D7757]">
                 <div className="flex text-white text-[14px] font-medium divide-x divide-[#5D7757]">
                     {navLinks.map(({ name, path }, i) => (
-                        <a
+                        <Link
                             key={i}
                             href={path}
                             className={`px-6 py-2 ${pathname === path ? 'bg-[#2f462f] rounded-sm' : 'hover:bg-[#5D7757]'}`}
                         >
                             {name}
-                        </a>
+                        </Link>
                     ))}
+
                 </div>
 
-                <Link href="/contact-us">
+                <div>
                     <div className="cursor-pointer bg-[#EF4444] text-white px-5 py-2.5 rounded-md font-bold text-[20px] flex items-center gap-2 shadow-md">
                         <FaPhone className="text-[20px]" />
-                        <span>262-248-4711</span>
+                        <a href="tel:262-248-4711">262-248-4711</a>
                     </div>
-                </Link>
+                </div>
             </div>
 
             {menuOpen && (
                 <div className="md:hidden bg-[#3F503B] text-white w-full">
                     <div className="flex flex-col divide-y divide-[#5D7757] font-medium text-[14px]">
-                        {navLinks.map(({ name, path }, i) => (
-                            <a
-                                key={i}
-                                href={path}
-                                className={`px-6 py-4 ${pathname === path ? 'bg-[#2f462f]' : 'hover:bg-[#5D7757]'}`}
-                            >
-                                {name}
-                            </a>
-                        ))}
+                    {navLinks.map(({ name, path }, i) => (
+                        <Link
+                            key={i}
+                            href={path}
+                            className={`px-6 py-2 ${pathname === path ? 'bg-[#2f462f] rounded-sm' : 'hover:bg-[#5D7757]'}`}
+                        >
+                            {name}
+                        </Link>
+                    ))}
                     </div>
 
                     <div className="flex items-center justify-center gap-3 py-4">
@@ -117,7 +118,8 @@ export default function Navbar() {
                         <div className="flex justify-center py-4">
                             <div className="bg-[#EF4444] text-white px-5 py-3 rounded-md font-bold text-[16px] flex items-center gap-2 shadow-md">
                                 <FaPhone className="text-[18px]" />
-                                <span>262-248-4711</span>
+                                {/* <span>262-248-4711</span> */}
+                                <a href="tel:262-248-4711">262-248-4711</a>
                             </div>
                         </div>
                     </Link>

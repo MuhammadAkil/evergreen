@@ -4,10 +4,8 @@ import Navbar from "../components/Navbar";
 import Hero from "./hero";
 export default function UseCasesPage() {
   return (
-      <div>
-      <Navbar />
+      <>
       <Hero />
-      <Footer />
-    </div>
+    </>
   );
 }

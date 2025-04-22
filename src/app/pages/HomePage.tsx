@@ -15,7 +15,6 @@ import Slider from '../components/Slider';
 export default function HomePage() {
     return (
         <>
-            <Navbar />
             <HeroSection />
             <Services />
             <About />
@@ -25,7 +24,6 @@ export default function HomePage() {
             <Banner />
             <Slider />
             <FAQ />
-<Footer />
         </>
     )
 }

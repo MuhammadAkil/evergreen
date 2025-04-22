@@ -6,12 +6,10 @@ import Services from '../components/Services'
 import ServiceBanner from './servicebanner'
 export default function UseCasesPage() {
   return (
-      <div>
-      <Navbar />
+      <>
       <Hero />
       <Services />
       <ServiceBanner />
-      <Footer />
-    </div>
+    </>
   );
 }

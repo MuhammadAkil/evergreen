@@ -74,10 +74,10 @@ export default function Services() {
                                 <p className="text-gray-600 text-sm mb-4 group-hover:text-gray-200">
                                     {service.description}
                                 </p>
-                                <div className="flex items-center gap-2 text-[#3F503B] font-medium cursor-pointer hover:underline group-hover:text-white">
+                                {/* <div className="flex items-center gap-2 text-[#3F503B] font-medium cursor-pointer hover:underline group-hover:text-white">
                                     <FaPlus className="text-sm" />
                                     <span>More About</span>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     ))}
