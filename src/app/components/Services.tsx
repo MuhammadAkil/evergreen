@@ -2,6 +2,7 @@ import React,{useEffect} from 'react';
 import { FaPlus } from "react-icons/fa";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Link from 'next/link';
 
 const services = [
     {
@@ -84,9 +85,9 @@ export default function Services() {
                 </div>
 
                 <div className="mt-12">
-                    <button className="bg-[#3F503B] hover:bg-[#2f462f] text-white font-semibold px-8 py-3 rounded-lg shadow-md">
+                    <Link className="bg-[#3F503B] hover:bg-[#2f462f] text-white font-semibold px-8 py-3 rounded-lg shadow-md" href='/our-services'>
                         View More
-                    </button>
+                    </Link>
                 </div>
             </div>
         </section>

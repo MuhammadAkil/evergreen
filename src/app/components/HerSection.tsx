@@ -53,9 +53,8 @@ export default function HerSection() {
                     </div>
 
                     <div className="bg-white p-6 md:p-10 rounded-xl shadow-xl w-full md:w-[90%] lg:w-[80%] xl:w-[70%]">
-                        <h2 className="text-4xl font-bold text-[#3F503B] mb-2 whitespace-pre-line text-center">
-                            Schedule a call for your need
-                        </h2>
+                        <h2 className="text-3xl font-bold text-[#3F503B] mb-3 whitespace-pre-line text-center">
+                        Book Your Free Consultation</h2>
                         <hr className="border-t-2 border-[#3F503B] mb-4" />
 
                         <form className="flex flex-col gap-4">
