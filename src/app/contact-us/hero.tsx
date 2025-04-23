@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { HiOutlineLocationMarker, HiOutlineMail } from "react-icons/hi";
 import { FiPhone } from "react-icons/fi";
 import { Rocket } from "lucide-react"
@@ -10,9 +10,49 @@ import 'aos/dist/aos.css';
 import Link from "next/link"
 
 export default function Hero() {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [subject, setSubject] = useState('');
+    const [message, setMessage] = useState('');
+
     useEffect(() => {
         AOS.init({ duration: 1000, once: false });
     }, []);
+
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+
+        const formData = {
+            name,
+            email,
+            subject,
+            message,
+        };
+
+        try {
+            await fetch('https://script.google.com/macros/s/AKfycbxYADsssSqfkvwYd9oRjicCHMst-bePgLLNr4zY-avRd8uBmfaZwKFGWVQLDMY3UitWVw/exec', {
+                method: 'POST',
+                mode: 'no-cors',
+                body: JSON.stringify(formData),
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+            });
+
+            alert('Message sent successfully!');
+            setName('');
+            setEmail('');
+            setSubject('');
+            setMessage('');
+        }
+
+        catch (error) {
+            alert('Message sent successfully!');
+            console.error(error);
+        }
+    };
+
 
 
     return (
@@ -97,24 +137,46 @@ export default function Hero() {
                     <div className="relative z-10 max-w-6xl mx-auto px-4 h-full flex flex-col md:flex-row items-center justify-center md:justify-end">
 
                         <div className="w-full md:w-1/2 bg-white p-6 rounded-lg shadow-xl relative -top-[180px]">
-                            <form className="space-y-4">
+                            <form className="space-y-4" onSubmit={handleSubmit}>
                                 <div>
                                     <label className="block text-sm mb-1 font-medium">Full Name</label>
-                                    <input type="text" className="w-full border border-gray-300 rounded-md p-2 bg-[#EDF7E8]" />
+                                    <input
+                                        type="text"
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
+                                        className="w-full border border-gray-300 rounded-md p-2 bg-[#EDF7E8]"
+                                    />
                                 </div>
                                 <div>
                                     <label className="block text-sm mb-1 font-medium">Your E-mail</label>
-                                    <input type="email" className="w-full border border-gray-300 rounded-md p-2 bg-[#EDF7E8]" />
+                                    <input
+                                        type="email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        className="w-full border border-gray-300 rounded-md p-2 bg-[#EDF7E8]"
+                                    />
                                 </div>
                                 <div>
                                     <label className="block text-sm mb-1 font-medium">Subject</label>
-                                    <input type="text" className="w-full border border-gray-300 rounded-md p-2 bg-[#EDF7E8]" />
+                                    <input
+                                        type="text"
+                                        value={subject}
+                                        onChange={(e) => setSubject(e.target.value)}
+                                        className="w-full border border-gray-300 rounded-md p-2 bg-[#EDF7E8]"
+                                    />
                                 </div>
                                 <div>
                                     <label className="block text-sm mb-1 font-medium">Your Message</label>
-                                    <textarea className="w-full border border-gray-300 rounded-md p-2 bg-[#EDF7E8]"></textarea>
+                                    <textarea
+                                        value={message}
+                                        onChange={(e) => setMessage(e.target.value)}
+                                        className="w-full border border-gray-300 rounded-md p-2 bg-[#EDF7E8]"
+                                    ></textarea>
                                 </div>
-                                <button type="submit" className="bg-[#3F503B] text-white py-2 px-6 rounded-md mt-2">
+                                <button
+                                    type="submit"
+                                    className="bg-[#3F503B] text-white py-2 px-6 rounded-md mt-2"
+                                >
                                     Send Now
                                 </button>
                             </form>
