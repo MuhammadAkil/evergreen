@@ -40,9 +40,34 @@ export default function Home() {
 
     const table = pricingData[category as 'holding' | 'septic'];
 
-    const matched = Object.entries(table).find(([gallons]) => parseInt(gallons) >= qty);
-    setPrice(matched ? matched[1] : null);
+    const entries = Object.entries(table)
+      .map(([key, value]) => [parseInt(key), value] as [number, number])
+      .sort((a, b) => a[0] - b[0]);
+
+    const matched = entries.find(([gallons]) => gallons >= qty);
+
+    if (matched) {
+      setPrice(matched[1]);
+    }
+
+    else {
+      const len = entries.length;
+      if (len >= 2) {
+        const [x1, y1] = entries[len - 2];
+        const [x2, y2] = entries[len - 1];
+
+        const slope = (y2 - y1) / (x2 - x1);
+        const estimated = y2 + slope * (qty - x2);
+
+        setPrice(Math.round(estimated));
+      }
+
+      else {
+        setPrice(null);
+      }
+    }
   };
+
 
   return (
     <main className="min-h-screen bg-[#3F503B]" data-aos="fade-up"
@@ -56,7 +81,7 @@ export default function Home() {
         </div>
 
         {/* Estimate Card */}
-        <div className="">
+        <div  >
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
             <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 max-w-3xl mx-auto mb-12">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">

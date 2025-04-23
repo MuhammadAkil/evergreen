@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { MdAccessTime } from "react-icons/md";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -24,11 +24,17 @@ export default function Hero() {
                     alt="Mask Overlay"
                     className="w-[50%] h-[161%] object-cover absolute top-4 left-0 z-10"
                 />
-                <div className="absolute inset-0 flex flex-col items-start justify-center ml-10 text-white text-center z-20">
-                    <h1 className="text-6xl font-bold uppercase tracking-wide">TESTIMONIAL</h1>
-                    <p className="text-sm mt-2">Reliable, Professional, and Environmentally Responsible Septic Solutions</p>
+                <div className="absolute inset-0 flex flex-col items-start justify-center ml-4 md:ml-10 text-white z-20 pt-0 lg:pt-10 xl:pt-16">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-wide leading-tight">
+                        TESTIMONIAL
+                    </h1>
+                    <p className="text-xs sm:text-sm md:text-base mt-2 max-w-xs sm:max-w-md">
+                        Reliable, Professional, and Environmentally Responsible Septic Solutions
+                    </p>
                 </div>
             </div>
+
+
 
             <section className="py-16 bg-white relative overflow-hidden" data-aos="fade-right">
                 <img
@@ -187,31 +193,28 @@ export default function Hero() {
             <section data-aos="fade-up">
                 <div className="relative w-full bg-[#3F503B] py-10">
                     <div className="relative mx-auto max-w-4xl -mt-16 px-4">
-                        <div className="bg-white rounded-lg shadow-[0_-20px_22px_rgba(0,0,0,0.1)] p-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                        <div className="bg-white rounded-lg shadow-[0_-20px_22px_rgba(0,0,0,0.1)] p-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
                             <div className="flex flex-col">
                                 <span className="text-3xl md:text-4xl font-bold text-gray-800">3400+</span>
                                 <span className="text-sm text-gray-500 mt-1">Complete Projects</span>
                             </div>
-
                             <div className="flex flex-col">
                                 <span className="text-3xl md:text-4xl font-bold text-gray-800">6,820</span>
                                 <span className="text-sm text-gray-500 mt-1">Happy Clients</span>
                             </div>
-
                             <div className="flex flex-col">
                                 <span className="text-3xl md:text-4xl font-bold text-gray-800">270+</span>
                                 <span className="text-sm text-gray-500 mt-1">Dealer Equipments</span>
                             </div>
-
                             <div className="flex flex-col">
                                 <span className="text-3xl md:text-4xl font-bold text-gray-800">15+</span>
                                 <span className="text-sm text-gray-500 mt-1">Years of Experience</span>
                             </div>
                         </div>
                     </div>
-
                 </div>
-                <div className="relative w-full bg-[#3F503B] py-10 text-white"  data-aos="fade-up">
+
+                <div className="relative w-full bg-[#3F503B] py-10 text-white" data-aos="fade-up">
                     <div className="max-w-2xl mx-auto px-4 text-center">
                         <h2 className="text-4xl my-2">Project Completed</h2>
                         <p className="text-sm mb-8">
@@ -221,17 +224,19 @@ export default function Hero() {
                 </div>
 
                 <div className="relative w-full bg-[#3F503B] pb-10">
-                    <div className="px-4 grid grid-cols-3 gap-4">
-                        <img src="/assets/PNG/image 8.png" alt="Project 2" className="w-[80%] h-[80%] object-cover ml-auto" />
-                        <img src="/assets/PNG/Group.png" alt="Project 1" className="w-full h-[80%] object-cover mx-auto" />
-                        <img src="/assets/PNG/Group (1).png" alt="Project 3" className="w-[80%] h-[80%] object-cover mr-auto" />
+                    <div className="px-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <img src="/assets/PNG/image 8.png" alt="Project 2" className="w-full md:w-[80%] h-auto md:h-[80%] object-cover ml-auto" />
+                        <img src="/assets/PNG/Group.png" alt="Project 1" className="w-full h-auto md:h-[80%] object-cover mx-auto" />
+                        <img src="/assets/PNG/Group (1).png" alt="Project 3" className="w-full md:w-[80%] h-auto md:h-[80%] object-cover mr-auto" />
                     </div>
-                    <div className="pl-[462px] mt-[-172px] px-4 mt-4">
-                        <div className="bg-white bg-opacity-90 p-4 rounded-lg shadow-lg inline-block text-green-600">
+
+                    <div className="px-4 mt-4 flex justify-center md:justify-start md:pl-[200px] lg:pl-[481px] md:-mt-[100px] lg:-mt-[172px]">
+                        <div className="bg-white bg-opacity-90 p-4 rounded-lg shadow-lg inline-block text-green-600 max-w-md w-full text-center md:text-left">
                             <h3 className="text-lg font-bold">20,000 Gallons Septic System</h3>
                             <p className="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonum-</p>
                         </div>
                     </div>
+
                 </div>
             </section>
 

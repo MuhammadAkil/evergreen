@@ -40,18 +40,34 @@ export default function Hero() {
                 </div>
 
                 <div className="relative w-full bg-[#3F503B] pb-10">
-                    <div className="px-4 grid grid-cols-3 gap-4">
-                        <img src="/assets/PNG/image 8.png" alt="Project 2" className="w-[80%] h-[80%] object-cover ml-auto" />
-                        <img src="/assets/PNG/Group.png" alt="Project 1" className="w-full h-[80%] object-cover mx-auto" />
-                        <img src="/assets/PNG/Group (1).png" alt="Project 3" className="w-[80%] h-[80%] object-cover mr-auto" />
+                    <div className="px-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <img
+                            src="/assets/PNG/image 8.png"
+                            alt="Project 2"
+                            className="w-full md:w-[80%] h-auto md:h-[80%] object-cover ml-auto"
+                        />
+                        <img
+                            src="/assets/PNG/Group.png"
+                            alt="Project 1"
+                            className="w-full h-auto md:h-[80%] object-cover mx-auto"
+                        />
+                        <img
+                            src="/assets/PNG/Group (1).png"
+                            alt="Project 3"
+                            className="w-full md:w-[80%] h-auto md:h-[80%] object-cover mr-auto"
+                        />
                     </div>
-                    <div className="pl-[462px] mt-[-172px] px-4 mt-4">
-                        <div className="bg-white bg-opacity-90 p-4 rounded-lg shadow-lg inline-block text-green-600">
+
+                    <div
+                        className="px-4 mt-4 md:pl-[481px] md:-mt-[172px] flex justify-center md:justify-start"
+                    >
+                        <div className="bg-white bg-opacity-90 p-4 rounded-lg shadow-lg inline-block text-green-600 max-w-md w-full text-center md:text-left">
                             <h3 className="text-lg font-bold">20,000 Gallons Septic System</h3>
                             <p className="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonum-</p>
                         </div>
                     </div>
                 </div>
+
             </section>
         </>
     );
