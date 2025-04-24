@@ -36,7 +36,7 @@ export default function Hero() {
                 mode: 'no-cors',
                 body: JSON.stringify(formData),
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Content-Type': 'application/json',
                 },
             });
 

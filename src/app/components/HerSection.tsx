@@ -1,13 +1,16 @@
+'use client';
+
 import React, { useEffect, useState } from 'react'
 import { FaCheckCircle, FaPhone } from "react-icons/fa";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 export default function HerSection() {
-    const [name, setName] = useState("");
-    const [phone, setPhone] = useState("");
-    const [service, setService] = useState("");
-    const [bestTime, setBestTime] = useState("");
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
+    const [service, setService] = useState('');
+    const [bestTime, setBestTime] = useState('');
+
 
     useEffect(() => {
         AOS.init({ duration: 1000, once: false });
@@ -24,7 +27,7 @@ export default function HerSection() {
         };
 
         try {
-            await fetch('https://script.google.com/macros/s/AKfycbyx3rAe0fFOQWj-y4xJ4MHJBZ3P4fotF9cFBDs7kCGMTz_GuDTMicDkfpja9Ye7-Sckaw/exec', {
+            await fetch('https://script.google.com/macros/s/AKfycbxYADsssSqfkvwYd9oRjicCHMst-bePgLLNr4zY-avRd8uBmfaZwKFGWVQLDMY3UitWVw/exec', {
                 method: 'POST',
                 mode: 'no-cors',
                 headers: {
