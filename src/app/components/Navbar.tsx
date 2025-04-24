@@ -19,6 +19,7 @@ export default function Navbar() {
     ];
 
     return (
+        <>
         <div
             className="w-full bg-white z-50 shadow-sm"
             style={{ position: 'fixed', top: 0, left: 0, width: '100%' }}
@@ -126,5 +127,6 @@ export default function Navbar() {
                 </div>
             )}
         </div>
+        </>
     );
 }

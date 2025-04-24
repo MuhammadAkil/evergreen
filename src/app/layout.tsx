@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: "Evergreen Septic Service LLC",
     images: [
       {
-        url: "https://www.evergreensepticsvc.com/og-image.jpg", 
+        url: "https://www.evergreensepticsvc.com/assets/images/HeroSection.png", 
         width: 1200,
         height: 630,
       },
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "Evergreen Septic Service LLC",
     description:
       "Top-rated septic pumping and inspections with an emphasis on education, customer care, and environmental responsibility.",
-    images: ["https://www.evergreensepticsvc.com/og-image.jpg"],
+    images: ["https://www.evergreensepticsvc.com/assets/images/HeroSection.png"],
   },
 };
 
@@ -51,9 +51,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/fav.svg" type="image/svg+xml" />
+      </head>
+      <body>
       <Navbar/>
       <body>{children}</body>
       <Footer />
+      </body>
     </html>
   );
 }

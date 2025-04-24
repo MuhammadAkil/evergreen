@@ -19,12 +19,12 @@ export default function Hero() {
         <>
             <div className="relative w-full h-[400px] overflow-hidden">
                 <img
-                    src="/assets/PNG/Rectangle 30139.png"
+                    src="/assets/images/Rectangle 30139.png"
                     alt="Background Image"
                     className="w-full h-full object-cover"
                 />
                 <img
-                    src="/assets/PNG/Mask group.png"
+                    src="/assets/images/Mask group.png"
                     alt="Mask Overlay"
                     className="w-[50%] h-[161%] object-cover absolute top-4 left-0 z-10"
                 />
@@ -45,10 +45,10 @@ export default function Hero() {
                             <div>
                                 <h1 className="text-3xl md:text-4xl font-bold mb-4">Keeping Systems Flowing Your Septic Needs, Our Expertise</h1>
                             </div>
-                            <img src="/assets/PNG/thirdsectionleftimage.png" alt="Worker with pipe" className="rounded-lg h-[300px] object-cover w-full" />
+                            <img src="/assets/images/thirdsectionleftimage.png" alt="Worker with pipe" className="rounded-lg h-[300px] object-cover w-full" />
                         </div>
                         <div className="w-full md:w-1/3 flex items-end">
-                            <img src="/assets/PNG/thirdsectionrightimage.png" alt="Worker inspecting tank" className="rounded-lg h-[300px] object-cover w-full" />
+                            <img src="/assets/images/thirdsectionrightimage.png" alt="Worker inspecting tank" className="rounded-lg h-[300px] object-cover w-full" />
                         </div>
                     </div>
                     <p className="mt-6 text-lg text-gray-600  mx-auto">
@@ -56,67 +56,85 @@ export default function Hero() {
                     </p>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mt-8 text-sm text-center">
-                        <div className="flex items-center">
-                            <div className="bg-[#4CAF50] p-2 rounded-l-md shadow-md">
-                                <MdAccessTime className="text-[#3F503B] text-lg" />
+                        <div className="flex items-center  h-[42px]">
+                            <div className="bg-[#39623a] p-2 rounded-l-md shadow-md h-full  ">
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.4286 0.676025C11.8515 0.731428 12.2768 0.771351 12.6965 0.844678C14.0774 1.08572 15.3937 1.6081 16.5634 2.37926C16.5911 2.39759 16.616 2.41999 16.6617 2.45544C16.5462 2.5251 16.4397 2.58091 16.3421 2.64975C15.7155 3.09013 15.0885 3.53091 14.4672 3.97902C14.3701 4.04868 14.304 4.07923 14.1815 4.02342C11.0257 2.58009 7.48696 3.26326 5.11611 5.79713C3.90334 7.09258 3.21552 8.64182 3.0702 10.4143C2.77792 13.9841 4.79486 17.1987 8.14907 18.4396C12.6393 20.1009 17.4279 17.4065 18.4823 12.8663C18.8837 11.124 18.6796 9.29735 17.9035 7.68612C18.5877 7.14066 19.3375 6.68275 20.1356 6.32305C20.2862 6.66687 20.4425 6.99522 20.5764 7.33293C22.179 11.3729 21.0063 16.1237 17.7125 18.9578C15.9592 20.465 13.9362 21.3246 11.6261 21.4986C11.5734 21.5065 11.5213 21.5182 11.4702 21.5336H10.2472C10.1892 21.5179 10.1304 21.5058 10.0709 21.4973C7.9715 21.3344 6.08396 20.6141 4.43482 19.3077C2.34727 17.6538 1.0553 15.5097 0.588727 12.881C0.520149 12.4952 0.481369 12.1045 0.428711 11.7159V10.4937C0.460143 10.2322 0.486676 9.97027 0.523414 9.70914C0.818954 7.60383 1.66271 5.7458 3.08448 4.16519C4.69852 2.3703 6.6979 1.25042 9.08263 0.838975C9.46838 0.772166 9.85821 0.730614 10.2472 0.676025H11.4286Z" fill="white" />
+                                    <path d="M10.0325 12.2995C10.2525 11.7952 10.4407 11.3092 10.6726 10.8432C12.3001 7.54345 14.6934 4.97455 17.9549 3.24361C18.4623 2.97434 19.002 2.76495 19.5302 2.53641C19.9347 2.36165 20.3413 2.33273 20.6968 2.64152C21.0777 2.97393 21.1867 3.41553 21.1026 3.89867C21.0209 4.3643 20.7372 4.67268 20.2939 4.83849C18.4803 5.51432 16.9271 6.58449 15.5996 7.98016C13.6402 10.0382 12.3409 12.4491 11.7678 15.2412C11.7474 15.3406 11.7319 15.4412 11.7147 15.5414C11.6249 16.071 11.3065 16.3969 10.7881 16.4825C10.208 16.579 9.71085 16.3688 9.46837 15.9048C9.04262 15.0901 8.5589 14.3161 7.94455 13.6276C7.2261 12.8285 6.36656 12.168 5.40879 11.6791C5.09611 11.5162 4.83241 11.3125 4.74954 10.9503C4.63116 10.4326 4.82343 10.0134 5.20836 9.68135C5.5933 9.34934 6.04355 9.2642 6.47788 9.5074C7.13835 9.87771 7.7976 10.2663 8.39643 10.7267C8.93608 11.1414 9.39367 11.6636 9.88637 12.1374C9.93332 12.1843 9.97577 12.2368 10.0325 12.2995Z" fill="white" />
+                                </svg>
+
                             </div>
-                            <div className="bg-[#E7F2E5] text-dark text-sm px-4 py-2 rounded-r-md shadow w-full text-left h-[33px]">
+                            <div className="bg-[#374932] text- text-base font-medium h-full px-4 py-2 rounded-r-md shadow w-full text-center">
                                 Eco-Friendly Solutions
                             </div>
                         </div>
-                        <div className="flex items-center">
-                            <div className="bg-[#4CAF50] p-2 rounded-l-md shadow-md">
-                                <MdAccessTime className="text-[#3F503B] text-lg" />
-                            </div>
-                            <div className="bg-[#E7F2E5] text-dark text-sm px-4 py-2 rounded-r-md shadow w-full text-left h-[33px]">
+                        <div className="flex items-center h-[42px]">
+                            <div className="bg-[#39623a] p-2 rounded-l-md shadow-md h-full ">
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.4286 0.676025C11.8515 0.731428 12.2768 0.771351 12.6965 0.844678C14.0774 1.08572 15.3937 1.6081 16.5634 2.37926C16.5911 2.39759 16.616 2.41999 16.6617 2.45544C16.5462 2.5251 16.4397 2.58091 16.3421 2.64975C15.7155 3.09013 15.0885 3.53091 14.4672 3.97902C14.3701 4.04868 14.304 4.07923 14.1815 4.02342C11.0257 2.58009 7.48696 3.26326 5.11611 5.79713C3.90334 7.09258 3.21552 8.64182 3.0702 10.4143C2.77792 13.9841 4.79486 17.1987 8.14907 18.4396C12.6393 20.1009 17.4279 17.4065 18.4823 12.8663C18.8837 11.124 18.6796 9.29735 17.9035 7.68612C18.5877 7.14066 19.3375 6.68275 20.1356 6.32305C20.2862 6.66687 20.4425 6.99522 20.5764 7.33293C22.179 11.3729 21.0063 16.1237 17.7125 18.9578C15.9592 20.465 13.9362 21.3246 11.6261 21.4986C11.5734 21.5065 11.5213 21.5182 11.4702 21.5336H10.2472C10.1892 21.5179 10.1304 21.5058 10.0709 21.4973C7.9715 21.3344 6.08396 20.6141 4.43482 19.3077C2.34727 17.6538 1.0553 15.5097 0.588727 12.881C0.520149 12.4952 0.481369 12.1045 0.428711 11.7159V10.4937C0.460143 10.2322 0.486676 9.97027 0.523414 9.70914C0.818954 7.60383 1.66271 5.7458 3.08448 4.16519C4.69852 2.3703 6.6979 1.25042 9.08263 0.838975C9.46838 0.772166 9.85821 0.730614 10.2472 0.676025H11.4286Z" fill="white" />
+                                    <path d="M10.0325 12.2995C10.2525 11.7952 10.4407 11.3092 10.6726 10.8432C12.3001 7.54345 14.6934 4.97455 17.9549 3.24361C18.4623 2.97434 19.002 2.76495 19.5302 2.53641C19.9347 2.36165 20.3413 2.33273 20.6968 2.64152C21.0777 2.97393 21.1867 3.41553 21.1026 3.89867C21.0209 4.3643 20.7372 4.67268 20.2939 4.83849C18.4803 5.51432 16.9271 6.58449 15.5996 7.98016C13.6402 10.0382 12.3409 12.4491 11.7678 15.2412C11.7474 15.3406 11.7319 15.4412 11.7147 15.5414C11.6249 16.071 11.3065 16.3969 10.7881 16.4825C10.208 16.579 9.71085 16.3688 9.46837 15.9048C9.04262 15.0901 8.5589 14.3161 7.94455 13.6276C7.2261 12.8285 6.36656 12.168 5.40879 11.6791C5.09611 11.5162 4.83241 11.3125 4.74954 10.9503C4.63116 10.4326 4.82343 10.0134 5.20836 9.68135C5.5933 9.34934 6.04355 9.2642 6.47788 9.5074C7.13835 9.87771 7.7976 10.2663 8.39643 10.7267C8.93608 11.1414 9.39367 11.6636 9.88637 12.1374C9.93332 12.1843 9.97577 12.2368 10.0325 12.2995Z" fill="white" />
+                                </svg>                            </div>
+                            <div className="bg-[#374932] text- text-base font-medium h-full px-4 py-2 rounded-r-md shadow w-full text-center">
                                 Affordable Pricing
                             </div>
                         </div>
-                        <div className="flex items-center">
-                            <div className="bg-[#4CAF50] p-2 rounded-l-md shadow-md">
-                                <MdAccessTime className="text-[#3F503B] text-lg" />
-                            </div>
-                            <div className="bg-[#E7F2E5] text-dark text-sm px-4 py-2 rounded-r-md shadow w-full text-left h-[33px]">
+                        <div className="flex items-center h-[42px]">
+                            <div className="bg-[#39623a] p-2 rounded-l-md shadow-md h-full ">
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.4286 0.676025C11.8515 0.731428 12.2768 0.771351 12.6965 0.844678C14.0774 1.08572 15.3937 1.6081 16.5634 2.37926C16.5911 2.39759 16.616 2.41999 16.6617 2.45544C16.5462 2.5251 16.4397 2.58091 16.3421 2.64975C15.7155 3.09013 15.0885 3.53091 14.4672 3.97902C14.3701 4.04868 14.304 4.07923 14.1815 4.02342C11.0257 2.58009 7.48696 3.26326 5.11611 5.79713C3.90334 7.09258 3.21552 8.64182 3.0702 10.4143C2.77792 13.9841 4.79486 17.1987 8.14907 18.4396C12.6393 20.1009 17.4279 17.4065 18.4823 12.8663C18.8837 11.124 18.6796 9.29735 17.9035 7.68612C18.5877 7.14066 19.3375 6.68275 20.1356 6.32305C20.2862 6.66687 20.4425 6.99522 20.5764 7.33293C22.179 11.3729 21.0063 16.1237 17.7125 18.9578C15.9592 20.465 13.9362 21.3246 11.6261 21.4986C11.5734 21.5065 11.5213 21.5182 11.4702 21.5336H10.2472C10.1892 21.5179 10.1304 21.5058 10.0709 21.4973C7.9715 21.3344 6.08396 20.6141 4.43482 19.3077C2.34727 17.6538 1.0553 15.5097 0.588727 12.881C0.520149 12.4952 0.481369 12.1045 0.428711 11.7159V10.4937C0.460143 10.2322 0.486676 9.97027 0.523414 9.70914C0.818954 7.60383 1.66271 5.7458 3.08448 4.16519C4.69852 2.3703 6.6979 1.25042 9.08263 0.838975C9.46838 0.772166 9.85821 0.730614 10.2472 0.676025H11.4286Z" fill="white" />
+                                    <path d="M10.0325 12.2995C10.2525 11.7952 10.4407 11.3092 10.6726 10.8432C12.3001 7.54345 14.6934 4.97455 17.9549 3.24361C18.4623 2.97434 19.002 2.76495 19.5302 2.53641C19.9347 2.36165 20.3413 2.33273 20.6968 2.64152C21.0777 2.97393 21.1867 3.41553 21.1026 3.89867C21.0209 4.3643 20.7372 4.67268 20.2939 4.83849C18.4803 5.51432 16.9271 6.58449 15.5996 7.98016C13.6402 10.0382 12.3409 12.4491 11.7678 15.2412C11.7474 15.3406 11.7319 15.4412 11.7147 15.5414C11.6249 16.071 11.3065 16.3969 10.7881 16.4825C10.208 16.579 9.71085 16.3688 9.46837 15.9048C9.04262 15.0901 8.5589 14.3161 7.94455 13.6276C7.2261 12.8285 6.36656 12.168 5.40879 11.6791C5.09611 11.5162 4.83241 11.3125 4.74954 10.9503C4.63116 10.4326 4.82343 10.0134 5.20836 9.68135C5.5933 9.34934 6.04355 9.2642 6.47788 9.5074C7.13835 9.87771 7.7976 10.2663 8.39643 10.7267C8.93608 11.1414 9.39367 11.6636 9.88637 12.1374C9.93332 12.1843 9.97577 12.2368 10.0325 12.2995Z" fill="white" />
+                                </svg>                            </div>
+                            <div className="bg-[#374932] text- text-base font-medium h-full px-4 py-2 rounded-r-md shadow w-full text-center">
                                 Reliable Service
                             </div>
                         </div>
-                        <div className="flex items-center">
-                            <div className="bg-[#4CAF50] p-2 rounded-l-md shadow-md">
-                                <MdAccessTime className="text-[#3F503B] text-lg" />
-                            </div>
-                            <div className="bg-[#E7F2E5] text-dark text-sm px-4 py-2 rounded-r-md shadow w-full text-left h-[33px]">
+                        <div className="flex items-center h-[42px]">
+                            <div className="bg-[#39623a] p-2 rounded-l-md shadow-md h-full ">
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.4286 0.676025C11.8515 0.731428 12.2768 0.771351 12.6965 0.844678C14.0774 1.08572 15.3937 1.6081 16.5634 2.37926C16.5911 2.39759 16.616 2.41999 16.6617 2.45544C16.5462 2.5251 16.4397 2.58091 16.3421 2.64975C15.7155 3.09013 15.0885 3.53091 14.4672 3.97902C14.3701 4.04868 14.304 4.07923 14.1815 4.02342C11.0257 2.58009 7.48696 3.26326 5.11611 5.79713C3.90334 7.09258 3.21552 8.64182 3.0702 10.4143C2.77792 13.9841 4.79486 17.1987 8.14907 18.4396C12.6393 20.1009 17.4279 17.4065 18.4823 12.8663C18.8837 11.124 18.6796 9.29735 17.9035 7.68612C18.5877 7.14066 19.3375 6.68275 20.1356 6.32305C20.2862 6.66687 20.4425 6.99522 20.5764 7.33293C22.179 11.3729 21.0063 16.1237 17.7125 18.9578C15.9592 20.465 13.9362 21.3246 11.6261 21.4986C11.5734 21.5065 11.5213 21.5182 11.4702 21.5336H10.2472C10.1892 21.5179 10.1304 21.5058 10.0709 21.4973C7.9715 21.3344 6.08396 20.6141 4.43482 19.3077C2.34727 17.6538 1.0553 15.5097 0.588727 12.881C0.520149 12.4952 0.481369 12.1045 0.428711 11.7159V10.4937C0.460143 10.2322 0.486676 9.97027 0.523414 9.70914C0.818954 7.60383 1.66271 5.7458 3.08448 4.16519C4.69852 2.3703 6.6979 1.25042 9.08263 0.838975C9.46838 0.772166 9.85821 0.730614 10.2472 0.676025H11.4286Z" fill="white" />
+                                    <path d="M10.0325 12.2995C10.2525 11.7952 10.4407 11.3092 10.6726 10.8432C12.3001 7.54345 14.6934 4.97455 17.9549 3.24361C18.4623 2.97434 19.002 2.76495 19.5302 2.53641C19.9347 2.36165 20.3413 2.33273 20.6968 2.64152C21.0777 2.97393 21.1867 3.41553 21.1026 3.89867C21.0209 4.3643 20.7372 4.67268 20.2939 4.83849C18.4803 5.51432 16.9271 6.58449 15.5996 7.98016C13.6402 10.0382 12.3409 12.4491 11.7678 15.2412C11.7474 15.3406 11.7319 15.4412 11.7147 15.5414C11.6249 16.071 11.3065 16.3969 10.7881 16.4825C10.208 16.579 9.71085 16.3688 9.46837 15.9048C9.04262 15.0901 8.5589 14.3161 7.94455 13.6276C7.2261 12.8285 6.36656 12.168 5.40879 11.6791C5.09611 11.5162 4.83241 11.3125 4.74954 10.9503C4.63116 10.4326 4.82343 10.0134 5.20836 9.68135C5.5933 9.34934 6.04355 9.2642 6.47788 9.5074C7.13835 9.87771 7.7976 10.2663 8.39643 10.7267C8.93608 11.1414 9.39367 11.6636 9.88637 12.1374C9.93332 12.1843 9.97577 12.2368 10.0325 12.2995Z" fill="white" />
+                                </svg>                            </div>
+                            <div className="bg-[#374932] text- text-base font-medium h-full px-4 py-2 rounded-r-md shadow w-full text-center">
                                 Expert Team
                             </div>
                         </div>
-                        <div className="flex items-center">
-                            <div className="bg-[#4CAF50] p-2 rounded-l-md shadow-md">
-                                <MdAccessTime className="text-[#3F503B] text-lg" />
-                            </div>
-                            <div className="bg-[#E7F2E5] text-dark text-sm px-4 py-2 rounded-r-md shadow w-full text-left h-[33px]">
+                        <div className="flex items-center h-[42px]">
+                            <div className="bg-[#39623a] p-2 rounded-l-md shadow-md h-full ">
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.4286 0.676025C11.8515 0.731428 12.2768 0.771351 12.6965 0.844678C14.0774 1.08572 15.3937 1.6081 16.5634 2.37926C16.5911 2.39759 16.616 2.41999 16.6617 2.45544C16.5462 2.5251 16.4397 2.58091 16.3421 2.64975C15.7155 3.09013 15.0885 3.53091 14.4672 3.97902C14.3701 4.04868 14.304 4.07923 14.1815 4.02342C11.0257 2.58009 7.48696 3.26326 5.11611 5.79713C3.90334 7.09258 3.21552 8.64182 3.0702 10.4143C2.77792 13.9841 4.79486 17.1987 8.14907 18.4396C12.6393 20.1009 17.4279 17.4065 18.4823 12.8663C18.8837 11.124 18.6796 9.29735 17.9035 7.68612C18.5877 7.14066 19.3375 6.68275 20.1356 6.32305C20.2862 6.66687 20.4425 6.99522 20.5764 7.33293C22.179 11.3729 21.0063 16.1237 17.7125 18.9578C15.9592 20.465 13.9362 21.3246 11.6261 21.4986C11.5734 21.5065 11.5213 21.5182 11.4702 21.5336H10.2472C10.1892 21.5179 10.1304 21.5058 10.0709 21.4973C7.9715 21.3344 6.08396 20.6141 4.43482 19.3077C2.34727 17.6538 1.0553 15.5097 0.588727 12.881C0.520149 12.4952 0.481369 12.1045 0.428711 11.7159V10.4937C0.460143 10.2322 0.486676 9.97027 0.523414 9.70914C0.818954 7.60383 1.66271 5.7458 3.08448 4.16519C4.69852 2.3703 6.6979 1.25042 9.08263 0.838975C9.46838 0.772166 9.85821 0.730614 10.2472 0.676025H11.4286Z" fill="white" />
+                                    <path d="M10.0325 12.2995C10.2525 11.7952 10.4407 11.3092 10.6726 10.8432C12.3001 7.54345 14.6934 4.97455 17.9549 3.24361C18.4623 2.97434 19.002 2.76495 19.5302 2.53641C19.9347 2.36165 20.3413 2.33273 20.6968 2.64152C21.0777 2.97393 21.1867 3.41553 21.1026 3.89867C21.0209 4.3643 20.7372 4.67268 20.2939 4.83849C18.4803 5.51432 16.9271 6.58449 15.5996 7.98016C13.6402 10.0382 12.3409 12.4491 11.7678 15.2412C11.7474 15.3406 11.7319 15.4412 11.7147 15.5414C11.6249 16.071 11.3065 16.3969 10.7881 16.4825C10.208 16.579 9.71085 16.3688 9.46837 15.9048C9.04262 15.0901 8.5589 14.3161 7.94455 13.6276C7.2261 12.8285 6.36656 12.168 5.40879 11.6791C5.09611 11.5162 4.83241 11.3125 4.74954 10.9503C4.63116 10.4326 4.82343 10.0134 5.20836 9.68135C5.5933 9.34934 6.04355 9.2642 6.47788 9.5074C7.13835 9.87771 7.7976 10.2663 8.39643 10.7267C8.93608 11.1414 9.39367 11.6636 9.88637 12.1374C9.93332 12.1843 9.97577 12.2368 10.0325 12.2995Z" fill="white" />
+                                </svg>                            </div>
+                            <div className="bg-[#374932] text- text-base font-medium h-full px-4 py-2 rounded-r-md shadow w-full text-center">
                                 Advanced Technology
                             </div>
                         </div>
-                        <div className="flex items-center">
-                            <div className="bg-[#4CAF50] p-2 rounded-l-md shadow-md">
-                                <MdAccessTime className="text-[#3F503B] text-lg" />
-                            </div>
-                            <div className="bg-[#E7F2E5] text-dark text-sm px-4 py-2 rounded-r-md shadow w-full text-left">
+                        <div className="flex items-center h-[42px]">
+                            <div className="bg-[#39623a] p-2 rounded-l-md shadow-md h-full ">
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.4286 0.676025C11.8515 0.731428 12.2768 0.771351 12.6965 0.844678C14.0774 1.08572 15.3937 1.6081 16.5634 2.37926C16.5911 2.39759 16.616 2.41999 16.6617 2.45544C16.5462 2.5251 16.4397 2.58091 16.3421 2.64975C15.7155 3.09013 15.0885 3.53091 14.4672 3.97902C14.3701 4.04868 14.304 4.07923 14.1815 4.02342C11.0257 2.58009 7.48696 3.26326 5.11611 5.79713C3.90334 7.09258 3.21552 8.64182 3.0702 10.4143C2.77792 13.9841 4.79486 17.1987 8.14907 18.4396C12.6393 20.1009 17.4279 17.4065 18.4823 12.8663C18.8837 11.124 18.6796 9.29735 17.9035 7.68612C18.5877 7.14066 19.3375 6.68275 20.1356 6.32305C20.2862 6.66687 20.4425 6.99522 20.5764 7.33293C22.179 11.3729 21.0063 16.1237 17.7125 18.9578C15.9592 20.465 13.9362 21.3246 11.6261 21.4986C11.5734 21.5065 11.5213 21.5182 11.4702 21.5336H10.2472C10.1892 21.5179 10.1304 21.5058 10.0709 21.4973C7.9715 21.3344 6.08396 20.6141 4.43482 19.3077C2.34727 17.6538 1.0553 15.5097 0.588727 12.881C0.520149 12.4952 0.481369 12.1045 0.428711 11.7159V10.4937C0.460143 10.2322 0.486676 9.97027 0.523414 9.70914C0.818954 7.60383 1.66271 5.7458 3.08448 4.16519C4.69852 2.3703 6.6979 1.25042 9.08263 0.838975C9.46838 0.772166 9.85821 0.730614 10.2472 0.676025H11.4286Z" fill="white" />
+                                    <path d="M10.0325 12.2995C10.2525 11.7952 10.4407 11.3092 10.6726 10.8432C12.3001 7.54345 14.6934 4.97455 17.9549 3.24361C18.4623 2.97434 19.002 2.76495 19.5302 2.53641C19.9347 2.36165 20.3413 2.33273 20.6968 2.64152C21.0777 2.97393 21.1867 3.41553 21.1026 3.89867C21.0209 4.3643 20.7372 4.67268 20.2939 4.83849C18.4803 5.51432 16.9271 6.58449 15.5996 7.98016C13.6402 10.0382 12.3409 12.4491 11.7678 15.2412C11.7474 15.3406 11.7319 15.4412 11.7147 15.5414C11.6249 16.071 11.3065 16.3969 10.7881 16.4825C10.208 16.579 9.71085 16.3688 9.46837 15.9048C9.04262 15.0901 8.5589 14.3161 7.94455 13.6276C7.2261 12.8285 6.36656 12.168 5.40879 11.6791C5.09611 11.5162 4.83241 11.3125 4.74954 10.9503C4.63116 10.4326 4.82343 10.0134 5.20836 9.68135C5.5933 9.34934 6.04355 9.2642 6.47788 9.5074C7.13835 9.87771 7.7976 10.2663 8.39643 10.7267C8.93608 11.1414 9.39367 11.6636 9.88637 12.1374C9.93332 12.1843 9.97577 12.2368 10.0325 12.2995Z" fill="white" />
+                                </svg>                            </div>
+                            <div className="bg-[#374932] text- text-base font-medium h-full px-4 py-2 rounded-r-md shadow w-full text-center">
                                 Customer Satisfaction
                             </div>
                         </div>
-                        <div className="flex items-center">
-                            <div className="bg-[#4CAF50] p-2 rounded-l-md shadow-md">
-                                <MdAccessTime className="text-[#3F503B] text-lg" />
-                            </div>
-                            <div className="bg-[#E7F2E5] text-dark text-sm px-4 py-2 rounded-r-md shadow w-full text-left h-[33px]">
+                        <div className="flex items-center h-[42px]">
+                            <div className="bg-[#39623a] p-2 rounded-l-md shadow-md h-full ">
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.4286 0.676025C11.8515 0.731428 12.2768 0.771351 12.6965 0.844678C14.0774 1.08572 15.3937 1.6081 16.5634 2.37926C16.5911 2.39759 16.616 2.41999 16.6617 2.45544C16.5462 2.5251 16.4397 2.58091 16.3421 2.64975C15.7155 3.09013 15.0885 3.53091 14.4672 3.97902C14.3701 4.04868 14.304 4.07923 14.1815 4.02342C11.0257 2.58009 7.48696 3.26326 5.11611 5.79713C3.90334 7.09258 3.21552 8.64182 3.0702 10.4143C2.77792 13.9841 4.79486 17.1987 8.14907 18.4396C12.6393 20.1009 17.4279 17.4065 18.4823 12.8663C18.8837 11.124 18.6796 9.29735 17.9035 7.68612C18.5877 7.14066 19.3375 6.68275 20.1356 6.32305C20.2862 6.66687 20.4425 6.99522 20.5764 7.33293C22.179 11.3729 21.0063 16.1237 17.7125 18.9578C15.9592 20.465 13.9362 21.3246 11.6261 21.4986C11.5734 21.5065 11.5213 21.5182 11.4702 21.5336H10.2472C10.1892 21.5179 10.1304 21.5058 10.0709 21.4973C7.9715 21.3344 6.08396 20.6141 4.43482 19.3077C2.34727 17.6538 1.0553 15.5097 0.588727 12.881C0.520149 12.4952 0.481369 12.1045 0.428711 11.7159V10.4937C0.460143 10.2322 0.486676 9.97027 0.523414 9.70914C0.818954 7.60383 1.66271 5.7458 3.08448 4.16519C4.69852 2.3703 6.6979 1.25042 9.08263 0.838975C9.46838 0.772166 9.85821 0.730614 10.2472 0.676025H11.4286Z" fill="white" />
+                                    <path d="M10.0325 12.2995C10.2525 11.7952 10.4407 11.3092 10.6726 10.8432C12.3001 7.54345 14.6934 4.97455 17.9549 3.24361C18.4623 2.97434 19.002 2.76495 19.5302 2.53641C19.9347 2.36165 20.3413 2.33273 20.6968 2.64152C21.0777 2.97393 21.1867 3.41553 21.1026 3.89867C21.0209 4.3643 20.7372 4.67268 20.2939 4.83849C18.4803 5.51432 16.9271 6.58449 15.5996 7.98016C13.6402 10.0382 12.3409 12.4491 11.7678 15.2412C11.7474 15.3406 11.7319 15.4412 11.7147 15.5414C11.6249 16.071 11.3065 16.3969 10.7881 16.4825C10.208 16.579 9.71085 16.3688 9.46837 15.9048C9.04262 15.0901 8.5589 14.3161 7.94455 13.6276C7.2261 12.8285 6.36656 12.168 5.40879 11.6791C5.09611 11.5162 4.83241 11.3125 4.74954 10.9503C4.63116 10.4326 4.82343 10.0134 5.20836 9.68135C5.5933 9.34934 6.04355 9.2642 6.47788 9.5074C7.13835 9.87771 7.7976 10.2663 8.39643 10.7267C8.93608 11.1414 9.39367 11.6636 9.88637 12.1374C9.93332 12.1843 9.97577 12.2368 10.0325 12.2995Z" fill="white" />
+                                </svg>                            </div>
+                            <div className="bg-[#374932] text- text-base font-medium h-full px-4 py-2 rounded-r-md shadow w-full text-center">
                                 24/7 Support
                             </div>
                         </div>
-                        <div className="flex items-center">
-                            <div className="bg-[#4CAF50] p-2 rounded-l-md shadow-md">
-                                <MdAccessTime className="text-[#3F503B] text-lg" />
-                            </div>
-                            <div className="bg-[#E7F2E5] text-dark text-sm px-4 py-2 rounded-r-md shadow w-full text-left h-[33px]">
+                        <div className="flex items-center h-[42px]">
+                            <div className="bg-[#39623a] p-2 rounded-l-md shadow-md h-full ">
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.4286 0.676025C11.8515 0.731428 12.2768 0.771351 12.6965 0.844678C14.0774 1.08572 15.3937 1.6081 16.5634 2.37926C16.5911 2.39759 16.616 2.41999 16.6617 2.45544C16.5462 2.5251 16.4397 2.58091 16.3421 2.64975C15.7155 3.09013 15.0885 3.53091 14.4672 3.97902C14.3701 4.04868 14.304 4.07923 14.1815 4.02342C11.0257 2.58009 7.48696 3.26326 5.11611 5.79713C3.90334 7.09258 3.21552 8.64182 3.0702 10.4143C2.77792 13.9841 4.79486 17.1987 8.14907 18.4396C12.6393 20.1009 17.4279 17.4065 18.4823 12.8663C18.8837 11.124 18.6796 9.29735 17.9035 7.68612C18.5877 7.14066 19.3375 6.68275 20.1356 6.32305C20.2862 6.66687 20.4425 6.99522 20.5764 7.33293C22.179 11.3729 21.0063 16.1237 17.7125 18.9578C15.9592 20.465 13.9362 21.3246 11.6261 21.4986C11.5734 21.5065 11.5213 21.5182 11.4702 21.5336H10.2472C10.1892 21.5179 10.1304 21.5058 10.0709 21.4973C7.9715 21.3344 6.08396 20.6141 4.43482 19.3077C2.34727 17.6538 1.0553 15.5097 0.588727 12.881C0.520149 12.4952 0.481369 12.1045 0.428711 11.7159V10.4937C0.460143 10.2322 0.486676 9.97027 0.523414 9.70914C0.818954 7.60383 1.66271 5.7458 3.08448 4.16519C4.69852 2.3703 6.6979 1.25042 9.08263 0.838975C9.46838 0.772166 9.85821 0.730614 10.2472 0.676025H11.4286Z" fill="white" />
+                                    <path d="M10.0325 12.2995C10.2525 11.7952 10.4407 11.3092 10.6726 10.8432C12.3001 7.54345 14.6934 4.97455 17.9549 3.24361C18.4623 2.97434 19.002 2.76495 19.5302 2.53641C19.9347 2.36165 20.3413 2.33273 20.6968 2.64152C21.0777 2.97393 21.1867 3.41553 21.1026 3.89867C21.0209 4.3643 20.7372 4.67268 20.2939 4.83849C18.4803 5.51432 16.9271 6.58449 15.5996 7.98016C13.6402 10.0382 12.3409 12.4491 11.7678 15.2412C11.7474 15.3406 11.7319 15.4412 11.7147 15.5414C11.6249 16.071 11.3065 16.3969 10.7881 16.4825C10.208 16.579 9.71085 16.3688 9.46837 15.9048C9.04262 15.0901 8.5589 14.3161 7.94455 13.6276C7.2261 12.8285 6.36656 12.168 5.40879 11.6791C5.09611 11.5162 4.83241 11.3125 4.74954 10.9503C4.63116 10.4326 4.82343 10.0134 5.20836 9.68135C5.5933 9.34934 6.04355 9.2642 6.47788 9.5074C7.13835 9.87771 7.7976 10.2663 8.39643 10.7267C8.93608 11.1414 9.39367 11.6636 9.88637 12.1374C9.93332 12.1843 9.97577 12.2368 10.0325 12.2995Z" fill="white" />
+                                </svg>                            </div>
+                            <div className="bg-[#374932] text- text-base font-medium h-full px-4 py-2 rounded-r-md shadow w-full text-center">
                                 Quality Workmanship
                             </div>
                         </div>
@@ -126,7 +144,7 @@ export default function Hero() {
 
             <section className="relative bg-[#374932] text-white py-16 md:pb-[120px] overflow-hidden" data-aos="zoom-in-up">
                 <img
-                    src="/assets/PNG/3rdsection.png"
+                    src="/assets/images/3rdsection.png"
                     alt="Layout Background"
                     className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[300px] md:w-[600px] z-0 pointer-events-none"
                 />
@@ -134,22 +152,22 @@ export default function Hero() {
                 <div className="relative z-10 max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div className="bg-white p-6 rounded-lg shadow-lg">
                         <h2 className="text-5xl text-black">3400+</h2>
-                        <p className="mt-2 text-[#4CAF50] font-bold">Septic Systems Serviced</p>
+                        <p className="mt-2 text-[#39623a] font-bold">Septic Systems Serviced</p>
                         <span className="block mt-2 text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
                     </div>
                     <div className="bg-white p-6 rounded-lg shadow-lg md:relative md:top-[96px]">
                         <h2 className="text-5xl text-black">6820</h2>
-                        <p className="mt-2 text-[#4CAF50] font-bold">Satisfied Customers</p>
+                        <p className="mt-2 text-[#39623a] font-bold">Satisfied Customers</p>
                         <span className="block mt-2 text-gray-500">Fusce nec urna sit amet nisi bibendum fringilla.</span>
                     </div>
                     <div className="bg-white p-6 rounded-lg shadow-lg">
                         <h2 className="text-5xl text-black">270+</h2>
-                        <p className="mt-2 text-[#4CAF50] font-bold">Advanced Equipment</p>
+                        <p className="mt-2 text-[#39623a] font-bold">Advanced Equipment</p>
                         <span className="block mt-2 text-gray-500">Phasellus egestas ipsum non quam malesuada, et facilisis nisl vestibulum.</span>
                     </div>
                     <div className="bg-white p-6 rounded-lg shadow-lg md:relative md:top-[96px]">
                         <h2 className="text-5xl text-black">3568</h2>
-                        <p className="mt-2 text-[#4CAF50] font-bold">System Inspections</p>
+                        <p className="mt-2 text-[#39623a] font-bold">System Inspections</p>
                         <span className="block mt-2 text-gray-500">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
                     </div>
                 </div>
@@ -157,13 +175,13 @@ export default function Hero() {
 
             <section className="bg-white py-16" data-aos="zoom-in-down">
                 <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
-                    <img src="/assets/PNG/AboutUSImage.png" alt="Team working" className="rounded-lg" />
+                    <img src="/assets/images/AboutUSImage.png" alt="Team working" className="rounded-lg" />
 
                     <div>
-                        <h2 className="text-3xl mb-4">Who We Are</h2>
+                        <h2 className="text-3xl lg:text-5xl font-medium mb-4">Who We Are</h2>
 
                         <p className="text-gray-600 mb-4 flex items-center gap-2">
-                            <img src="/assets/PNG/Whoweare.png" alt="" />
+                            <img src="/assets/images/Whoweare.png" alt="" />
                             <span className='text-xl ms-4 text-gray-800 font-semibold'>We're in this business since 2011 and we provide the best services.</span>
                         </p>
 
@@ -254,7 +272,7 @@ export default function Hero() {
                                 <div className="bg-[#E8F3E6] p-2 rounded-l-md shadow-md">
                                     <MdAccessTime className="text-[#3F503B] text-lg" />
                                 </div>
-                                <div className="bg-[#5D7757] text-white text-sm px-4 py-2 rounded-r-md shadow w-full text-left h-[33px]">
+                                <div className="bg-[#5D7757] text-white text-base font-medium px-4 py-2 rounded-r-md shadow w-full text-center">
                                     Eco-Friendly Solutions
                                 </div>
                             </div>
@@ -262,7 +280,7 @@ export default function Hero() {
                                 <div className="bg-[#E8F3E6] p-2 rounded-l-md shadow-md">
                                     <MdAccessTime className="text-[#3F503B] text-lg" />
                                 </div>
-                                <div className="bg-[#5D7757] text-white text-sm px-4 py-2 rounded-r-md shadow w-full text-left h-[33px]">
+                                <div className="bg-[#5D7757] text-white text-base font-medium px-4 py-2 rounded-r-md shadow w-full text-center">
                                     Affordable Pricing
                                 </div>
                             </div>
@@ -271,7 +289,7 @@ export default function Hero() {
                                 <div className="bg-[#E8F3E6] p-2 rounded-l-md shadow-md">
                                     <MdAccessTime className="text-[#3F503B] text-lg" />
                                 </div>
-                                <div className="bg-[#5D7757] text-white text-sm px-4 py-2 rounded-r-md shadow w-full text-left h-[33px]">
+                                <div className="bg-[#5D7757] text-white text-base font-medium px-4 py-2 rounded-r-md shadow w-full text-center">
                                     Advanced Technology
                                 </div>
                             </div>
@@ -279,7 +297,7 @@ export default function Hero() {
                                 <div className="bg-[#E8F3E6] p-2 rounded-l-md shadow-md">
                                     <MdAccessTime className="text-[#3F503B] text-lg" />
                                 </div>
-                                <div className="bg-[#5D7757] text-white text-sm px-4 py-2 rounded-r-md shadow w-full text-left">
+                                <div className="bg-[#5D7757] text-white text-base font-medium px-4 py-2 rounded-r-md shadow w-full text-left">
                                     Customer Satisfaction
                                 </div>
                             </div>
@@ -288,18 +306,18 @@ export default function Hero() {
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
                             <div className="transform rotate-2 bg-white shadow-lg overflow-hidden">
-                                <img src="/assets/PNG/Image1AboutSection.png" alt="Card 1" className="w-full h-48 object-cover shadow-md" />
+                                <img src="/assets/images/Image1AboutSection.png" alt="Card 1" className="w-full h-48 object-cover shadow-md" />
                             </div>
                             <div className="transform rotate-2 bg-white shadow-lg overflow-hidden">
-                                <img src="/assets/PNG/Image2AboutSection.png" alt="Card 2" className="w-full h-48 object-cover shadow-md" />
+                                <img src="/assets/images/Image2AboutSection.png" alt="Card 2" className="w-full h-48 object-cover shadow-md" />
                             </div>
                             <div className="transform rotate-2 bg-white shadow-lg overflow-hidden">
-                                <img src="assets/PNG/Image3AboutSection.png" alt="Card 3" className="w-full h-48 object-cover shadow-md" />
+                                <img src="assets/images/Image3AboutSection.png" alt="Card 3" className="w-full h-48 object-cover shadow-md" />
                             </div>
                         </div>
                     </div>
 
-                    <img src="/assets/PNG/AboutUSImage.png" alt="Team working" className="rounded-lg" />
+                    <img src="/assets/images/AboutUSImage.png" alt="Team working" className="rounded-lg" />
                 </div>
 
 
@@ -346,7 +364,7 @@ export default function Hero() {
                 data-aos-easing="ease-in-back"
                 data-aos-delay="300"
                 data-aos-offset="0" className="relative bg-cover bg-center bg-no-repeat h-[400px] flex items-center justify-center text-center mb-5"
-                style={{ backgroundImage: "url('/assets/PNG/thirdsectionleftimage.png')" }}
+                style={{ backgroundImage: "url('/assets/images/thirdsectionleftimage.png')" }}
             >
                 <div className=" p-6 rounded-md">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -365,7 +383,7 @@ export default function Hero() {
             <section className="relative bg-white py-16" data-aos="fade-up"
                 data-aos-anchor-placement="bottom-bottom">
                 <div className="absolute top-0 right-0 z-0">
-                    <img src="/assets/PNG/Union.png" alt="Design" className="w-[300px] md:h-[165px]" />
+                    <img src="/assets/images/Union.png" alt="Design" className="w-[300px] md:h-[165px]" />
                 </div>
 
                 <div className="max-w-7xl mx-auto px-4 relative z-10">

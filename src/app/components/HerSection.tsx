@@ -54,7 +54,7 @@ export default function HerSection() {
     return (
         <>
             <div className="w-full min-h-screen flex items-center justify-center bg-cover bg-center px-4 py-25 md:pb-20 md:pt-50"
-                style={{ backgroundImage: "url('/assets/PNG/HeroSection.png')" }} data-aos="fade-up"
+                style={{ backgroundImage: "url('/assets/images/HeroSection.png')" }} data-aos="fade-up"
                 data-aos-anchor-placement="top-bottom"
             >
                 <div className="max-w-screen-xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">

@@ -11,7 +11,7 @@ export default function Slider() {
             <section className="relative bg-white py-16" data-aos="fade-up"
                 data-aos-anchor-placement="top-bottom">
                 <div className="absolute top-0 right-0 z-0">
-                    <img src="/assets/PNG/Union.png" alt="Design" className="w-[300px] md:h-[165px]" />
+                    <img src="/assets/images/Union.png" alt="Design" className="w-[300px] md:h-[165px]" />
                 </div>
 
                 <div className="max-w-7xl mx-auto px-4 relative z-10">

@@ -15,12 +15,12 @@ export default function Hero() {
         <>
             <div className="relative w-full h-[400px] overflow-hidden">
                 <img
-                    src="/assets/PNG/Rectangle 30139.png"
+                    src="/assets/images/Rectangle 30139.png"
                     alt="Background Image"
                     className="w-full h-full object-cover"
                 />
                 <img
-                    src="/assets/PNG/Mask group.png"
+                    src="/assets/images/Mask group.png"
                     alt="Mask Overlay"
                     className="w-[50%] h-[161%] object-cover absolute top-4 left-0 z-10"
                 />
@@ -38,7 +38,7 @@ export default function Hero() {
 
             <section className="py-16 bg-white relative overflow-hidden" data-aos="fade-right">
                 <img
-                    src="/assets/PNG/Union.png"
+                    src="/assets/images/Union.png"
                     alt="Background Graphic"
                     className="absolute top-0 right-0 w-50 h-50 object-contain z-0"
                 />
@@ -55,7 +55,7 @@ export default function Hero() {
                     <div className="rounded-lg overflow-hidden border shadow-sm">
                         <div className="relative">
                             <img
-                                src="/assets/PNG/card1T.png"
+                                src="/assets/images/card1T.png"
                                 alt="Septic Service"
                                 className="w-full h-56 object-cover rounded-t-lg"
                             />
@@ -85,7 +85,7 @@ export default function Hero() {
                     <div className="rounded-lg overflow-hidden border shadow-sm">
                         <div className="relative">
                             <img
-                                src="/assets/PNG/card2T.png"
+                                src="/assets/images/card2T.png"
                                 alt="Septic Service"
                                 className="w-full h-56 object-cover rounded-t-lg"
                             />
@@ -121,7 +121,7 @@ export default function Hero() {
                     <div className="rounded-lg overflow-hidden border shadow-sm">
                         <div className="relative">
                             <img
-                                src="/assets/PNG/card3T.png"
+                                src="/assets/images/card3T.png"
                                 alt="Septic Service"
                                 className="w-full h-56 object-cover rounded-t-lg"
                             />
@@ -151,7 +151,7 @@ export default function Hero() {
                     <div className="rounded-lg overflow-hidden border shadow-sm">
                         <div className="relative">
                             <img
-                                src="/assets/PNG/card4T.png"
+                                src="/assets/images/card4T.png"
                                 alt="Septic Service"
                                 className="w-full h-56 object-cover rounded-t-lg"
                             />
@@ -225,15 +225,15 @@ export default function Hero() {
 
                 <div className="relative w-full bg-[#3F503B] pb-10">
                     <div className="px-4 grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <img src="/assets/PNG/image 8.png" alt="Project 2" className="w-full md:w-[80%] h-auto md:h-[80%] object-cover ml-auto" />
-                        <img src="/assets/PNG/Group.png" alt="Project 1" className="w-full h-auto md:h-[80%] object-cover mx-auto" />
-                        <img src="/assets/PNG/Group (1).png" alt="Project 3" className="w-full md:w-[80%] h-auto md:h-[80%] object-cover mr-auto" />
+                        <img src="/assets/images/image 8.png" alt="Project 2" className="w-full md:w-[80%] h-auto md:h-[80%] object-cover ml-auto" />
+                        <img src="/assets/images/Group.png" alt="Project 1" className="w-full h-auto md:h-[80%] object-cover mx-auto" />
+                        <img src="/assets/images/Group (1).png" alt="Project 3" className="w-full md:w-[80%] h-auto md:h-[80%] object-cover mr-auto" />
                     </div>
 
                     <div className="px-4 mt-4 flex justify-center md:justify-start md:pl-[200px] lg:pl-[481px] md:-mt-[100px] lg:-mt-[172px]">
                         <div className="bg-white bg-opacity-90 p-4 rounded-lg shadow-lg inline-block text-green-600 max-w-md w-full text-center md:text-left">
                             <h3 className="text-lg font-bold">20,000 Gallons Septic System</h3>
-                            <p className="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonum-</p>
+                            <p className="text-sm">Evergreen Septic Service LLC's "20,000 Gallons Septic System" is a big, dependable septic setup for homes or businesses. It includes tanks, drain fields, and pipes, all installed with care to work well and be eco-friendly.</p>
                         </div>
                     </div>
 
@@ -289,7 +289,7 @@ export default function Hero() {
 
                     </div>
 
-                    <img src="/assets/PNG/AboutUSImage.png" alt="Team working" className="rounded-lg" />
+                    <img src="/assets/images/AboutUSImage.png" alt="Team working" className="rounded-lg" />
                 </div>
 
 

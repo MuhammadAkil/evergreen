@@ -3,37 +3,70 @@ import { FaPlus } from "react-icons/fa";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Services",
+    description:
+      "Explore the septic pumping and certified inspection services offered by Evergreen Septic Service LLC in the foothills.",
+    keywords: [
+      "Septic pumping services",
+      "Certified septic inspections",
+      "Evergreen Septic services",
+      "Foothills septic solutions",
+    ],
+    openGraph: {
+      title: "Services | Evergreen Septic Service LLC",
+      description:
+        "Septic pumping and certified inspection services by Evergreen Septic Service LLC in the foothills.",
+      url: "https://www.evergreensepticsvc.com/services",
+      images: [
+        {
+          url: "https://www.evergreensepticsvc.com/assets/images/HeroSection.png",
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Services | Evergreen Septic Service LLC",
+      description:
+        "Septic pumping and certified inspection services by Evergreen Septic Service LLC in the foothills.",
+      images: ["https://www.evergreensepticsvc.com/assets/images/HeroSection.png"],
+    },
+  };
 
 const services = [
     {
         title: "Septic Tank Pumping",
         description: "Efficient and timely septic tank pumping to keep your system clean and operational.",
-        image: "/assets/PNG/image-3.png",
+        image: "/assets/images/image-3.png",
     },
     {
         title: "Septic System Inspections",
         description: "Thorough inspections to ensure your septic system meets local regulations and safety standards.",
-        image: "/assets/PNG/image-4.png",
+        image: "/assets/images/image-4.png",
     },
     {
         title: "Emergency Septic Services",
         description: "Professional repairs to address any issues and extend the life of your septic system.",
-        image: "/assets/PNG/image-5.png",
+        image: "/assets/images/image-5.png",
     },
     {
         title: "Drain Field Repair",
         description: "Quick and efficient drain cleaning to prevent backups and system failures.",
-        image: "/assets/PNG/image-6.png",
+        image: "/assets/images/image-6.png",
     },
     {
         title: "Grease Trap Services",
         description: "Cleaning and maintenance of grease traps for commercial kitchens.",
-        image: "/assets/PNG/image-7.png",
+        image: "/assets/images/image-7.png",
     },
     {
         title: "Emergency Services",
         description: "24/7 emergency response for urgent septic issues.",
-        image: "/assets/PNG/image-8.png",
+        image: "/assets/images/image-8.png",
     },
 ];
 

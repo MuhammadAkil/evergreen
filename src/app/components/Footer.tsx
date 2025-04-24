@@ -7,9 +7,15 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row gap-8">
           <div className="md:w-1/3">
             <div className="flex items-center gap-2 mb-4">
-              <svg viewBox="0 0 24 24" className="w-10 h-10 fill-white">
-                <path d="M12 2L4 9v12h16V9l-8-7zm0 2.5L17 9v10h-2v-6h-6v6H7V9l5-4.5z" />
-              </svg>
+            <svg width="60" height="60" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_105_240" style={{maskType:'alpha'}} maskUnits="userSpaceOnUse" x="0" y="0" width="72" height="72">
+<rect width="71.7832" height="71.7832" fill="white"/>
+</mask>
+<g mask="url(#mask0_105_240)">
+<path d="M38.8826 65.8018V56.8289H50.8464V65.8018H38.8826ZM20.9368 65.8018V53.8379H0L11.5152 35.8921H5.98193L26.9187 5.98242L47.8555 35.8921H42.3222L53.9122 53.8379H32.9006V65.8018H20.9368ZM57.5761 53.8379L47.8555 38.8831H53.6131L37.761 16.2265L44.8645 5.98242L65.8013 35.8921H60.268L71.7832 53.8379H57.5761Z" fill="white"/>
+</g>
+</svg>
+
               <div>
                 <Link href='/'>
                   <div className="text-xl font-bold tracking-wide">EVERGREEN</div>
@@ -220,7 +226,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" className="hover:underline">
+                  <Link href="/contact-us" className="hover:underline">
                     Service Request
                   </Link>
                 </li>
@@ -235,8 +241,14 @@ export default function Footer() {
         </div>
 
         {/* Copyright section */}
-        <div className="mt-8 pt-4 border-t border-[#3a4b3a] text-center text-sm">
-          <p>Copyright © 2025 EverGreen Septic Services LLC</p>
+        <div className=" mt-8 pt-4 border-t border-[#3a4b3a] text-center text-sm">
+        
+        <div className="flex flex-col lg:flex-row w-full items-center mx-auto justify-between max-w-[450px]">
+          
+           <p>&copy; Copyright {new Date().getFullYear()} Evergreen Septic Service LLC.</p>
+           |
+          <p>All rights reserved.</p>
+        </div>
         </div>
       </div>
     </footer>

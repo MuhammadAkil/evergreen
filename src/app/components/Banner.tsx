@@ -15,7 +15,7 @@ export default function SepticHero() {
       data-aos-anchor-placement="top-bottom">
       <div className="relative h-[500px] w-full">
         <Image
-          src="/assets/PNG/Group 39285.png"
+          src="/assets/images/Group 39285.png"
           alt="Septic system maintenance"
           fill
           className="object-cover brightness-[0.85]"

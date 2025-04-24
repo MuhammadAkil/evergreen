@@ -8,12 +8,46 @@ import { Button } from "@/components/ui/button"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Link from "next/link"
+import { Metadata } from 'next';
+export const metadata: Metadata = {
+    title: "Contact Us",
+    description:
+      "Get in touch with Evergreen Septic Service LLC for septic pumping and inspection inquiries in the foothills.",
+    keywords: [
+      "Contact Evergreen Septic",
+      "Septic service inquiries",
+      "Foothills septic contact",
+      "Evergreen Septic support",
+    ],
+    openGraph: {
+      title: "Contact Us | Evergreen Septic Service LLC",
+      description:
+        "Contact Evergreen Septic Service LLC for septic pumping and inspection inquiries.",
+      url: "https://www.evergreensepticsvc.com/contact",
+      images: [
+        {
+          url: "https://www.evergreensepticsvc.com/assets/images/HeroSection.png",
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Contact Us | Evergreen Septic Service LLC",
+      description:
+        "Contact Evergreen Septic Service LLC for septic pumping and inspection inquiries.",
+      images: ["https://www.evergreensepticsvc.com/assets/images/HeroSection.png"],
+    },
+  };
 
 export default function Hero() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [subject, setSubject] = useState('');
     const [message, setMessage] = useState('');
+
+    
 
     useEffect(() => {
         AOS.init({ duration: 1000, once: false });
@@ -59,12 +93,12 @@ export default function Hero() {
         <>
             <div className="relative w-full h-[400px] overflow-hidden">
                 <img
-                    src="/assets/PNG/Rectangle 30139.png"
+                    src="/assets/images/Rectangle 30139.png"
                     alt="Background Image"
                     className="w-full h-full object-cover"
                 />
                 <img
-                    src="/assets/PNG/Mask group.png"
+                    src="/assets/images/Mask group.png"
                     alt="Mask Overlay"
                     className="w-[50%] h-[161%] object-cover absolute top-4 left-0 z-10"
                 />
@@ -80,7 +114,7 @@ export default function Hero() {
 
             <section className="py-16 bg-white relative overflow-hidden" data-aos="fade-up">
                 <img
-                    src="/assets/PNG/Union.png"
+                    src="/assets/images/Union.png"
                     alt="Background Graphic"
                     className="absolute top-0 left-0 w-40 h-auto object-contain z-0"
                 />
@@ -188,12 +222,12 @@ export default function Hero() {
 
             <section className="relative w-full overflow-hidden h-[500px]" data-aos="fade-up">
                 <img
-                    src="/assets/PNG/Rectangle 30139.png"
+                    src="/assets/images/Rectangle 30139.png"
                     alt="Background Image"
                     className="w-full h-full object-cover"
                 />
                 <img
-                    src="/assets/PNG/Mask group.png"
+                    src="/assets/images/Mask group.png"
                     alt="Mask Overlay"
                     className="w-[50%] h-[161%] object-cover absolute top-15 left-0 z-10"
                 />
@@ -215,7 +249,7 @@ export default function Hero() {
                             </div>
 
                             <div className="flex items-center gap-3 justify-center md:justify-start">
-                                <img src="/assets/PNG/Person.png" className="w-10 h-10 rounded-full" alt="Sophia Moore" />
+                                <img src="/assets/images/Person.png" className="w-10 h-10 rounded-full" alt="Sophia Moore" />
                                 <div className="flex flex-col justify-start">
                                     <p className="font-semibold text-sm text-white group-hover:text-[#3F503B]">Sophia Moore</p>
                                     <p className="text-xs text-gray-300">Home Owner New Orleans</p>

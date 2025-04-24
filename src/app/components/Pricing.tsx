@@ -1,5 +1,5 @@
-import { Check, ChevronDown } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Check, ChevronDown, ChevronUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import React, { useEffect, useState } from 'react';
@@ -13,6 +13,17 @@ const pricingData = {
     3800: 170,
     4000: 175,
     4200: 180,
+    4400: 185,
+    4600: 190,
+    4800: 195,
+    5000: 200,
+    5200: 205,
+    5400: 210,
+    5600: 215,
+    5800: 220,
+    6000: 225,
+    6200: 230,
+    6400: 235,
   },
   septic: {
     1000: 250,
@@ -22,6 +33,17 @@ const pricingData = {
     1800: 330,
     2000: 350,
     2200: 370,
+    2400: 390,
+    2600: 410,
+    2800: 430,
+    3000: 450,
+    3200: 470,
+    3400: 490,
+    3600: 510,
+    3800: 530,
+    4000: 550,
+    4200: 570,
+    4400: 590,
   },
 };
 
@@ -33,6 +55,8 @@ export default function Home() {
   const [category, setCategory] = useState('holding');
   const [quantity, setQuantity] = useState('');
   const [price, setPrice] = useState<number | null>(null);
+  const [showMoreHolding, setShowMoreHolding] = useState(false);
+  const [showMoreSeptic, setShowMoreSeptic] = useState(false);
 
   const handleEstimate = () => {
     const qty = parseInt(quantity);
@@ -48,9 +72,7 @@ export default function Home() {
 
     if (matched) {
       setPrice(matched[1]);
-    }
-
-    else {
+    } else {
       const len = entries.length;
       if (len >= 2) {
         const [x1, y1] = entries[len - 2];
@@ -60,18 +82,56 @@ export default function Home() {
         const estimated = y2 + slope * (qty - x2);
 
         setPrice(Math.round(estimated));
-      }
-
-      else {
+      } else {
         setPrice(null);
       }
     }
   };
 
+  const holdingData = [
+    { gallons: "3000 OR LESS", price: "150.00" },
+    { gallons: "3200", price: "155.00" },
+    { gallons: "3400", price: "160.00" },
+    { gallons: "3600", price: "165.00" },
+    { gallons: "3800", price: "170.00" },
+    { gallons: "4000", price: "175.00" },
+    { gallons: "4200", price: "180.00" },
+    { gallons: "4400", price: "185.00" },
+    { gallons: "4600", price: "190.00" },
+    { gallons: "4800", price: "195.00" },
+    { gallons: "5000", price: "200.00" },
+    { gallons: "5200", price: "205.00" },
+    { gallons: "5400", price: "210.00" },
+    { gallons: "5600", price: "215.00" },
+    { gallons: "5800", price: "220.00" },
+    { gallons: "6000", price: "225.00" },
+    { gallons: "6200", price: "230.00" },
+    { gallons: "6400", price: "235.00" },
+  ];
+
+  const septicData = [
+    { gallons: "1000 OR LESS", price: "250.00" },
+    { gallons: "1200", price: "270.00" },
+    { gallons: "1400", price: "290.00" },
+    { gallons: "1600", price: "310.00" },
+    { gallons: "1800", price: "330.00" },
+    { gallons: "2000", price: "350.00" },
+    { gallons: "2200", price: "370.00" },
+    { gallons: "2400", price: "390.00" },
+    { gallons: "2600", price: "410.00" },
+    { gallons: "2800", price: "430.00" },
+    { gallons: "3000", price: "450.00" },
+    { gallons: "3200", price: "470.00" },
+    { gallons: "3400", price: "490.00" },
+    { gallons: "3600", price: "510.00" },
+    { gallons: "3800", price: "530.00" },
+    { gallons: "4000", price: "550.00" },
+    { gallons: "4200", price: "570.00" },
+    { gallons: "4400", price: "590.00" },
+  ];
 
   return (
-    <main className="min-h-screen bg-[#3F503B]" data-aos="fade-up"
-      data-aos-anchor-placement="top-bottom">
+    <main className="min-h-screen bg-[#3F503B]" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
       <div className="container mx-auto px-4 py-12">
         {/* Header */}
         <div className="text-white mb-8 ml-10 text-center md:text-left">
@@ -81,7 +141,7 @@ export default function Home() {
         </div>
 
         {/* Estimate Card */}
-        <div  >
+        <div>
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
             <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 max-w-3xl mx-auto mb-12">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
@@ -134,7 +194,7 @@ export default function Home() {
         {/* Pricing Tables */}
         <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
           {/* Holding Tanks Table */}
-          <div className="bg-white rounded-xl overflow-hidden shadow-lg">
+          <div className="bg-white rounded-xl overflow-hidden shadow-lg self-start">
             <div className="bg-[#4CAF50] text-white p-4 text-center font-bold text-xl">
               <div className="flex justify-between">
                 <span>HOLDING</span>
@@ -142,30 +202,30 @@ export default function Home() {
               </div>
             </div>
             <div className="divide-y">
-              {[
-                { gallons: "3000 OR LESS", price: "150.00" },
-                { gallons: "3200", price: "155.00" },
-                { gallons: "3400", price: "160.00" },
-                { gallons: "3600", price: "165.00" },
-                { gallons: "3800", price: "170.00" },
-                { gallons: "4000", price: "175.00" },
-                { gallons: "4200", price: "180.00" },
-              ].map((item, index) => (
-                <div key={index} className={`flex justify-between p-4 ${index % 2 === 0 ? "bg-gray-100" : "bg-white"}`}>
+              {holdingData.slice(0, showMoreHolding ? holdingData.length : 7).map((item, index) => (
+                <div
+                  key={index}
+                  className={`flex justify-between p-4 ${index % 2 === 0 ? "bg-gray-100" : "bg-white"}`}
+                >
                   <span>{item.gallons}</span>
                   <span>{item.price}</span>
                 </div>
               ))}
             </div>
             <div className="p-4 flex justify-center">
-              <Button variant="ghost" className="text-gray-500 flex items-center gap-1">
-                View More <ChevronDown className="h-4 w-4" />
+              <Button
+                variant="ghost"
+                className="text-gray-500 flex items-center gap-1"
+                onClick={() => setShowMoreHolding(!showMoreHolding)}
+              >
+                {showMoreHolding ? "View Less" : "View More"}
+                {showMoreHolding ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
               </Button>
             </div>
           </div>
 
           {/* Septic Tanks Table */}
-          <div className="bg-white rounded-xl overflow-hidden shadow-lg">
+          <div className="bg-white rounded-xl overflow-hidden shadow-lg self-start">
             <div className="bg-[#4CAF50] text-white p-4 text-center font-bold text-xl">
               <div className="flex justify-between">
                 <span>SEPTIC</span>
@@ -173,31 +233,29 @@ export default function Home() {
               </div>
             </div>
             <div className="divide-y">
-              {[
-                { gallons: "1000 OR LESS", price: "250.00" },
-                { gallons: "1200", price: "270.00" },
-                { gallons: "1400", price: "290.00" },
-                { gallons: "1600", price: "310.00" },
-                { gallons: "1800", price: "330.00" },
-                { gallons: "2000", price: "350.00" },
-                { gallons: "2200", price: "370.00" },
-              ].map((item, index) => (
-                <div key={index} className={`flex justify-between p-4 ${index % 2 === 0 ? "bg-gray-100" : "bg-white"}`}>
+              {septicData.slice(0, showMoreSeptic ? septicData.length : 7).map((item, index) => (
+                <div
+                  key={index}
+                  className={`flex justify-between p-4 ${index % 2 === 0 ? "bg-gray-100" : "bg-white"}`}
+                >
                   <span>{item.gallons}</span>
                   <span>{item.price}</span>
                 </div>
               ))}
             </div>
             <div className="p-4 flex justify-center">
-              <Button variant="ghost" className="text-gray-500 flex items-center gap-1">
-                View More <ChevronDown className="h-4 w-4" />
+              <Button
+                variant="ghost"
+                className="text-gray-500 flex items-center gap-1"
+                onClick={() => setShowMoreSeptic(!showMoreSeptic)}
+              >
+                {showMoreSeptic ? "View Less" : "View More"}
+                {showMoreSeptic ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
               </Button>
             </div>
           </div>
         </div>
       </div>
-
     </main>
-
-  )
+  );
 }

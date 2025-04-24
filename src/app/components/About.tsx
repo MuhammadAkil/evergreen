@@ -16,12 +16,12 @@ export default function About() {
 
                     <div className="flex flex-row gap-4">
                         <img
-                            src="/assets/PNG/thirdsectionleftimage.png"
+                            src="/assets/images/thirdsectionleftimage.png"
                             alt="History 1"
                             className="object-cover h-100 w-[75%]"
                         />
                         <img
-                            src="/assets/PNG/thirdsectionrightimage.png"
+                            src="/assets/images/thirdsectionrightimage.png"
                             alt="History 2"
                             className="shadow-lg object-cover h-100 w-[25%]"
                         />
@@ -93,7 +93,7 @@ export default function About() {
                 </div>
 
                 <img
-                    src="/assets/PNG/3rdsection.png"
+                    src="/assets/images/3rdsection.png"
                     alt="Layout Background"
                     className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[300px] md:w-[600px] z-999999 pointer-events-none"
                 />

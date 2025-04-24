@@ -19,7 +19,7 @@ export default function Industries() {
             <section className="relative bg-white py-16 px-4" data-aos="fade-up"
                 data-aos-anchor-placement="top-bottom">
                 <img
-                    src="/assets/PNG/fourthSection.svg"
+                    src="/assets/images/fourthSection.svg"
                     alt="Industry Illustration"
                     className="absolute -top-24 md:-top-36 left-0 w-[80px] md:w-[120px] object-contain"
                 />

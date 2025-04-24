@@ -42,17 +42,17 @@ export default function Hero() {
                 <div className="relative w-full bg-[#3F503B] pb-10">
                     <div className="px-4 grid grid-cols-1 md:grid-cols-3 gap-4">
                         <img
-                            src="/assets/PNG/image 8.png"
+                            src="/assets/images/image 8.png"
                             alt="Project 2"
                             className="w-full md:w-[80%] h-auto md:h-[80%] object-cover ml-auto"
                         />
                         <img
-                            src="/assets/PNG/Group.png"
+                            src="/assets/images/Group.png"
                             alt="Project 1"
                             className="w-full h-auto md:h-[80%] object-cover mx-auto"
                         />
                         <img
-                            src="/assets/PNG/Group (1).png"
+                            src="/assets/images/Group (1).png"
                             alt="Project 3"
                             className="w-full md:w-[80%] h-auto md:h-[80%] object-cover mr-auto"
                         />
@@ -63,7 +63,7 @@ export default function Hero() {
                     >
                         <div className="bg-white bg-opacity-90 p-4 rounded-lg shadow-lg inline-block text-green-600 max-w-md w-full text-center md:text-left">
                             <h3 className="text-lg font-bold">20,000 Gallons Septic System</h3>
-                            <p className="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonum-</p>
+                            <p className="text-sm">Evergreen Septic Service LLC's "20,000 Gallons Septic System" is a big, dependable septic setup for homes or businesses. It includes tanks, drain fields, and pipes, all installed with care to work well and be eco-friendly.</p>
                         </div>
                     </div>
                 </div>
