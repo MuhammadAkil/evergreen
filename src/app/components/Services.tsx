@@ -1,9 +1,10 @@
-import React,{useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { FaPlus } from "react-icons/fa";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import { usePathname } from 'next/navigation';
 
 export const metadata: Metadata = {
     title: "Services",
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
         "Septic pumping and certified inspection services by Evergreen Septic Service LLC in the foothills.",
       images: ["https://www.evergreensepticsvc.com/assets/images/HeroSection.png"],
     },
-  };
+};
 
 const services = [
     {
@@ -71,13 +72,13 @@ const services = [
 ];
 
 export default function Services() {
-     useEffect(() => {
-            AOS.init({ duration: 1000, once: false });
-        }, []);
+    useEffect(() => {
+        AOS.init({ duration: 1000, once: false });
+    }, []);
 
+    const pathname = usePathname();
     return (
-        <section className="w-full px-4 py-16 bg-gray-50" data-aos="fade-up"
-        data-aos-anchor-placement="top-bottom">
+        <section className="w-full px-4 py-16 bg-gray-50" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
             <div className="max-w-screen-xl mx-auto text-center">
                 <h3 className="text-[#3F503B] text-sm font-semibold uppercase tracking-wider mb-2">
                     What We Do
@@ -108,20 +109,27 @@ export default function Services() {
                                 <p className="text-gray-600 text-sm mb-4 group-hover:text-gray-200">
                                     {service.description}
                                 </p>
-                                {/* <div className="flex items-center gap-2 text-[#3F503B] font-medium cursor-pointer hover:underline group-hover:text-white">
+                                {/* Uncomment if needed later
+                                <div className="flex items-center gap-2 text-[#3F503B] font-medium cursor-pointer hover:underline group-hover:text-white">
                                     <FaPlus className="text-sm" />
                                     <span>More About</span>
-                                </div> */}
+                                </div>
+                                */}
                             </div>
                         </div>
                     ))}
                 </div>
 
-                <div className="mt-12">
-                    <Link className="bg-[#3F503B] hover:bg-[#2f462f] text-white font-semibold px-8 py-3 rounded-lg shadow-md" href='/our-services'>
-                        View More
-                    </Link>
-                </div>
+                {pathname !== '/our-services' && (
+                    <div className="mt-12">
+                        <Link
+                            className="bg-[#3F503B] hover:bg-[#2f462f] text-white font-semibold px-8 py-3 rounded-lg shadow-md"
+                            href='/our-services'
+                        >
+                            View More
+                        </Link>
+                    </div>
+                )}
             </div>
         </section>
     );
