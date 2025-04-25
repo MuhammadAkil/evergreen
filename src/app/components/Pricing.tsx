@@ -133,25 +133,41 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#3F503B]" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
       <div className="container mx-auto px-4 py-12">
-        {/* Header */}
-        <div className="text-white mb-8 ml-10 text-center md:text-left">
-          <p className="text-sm md:text-base">EFFECTIVE MAY 1, 2023</p>
-          <h1 className="text-4xl md:text-5xl font-bold mt-2">PRICING LIST</h1>
-          <p className="text-xl md:text-2xl mt-1">PRICE PER GALLON</p>
-        </div>
+        <div className="flex justify-between items-start gap-6 mb-8 ml-10">
+          <div className="text-white text-left">
+            <p className="text-sm md:text-base font-instrument font-semibold leading-[100%] tracking-[0%] sm:text-[16px] md:text-[20px]">
+              EFFECTIVE MAY 1, 2023
+            </p>
 
-        {/* Estimate Card */}
-        <div>
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <h1 className="text-4xl md:text-5xl font-instrument my-2 leading-[100%]">
+              PRICING LIST
+            </h1>
+
+            <p className="text-xl md:text-2xl mt-2 font-instrument font-medium leading-[100%]">
+              PRICE PER GALLON
+            </p>
+
+          </div>
+
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 w-full">
             <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 max-w-3xl mx-auto mb-12">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                 <div className="space-y-4 flex-1">
-                  <h2 className="text-2xl md:text-3xl font-bold text-[#3b5741]">Get Your Estimate!</h2>
-                  <p className="text-gray-600">Get your own estimate by finding best offer for you!</p>
+                  <h2 className="text-2xl md:text-3xl font-instrument font-semibold text-[#3b5741] leading-[100%] tracking-[0%]">
+                    Get Your Estimate!
+                  </h2>
+
+                  <p className="text-gray-600 font-instrument font-normal text-[18px] leading-[100%]">
+                    Get your own estimate by finding best offer for you!
+                  </p>
+
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <p className="font-medium">Category</p>
+                      <p className="font-instrument font-normal text-[24px] leading-[100%] tracking-[0%]">
+                        Category
+                      </p>
+
                       <select
                         value={category}
                         onChange={(e) => setCategory(e.target.value)}
@@ -163,7 +179,10 @@ export default function Home() {
                     </div>
 
                     <div className="space-y-2">
-                      <p className="font-medium">Quantity (Gallons)</p>
+                      <p className="font-instrument font-normal text-[24px] leading-[100%] tracking-[0%]">
+                        Quantity (Gallons)
+                      </p>
+
                       <input
                         type="number"
                         value={quantity}
@@ -191,14 +210,21 @@ export default function Home() {
           </div>
         </div>
 
+
         {/* Pricing Tables */}
         <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
           {/* Holding Tanks Table */}
           <div className="bg-white rounded-xl overflow-hidden shadow-lg self-start">
             <div className="bg-[#4CAF50] text-white p-4 text-center font-bold text-xl">
               <div className="flex justify-between">
-                <span>HOLDING</span>
-                <span>TANKS</span>
+                <span className="font-inter font-semibold text-[24px] leading-[30px] tracking-[0%]">
+                  HOLDING
+                </span>
+
+                <span className="font-inter font-semibold text-[24px] leading-[30px] tracking-[0%]">
+                  TANKS
+                </span>
+
               </div>
             </div>
             <div className="divide-y">
@@ -207,8 +233,8 @@ export default function Home() {
                   key={index}
                   className={`flex justify-between p-4 ${index % 2 === 0 ? "bg-gray-100" : "bg-white"}`}
                 >
-                  <span>{item.gallons}</span>
-                  <span>{item.price}</span>
+                  <span className="font-medium">{item.gallons}</span>
+                  <span className="font-medium">{item.price}</span>
                 </div>
               ))}
             </div>
@@ -224,12 +250,15 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Septic Tanks Table */}
           <div className="bg-white rounded-xl overflow-hidden shadow-lg self-start">
             <div className="bg-[#4CAF50] text-white p-4 text-center font-bold text-xl">
               <div className="flex justify-between">
-                <span>SEPTIC</span>
-                <span>TANKS</span>
+                <span className="font-inter font-semibold text-[24px] leading-[30px] tracking-[0%]">
+                  SEPTIC
+                </span>
+                <span className="font-inter font-semibold text-[24px] leading-[30px] tracking-[0%]">
+                  TANKS
+                </span>
               </div>
             </div>
             <div className="divide-y">
@@ -238,8 +267,8 @@ export default function Home() {
                   key={index}
                   className={`flex justify-between p-4 ${index % 2 === 0 ? "bg-gray-100" : "bg-white"}`}
                 >
-                  <span>{item.gallons}</span>
-                  <span>{item.price}</span>
+                  <span className="font-medium">{item.gallons}</span>
+                  <span className="font-medium">{item.price}</span>
                 </div>
               ))}
             </div>

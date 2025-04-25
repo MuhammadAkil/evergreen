@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { Instrument_Sans } from 'next/font/google';
 
 export const metadata: Metadata = {
   title: {
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Evergreen Septic Service LLC",
     images: [
       {
-        url: "https://www.evergreensepticsvc.com/assets/images/HeroSection.png", 
+        url: "https://www.evergreensepticsvc.com/assets/images/HeroSection.png",
         width: 1200,
         height: 630,
       },
@@ -43,21 +44,27 @@ export const metadata: Metadata = {
   },
 };
 
+  const instrumentSans = Instrument_Sans({
+    subsets: ['latin'],
+    weight: ['400', '500', '600', '700'],
+  });
+
+
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
+   return (
     <html lang="en">
       <head>
         <link rel="icon" href="/fav.svg" type="image/svg+xml" />
       </head>
-      <body>
-      <Navbar/>
-      <body>{children}</body>
-      <Footer />
+      <body className={instrumentSans.className}>
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );

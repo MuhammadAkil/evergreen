@@ -15,22 +15,29 @@ export default function PricingPage() {
       <div className="max-w-3xl mx-auto p-6 mt-10 mb-10 font-sans" data-aos="fade-up"
         data-aos-anchor-placement="top-bottom">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-[#00BD00] mb-2">STDHT - $165.00</h1>
-          <p className="text-gray-800">STDHT counts as any septic tank pumped within 6 months of a pumping.</p>
+          <h1 className="text-center text-[#00BD00] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-inter font-bold mb-2" style={{ fontWeight: 700, letterSpacing: '0%' }}>
+            STDHT - $165.00
+          </h1>
+
+
+          <p className="text-gray-800 text-base md:text-lg font-inter font-medium leading-[30px]">
+            STDHT counts as any septic tank pumped within 6 months of a pumping.
+          </p>
+
         </div>
 
         <div className="space-y-4 text-center mb-8">
-          <div className="text-xl font-semibold">
+          <div className="text-xl font-medium font-instrument">
             <span className="font-bold">Grease Trap</span> - $150.00/service call and $0.21 per gallon
           </div>
 
-          <div className="text-xl font-semibold">
+          <div className="text-xl font-medium font-instrument">
             <span className="font-bold">Catch Basin</span> - $175.00/service call and $0.28 per gallon
           </div>
         </div>
 
         <div className="mb-8">
-          <h2 className="text-center text-xl font-semibold mb-4">Emergency Fees</h2>
+          <h2 className="text-center text-xl font-medium mb-4 font-instrument">Emergency Fees</h2>
           <div className="flex flex-wrap justify-center gap-4">
             <div className="flex items-center">
               <CheckSquare className="h-5 w-5 text-[#00BD00] mr-2" />

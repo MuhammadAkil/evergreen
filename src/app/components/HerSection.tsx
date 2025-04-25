@@ -54,17 +54,22 @@ export default function HerSection() {
     return (
         <>
             <div className="w-full min-h-screen flex items-center justify-center bg-cover bg-center px-4 py-25 md:pb-20 md:pt-50"
-                style={{ backgroundImage: "url('/assets/images/HeroSection.png')" }} data-aos="fade-up"
+                style={{ backgroundImage: "url('/assets/images/Home/HeroSection.png')" }} data-aos="fade-up"
                 data-aos-anchor-placement="top-bottom"
             >
                 <div className="max-w-screen-xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                     <div className="text-white">
-                        <h1 className="text-4xl md:text-5xl font-bold leading-tight whitespace-pre-line">
+                        <h1 className="text-4xl md:text-5xl font-bold leading-tight whitespace-pre-line font-instrument">
                             Reliable & Professional{"\n"}Septic Services
                         </h1>
-                        <p className="mt-4 text-lg md:text-xl">
-                            Fast, Affordable & Trusted Septic Pumping, Inspections & Repairs in Walworth County.
+                        <p className="mt-4 text-[24px] md:text-[24px] font-instrument font-normal leading-[100%] tracking-[0%]">
+                            Fast, Affordable & Trusted Septic Pumping,{" "}
+                            <span className="font-bold">
+                                Inspections & Repairs in Walworth County
+                            </span>.
                         </p>
+
+
                         <div className="text-white">
                             <div className="flex flex-wrap gap-4 my-6">
                                 {["Licensed & Insured", "Trusted & Reliable", "Fast Response Time"].map((item, index) => (
@@ -74,19 +79,23 @@ export default function HerSection() {
                                         style={{ backgroundColor: "#3F503B66" }}
                                     >
                                         <FaCheckCircle className="text-[#A4D4AE] text-lg" />
-                                        <span className="text-sm md:text-base">{item}</span>
+                                        <span className="text-sm md:text-base font-instrument font-medium text-[18px] leading-[100%] md:text-[16px]">{item}</span>
                                     </div>
                                 ))}
                             </div>
 
 
                             <div className="flex flex-col items-start gap-3">
-                                <span className="text-white font-semibold text-xl">Get a Free Quote!</span>
+                                <span className="text-white font-instrument font-semibold text-[24px] leading-[100%] tracking-[0%]">
+                                    Get a Free Quote!
+                                </span>
 
-                                <button className="flex items-center bg-[#3F503B] hover:bg-[#2f462f] text-white font-semibold px-6 py-3 rounded-lg shadow-md">
+
+                                <button className="flex items-center bg-[#3F503B] hover:bg-[#2f462f] text-white font-instrument font-semibold text-[24px] leading-[100%] tracking-[0%] px-6 py-3 rounded-lg shadow-md">
                                     <FaPhone className="text-[18px]" />
                                     <span className="px-2">262-248-4711</span>
                                 </button>
+
                             </div>
 
 
@@ -94,15 +103,18 @@ export default function HerSection() {
                     </div>
 
                     <div className="bg-white p-6 md:p-10 rounded-xl shadow-xl w-full md:w-[90%] lg:w-[80%] xl:w-[70%]">
-                        <h2 className="text-3xl font-bold text-[#3F503B] mb-3 whitespace-pre-line text-center">
-                            Book Your Free Consultation</h2>
+                        <h2 className="font-instrument font-semibold text-[#3F503B] mb-3 whitespace-pre-line text-center leading-[45px] tracking-[0%] text-[30px] md:text-[36px] sm:text-[24px]">
+                            Schedule a Call for Your Needs!
+                        </h2>
+
                         <hr className="border-t-2 border-[#3F503B] mb-4" />
 
                         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                             <div className="flex flex-col">
-                                <label className="text-sm font-bold text-gray-800 mb-1">
+                                <label className="font-instrument font-medium mb-1 text-[17px] leading-[32px] tracking-[0%]">
                                     Full Name <span className="text-red-500">*</span>
                                 </label>
+
                                 <input
                                     type="text"
                                     value={name}
@@ -113,7 +125,7 @@ export default function HerSection() {
                             </div>
 
                             <div className="flex flex-col">
-                                <label className="text-sm font-bold text-gray-800 mb-1">
+                                <label className="font-instrument font-medium mb-1 text-[17px] leading-[32px] tracking-[0%]">
                                     Phone Number <span className="text-red-500">*</span>
                                 </label>
                                 <input
@@ -126,9 +138,10 @@ export default function HerSection() {
                             </div>
 
                             <div className="flex flex-col">
-                                <label className="text-sm font-bold text-gray-800 mb-1">
+                                <label className="font-instrument font-medium mb-1 text-[17px] leading-[32px] tracking-[0%]">
                                     Type of Service <span className="text-red-500">*</span>
                                 </label>
+
                                 <select
                                     value={service}
                                     onChange={(e) => setService(e.target.value)}
@@ -143,8 +156,9 @@ export default function HerSection() {
                             </div>
 
                             <div className="flex flex-col">
-                                <label className="text-sm font-bold text-gray-800 mb-1">
-                                    Best Time for Call <span className="text-red-500">*</span>
+                                <label className="font-instrument font-medium mb-1 text-[17px] leading-[32px] tracking-[0%]">
+                                    Best Time for Call
+                                    <span className="text-red-500">*</span>
                                 </label>
                                 <div className="flex flex-wrap gap-3 md:flex-row flex-col">
                                     {["Morning", "Afternoon", "Evening"].map((time) => (
@@ -165,10 +179,11 @@ export default function HerSection() {
 
                             <button
                                 type="submit"
-                                className="w-full bg-[#3F503B] hover:bg-[#2f462f] text-white font-semibold px-6 py-3 rounded-md mt-2"
+                                className="w-full bg-[#3F503B] hover:bg-[#2f462f] text-white font-roboto font-normal text-[17px] leading-[24px] tracking-[0%] px-6 py-3 rounded-md mt-2"
                             >
                                 Request a Call
                             </button>
+
                         </form>
                     </div>
 
