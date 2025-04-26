@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react'
-import { MdAccessTime } from "react-icons/md";
+import React, { useEffect } from 'react'
+import { FaCheckCircle } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -16,12 +16,12 @@ export default function About() {
 
                     <div className="flex flex-row gap-4">
                         <img
-                            src="/assets/images/thirdsectionleftimage.png"
+                            src="/assets/images/About/LeftImage.png"
                             alt="History 1"
                             className="object-cover h-100 w-[75%]"
                         />
                         <img
-                            src="/assets/images/thirdsectionrightimage.png"
+                            src="/assets/images/About/RightImage.png"
                             alt="History 2"
                             className="shadow-lg object-cover h-100 w-[25%]"
                         />
@@ -37,21 +37,28 @@ export default function About() {
 
                     </div>
 
-                    <div className="text-white pl-20 relative z-10">
-                        <h4 className="text-sm font-semibold uppercase mb-2">
+                    <div className="text-white pl-10 relative z-10">
+                        <h4 className="text-sm font-instrument font-normal uppercase mb-2 text-[20px] leading-[100%] tracking-[0%] mb-2 sm:text-[16px] md:text-[18px] lg:text-[20px]">
                             Our History
                         </h4>
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4">About Evergreen Septic Service</h2>
-                        <h2 className="text-xl md:text-2xl mb-4">Who We Are</h2>
-                        <p className="text-gray-200 text-base leading-relaxed">
+                        <h2 className="font-instrument text-[54px] leading-[100%] tracking-[0%] mb-4 sm:text-[36px] md:text-[44px] lg:text-[54px]">
+                            About Evergreen Septic Service
+                        </h2>
+
+                        <h2 className="font-instrument text-[32px] leading-[100%] tracking-[0%] mb-4 sm:text-[24px] md:text-[32px] lg:text-[32px]">
+                            Who We Are
+                        </h2>
+
+                        <p className="font-instrument font-normal text-gray-200 text-[18px] leading-[160%] tracking-[0%] mb-4">
                             For over 15 years, Evergreen Septic Service has been providing top-notch septic solutions to homeowners and businesses in [Service Area]. We are a licensed, insured, and certified septic service provider dedicated to keeping your system running efficiently.
                         </p>
 
 
+
                         <div className="mt-6 flex flex-wrap gap-4">
                             <div className="flex items-center">
-                                <div className="bg-white p-2 rounded-l-md shadow-md">
-                                    <MdAccessTime className="text-[#3F503B] text-lg" />
+                                <div className="bg-[#E8F3E6] p-2 rounded-l-md shadow-md">
+                                    <FaCheckCircle className="text-[#3F503B] text-lg" />
                                 </div>
                                 <div className="bg-[#5D7757] text-white font-semibold text-sm px-4 py-2 rounded-r-md shadow h-[33px]">
                                     Experienced & Trusted Team
@@ -59,8 +66,8 @@ export default function About() {
                             </div>
 
                             <div className="flex items-center">
-                                <div className="bg-white p-2 rounded-l-md shadow-md">
-                                    <MdAccessTime className="text-[#3F503B] text-lg" />
+                                <div className="bg-[#E8F3E6] p-2 rounded-l-md shadow-md">
+                                    <FaCheckCircle className="text-[#3F503B] text-lg" />
                                 </div>
                                 <div className="bg-[#5D7757] text-white font-semibold text-sm px-4 py-2 rounded-r-md shadow h-[33px]">
                                     24/7 Assistance
@@ -70,8 +77,8 @@ export default function About() {
 
                         <div className="mt-6 flex flex-wrap gap-7">
                             <div className="flex items-center">
-                                <div className="bg-white p-2 rounded-l-md shadow-md">
-                                    <MdAccessTime className="text-[#3F503B] text-lg" />
+                                <div className="bg-[#E8F3E6] p-2 rounded-l-md shadow-md">
+                                    <FaCheckCircle className="text-[#3F503B] text-lg" />
                                 </div>
                                 <div className="bg-[#5D7757] text-white font-semibold text-sm px-4 py-2 rounded-r-md shadow h-[33px]">
                                     Fast & Affordable Services
@@ -79,8 +86,8 @@ export default function About() {
                             </div>
 
                             <div className="flex items-center">
-                                <div className="bg-white p-2 rounded-l-md shadow-md">
-                                    <MdAccessTime className="text-[#3F503B] text-lg" />
+                                <div className="bg-[#E8F3E6] p-2 rounded-l-md shadow-md">
+                                    <FaCheckCircle className="text-[#3F503B] text-lg" />
                                 </div>
                                 <div className="bg-[#5D7757] h-[33px] text-white font-semibold text-sm px-4 py-2 rounded-r-md shadow">
                                     Brilliant Ideas
@@ -93,13 +100,11 @@ export default function About() {
                 </div>
 
                 <img
-                    src="/assets/images/3rdsection.png"
+                    src="/assets/images/About/BgImage.png"
                     alt="Layout Background"
                     className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[300px] md:w-[600px] z-999999 pointer-events-none"
                 />
             </section>
-
-
         </>
     )
 }

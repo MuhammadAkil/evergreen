@@ -119,8 +119,16 @@
   body {
     @apply bg-background text-foreground;
   }
-  a, button{
+  a,
+  button {
     cursor: pointer;
-
   }
+}
+
+.font-instrument {
+  font-family: "Instrument Sans", sans-serif;
+}
+
+.font-gilroy {
+  font-family: "Gilroy", sans-serif;
 }

@@ -10,12 +10,13 @@ export default function SepticHero() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: false });
   }, []);
+ 
   return (
     <div className="relative" data-aos="fade-up"
       data-aos-anchor-placement="top-bottom">
       <div className="relative h-[500px] w-full">
         <Image
-          src="/assets/images/Group 39285.png"
+          src="/assets/images/Banner/bgImage.png"
           alt="Septic system maintenance"
           fill
           className="object-cover brightness-[0.85]"
@@ -43,16 +44,17 @@ export default function SepticHero() {
 
         {/* Hero Content */}
         <div className="absolute inset-0 flex flex-col justify-center px-6 md:px-12 lg:px-16">
-          <h1 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold max-w-3xl leading-tight">
+          <h1 className="text-white text-3xl md:text-4xl lg:text-5xl max-w-3xl leading-tight font-instrument font-medium">
             Maintain your septic system with our reliable and efficient solutions.
           </h1>
 
           <Link href="/contact-us">
             <div className="mt-8">
-              <Button className="bg-red-500 cursor-pointer hover:bg-red-600 text-white px-6 py-6 rounded-md text-lg font-medium">
+              <Button className="bg-red-500 cursor-pointer hover:bg-red-600 text-white px-6 py-6 rounded-md text-[24px] font-instrument font-bold leading-[100%] md:text-[24px]">
                 <Rocket className="mr-2 h-5 w-5" />
                 GET A FREE QUOTE
               </Button>
+
             </div>
           </Link>
         </div>
@@ -62,22 +64,22 @@ export default function SepticHero() {
         <div className="bg-white rounded-lg shadow-lg p-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           <div className="flex flex-col">
             <span className="text-3xl md:text-4xl font-bold text-gray-800">3400+</span>
-            <span className="text-sm text-gray-500 mt-1">Complete Projects</span>
+            <span className="text-sm text-gray-500 mt-1 font-instrument">Complete Projects</span>
           </div>
 
           <div className="flex flex-col">
             <span className="text-3xl md:text-4xl font-bold text-gray-800">6,820</span>
-            <span className="text-sm text-gray-500 mt-1">Happy Clients</span>
+            <span className="text-sm text-gray-500 mt-1 font-instrument">Happy Clients</span>
           </div>
 
           <div className="flex flex-col">
             <span className="text-3xl md:text-4xl font-bold text-gray-800">270+</span>
-            <span className="text-sm text-gray-500 mt-1">Dealer Equipments</span>
+            <span className="text-sm text-gray-500 mt-1 font-instrument">Dealer Equipments</span>
           </div>
 
           <div className="flex flex-col">
             <span className="text-3xl md:text-4xl font-bold text-gray-800">15+</span>
-            <span className="text-sm text-gray-500 mt-1">Years of Experience</span>
+            <span className="text-sm text-gray-500 mt-1 font-instrument">Years of Experience</span>
           </div>
         </div>
       </div>

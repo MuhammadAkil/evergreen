@@ -15,17 +15,27 @@ export default function Slider() {
                 </div>
 
                 <div className="max-w-7xl mx-auto px-4 relative z-10">
-                    <p className="text-sm font-semibold text-[#3F503B] uppercase mb-2">Testimonials</p>
-                    <h2 className="text-4xl font-semibold text-black mb-12">What Our Clients Say</h2>
+                    <p className="text-sm font-instrument font-bold text-[#3F503B] uppercase mb-2 text-[20px] md:text-[20px]">
+                        Testimonials
+                    </p>
+
+                    <h2 className="font-instrument font-normal text-[32px] text-black mb-12 md:text-[48px] lg:text-[54px]">
+                        What Our Clients Say
+                    </h2>
+
 
                     <div className="grid md:grid-cols-3 gap-6">
                         <div className="group bg-white border border-transparent p-6 rounded-lg shadow-sm hover:bg-[#e8f3e6] hover:border-[#3F503B] hover:shadow-md transition-all duration-300">
-                            <h3 className="font-semibold text-black group-hover:text-[#3F503B] mb-3">The Best Septic Services</h3>
-                            <p className="text-[#696969] text-sm mb-6">
+                            <h3 className="font-gilroy font-bold text-[#000000] text-[20.38px] sm:text-[18px] leading-[25.94px] group-hover:text-[#3F503B] mb-3">
+                                The Best Septic Services
+                            </h3>
+
+                            <p className="font-instrument text-[#696969] text-[16.67px] leading-[27.79px] mb-6 sm:text-[14px] sm:leading-[22px]">
                                 "I highly recommend this company. Jon and his crew provided outstanding service when they came
                                 out to help my parents with their septic tank. They were very honest and open to work with! Thank
                                 you for your help!"
                             </p>
+
                             <div className="flex items-center gap-3">
                                 <img
                                     src="https://randomuser.me/api/portraits/women/65.jpg"
@@ -40,12 +50,15 @@ export default function Slider() {
                         </div>
 
                         <div className="group bg-white border border-transparent p-6 rounded-lg shadow-sm hover:bg-[#e8f3e6] hover:border-[#3F503B] hover:shadow-md transition-all duration-300">
-                            <h3 className="font-semibold text-black group-hover:text-[#3F503B] mb-3">The Best Septic Services</h3>
-                            <p className="text-[#696969] text-sm mb-6">
+                            <h3 className="font-gilroy font-bold text-[#000000] text-[20.38px] sm:text-[18px] leading-[25.94px] group-hover:text-[#3F503B] mb-3">
+                                The Best Septic Services
+                            </h3>
+                            <p className="font-instrument text-[#696969] text-[16.67px] leading-[27.79px] mb-6 sm:text-[14px] sm:leading-[22px]">
                                 "I highly recommend this company. Jon and his crew provided outstanding service when they came
                                 out to help my parents with their septic tank. They were very honest and open to work with! Thank
                                 you for your help!"
                             </p>
+
                             <div className="flex items-center gap-3">
                                 <img
                                     src="https://randomuser.me/api/portraits/women/65.jpg"
@@ -60,12 +73,15 @@ export default function Slider() {
                         </div>
 
                         <div className="group bg-white border border-transparent p-6 rounded-lg shadow-sm hover:bg-[#e8f3e6] hover:border-[#3F503B] hover:shadow-md transition-all duration-300">
-                            <h3 className="font-semibold text-black group-hover:text-[#3F503B] mb-3">The Best Septic Services</h3>
-                            <p className="text-[#696969] text-sm mb-6">
+                            <h3 className="font-gilroy font-bold text-[#000000] text-[20.38px] sm:text-[18px] leading-[25.94px] group-hover:text-[#3F503B] mb-3">
+                                The Best Septic Services
+                            </h3>
+                            <p className="font-instrument text-[#696969] text-[16.67px] leading-[27.79px] mb-6 sm:text-[14px] sm:leading-[22px]">
                                 "I highly recommend this company. Jon and his crew provided outstanding service when they came
                                 out to help my parents with their septic tank. They were very honest and open to work with! Thank
                                 you for your help!"
                             </p>
+
                             <div className="flex items-center gap-3">
                                 <img
                                     src="https://randomuser.me/api/portraits/women/65.jpg"
