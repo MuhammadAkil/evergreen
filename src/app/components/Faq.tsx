@@ -51,7 +51,7 @@ const FAQSection = () => {
                                     onClick={() => toggleAccordion(index)}
                                     className="flex justify-between items-center p-6 cursor-pointer"
                                 >
-                                    <h3 className="text-xl  text-[#3F503B]">{item.question}</h3>
+                                    <h3 className="text-xl font-instrument text-black">{item.question}</h3>
                                     <span className={`p-2 rounded-full transition-colors duration-300 ${open === index ? 'bg-[#3F503B] text-white' : 'bg-transparent'}`}>
                                         {open === index ? (
                                             <FaChevronUp />
@@ -75,19 +75,37 @@ const FAQSection = () => {
                     <div className="w-full max-w-7xl bg-white rounded-lg shadow-sm p-6 md:p-8">
                         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                             <div className="text-left">
-                                <h2 className="text-xl font-semibold text-gray-800">Didn't find your answer?</h2>
-                                <p className="text-gray-600 mt-1">We are here to help!</p>
-                                <p className="text-gray-700 mt-2">
+                                <h2 className="font-instrument font-semibold text-gray-800 text-[24px] sm:text-[20px] md:text-[24px] lg:text-[28px]">
+                                    Didn't find your answer?
+                                </h2>
+
+                                <p className="font-instrument text-gray-600 text-[14px] sm:text-[16px] md:text-[14px] mt-1">
+                                    We are here to help!
+                                </p>
+                                <p className="text-black mt-2">
                                     email us at{" "}
-                                    <Link href="mailto:info@evergreenseptics.com" className="text-gray-900 hover:underline">
+                                    <Link
+                                        href="mailto:info@evergreenseptics.com"
+                                        className="font-instrument font-semibold text-[16px] text-[#3F503B] hover:underline"
+                                    >
                                         info@evergreenseptics.com
                                     </Link>
                                 </p>
+
                             </div>
                             <Link href='/contact-us'>
-                                <Button className="bg-red-500 cursor-pointer hover:bg-red-600 text-white font-medium px-6 py-2 rounded w-full md:w-auto">
+                                <Button
+                                    className="bg-red-500 cursor-pointer hover:bg-red-600 text-white font-medium px-6 py-2 rounded w-full md:w-auto text-sm md:text-base lg:text-lg"
+                                    style={{
+                                        fontFamily: "'Lorin', sans-serif",
+                                        fontWeight: '500',
+                                        fontSize: '14px',
+                                    }}
+                                >
                                     CONTACT CUSTOMER CARE
                                 </Button>
+
+
                             </Link>
                         </div>
                     </div>

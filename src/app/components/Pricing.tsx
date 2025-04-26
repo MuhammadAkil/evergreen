@@ -133,38 +133,36 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#3F503B]" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
       <div className="container mx-auto px-4 py-12">
-        <div className="flex justify-between items-start gap-6 mb-8 ml-10">
-          <div className="text-white text-left">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-8 ml-4 md:ml-10">
+          <div className="text-white text-left w-full md:w-auto">
             <p className="text-sm md:text-base font-instrument font-semibold leading-[100%] tracking-[0%] sm:text-[16px] md:text-[20px]">
               EFFECTIVE MAY 1, 2023
             </p>
 
-            <h1 className="text-4xl md:text-5xl font-instrument my-2 leading-[100%]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-instrument my-2 leading-[100%]">
               PRICING LIST
             </h1>
 
-            <p className="text-xl md:text-2xl mt-2 font-instrument font-medium leading-[100%]">
+            <p className="text-lg sm:text-xl md:text-2xl mt-2 font-instrument font-medium leading-[100%]">
               PRICE PER GALLON
             </p>
-
           </div>
 
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 w-full">
-            <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 max-w-3xl mx-auto mb-12">
+          <div className="flex flex-col w-full">
+            <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 md:p-8 max-w-full md:max-w-3xl mx-auto mb-8 md:mb-12">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-                <div className="space-y-4 flex-1">
-                  <h2 className="text-2xl md:text-3xl font-instrument font-semibold text-[#3b5741] leading-[100%] tracking-[0%]">
+                <div className="space-y-4 flex-1 w-full">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-instrument font-semibold text-[#3b5741] leading-[100%] tracking-[0%]">
                     Get Your Estimate!
                   </h2>
 
-                  <p className="text-gray-600 font-instrument font-normal text-[18px] leading-[100%]">
+                  <p className="text-gray-600 font-instrument font-normal text-[16px] sm:text-[18px] leading-[100%]">
                     Get your own estimate by finding best offer for you!
                   </p>
 
-
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <p className="font-instrument font-normal text-[24px] leading-[100%] tracking-[0%]">
+                      <p className="font-instrument font-normal text-[20px] sm:text-[24px] leading-[100%] tracking-[0%]">
                         Category
                       </p>
 
@@ -179,7 +177,7 @@ export default function Home() {
                     </div>
 
                     <div className="space-y-2">
-                      <p className="font-instrument font-normal text-[24px] leading-[100%] tracking-[0%]">
+                      <p className="font-instrument font-normal text-[20px] sm:text-[24px] leading-[100%] tracking-[0%]">
                         Quantity (Gallons)
                       </p>
 
@@ -194,13 +192,13 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="flex flex-col items-center gap-4">
-                  <div className="text-[#4CAF50] text-3xl md:text-4xl font-bold">
+                <div className="flex flex-col items-center gap-4 w-full md:w-auto">
+                  <div className="text-[#4CAF50] text-2xl sm:text-3xl md:text-4xl font-bold">
                     {price !== null ? `$ ${price.toFixed(2)}` : '--'}
                   </div>
                   <Button
                     onClick={handleEstimate}
-                    className="bg-[#4CAF50] hover:bg-green-600 text-white px-8"
+                    className="bg-[#4CAF50] hover:bg-green-600 text-white px-6 sm:px-8 w-full md:w-auto"
                   >
                     Get Now
                   </Button>
@@ -210,21 +208,16 @@ export default function Home() {
           </div>
         </div>
 
-
-        {/* Pricing Tables */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-          {/* Holding Tanks Table */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto px-4 sm:px-6">
           <div className="bg-white rounded-xl overflow-hidden shadow-lg self-start">
             <div className="bg-[#4CAF50] text-white p-4 text-center font-bold text-xl">
               <div className="flex justify-between">
-                <span className="font-inter font-semibold text-[24px] leading-[30px] tracking-[0%]">
+                <span className="font-inter font-semibold text-[20px] sm:text-[24px] leading-[30px] tracking-[0%]">
                   HOLDING
                 </span>
-
-                <span className="font-inter font-semibold text-[24px] leading-[30px] tracking-[0%]">
+                <span className="font-inter font-semibold text-[20px] sm:text-[24px] leading-[30px] tracking-[0%]">
                   TANKS
                 </span>
-
               </div>
             </div>
             <div className="divide-y">
@@ -233,8 +226,8 @@ export default function Home() {
                   key={index}
                   className={`flex justify-between p-4 ${index % 2 === 0 ? "bg-gray-100" : "bg-white"}`}
                 >
-                  <span className="font-medium">{item.gallons}</span>
-                  <span className="font-medium">{item.price}</span>
+                  <span className="font-medium text-sm sm:text-base">{item.gallons}</span>
+                  <span className="font-medium text-sm sm:text-base">{item.price}</span>
                 </div>
               ))}
             </div>
@@ -253,10 +246,10 @@ export default function Home() {
           <div className="bg-white rounded-xl overflow-hidden shadow-lg self-start">
             <div className="bg-[#4CAF50] text-white p-4 text-center font-bold text-xl">
               <div className="flex justify-between">
-                <span className="font-inter font-semibold text-[24px] leading-[30px] tracking-[0%]">
+                <span className="font-inter font-semibold text-[20px] sm:text-[24px] leading-[30px] tracking-[0%]">
                   SEPTIC
                 </span>
-                <span className="font-inter font-semibold text-[24px] leading-[30px] tracking-[0%]">
+                <span className="font-inter font-semibold text-[20px] sm:text-[24px] leading-[30px] tracking-[0%]">
                   TANKS
                 </span>
               </div>
@@ -267,8 +260,8 @@ export default function Home() {
                   key={index}
                   className={`flex justify-between p-4 ${index % 2 === 0 ? "bg-gray-100" : "bg-white"}`}
                 >
-                  <span className="font-medium">{item.gallons}</span>
-                  <span className="font-medium">{item.price}</span>
+                  <span className="font-medium text-sm sm:text-base">{item.gallons}</span>
+                  <span className="font-medium text-sm sm:text-base">{item.price}</span>
                 </div>
               ))}
             </div>
@@ -284,6 +277,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+
       </div>
     </main>
   );

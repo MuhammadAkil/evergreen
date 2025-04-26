@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { FaCheckCircle, FaPhone } from "react-icons/fa";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { toast } from 'react-toastify';
 
 export default function HerSection() {
     const [name, setName] = useState('');
@@ -36,7 +37,7 @@ export default function HerSection() {
                 body: JSON.stringify(formData),
             });
 
-            alert('Request submitted successfully!');
+            toast.success('Request submitted successfully!');
             setName('');
             setPhone('');
             setService('');
@@ -44,7 +45,7 @@ export default function HerSection() {
         }
 
         catch (error) {
-            alert('Something went wrong!');
+            toast.error('Something went wrong!')
             console.error(error);
         }
     };

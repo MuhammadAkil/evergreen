@@ -3,6 +3,8 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Instrument_Sans } from 'next/font/google';
+import { ToastContainer } from 'react-toastify'; 
+import 'react-toastify/dist/ReactToastify.css'; 
 
 export const metadata: Metadata = {
   title: {
@@ -44,27 +46,38 @@ export const metadata: Metadata = {
   },
 };
 
-  const instrumentSans = Instrument_Sans({
-    subsets: ['latin'],
-    weight: ['400', '500', '600', '700'],
-  });
-
-
+const instrumentSans = Instrument_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+});
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-   return (
+  return (
     <html lang="en">
       <head>
         <link rel="icon" href="/fav.svg" type="image/svg+xml" />
+        <link href="https://fonts.googleapis.com/css2?family=Gilroy:wght@400&display=swap" rel="stylesheet"/>
       </head>
-      <body className={instrumentSans.className}>
+      <body className={`${instrumentSans.className} font-sans`}>
         <Navbar />
         {children}
         <Footer />
+
+        <ToastContainer 
+          position="top-center"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
       </body>
     </html>
   );
