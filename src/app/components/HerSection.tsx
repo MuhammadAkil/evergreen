@@ -111,7 +111,7 @@ export default function HerSection() {
 
                     {/* Right Section - Form */}
                     <div className="bg-white p-6 md:p-10 rounded-xl shadow-xl w-full md:w-[90%] lg:w-[80%] xl:w-[70%]">
-                        <h2 className="font-instrument font-semibold text-[#3F503B] mb-3 text-center leading-[45px] text-[30px] md:text-[36px]">Quick Help? Call Now</h2>
+                        <h2 className="font-instrument font-semibold text-[#3F503B] mb-3 text-center leading-[45px] text-[30px] md:text-[36px]">Need Service? Let's Talk</h2>
 
                         <hr className="border-t-2 border-[#3F503B] mb-4" />
 

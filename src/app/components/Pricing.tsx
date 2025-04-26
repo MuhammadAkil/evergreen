@@ -136,7 +136,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-8 ml-4 md:ml-10">
           <div className="text-white text-left w-full md:w-auto">
             <p className="text-sm md:text-base font-instrument font-semibold leading-[100%] tracking-[0%] sm:text-[16px] md:text-[20px]">
-              EFFECTIVE MAY 1, 2023
+              EFFECTIVE April 1, 2025
             </p>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-instrument my-2 leading-[100%]">
