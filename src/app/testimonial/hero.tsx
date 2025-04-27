@@ -11,8 +11,7 @@ export default function Hero() {
 
     return (
         <>
-
-            <div className="relative w-full h-[400px] overflow-hidden">
+          <div className="relative w-full h-[400px] overflow-hidden">
                 <img
                     src="/assets/images/ContactUs/bgImage.png"
                     alt="Background Image"
@@ -56,11 +55,11 @@ export default function Hero() {
                                 alt="Septic Service"
                                 className="w-full h-56 object-cover rounded-t-lg"
                             />
-                            <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2">
+                            {/* <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2">
                                 <button className="bg-[#4CAF50] text-white px-4 py-2 rounded-md shadow-md">
                                     View More Photos
                                 </button>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="p-4 text-center">
                             <h3 className="font-[700] text-[22px] text-[#3F503B] mb-2 font-instrument font-medium md:text-[20px] sm:text-[18px] xs:text-[16px]">
@@ -90,11 +89,11 @@ export default function Hero() {
                                 alt="Septic Service"
                                 className="w-full h-56 object-cover rounded-t-lg"
                             />
-                            <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2">
+                            {/* <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2">
                                 <button className="bg-[#4CAF50] text-white px-4 py-2 rounded-md shadow-md">
                                     View More Photos
                                 </button>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="p-4 text-center">
                             <h3 className="font-[700] text-[22px] text-[#3F503B] mb-2 font-instrument font-medium md:text-[20px] sm:text-[18px] xs:text-[16px]">
@@ -128,11 +127,11 @@ export default function Hero() {
                                 alt="Septic Service"
                                 className="w-full h-56 object-cover rounded-t-lg"
                             />
-                            <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2">
+                            {/* <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2">
                                 <button className="bg-[#4CAF50] text-white px-4 py-2 rounded-md shadow-md">
                                     View More Photos
                                 </button>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="p-4 text-center">
 
@@ -162,11 +161,11 @@ export default function Hero() {
                                 alt="Septic Service"
                                 className="w-full h-56 object-cover rounded-t-lg"
                             />
-                            <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2">
+                            {/* <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2">
                                 <button className="bg-[#4CAF50] text-white px-4 py-2 rounded-md shadow-md">
                                     View More Photos
                                 </button>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="p-4 text-center">
                             <h3 className="font-[700] text-[22px] text-[#3F503B] mb-2 font-instrument font-medium md:text-[20px] sm:text-[18px] xs:text-[16px]">

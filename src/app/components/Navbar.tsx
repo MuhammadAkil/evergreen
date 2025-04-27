@@ -15,6 +15,7 @@ export default function Navbar() {
         { name: 'About Us', path: '/about-us' },
         { name: 'Our Services', path: '/our-services' },
         { name: 'Testimonials', path: '/testimonial' },
+        { name: 'Pricing', path: '/pricing' },
         { name: 'Contact', path: '/contact-us' }
     ];
 
@@ -119,7 +120,6 @@ export default function Navbar() {
                         <div className="flex justify-center py-4">
                             <div className="bg-[#EF4444] text-white px-5 py-3 rounded-md font-bold text-[16px] flex items-center gap-2 shadow-md">
                                 <FaPhone className="text-[18px]" />
-                                {/* <span>262-248-4711</span> */}
                                 <a href="tel:262-248-4711">262-248-4711</a>
                             </div>
                         </div>

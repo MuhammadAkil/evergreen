@@ -143,9 +143,9 @@ export default function Footer() {
                 </div>
                 <div>
                   <div className="font-medium">Call Us</div>
-                  <a href="tel:+12622484711" className="text-sm hover:underline">
+                  <Link href="tel:+12622484711" className="text-sm hover:underline">
                     +1 262-248-4711
-                  </a>
+                  </Link>
                 </div>
               </div>
 
@@ -191,12 +191,12 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" className="hover:underline">
+                  <Link href="/pricing" className="hover:underline">
                     Offers
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" className="hover:underline">
+                  <Link href="/pricing" className="hover:underline">
                     Pricing
                   </Link>
                 </li>
@@ -231,7 +231,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" className="hover:underline">
+                  <Link href="/pricing" className="hover:underline">
                     Estimation Calculator
                   </Link>
                 </li>
