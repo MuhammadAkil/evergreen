@@ -304,9 +304,9 @@ export default function Hero() {
                         </p>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 mt-8 text-sm text-center">
-                            <div className="flex items-center">
+                            <div className="flex items-center h-42">
                                 <div className="bg-[#E8F3E6] p-2 rounded-l-md shadow-md">
-                                    <MdAccessTime className="text-[#3F503B] text-lg" />
+                                    <FaCheckCircle className="text-[#3F503B] text-lg" />
                                 </div>
                                 <div className="bg-[#5D7757] text-white text-base font-medium px-4 py-2 rounded-r-md shadow w-full text-center">
                                     Eco-Friendly Solutions
@@ -314,7 +314,7 @@ export default function Hero() {
                             </div>
                             <div className="flex items-center">
                                 <div className="bg-[#E8F3E6] p-2 rounded-l-md shadow-md">
-                                    <MdAccessTime className="text-[#3F503B] text-lg" />
+                                    <FaCheckCircle className="text-[#3F503B] text-lg" />
                                 </div>
                                 <div className="bg-[#5D7757] text-white text-base font-medium px-4 py-2 rounded-r-md shadow w-full text-center">
                                     Affordable Pricing
@@ -323,7 +323,7 @@ export default function Hero() {
 
                             <div className="flex items-center">
                                 <div className="bg-[#E8F3E6] p-2 rounded-l-md shadow-md">
-                                    <MdAccessTime className="text-[#3F503B] text-lg" />
+                                    <FaCheckCircle className="text-[#3F503B] text-lg" />
                                 </div>
                                 <div className="bg-[#5D7757] text-white text-base font-medium px-4 py-2 rounded-r-md shadow w-full text-center">
                                     Advanced Technology
@@ -331,7 +331,7 @@ export default function Hero() {
                             </div>
                             <div className="flex items-center">
                                 <div className="bg-[#E8F3E6] p-2 rounded-l-md shadow-md">
-                                    <MdAccessTime className="text-[#3F503B] text-lg" />
+                                    <FaCheckCircle className="text-[#3F503B] text-lg" />
                                 </div>
                                 <div className="bg-[#5D7757] text-white text-base font-medium px-4 py-2 rounded-r-md shadow w-full text-left">
                                     Customer Satisfaction

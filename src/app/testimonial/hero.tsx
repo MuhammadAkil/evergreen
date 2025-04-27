@@ -167,17 +167,17 @@ export default function Hero() {
 
                 </div>
 
-                <div className="flex justify-center items-center my-10">
+                {/* <div className="flex justify-center items-center my-10">
                     <div className="flex items-center">
                         <button className="bg-[#3F503B] text-white px-4 py-2 rounded-md shadow-md">
                             View More Photos
                         </button>
                     </div>
-                </div>
+                </div> */}
 
             </section>
 
-            <section data-aos="fade-up">
+            <section data-aos="fade-up" className='pt-10'>
                 <div className="relative w-full bg-[#3F503B] py-10">
                     <div className="relative mx-auto max-w-4xl -mt-16 px-4">
                         <div className="bg-white rounded-lg shadow-[0_-20px_22px_rgba(0,0,0,0.1)] p-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
