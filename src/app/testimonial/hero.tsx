@@ -55,7 +55,7 @@ export default function Hero() {
                     <div className="rounded-lg overflow-hidden border shadow-sm">
                         <div className="relative">
                             <img
-                                src="/assets/images/card1T.png"
+                                src="/assets/images/Testominal/card1T.png"
                                 alt="Septic Service"
                                 className="w-full h-56 object-cover rounded-t-lg"
                             />
@@ -66,10 +66,14 @@ export default function Hero() {
                             </div>
                         </div>
                         <div className="p-4 text-center">
-                            <h3 className="text-base font-semibold text-[#3F503B] mb-2">The Best Septic Services</h3>
-                            <p className="text-[#696969] text-sm mb-4">
+                            <h3 className="font-[700] text-[22px] text-[#3F503B] mb-2 font-instrument font-medium md:text-[20px] sm:text-[18px] xs:text-[16px]">
+                                The Best Septic Services
+                            </h3>
+
+                            <p className="font-instrument font-[400] text-[18px] leading-[30px] text-[#696969] mb-4 md:text-[16px] sm:text-[14px] xs:text-[13px]">
                                 "I highly recommend this company. Jon and his crew provided outstanding service when they came out to help my parents with their septic tank. They were very honest and open to work with! Thank you for your help!!"
                             </p>
+
                             <div className="flex flex-col items-center">
                                 <img
                                     src="https://randomuser.me/api/portraits/women/65.jpg"
@@ -85,7 +89,7 @@ export default function Hero() {
                     <div className="rounded-lg overflow-hidden border shadow-sm">
                         <div className="relative">
                             <img
-                                src="/assets/images/card2T.png"
+                                src="/assets/images/Testominal/card2T.png"
                                 alt="Septic Service"
                                 className="w-full h-56 object-cover rounded-t-lg"
                             />
@@ -96,9 +100,11 @@ export default function Hero() {
                             </div>
                         </div>
                         <div className="p-4 text-center">
-                            <h3 className="text-base font-semibold text-[#3F503B] mb-2">Outstanding Experience</h3>
-                            <p className="text-[#696969] text-sm mb-4">
-                                "Amazing service! Very friendly and knowledgeable team. They cleaned our tank quickly and explained everything clearly. Highly satisfied!"
+                            <h3 className="font-[700] text-[22px] text-[#3F503B] mb-2 font-instrument font-medium md:text-[20px] sm:text-[18px] xs:text-[16px]">
+                                Outstanding Experience
+                            </h3>
+                            <p className="font-instrument font-[400] text-[18px] leading-[30px] text-[#696969] mb-4 md:text-[16px] sm:text-[14px] xs:text-[13px]">
+                                "I highly recommend this company. Jon and his crew provided outstanding service when they came out to help my parents with their septic tank. They were very honest and open to work with! Thank you for your help!!"
                             </p>
                             <div className="flex flex-col items-center">
                                 <img
@@ -121,7 +127,7 @@ export default function Hero() {
                     <div className="rounded-lg overflow-hidden border shadow-sm">
                         <div className="relative">
                             <img
-                                src="/assets/images/card3T.png"
+                                src="/assets/images/Testominal/card3T.png"
                                 alt="Septic Service"
                                 className="w-full h-56 object-cover rounded-t-lg"
                             />
@@ -132,10 +138,14 @@ export default function Hero() {
                             </div>
                         </div>
                         <div className="p-4 text-center">
-                            <h3 className="text-base font-semibold text-[#3F503B] mb-2">The Best Septic Services</h3>
-                            <p className="text-[#696969] text-sm mb-4">
+
+                            <h3 className="font-[700] text-[22px] text-[#3F503B] mb-2 font-instrument font-medium md:text-[20px] sm:text-[18px] xs:text-[16px]">
+                                The Best Septic Services
+                            </h3>
+                            <p className="font-instrument font-[400] text-[18px] leading-[30px] text-[#696969] mb-4 md:text-[16px] sm:text-[14px] xs:text-[13px]">
                                 "I highly recommend this company. Jon and his crew provided outstanding service when they came out to help my parents with their septic tank. They were very honest and open to work with! Thank you for your help!!"
                             </p>
+
                             <div className="flex flex-col items-center">
                                 <img
                                     src="https://randomuser.me/api/portraits/women/65.jpg"
@@ -151,7 +161,7 @@ export default function Hero() {
                     <div className="rounded-lg overflow-hidden border shadow-sm">
                         <div className="relative">
                             <img
-                                src="/assets/images/card4T.png"
+                                src="/assets/images/Testominal/card4T.png"
                                 alt="Septic Service"
                                 className="w-full h-56 object-cover rounded-t-lg"
                             />
@@ -162,9 +172,11 @@ export default function Hero() {
                             </div>
                         </div>
                         <div className="p-4 text-center">
-                            <h3 className="text-base font-semibold text-[#3F503B] mb-2">Outstanding Experience</h3>
-                            <p className="text-[#696969] text-sm mb-4">
-                                "Amazing service! Very friendly and knowledgeable team. They cleaned our tank quickly and explained everything clearly. Highly satisfied!"
+                            <h3 className="font-[700] text-[22px] text-[#3F503B] mb-2 font-instrument font-medium md:text-[20px] sm:text-[18px] xs:text-[16px]">
+                                Outstanding Experience
+                            </h3>
+                            <p className="font-instrument font-[400] text-[18px] leading-[30px] text-[#696969] mb-4 md:text-[16px] sm:text-[14px] xs:text-[13px]">
+                                "I highly recommend this company. Jon and his crew provided outstanding service when they came out to help my parents with their septic tank. They were very honest and open to work with! Thank you for your help!!"
                             </p>
                             <div className="flex flex-col items-center">
                                 <img

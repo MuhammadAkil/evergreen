@@ -18,14 +18,15 @@ export default function Hero() {
 
     return (
         <>
+ 
             <div className="relative w-full h-[400px] overflow-hidden">
                 <img
-                    src="/assets/images/Rectangle 30139.png"
+                    src="/assets/images/ContactUs/bgImage.png"
                     alt="Background Image"
                     className="w-full h-full object-cover"
                 />
                 <img
-                    src="/assets/images/Mask group.png"
+                    src="/assets/images/ContactUs/WhiteBg.png"
                     alt="Mask Overlay"
                     className="w-[50%] h-[161%] object-cover absolute top-4 left-0 z-10"
                 />
