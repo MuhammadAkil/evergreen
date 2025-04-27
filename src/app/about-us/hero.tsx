@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef  } from 'react';
 import { MdAccessTime } from "react-icons/md";
 import { FaPumpSoap, FaTools, FaSearch, FaHardHat, FaLeaf, FaBell } from 'react-icons/fa';
 import { Mail, Phone } from "lucide-react"
@@ -8,17 +8,28 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Link from "next/link"
 import Image from "next/image"
+import useEmblaCarousel from "embla-carousel-react";
 
 export default function Hero() {
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
     useEffect(() => {
         AOS.init({ duration: 1000, once: false });
-    }, []);
+
+        const intervalId = setInterval(() => {
+            if (emblaApi) {
+              emblaApi.scrollNext();
+            }
+          }, 3000);
+      
+          return () => clearInterval(intervalId);
+    }, [emblaApi]);
+
 
 
     return (
         <>
- 
+
             <div className="relative w-full h-[400px] overflow-hidden">
                 <img
                     src="/assets/images/ContactUs/bgImage.png"
@@ -505,84 +516,166 @@ export default function Hero() {
                         What Our Clients Say
                     </h2>
 
+                    <div className="w-full">
+                        <div className="overflow-hidden" ref={emblaRef}>
+                            <div className="flex">
 
-                    <div className="grid md:grid-cols-3 gap-6">
-                        <div className="group bg-white border border-transparent p-6 rounded-lg shadow-sm hover:bg-[#e8f3e6] hover:border-[#3F503B] hover:shadow-md transition-all duration-300">
-                            <h3 className="font-gilroy font-bold text-[#000000] text-[20.38px] sm:text-[18px] leading-[25.94px] group-hover:text-[#3F503B] mb-3">
-                                The Best Septic Services
-                            </h3>
-
-                            <p className="font-instrument text-[#696969] text-[16.67px] leading-[27.79px] mb-6 sm:text-[14px] sm:leading-[22px]">
-                                "I highly recommend this company. Jon and his crew provided outstanding service when they came
-                                out to help my parents with their septic tank. They were very honest and open to work with! Thank
-                                you for your help!"
-                            </p>
-
-                            <div className="flex items-center gap-3">
-                                <img
-                                    src="https://randomuser.me/api/portraits/women/65.jpg"
-                                    className="w-10 h-10 rounded-full"
-                                    alt="Giovanni C"
-                                />
-                                <div>
-                                    <p className="font-semibold text-sm text-black group-hover:text-[#3F503B]">Giovanni C</p>
-                                    <p className="text-xs text-gray-500">Brooklyns NY</p>
+                                {/* Card 1 */}
+                                <div className="flex-[0_0_100%] md:flex-[0_0_33.3333%] p-3">
+                                    <div className="group bg-white border border-transparent p-6 rounded-lg shadow-sm hover:bg-[#e8f3e6] hover:border-[#3F503B] hover:shadow-md transition-all duration-300 h-full">
+                                        <h3 className="font-gilroy font-bold text-[#000000] text-[20.38px] sm:text-[18px] leading-[25.94px] group-hover:text-[#3F503B] mb-3">
+                                            The Best Septic Services
+                                        </h3>
+                                        <p className="font-instrument text-[#696969] text-[16.67px] leading-[27.79px] mb-6 sm:text-[14px] sm:leading-[22px]">
+                                            "I highly recommend this company. Jon and his crew provided outstanding service when they came
+                                            out to help my parents with their septic tank. They were very honest and open to work with! Thank
+                                            you for your help!"
+                                        </p>
+                                        <div className="flex items-center gap-3">
+                                            <img
+                                                src="https://randomuser.me/api/portraits/women/65.jpg"
+                                                className="w-10 h-10 rounded-full"
+                                                alt="Giovanni C"
+                                            />
+                                            <div>
+                                                <p className="font-semibold text-sm text-black group-hover:text-[#3F503B]">Giovanni C</p>
+                                                <p className="text-xs text-gray-500">Brooklyns NY</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+
+                                {/* Card 2 */}
+                                <div className="flex-[0_0_100%] md:flex-[0_0_33.3333%] p-3">
+                                    <div className="group bg-white border border-transparent p-6 rounded-lg shadow-sm hover:bg-[#e8f3e6] hover:border-[#3F503B] hover:shadow-md transition-all duration-300 h-full">
+                                        <h3 className="font-gilroy font-bold text-[#000000] text-[20.38px] sm:text-[18px] leading-[25.94px] group-hover:text-[#3F503B] mb-3">
+                                            The Best Septic Services
+                                        </h3>
+                                        <p className="font-instrument text-[#696969] text-[16.67px] leading-[27.79px] mb-6 sm:text-[14px] sm:leading-[22px]">
+                                            "I highly recommend this company. Jon and his crew provided outstanding service when they came
+                                            out to help my parents with their septic tank. They were very honest and open to work with! Thank
+                                            you for your help!"
+                                        </p>
+                                        <div className="flex items-center gap-3">
+                                            <img
+                                                src="https://randomuser.me/api/portraits/women/65.jpg"
+                                                className="w-10 h-10 rounded-full"
+                                                alt="Giovanni C"
+                                            />
+                                            <div>
+                                                <p className="font-semibold text-sm text-black group-hover:text-[#3F503B]">Giovanni C</p>
+                                                <p className="text-xs text-gray-500">Brooklyns NY</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Card 3 */}
+                                <div className="flex-[0_0_100%] md:flex-[0_0_33.3333%] p-3">
+                                    <div className="group bg-white border border-transparent p-6 rounded-lg shadow-sm hover:bg-[#e8f3e6] hover:border-[#3F503B] hover:shadow-md transition-all duration-300 h-full">
+                                        <h3 className="font-gilroy font-bold text-[#000000] text-[20.38px] sm:text-[18px] leading-[25.94px] group-hover:text-[#3F503B] mb-3">
+                                            The Best Septic Services
+                                        </h3>
+                                        <p className="font-instrument text-[#696969] text-[16.67px] leading-[27.79px] mb-6 sm:text-[14px] sm:leading-[22px]">
+                                            "I highly recommend this company. Jon and his crew provided outstanding service when they came
+                                            out to help my parents with their septic tank. They were very honest and open to work with! Thank
+                                            you for your help!"
+                                        </p>
+                                        <div className="flex items-center gap-3">
+                                            <img
+                                                src="https://randomuser.me/api/portraits/women/65.jpg"
+                                                className="w-10 h-10 rounded-full"
+                                                alt="Giovanni C"
+                                            />
+                                            <div>
+                                                <p className="font-semibold text-sm text-black group-hover:text-[#3F503B]">Giovanni C</p>
+                                                <p className="text-xs text-gray-500">Brooklyns NY</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Card 1 */}
+                                <div className="flex-[0_0_100%] md:flex-[0_0_33.3333%] p-3">
+                                    <div className="group bg-white border border-transparent p-6 rounded-lg shadow-sm hover:bg-[#e8f3e6] hover:border-[#3F503B] hover:shadow-md transition-all duration-300 h-full">
+                                        <h3 className="font-gilroy font-bold text-[#000000] text-[20.38px] sm:text-[18px] leading-[25.94px] group-hover:text-[#3F503B] mb-3">
+                                            The Best Septic Services
+                                        </h3>
+                                        <p className="font-instrument text-[#696969] text-[16.67px] leading-[27.79px] mb-6 sm:text-[14px] sm:leading-[22px]">
+                                            "I highly recommend this company. Jon and his crew provided outstanding service when they came
+                                            out to help my parents with their septic tank. They were very honest and open to work with! Thank
+                                            you for your help!"
+                                        </p>
+                                        <div className="flex items-center gap-3">
+                                            <img
+                                                src="https://randomuser.me/api/portraits/women/65.jpg"
+                                                className="w-10 h-10 rounded-full"
+                                                alt="Giovanni C"
+                                            />
+                                            <div>
+                                                <p className="font-semibold text-sm text-black group-hover:text-[#3F503B]">Giovanni C</p>
+                                                <p className="text-xs text-gray-500">Brooklyns NY</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Card 2 */}
+                                <div className="flex-[0_0_100%] md:flex-[0_0_33.3333%] p-3">
+                                    <div className="group bg-white border border-transparent p-6 rounded-lg shadow-sm hover:bg-[#e8f3e6] hover:border-[#3F503B] hover:shadow-md transition-all duration-300 h-full">
+                                        <h3 className="font-gilroy font-bold text-[#000000] text-[20.38px] sm:text-[18px] leading-[25.94px] group-hover:text-[#3F503B] mb-3">
+                                            The Best Septic Services
+                                        </h3>
+                                        <p className="font-instrument text-[#696969] text-[16.67px] leading-[27.79px] mb-6 sm:text-[14px] sm:leading-[22px]">
+                                            "I highly recommend this company. Jon and his crew provided outstanding service when they came
+                                            out to help my parents with their septic tank. They were very honest and open to work with! Thank
+                                            you for your help!"
+                                        </p>
+                                        <div className="flex items-center gap-3">
+                                            <img
+                                                src="https://randomuser.me/api/portraits/women/65.jpg"
+                                                className="w-10 h-10 rounded-full"
+                                                alt="Giovanni C"
+                                            />
+                                            <div>
+                                                <p className="font-semibold text-sm text-black group-hover:text-[#3F503B]">Giovanni C</p>
+                                                <p className="text-xs text-gray-500">Brooklyns NY</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Card 3 */}
+                                <div className="flex-[0_0_100%] md:flex-[0_0_33.3333%] p-3">
+                                    <div className="group bg-white border border-transparent p-6 rounded-lg shadow-sm hover:bg-[#e8f3e6] hover:border-[#3F503B] hover:shadow-md transition-all duration-300 h-full">
+                                        <h3 className="font-gilroy font-bold text-[#000000] text-[20.38px] sm:text-[18px] leading-[25.94px] group-hover:text-[#3F503B] mb-3">
+                                            The Best Septic Services
+                                        </h3>
+                                        <p className="font-instrument text-[#696969] text-[16.67px] leading-[27.79px] mb-6 sm:text-[14px] sm:leading-[22px]">
+                                            "I highly recommend this company. Jon and his crew provided outstanding service when they came
+                                            out to help my parents with their septic tank. They were very honest and open to work with! Thank
+                                            you for your help!"
+                                        </p>
+                                        <div className="flex items-center gap-3">
+                                            <img
+                                                src="https://randomuser.me/api/portraits/women/65.jpg"
+                                                className="w-10 h-10 rounded-full"
+                                                alt="Giovanni C"
+                                            />
+                                            <div>
+                                                <p className="font-semibold text-sm text-black group-hover:text-[#3F503B]">Giovanni C</p>
+                                                <p className="text-xs text-gray-500">Brooklyns NY</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
 
-                        <div className="group bg-white border border-transparent p-6 rounded-lg shadow-sm hover:bg-[#e8f3e6] hover:border-[#3F503B] hover:shadow-md transition-all duration-300">
-                            <h3 className="font-gilroy font-bold text-[#000000] text-[20.38px] sm:text-[18px] leading-[25.94px] group-hover:text-[#3F503B] mb-3">
-                                The Best Septic Services
-                            </h3>
-                            <p className="font-instrument text-[#696969] text-[16.67px] leading-[27.79px] mb-6 sm:text-[14px] sm:leading-[22px]">
-                                "I highly recommend this company. Jon and his crew provided outstanding service when they came
-                                out to help my parents with their septic tank. They were very honest and open to work with! Thank
-                                you for your help!"
-                            </p>
-
-                            <div className="flex items-center gap-3">
-                                <img
-                                    src="https://randomuser.me/api/portraits/women/65.jpg"
-                                    className="w-10 h-10 rounded-full"
-                                    alt="Giovanni C"
-                                />
-                                <div>
-                                    <p className="font-semibold text-sm text-black group-hover:text-[#3F503B]">Giovanni C</p>
-                                    <p className="text-xs text-gray-500">Brooklyns NY</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="group bg-white border border-transparent p-6 rounded-lg shadow-sm hover:bg-[#e8f3e6] hover:border-[#3F503B] hover:shadow-md transition-all duration-300">
-                            <h3 className="font-gilroy font-bold text-[#000000] text-[20.38px] sm:text-[18px] leading-[25.94px] group-hover:text-[#3F503B] mb-3">
-                                The Best Septic Services
-                            </h3>
-                            <p className="font-instrument text-[#696969] text-[16.67px] leading-[27.79px] mb-6 sm:text-[14px] sm:leading-[22px]">
-                                "I highly recommend this company. Jon and his crew provided outstanding service when they came
-                                out to help my parents with their septic tank. They were very honest and open to work with! Thank
-                                you for your help!"
-                            </p>
-
-                            <div className="flex items-center gap-3">
-                                <img
-                                    src="https://randomuser.me/api/portraits/women/65.jpg"
-                                    className="w-10 h-10 rounded-full"
-                                    alt="Giovanni C"
-                                />
-                                <div>
-                                    <p className="font-semibold text-sm text-black group-hover:text-[#3F503B]">Giovanni C</p>
-                                    <p className="text-xs text-gray-500">Brooklyns NY</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="mt-10 w-full max-w-[40em] h-2 bg-gray-200 rounded-full overflow-hidden border mx-auto" style={{ borderColor: '#AEAEAE' }}>
+                        <div className="mt-10 w-full max-w-[40em] h-2 bg-gray-200 rounded-full overflow-hidden border" style={{ borderColor: '#AEAEAE' }}>
                             <div className="w-1/3 h-full rounded-full" style={{ backgroundColor: '#484848' }}></div>
                         </div>
-
-
-
                     </div>
 
                 </div>

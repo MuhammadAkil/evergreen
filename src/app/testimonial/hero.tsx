@@ -3,13 +3,11 @@ import { MdAccessTime } from "react-icons/md";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-
 export default function Hero() {
 
     useEffect(() => {
         AOS.init({ duration: 1000, once: false });
     }, []);
-
 
     return (
         <>
