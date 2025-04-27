@@ -373,7 +373,6 @@ export default function Hero() {
                             </div>
                         </div>
                     </div>
-
                     <img src="/assets/images/About/AboutUSImage.png" alt="Team working" className="rounded-lg" />
                 </div>
             </section>
@@ -390,10 +389,12 @@ export default function Hero() {
                                 <div className="font-semibold text-base md:text-lg">
                                     Mail Us
                                 </div>
-                                <div className="text-gray-700 text-sm md:text-base break-words overflow-wrap break-word w-full">
+                                <Link 
+                                        href="mailto:evergreensepticservicellc@gmail.com"
+                                        className="text-gray-700 text-sm md:text-base break-words overflow-wrap break-word w-full">
                                     evergreensepticservicellc@gmail.com
-                                </div>
-
+                                </Link>
+        
                             </div>
                         </div>
 
@@ -404,7 +405,7 @@ export default function Hero() {
                             </div>
                             <div>
                                 <div className="font-semibold text-base md:text-lg">Call Us</div>
-                                <div className="text-gray-700 text-sm md:text-base">+1 262-248-4711</div>
+                                <Link href="tel:+1 262-248-4711" className="text-gray-700 text-sm md:text-base">+1 262-248-4711</Link>
                             </div>
                         </div>
 
