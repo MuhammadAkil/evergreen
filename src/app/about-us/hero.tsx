@@ -1,5 +1,5 @@
-import React, { useEffect, useRef  } from 'react';
-import { MdAccessTime } from "react-icons/md";
+import React, { useEffect, useState, useCallback } from 'react';
+import { MdCheckCircle } from 'react-icons/md';
 import { FaPumpSoap, FaTools, FaSearch, FaHardHat, FaLeaf, FaBell, FaCheckCircle } from 'react-icons/fa';
 import { Mail, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -12,20 +12,32 @@ import useEmblaCarousel from "embla-carousel-react";
 
 export default function Hero() {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+    const [progress, setProgress] = useState(0);
+
+    const onScroll = useCallback(() => {
+        if (!emblaApi) return;
+        const scrollProgress = Math.max(0, Math.min(1, emblaApi.scrollProgress()));
+        setProgress(scrollProgress);
+    }, [emblaApi]);
 
     useEffect(() => {
         AOS.init({ duration: 1000, once: false });
 
         const intervalId = setInterval(() => {
             if (emblaApi) {
-              emblaApi.scrollNext();
+                emblaApi.scrollNext();
             }
-          }, 3000);
-      
-          return () => clearInterval(intervalId);
-    }, [emblaApi]);
+        }, 3000);
 
+        if (emblaApi) {
+            emblaApi.on("scroll", onScroll);
+            emblaApi.on("reInit", onScroll);
+        }
 
+        return () => {
+            clearInterval(intervalId);
+        };
+    }, [emblaApi, onScroll]);
 
     return (
         <>
@@ -222,7 +234,7 @@ export default function Hero() {
                         <div className="grid md:grid-cols-2 gap-6 mt-6">
                             <div>
                                 <div className="flex items-center gap-2 text-green-600 font-semibold text-lg">
-                                    <span><FaCheckCircle className="text-xl" /></span> Expert Septic Professionals
+                                    <span><img src='/assets/images/Icon.svg' className='h-7' alt='error' /></span> Expert Septic Professionals
                                 </div>
                                 <p className="text-gray-600 mt-1 text-sm font-instrument">
                                     Our team consists of experienced and certified septic specialists who ensure efficient and reliable service. We provide top-tier septic solutions across residential and commercial properties.
@@ -230,7 +242,7 @@ export default function Hero() {
                             </div>
                             <div>
                                 <div className="flex items-center gap-2 text-green-600 font-semibold text-lg">
-                                    <span><FaCheckCircle className="text-xl" /></span> Maintenance & Repairs
+                                    <span><img src='/assets/images/Icon.svg' className='h-7' alt='error' /></span> Maintenance & Repairs
                                 </div>
                                 <p className="text-gray-600 mt-1 text-sm font-instrument">
                                     We specialize in the inspection, maintenance, and repair of septic systems. Whether it's routine upkeep or emergency fixes, our experts handle it all with precision and care.
@@ -250,109 +262,99 @@ export default function Hero() {
                     </h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center text-center">
-                        <div className="bg-[#E8F3E6] hover:bg-white transition-colors shadow-md p-6 rounded-lg w-full max-w-[320px]">
-                            <FaPumpSoap className="text-3xl text-green-700 mb-2 mx-auto" />
-                            <h3 className="font-bold mb-2">Septic Tank Pumping</h3>
-                            <p className="text-gray-600">Prevent overflows with routine maintenance.</p>
+                        <div className="bg-[#E8F3E6] hover:bg-white transition-colors shadow-md p-6 rounded-lg w-full max-w-[320px] text-center">
+                            <img src='/assets/images/About/Icon1.svg' alt='error' className='mx-auto mb-4' />
+                            <h3 className="font-bold mb-2 font-instrument ">Septic Tank Pumping</h3>
+                            <p className="text-gray-600 font-instrument ">Prevent overflows with routine maintenance.</p>
                         </div>
 
-                        <div className="bg-[#E8F3E6] hover:bg-white transition-colors shadow-md p-6 rounded-lg w-full max-w-[320px]">
-                            <FaHardHat className="text-3xl text-green-700 mb-2 mx-auto" />
-                            <h3 className="font-bold mb-2">Septic System Installation</h3>
-                            <p className="text-gray-600">Professional new & replacement system setup.</p>
+                        <div className="bg-[#E8F3E6] hover:bg-white transition-colors shadow-md p-6 rounded-lg w-full max-w-[320px] text-center">
+                            <img src='/assets/images/About/Icon2.svg' alt='error' className='mx-auto mb-4' />
+                            <h3 className="font-bold mb-2 font-instrument ">Septic System Installation</h3>
+                            <p className="text-gray-600 font-instrument ">Professional new & replacement system setup.</p>
                         </div>
 
-                        <div className="bg-[#E8F3E6] hover:bg-white transition-colors shadow-md p-6 rounded-lg w-full max-w-[320px]">
-                            <FaSearch className="text-3xl text-green-700 mb-2 mx-auto" />
-                            <h3 className="font-bold mb-2">Septic System Inspections</h3>
-                            <p className="text-gray-600">Ensure compliance & efficiency.</p>
+                        <div className="bg-[#E8F3E6] hover:bg-white transition-colors shadow-md p-6 rounded-lg w-full max-w-[320px] text-center">
+                            <img src='/assets/images/About/Icon3.svg' alt='error' className='mx-auto mb-4' />
+                            <h3 className="font-bold mb-2 font-instrument ">Septic System Inspections</h3>
+                            <p className="text-gray-600 font-instrument ">Ensure compliance & efficiency.</p>
                         </div>
 
-                        <div className="bg-[#E8F3E6] hover:bg-white transition-colors shadow-md p-6 rounded-lg w-full max-w-[320px]">
-                            <FaTools className="text-3xl text-green-700 mb-2 mx-auto" />
-                            <h3 className="font-bold mb-2">Septic Repairs</h3>
-                            <p className="text-gray-600">Quick fixes for long-term performance.</p>
+                        <div className="bg-[#E8F3E6] hover:bg-white transition-colors shadow-md p-6 rounded-lg w-full max-w-[320px] text-center">
+                            <img src='/assets/images/About/Icon4.svg' alt='error' className='mx-auto mb-4' />
+                            <h3 className="font-bold mb-2 font-instrument ">Septic Repairs</h3>
+                            <p className="text-gray-600 font-instrument ">Quick fixes for long-term performance.</p>
                         </div>
 
-                        <div className="bg-[#E8F3E6] hover:bg-white transition-colors shadow-md p-6 rounded-lg w-full max-w-[320px]">
-                            <FaLeaf className="text-3xl text-green-700 mb-2 mx-auto" />
-                            <h3 className="font-bold mb-2">Drain Field Restoration</h3>
-                            <p className="text-gray-600">Keep your drainage effective.</p>
+                        <div className="bg-[#E8F3E6] hover:bg-white transition-colors shadow-md p-6 rounded-lg w-full max-w-[320px] text-center">
+                            <img src='/assets/images/About/Icon5.svg' alt='error' className='mx-auto mb-4' />
+                            <h3 className="font-bold mb-2 font-instrument ">Drain Field Restoration</h3>
+                            <p className="text-gray-600 font-instrument ">Keep your drainage effective.</p>
                         </div>
 
-                        <div className="bg-[#E8F3E6] hover:bg-white transition-colors shadow-md p-6 rounded-lg w-full max-w-[320px]">
-                            <FaBell className="text-3xl text-green-700 mb-2 mx-auto" />
-                            <h3 className="font-bold mb-2">Emergency Services</h3>
-                            <p className="text-gray-600">24/7 support for urgent issues.</p>
+                        <div className="bg-[#E8F3E6] hover:bg-white transition-colors shadow-md p-6 rounded-lg w-full max-w-[320px] text-center">
+                            <img src='/assets/images/About/Icon6.svg' alt='error' className='mx-auto mb-4' />
+                            <h3 className="font-bold mb-2 font-instrument ">Emergency Services</h3>
+                            <p className="text-gray-600 font-instrument ">24/7 support for urgent issues.</p>
                         </div>
                     </div>
 
                 </div>
             </section>
 
-            <section className="bg-white py-16" data-aos="fade-up"
-                data-aos-duration="3000">
-                <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
-                    <div>
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-instrument font-medium mb-4">
-                            Why Choose Us
-                        </h2>
+            <section className="bg-white py-16" data-aos="fade-up" data-aos-duration="3000">
+                <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-stretch">
 
+                    <div className="flex flex-col justify-between">
+                        <div>
+                            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-instrument font-medium mb-4">
+                                Why Choose Us
+                            </h2>
 
-                        <p className="text-gray-600 mb-4 text-cxl">
-                            At Evergreen Septics, we take pride in offering reliable, efficient, and environmentally responsible septic solutions. Our commitment to quality and customer satisfaction sets us apart. Here’s why homeowners and businesses trust us:
-                        </p>
+                            <p className="text-gray-600 mb-3 text-cxl">
+                                At Evergreen Septics, we take pride in offering reliable, efficient, and environmentally responsible septic solutions. Our commitment to quality and customer satisfaction sets us apart. Here’s why homeowners and businesses trust us:
+                            </p>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 mt-8 text-sm text-center">
-                            <div className="flex items-center h-42">
-                                <div className="bg-[#E8F3E6] p-2 rounded-l-md shadow-md">
-                                    <FaCheckCircle className="text-[#3F503B] text-lg" />
-                                </div>
-                                <div className="bg-[#5D7757] text-white text-base font-medium px-4 py-2 rounded-r-md shadow w-full text-center">
-                                    Eco-Friendly Solutions
-                                </div>
-                            </div>
-                            <div className="flex items-center">
-                                <div className="bg-[#E8F3E6] p-2 rounded-l-md shadow-md">
-                                    <FaCheckCircle className="text-[#3F503B] text-lg" />
-                                </div>
-                                <div className="bg-[#5D7757] text-white text-base font-medium px-4 py-2 rounded-r-md shadow w-full text-center">
-                                    Affordable Pricing
-                                </div>
-                            </div>
-
-                            <div className="flex items-center">
-                                <div className="bg-[#E8F3E6] p-2 rounded-l-md shadow-md">
-                                    <FaCheckCircle className="text-[#3F503B] text-lg" />
-                                </div>
-                                <div className="bg-[#5D7757] text-white text-base font-medium px-4 py-2 rounded-r-md shadow w-full text-center">
-                                    Advanced Technology
-                                </div>
-                            </div>
-                            <div className="flex items-center">
-                                <div className="bg-[#E8F3E6] p-2 rounded-l-md shadow-md">
-                                    <FaCheckCircle className="text-[#3F503B] text-lg" />
-                                </div>
-                                <div className="bg-[#5D7757] text-white text-base font-medium px-4 py-2 rounded-r-md shadow w-full text-left">
-                                    Customer Satisfaction
-                                </div>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+                                {[
+                                    "Eco-Friendly Solutions",
+                                    "Affordable Pricing",
+                                    "Advanced Technology",
+                                    "Customer Satisfaction",
+                                ].map((item, index) => (
+                                    <div key={index} className="flex items-center">
+                                        <div className="bg-[#E8F3E6] p-3 rounded-l-md shadow-md flex items-center justify-center">
+                                            <FaCheckCircle className="text-[#3F503B] text-lg" />
+                                        </div>
+                                        <div className="bg-[#5D7757] text-white text-base font-medium h-full px-4 py-2 rounded-r-md shadow w-full text-center">
+                                            {item}
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
 
-                        </div>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
-                            <div className="transform rotate-2 bg-white shadow-lg overflow-hidden">
-                                <img src="/assets/images/About/Image1AboutSection.png" alt="Card 1" className="w-full h-48 object-cover shadow-md" />
-                            </div>
-                            <div className="transform rotate-2 bg-white shadow-lg overflow-hidden">
-                                <img src="/assets/images/About/Image2AboutSection.png" alt="Card 2" className="w-full h-48 object-cover shadow-md" />
-                            </div>
-                            <div className="transform rotate-2 bg-white shadow-lg overflow-hidden">
-                                <img src="assets/images/About/Image3AboutSection.png" alt="Card 3" className="w-full h-48 object-cover shadow-md" />
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
+                                {[
+                                    "/assets/images/About/Image1AboutSection.png",
+                                    "/assets/images/About/Image2AboutSection.png",
+                                    "assets/images/About/Image3AboutSection.png",
+                                ].map((src, idx) => (
+                                    <div key={idx} className="transform rotate-2 bg-white shadow-lg overflow-hidden">
+                                        <img src={src} alt={`Card ${idx + 1}`} className="w-full h-48 object-cover shadow-md" />
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
-                    <img src="/assets/images/About/AboutUSImage.png" alt="Team working" className="rounded-lg" />
+
+                    <div className="h-full">
+                        <img
+                            src="/assets/images/About/AboutUSImage.png"
+                            alt="Team working"
+                            className="rounded-lg h-full w-full object-cover"
+                        />
+                    </div>
+
                 </div>
             </section>
 
@@ -368,12 +370,12 @@ export default function Hero() {
                                 <div className="font-semibold text-base md:text-lg">
                                     Mail Us
                                 </div>
-                                <Link 
-                                        href="mailto:evergreensepticservicellc@gmail.com"
-                                        className="text-gray-700 text-sm md:text-base break-words overflow-wrap break-word w-full">
+                                <Link
+                                    href="mailto:evergreensepticservicellc@gmail.com"
+                                    className="text-gray-700 text-sm md:text-base break-words overflow-wrap break-word w-full">
                                     evergreensepticservicellc@gmail.com
                                 </Link>
-        
+
                             </div>
                         </div>
 
@@ -436,7 +438,6 @@ export default function Hero() {
                             </svg>
                         </div>
 
-                        {/* Hero Content */}
                         <div className="absolute inset-0 flex flex-col justify-center px-6 md:px-12 lg:px-16">
                             <h1 className="text-white text-3xl md:text-4xl lg:text-5xl max-w-3xl leading-tight font-instrument font-medium">
                                 Maintain your septic system with our reliable and efficient solutions.
@@ -499,7 +500,6 @@ export default function Hero() {
                         <div className="overflow-hidden" ref={emblaRef}>
                             <div className="flex">
 
-                                {/* Card 1 */}
                                 <div className="flex-[0_0_100%] md:flex-[0_0_33.3333%] p-3">
                                     <div className="group bg-white border border-transparent p-6 rounded-lg shadow-sm hover:bg-[#e8f3e6] hover:border-[#3F503B] hover:shadow-md transition-all duration-300 h-full">
                                         <h3 className="font-gilroy font-bold text-[#000000] text-[20.38px] sm:text-[18px] leading-[25.94px] group-hover:text-[#3F503B] mb-3">
@@ -524,7 +524,6 @@ export default function Hero() {
                                     </div>
                                 </div>
 
-                                {/* Card 2 */}
                                 <div className="flex-[0_0_100%] md:flex-[0_0_33.3333%] p-3">
                                     <div className="group bg-white border border-transparent p-6 rounded-lg shadow-sm hover:bg-[#e8f3e6] hover:border-[#3F503B] hover:shadow-md transition-all duration-300 h-full">
                                         <h3 className="font-gilroy font-bold text-[#000000] text-[20.38px] sm:text-[18px] leading-[25.94px] group-hover:text-[#3F503B] mb-3">
@@ -549,7 +548,6 @@ export default function Hero() {
                                     </div>
                                 </div>
 
-                                {/* Card 3 */}
                                 <div className="flex-[0_0_100%] md:flex-[0_0_33.3333%] p-3">
                                     <div className="group bg-white border border-transparent p-6 rounded-lg shadow-sm hover:bg-[#e8f3e6] hover:border-[#3F503B] hover:shadow-md transition-all duration-300 h-full">
                                         <h3 className="font-gilroy font-bold text-[#000000] text-[20.38px] sm:text-[18px] leading-[25.94px] group-hover:text-[#3F503B] mb-3">
@@ -574,7 +572,6 @@ export default function Hero() {
                                     </div>
                                 </div>
 
-                                {/* Card 1 */}
                                 <div className="flex-[0_0_100%] md:flex-[0_0_33.3333%] p-3">
                                     <div className="group bg-white border border-transparent p-6 rounded-lg shadow-sm hover:bg-[#e8f3e6] hover:border-[#3F503B] hover:shadow-md transition-all duration-300 h-full">
                                         <h3 className="font-gilroy font-bold text-[#000000] text-[20.38px] sm:text-[18px] leading-[25.94px] group-hover:text-[#3F503B] mb-3">
@@ -599,7 +596,6 @@ export default function Hero() {
                                     </div>
                                 </div>
 
-                                {/* Card 2 */}
                                 <div className="flex-[0_0_100%] md:flex-[0_0_33.3333%] p-3">
                                     <div className="group bg-white border border-transparent p-6 rounded-lg shadow-sm hover:bg-[#e8f3e6] hover:border-[#3F503B] hover:shadow-md transition-all duration-300 h-full">
                                         <h3 className="font-gilroy font-bold text-[#000000] text-[20.38px] sm:text-[18px] leading-[25.94px] group-hover:text-[#3F503B] mb-3">
@@ -624,7 +620,6 @@ export default function Hero() {
                                     </div>
                                 </div>
 
-                                {/* Card 3 */}
                                 <div className="flex-[0_0_100%] md:flex-[0_0_33.3333%] p-3">
                                     <div className="group bg-white border border-transparent p-6 rounded-lg shadow-sm hover:bg-[#e8f3e6] hover:border-[#3F503B] hover:shadow-md transition-all duration-300 h-full">
                                         <h3 className="font-gilroy font-bold text-[#000000] text-[20.38px] sm:text-[18px] leading-[25.94px] group-hover:text-[#3F503B] mb-3">
@@ -653,7 +648,13 @@ export default function Hero() {
                         </div>
 
                         <div className="mt-10 w-full max-w-[40em] h-2 bg-gray-200 rounded-full overflow-hidden border" style={{ borderColor: '#AEAEAE' }}>
-                            <div className="w-1/3 h-full rounded-full" style={{ backgroundColor: '#484848' }}></div>
+                            <div
+                                className="h-full rounded-full transition-all duration-300"
+                                style={{
+                                    width: `${progress * 100}%`,
+                                    backgroundColor: '#484848'
+                                }}
+                            ></div>
                         </div>
                     </div>
 

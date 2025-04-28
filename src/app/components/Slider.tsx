@@ -1,10 +1,17 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import useEmblaCarousel from "embla-carousel-react";
 
 export default function Slider() {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+    const [progress, setProgress] = useState(0);
+
+    const onScroll = useCallback(() => {
+        if (!emblaApi) return;
+        const scrollProgress = Math.max(0, Math.min(1, emblaApi.scrollProgress()));
+        setProgress(scrollProgress);
+    }, [emblaApi]);
 
     useEffect(() => {
         AOS.init({ duration: 1000, once: false });
@@ -15,10 +22,16 @@ export default function Slider() {
             }
         }, 3000);
 
-        return () => clearInterval(intervalId);
+        if (emblaApi) {
+            emblaApi.on("scroll", onScroll);
+            emblaApi.on("reInit", onScroll);
+        }
 
+        return () => {
+            clearInterval(intervalId);
+        };
+    }, [emblaApi, onScroll]);
 
-    }, [emblaApi]);
     return (
         <>
             <section className="relative bg-white py-16" data-aos="fade-up"
@@ -194,7 +207,13 @@ export default function Slider() {
                         </div>
 
                         <div className="mt-10 w-full max-w-[40em] h-2 bg-gray-200 rounded-full overflow-hidden border" style={{ borderColor: '#AEAEAE' }}>
-                            <div className="w-1/3 h-full rounded-full" style={{ backgroundColor: '#484848' }}></div>
+                            <div
+                                className="h-full rounded-full transition-all duration-300"
+                                style={{
+                                    width: `${progress * 100}%`,
+                                    backgroundColor: '#484848'
+                                }}
+                            ></div>
                         </div>
                     </div>
 
