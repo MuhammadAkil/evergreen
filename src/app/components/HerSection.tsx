@@ -32,21 +32,24 @@ export default function HerSection() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
+        console.log('Submit initiated');
+
         if (!validateForm()) {
             toast.error('Please fill all required fields!');
             return;
         }
 
         const formData = { name, phone, service, bestTime };
+        console.log('Form data to send:', formData);
 
         try {
             await fetch('https://script.google.com/macros/s/AKfycbxYADsssSqfkvwYd9oRjicCHMst-bePgLLNr4zY-avRd8uBmfaZwKFGWVQLDMY3UitWVw/exec', {
                 method: 'POST',
-                mode: 'no-cors',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(formData),
+                mode: 'no-cors',
             });
 
             toast.success('Request submitted successfully!');
@@ -55,7 +58,9 @@ export default function HerSection() {
             setService('');
             setBestTime('');
             setErrors({});
-        } catch (error) {
+        }
+
+        catch (error) {
             toast.error('Something went wrong. Please try again.');
             console.error(error);
         }

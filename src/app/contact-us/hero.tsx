@@ -67,35 +67,33 @@ export default function Hero() {
             message,
         };
 
-
         try {
-            await fetch('https://script.google.com/macros/s/AKfycbxYADsssSqfkvwYd9oRjicCHMst-bePgLLNr4zY-avRd8uBmfaZwKFGWVQLDMY3UitWVw/exec', {
+            const response = await fetch('https://script.google.com/macros/s/AKfycbxYADsssSqfkvwYd9oRjicCHMst-bePgLLNr4zY-avRd8uBmfaZwKFGWVQLDMY3UitWVw/exec', {
                 method: 'POST',
-                mode: 'no-cors',
-                body: JSON.stringify(formData),
                 headers: {
                     'Content-Type': 'application/json',
                 },
+                body: JSON.stringify(formData),
+                mode: 'no-cors',
             });
 
-            toast.success('Request submitted successfully!');
+            toast.success('Data submitted successfully!');
             setName('');
             setEmail('');
             setSubject('');
             setMessage('');
+
         }
 
         catch (error) {
-            toast.error('Message sent successfully!');
             console.error(error);
+            toast.error('Failed to send message.');
         }
     };
 
-
-
     return (
         <>
-    
+
 
             <section className="py-16 bg-white relative overflow-hidden" data-aos="fade-up">
                 <img
