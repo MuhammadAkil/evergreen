@@ -43,7 +43,7 @@ export default function HerSection() {
         console.log('Form data to send:', formData);
 
         try {
-            await fetch('https://script.google.com/macros/s/AKfycbxYADsssSqfkvwYd9oRjicCHMst-bePgLLNr4zY-avRd8uBmfaZwKFGWVQLDMY3UitWVw/exec', {
+            await fetch('https://script.google.com/a/macros/superior.edu.pk/s/AKfycbwPK-cGgI8fAWucdy9onAteY73NGAR8iaGdJ8dwMuCTyoOcY5Oa3eS3tH81MLc3joKY/exec', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

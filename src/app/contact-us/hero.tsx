@@ -68,7 +68,7 @@ export default function Hero() {
         };
 
         try {
-            const response = await fetch('https://script.google.com/macros/s/AKfycbxYADsssSqfkvwYd9oRjicCHMst-bePgLLNr4zY-avRd8uBmfaZwKFGWVQLDMY3UitWVw/exec', {
+            await fetch('https://script.google.com/macros/s/AKfycbxYADsssSqfkvwYd9oRjicCHMst-bePgLLNr4zY-avRd8uBmfaZwKFGWVQLDMY3UitWVw/exec', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -77,19 +77,34 @@ export default function Hero() {
                 mode: 'no-cors',
             });
 
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
+                },
+                body: JSON.stringify({
+                    ...formData,
+                    access_key: '5393f9e5-8577-4a6e-a7a2-0e3f100ca8fc',
+                }),
+            });
+
+            const result = await response.json();
+
             toast.success('Data submitted successfully!');
+
+
             setName('');
             setEmail('');
             setSubject('');
             setMessage('');
 
-        }
-
-        catch (error) {
+        } catch (error) {
             console.error(error);
-            toast.error('Failed to send message.');
+            toast.error('Something went wrong.');
         }
     };
+
 
     return (
         <>
