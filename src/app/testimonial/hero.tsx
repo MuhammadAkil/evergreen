@@ -276,7 +276,7 @@ export default function Hero() {
 
                     </div>
 
-                    <img src="/assets/images/AboutUSImage.png" alt="Team working" className="rounded-lg" />
+                    <img src="/assets/images/About/AboutUSImage.png" alt="Team working" className="rounded-lg" />
                 </div>
 
 

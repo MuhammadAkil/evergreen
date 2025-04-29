@@ -93,6 +93,9 @@ export default function Hero() {
             subject,
             message,
         };
+        
+        console.log('Form data to send:', formData);
+        setLoading(true);
 
         try {
             const response = await fetch('https://script.google.com/macros/s/AKfycbxYADsssSqfkvwYd9oRjicCHMst-bePgLLNr4zY-avRd8uBmfaZwKFGWVQLDMY3UitWVw/exec', {
@@ -102,6 +105,17 @@ export default function Hero() {
                 },
                 body: JSON.stringify(formData),
                 mode: 'no-cors',
+            });
+
+            await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    ...formData,
+                    access_key: '5393f9e5-8577-4a6e-a7a2-0e3f100ca8fc',
+                }),
             });
 
             toast.success('Data submitted successfully!');
@@ -182,7 +196,7 @@ export default function Hero() {
             <section className="pt-13 mt-13" data-aos="fade-up">
                 <div className="md:w-1/2">
                     <div className="text-black mb-4 px-9">
-                        <p className="font-instrument font-semibold text-base sm:text-lg md:text-[20px] leading-tight text-[#3F503B] mb-2 md:relative md:top-0 relative top-[-10em]">
+                        <p className="font-instrument font-semibold text-base sm:text-lg md:text-[20px] leading-tight text-[#3F503B] mb-2 md:relative md:top-0 relative">
                             GET IN TOUCH
                         </p>
                         <h2 className="font-gilroy-medium font-normal text-2xl sm:text-4xl md:text-[54px] leading-tight md:relative md:top-0 relative top-[-4em]">
@@ -199,7 +213,7 @@ export default function Hero() {
                     ></iframe>
                     <div className="absolute inset-0 bg-black opacity-30 z-[5]"></div>
                     <div className="relative z-10 max-w-6xl mx-auto px-4 h-full flex flex-col md:flex-row items-center justify-center md:justify-end">
-                        <div className="w-full md:w-1/2 bg-white p-6 rounded-lg shadow-xl relative -top-[180px] border">
+                    <div className="w-full md:w-1/2 bg-white p-6 rounded-lg shadow-xl relative -top-[100px] md:-top-[180px] border">
                             <form className="space-y-4" onSubmit={handleSubmitNoCors}>
                                 <div>
                                     <label className="block text-sm mb-1 font-medium">
@@ -209,9 +223,8 @@ export default function Hero() {
                                         type="text"
                                         value={name}
                                         onChange={(e) => handleInputChange('name', e.target.value)}
-                                        className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${
-                                            errors.name ? 'border-red-500' : 'border-gray-300'
-                                        } focus:outline-none focus:ring-2 ${errors.name ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'}`}
+                                        className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.name ? 'border-red-500' : 'border-gray-300'
+                                            } focus:outline-none focus:ring-2 ${errors.name ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'}`}
                                     />
                                     {errors.name && <span className="text-red-500 text-sm mt-1 block">{errors.name}</span>}
                                 </div>
@@ -223,9 +236,8 @@ export default function Hero() {
                                         type="email"
                                         value={email}
                                         onChange={(e) => handleInputChange('email', e.target.value)}
-                                        className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${
-                                            errors.email ? 'border-red-500' : 'border-gray-300'
-                                        } focus:outline-none focus:ring-2 ${errors.email ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'}`}
+                                        className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.email ? 'border-red-500' : 'border-gray-300'
+                                            } focus:outline-none focus:ring-2 ${errors.email ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'}`}
                                     />
                                     {errors.email && <span className="text-red-500 text-sm mt-1 block">{errors.email}</span>}
                                 </div>
@@ -237,9 +249,8 @@ export default function Hero() {
                                         type="text"
                                         value={subject}
                                         onChange={(e) => handleInputChange('subject', e.target.value)}
-                                        className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${
-                                            errors.subject ? 'border-red-500' : 'border-gray-300'
-                                        } focus:outline-none focus:ring-2 ${errors.subject ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'}`}
+                                        className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.subject ? 'border-red-500' : 'border-gray-300'
+                                            } focus:outline-none focus:ring-2 ${errors.subject ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'}`}
                                     />
                                     {errors.subject && <span className="text-red-500 text-sm mt-1 block">{errors.subject}</span>}
                                 </div>
@@ -250,9 +261,8 @@ export default function Hero() {
                                     <textarea
                                         value={message}
                                         onChange={(e) => handleInputChange('message', e.target.value)}
-                                        className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${
-                                            errors.message ? 'border-red-500' : 'border-gray-300'
-                                        } focus:outline-none focus:ring-2 ${errors.message ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'}`}
+                                        className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.message ? 'border-red-500' : 'border-gray-300'
+                                            } focus:outline-none focus:ring-2 ${errors.message ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'}`}
                                         rows={4}
                                     ></textarea>
                                     {errors.message && <span className="text-red-500 text-sm mt-1 block">{errors.message}</span>}
@@ -260,9 +270,8 @@ export default function Hero() {
                                 <button
                                     type="submit"
                                     disabled={loading}
-                                    className={`bg-[#3F503B] text-white py-2 px-6 rounded-md mt-2 ${
-                                        loading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2f462f]'
-                                    }`}
+                                    className={`bg-[#3F503B] text-white py-2 px-6 rounded-md mt-2 ${loading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2f462f]'
+                                        }`}
                                 >
                                     {loading ? 'Sending...' : 'Send Now'}
                                 </button>

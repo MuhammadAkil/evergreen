@@ -51,27 +51,26 @@ export default function HerSection() {
                 mode: 'no-cors',
             });
 
-            const response = await fetch(
-                'https://script.google.com/macros/s/AKfycbxYADsssSqfkvwYd9oRjicCHMst-bePgLLNr4zY-avRd8uBmfaZwKFGWVQLDMY3UitWVw/exec',
-                {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData),
-                    mode: 'no-cors',
-                }
-            );
+            await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    ...formData,
+                    access_key: '5393f9e5-8577-4a6e-a7a2-0e3f100ca8fc',
+                }),
+            });
 
-            console.log('Submission successful:', formData);
-            console.log('Sent fields - name:', name, 'phone:', phone, 'service:', service, 'bestTime:', bestTime);
             toast.success('Request submitted successfully!');
             setName('');
             setPhone('');
             setService('');
             setBestTime('');
             setErrors({});
-        } catch (error) {
+        }
+
+        catch (error) {
             console.error('Submission error:', error);
             toast.error('Something went wrong. Please try again.');
         } finally {
@@ -79,6 +78,7 @@ export default function HerSection() {
             console.log('Submission completed');
         }
     };
+
 
     return (
         <div
