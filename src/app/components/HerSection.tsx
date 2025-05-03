@@ -58,7 +58,7 @@ export default function HerSection() {
                 },
                 body: JSON.stringify({
                     ...formData,
-                    access_key: '5393f9e5-8577-4a6e-a7a2-0e3f100ca8fc',
+                    access_key: '99760948-10ae-4676-b664-87235dfe2f80',
                 }),
             });
 
@@ -93,11 +93,11 @@ export default function HerSection() {
                     <h1 className="text-4xl md:text-5xl font-bold leading-tight whitespace-pre-line font-instrument">
                         Reliable & Professional{"\n"}Septic Services
                     </h1>
-                    <p className="mt-4 text-[24px] font-instrument font-normal leading-[100%] tracking-[0%]">
+                    <p className="mt-4 text-[24px] font-instrument font-normal leading-[30px] tracking-[0%]">
                         Fast, Affordable & Trusted Septic Pumping,{" "}
-                        <span className="font-bold">
+                        <strong className="font-bold">
                             Inspections & Repairs in Walworth County
-                        </span>.
+                        </strong>.
                     </p>
 
                     <div className="text-white">
@@ -109,7 +109,7 @@ export default function HerSection() {
                                     style={{ backgroundColor: "#3F503B66" }}
                                 >
                                     <FaCheckCircle className="text-[#A4D4AE] text-lg" />
-                                    <span className="text-sm md:text-base font-instrument font-medium text-[18px] leading-[100%]">{item}</span>
+                                    <strong className="text-sm md:text-base font-instrument font-medium text-[18px] leading-[100%]">{item}</strong>
                                 </div>
                             ))}
                         </div>
@@ -121,7 +121,7 @@ export default function HerSection() {
 
                             <button className="flex items-center bg-[#3F503B] hover:bg-[#2f462f] text-white font-instrument font-semibold text-[24px] px-6 py-3 rounded-lg shadow-md">
                                 <FaPhone className="text-[18px]" />
-                                <span className="px-2">262-248-4711</span>
+                                <a href='tel:262-248-4711' className="px-2">262-248-4711</a>
                             </button>
                         </div>
                     </div>
@@ -129,7 +129,7 @@ export default function HerSection() {
 
                 {/* Right Section - Form */}
                 <div className="bg-white p-6 md:p-10 rounded-xl shadow-xl w-full md:w-[90%] lg:w-[80%] xl:w-[70%]">
-                    <h2 className="font-instrument font-semibold text-[#3F503B] mb-3 text-center leading-[45px] text-[30px] md:text-[36px]">Need Service? Let's Talk</h2>
+                    <h2 className="font-instrument font-semibold text-[#3F503B] mb-3 text-center leading-[45px] text-[24px] md:text-[26px]">Need Service? <strong>Let's Talk</strong></h2>
 
                     <hr className="border-t-2 border-[#3F503B] mb-4" />
 

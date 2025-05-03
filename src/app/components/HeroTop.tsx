@@ -22,7 +22,7 @@ export default function HeroTop({ title, description }: HeroProps) {
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-wide leading-tight">
                     {title}
                 </h1>
-                <p className="text-xs sm:text-sm md:text-base mt-2 max-w-xs sm:max-w-md">
+                <p className="text-xs sm:text-sm md:text-base mt-2 w-[50%]">
                     {description}
                 </p>
             </div>

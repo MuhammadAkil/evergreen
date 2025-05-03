@@ -15,22 +15,58 @@ const FAQSection = () => {
 
     const faqData = [
         {
-            question: "What is the full form of FAQ?",
-            answer: "FAQ stands for Frequently Asked Questions.",
+          question: "Where is Evergreen Septic Services located?",
+          answer:
+            "We are based in Lake Geneva, Wisconsin, serving residential, commercial, and community properties throughout the region.",
         },
         {
-            question: "How do I use the service?",
-            answer: "You can use our service by following the easy steps provided on the website.",
+          question: "What services do you offer?",
+          answer:
+            "Our services include septic tank pumping, system inspections, repairs, drain field maintenance, grease trap cleaning, and 24/7 emergency response.",
         },
         {
-            question: "Is the service available 24/7?",
-            answer: "Yes, our service is available 24/7.",
+          question: "What is a septic system and how does it work?",
+          answer:
+            "A septic system is an underground wastewater treatment setup with a tank and drain field. It processes and disposes of household wastewater safely on-site.",
         },
         {
-            question: "How can I contact customer support?",
-            answer: "You can contact customer support via the contact form on our website or by phone.",
+          question: "What are common signs my septic system needs service?",
+          answer:
+            "Watch for slow drains, sewage backups, foul odors, gurgling pipes, or soggy spots near the drain field. These are signs your system needs attention.",
         },
-    ];
+        {
+          question: "Do you offer emergency septic services?",
+          answer:
+            "Yes, we offer 24/7 emergency services for septic backups, overflows, and urgent repairs. Our team responds promptly to protect your property.",
+        },
+        {
+          question: "How quickly can you respond to emergencies?",
+          answer:
+            "In most cases, we respond within a few hours of your call, with a team on standby around the clock for emergency situations.",
+        },
+        {
+          question: "Is there an extra cost for emergency services?",
+          answer:
+            "Yes. Emergency fees are $50 for same-day service, $75 for nights/weekends, and $150 on holidays to support after-hours availability.",
+        },
+        {
+          question: "How much does septic pumping cost?",
+          answer:
+            "Pricing depends on tank size and access. Our pumping services are competitively priced and include clear, upfront estimates.",
+        },
+        {
+          question: "How can I avoid emergency issues and extra fees?",
+          answer:
+            "Routine pumping, water conservation, and system inspections can help prevent problems and reduce the need for emergency service calls.",
+        },
+        {
+          question: "How do I schedule a service?",
+          answer:
+            "You can call us directly or use the request form on our website. We’re available 24/7 to answer questions or dispatch a technician.",
+        },
+      ];
+      
+      
 
     useEffect(() => {
         AOS.init({ duration: 1000, once: false });

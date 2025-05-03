@@ -9,6 +9,39 @@ import 'aos/dist/aos.css';
 import Link from "next/link"
 import Image from "next/image"
 import useEmblaCarousel from "embla-carousel-react";
+import { Metadata } from 'next';
+export const metadata: Metadata = {
+    title: 'About Us',
+    description:
+        'Learn more about Evergreen Septic Service LLC — a trusted provider of eco-friendly, reliable septic system services in the Lake Geneva region.',
+    keywords: [
+        'About Evergreen Septic',
+        'Septic system experts',
+        'Lake Geneva septic services',
+        'Septic company background',
+        'Evergreen Septic team',
+    ],
+    openGraph: {
+        title: 'About Us | Evergreen Septic Service LLC',
+        description:
+            'Discover the mission, values, and expert team behind Evergreen Septic Service LLC, your trusted local septic provider.',
+        url: 'https://www.evergreensepticsvc.com/about',
+        images: [
+            {
+                url: 'https://www.evergreensepticsvc.com/assets/images/AboutHeroSection.png',
+                width: 1200,
+                height: 630,
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'About Us | Evergreen Septic Service LLC',
+        description:
+            'Discover the mission, values, and expert team behind Evergreen Septic Service LLC, your trusted local septic provider.',
+        images: ['https://www.evergreensepticsvc.com/assets/images/AboutHeroSection.png'],
+    },
+  };
 
 export default function Hero() {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });

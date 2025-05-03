@@ -113,10 +113,10 @@ export default function Services() {
                                     {service.description}
                                 </p>
 
-                                <div className="flex items-center gap-2 sm:text-[14px] md:text-[16px] lg:text-[18px] font-instrument font-medium text-[#3F503B] leading-[100%] tracking-[0%] group-hover:text-white">
+                                {/* <div className="flex items-center gap-2 sm:text-[14px] md:text-[16px] lg:text-[18px] font-instrument font-medium text-[#3F503B] leading-[100%] tracking-[0%] group-hover:text-white">
                                     <FaPlusCircle className="text-[#3F503B] text-[16px] group-hover:text-white" />
                                     <span className='font-bold'>More About Septic System Inspection</span>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     ))}

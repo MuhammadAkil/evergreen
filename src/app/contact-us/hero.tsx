@@ -114,7 +114,7 @@ export default function Hero() {
                 },
                 body: JSON.stringify({
                     ...formData,
-                    access_key: '5393f9e5-8577-4a6e-a7a2-0e3f100ca8fc',
+                    access_key: '99760948-10ae-4676-b664-87235dfe2f80',
                 }),
             });
 
@@ -205,80 +205,192 @@ export default function Hero() {
                     </div>
                 </div>
 
-                <div className="relative h-[500px] w-full mt-10">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18..."
-                        className="absolute inset-0 w-full h-full border-0"
-                        loading="lazy"
-                    ></iframe>
-                    <div className="absolute inset-0 bg-black opacity-30 z-[5]"></div>
-                    <div className="relative z-10 max-w-6xl mx-auto px-4 h-full flex flex-col md:flex-row items-center justify-center md:justify-end">
-                    <div className="w-full md:w-1/2 bg-white p-6 rounded-lg shadow-xl relative -top-[100px] md:-top-[180px] border">
-                            <form className="space-y-4" onSubmit={handleSubmitNoCors}>
-                                <div>
-                                    <label className="block text-sm mb-1 font-medium">
-                                        Full Name <span className="text-red-500">*</span>
-                                    </label>
-                                    <input
-                                        type="text"
-                                        value={name}
-                                        onChange={(e) => handleInputChange('name', e.target.value)}
-                                        className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.name ? 'border-red-500' : 'border-gray-300'
-                                            } focus:outline-none focus:ring-2 ${errors.name ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'}`}
-                                    />
-                                    {errors.name && <span className="text-red-500 text-sm mt-1 block">{errors.name}</span>}
-                                </div>
-                                <div>
-                                    <label className="block text-sm mb-1 font-medium">
-                                        Your E-mail <span className="text-red-500">*</span>
-                                    </label>
-                                    <input
-                                        type="email"
-                                        value={email}
-                                        onChange={(e) => handleInputChange('email', e.target.value)}
-                                        className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.email ? 'border-red-500' : 'border-gray-300'
-                                            } focus:outline-none focus:ring-2 ${errors.email ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'}`}
-                                    />
-                                    {errors.email && <span className="text-red-500 text-sm mt-1 block">{errors.email}</span>}
-                                </div>
-                                <div>
-                                    <label className="block text-sm mb-1 font-medium">
-                                        Subject <span className="text-red-500">*</span>
-                                    </label>
-                                    <input
-                                        type="text"
-                                        value={subject}
-                                        onChange={(e) => handleInputChange('subject', e.target.value)}
-                                        className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.subject ? 'border-red-500' : 'border-gray-300'
-                                            } focus:outline-none focus:ring-2 ${errors.subject ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'}`}
-                                    />
-                                    {errors.subject && <span className="text-red-500 text-sm mt-1 block">{errors.subject}</span>}
-                                </div>
-                                <div>
-                                    <label className="block text-sm mb-1 font-medium">
-                                        Your Message <span className="text-red-500">*</span>
-                                    </label>
-                                    <textarea
-                                        value={message}
-                                        onChange={(e) => handleInputChange('message', e.target.value)}
-                                        className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.message ? 'border-red-500' : 'border-gray-300'
-                                            } focus:outline-none focus:ring-2 ${errors.message ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'}`}
-                                        rows={4}
-                                    ></textarea>
-                                    {errors.message && <span className="text-red-500 text-sm mt-1 block">{errors.message}</span>}
-                                </div>
-                                <button
-                                    type="submit"
-                                    disabled={loading}
-                                    className={`bg-[#3F503B] text-white py-2 px-6 rounded-md mt-2 ${loading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2f462f]'
-                                        }`}
-                                >
-                                    {loading ? 'Sending...' : 'Send Now'}
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                <div className="relative hidden md:block h-[500px] w-full mt-10">
+    {/* Map in Background */}
+    <iframe
+      src="https://www.google.com/maps/embed?pb=..."
+      className="absolute inset-0 w-full h-full border-0"
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    ></iframe>
+
+    {/* Overlay */}
+    <div className="absolute inset-0 bg-black opacity-30 z-[5]"></div>
+
+    {/* Contact Form on top of map */}
+    <div className="relative z-10 max-w-6xl mx-auto px-4 h-full flex items-center justify-end">
+      <div className="w-full md:w-1/2 bg-white p-6 rounded-lg shadow-xl -mt-[180px] border">
+        <form className="space-y-4" onSubmit={handleSubmitNoCors}>
+          <div>
+            <label className="block text-sm mb-1 font-medium">
+              Full Name <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => handleInputChange('name', e.target.value)}
+              className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${
+                errors.name ? 'border-red-500' : 'border-gray-300'
+              } focus:outline-none focus:ring-2 ${
+                errors.name ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
+              }`}
+            />
+            {errors.name && <span className="text-red-500 text-sm mt-1 block">{errors.name}</span>}
+          </div>
+          <div>
+            <label className="block text-sm mb-1 font-medium">
+              Your E-mail <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => handleInputChange('email', e.target.value)}
+              className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${
+                errors.email ? 'border-red-500' : 'border-gray-300'
+              } focus:outline-none focus:ring-2 ${
+                errors.email ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
+              }`}
+            />
+            {errors.email && <span className="text-red-500 text-sm mt-1 block">{errors.email}</span>}
+          </div>
+          <div>
+            <label className="block text-sm mb-1 font-medium">
+              Subject <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              value={subject}
+              onChange={(e) => handleInputChange('subject', e.target.value)}
+              className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${
+                errors.subject ? 'border-red-500' : 'border-gray-300'
+              } focus:outline-none focus:ring-2 ${
+                errors.subject ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
+              }`}
+            />
+            {errors.subject && <span className="text-red-500 text-sm mt-1 block">{errors.subject}</span>}
+          </div>
+          <div>
+            <label className="block text-sm mb-1 font-medium">
+              Your Message <span className="text-red-500">*</span>
+            </label>
+            <textarea
+              value={message}
+              onChange={(e) => handleInputChange('message', e.target.value)}
+              className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${
+                errors.message ? 'border-red-500' : 'border-gray-300'
+              } focus:outline-none focus:ring-2 ${
+                errors.message ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
+              }`}
+              rows={4}
+            ></textarea>
+            {errors.message && <span className="text-red-500 text-sm mt-1 block">{errors.message}</span>}
+          </div>
+          <button
+            type="submit"
+            disabled={loading}
+            className={`bg-[#3F503B] text-white py-2 px-6 rounded-md mt-2 ${
+              loading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2f462f]'
+            }`}
+          >
+            {loading ? 'Sending...' : 'Send Now'}
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  {/* Mobile Layout */}
+  <div className="block md:hidden space-y-6">
+    {/* Form first */}
+    <div className="bg-white p-6 rounded-lg shadow-xl border mx-4">
+      <form className="space-y-4" onSubmit={handleSubmitNoCors}>
+        <div>
+          <label className="block text-sm mb-1 font-medium">
+            Full Name <span className="text-red-500">*</span>
+          </label>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => handleInputChange('name', e.target.value)}
+            className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${
+              errors.name ? 'border-red-500' : 'border-gray-300'
+            } focus:outline-none focus:ring-2 ${
+              errors.name ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
+            }`}
+          />
+          {errors.name && <span className="text-red-500 text-sm mt-1 block">{errors.name}</span>}
+        </div>
+        <div>
+          <label className="block text-sm mb-1 font-medium">
+            Your E-mail <span className="text-red-500">*</span>
+          </label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => handleInputChange('email', e.target.value)}
+            className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${
+              errors.email ? 'border-red-500' : 'border-gray-300'
+            } focus:outline-none focus:ring-2 ${
+              errors.email ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
+            }`}
+          />
+          {errors.email && <span className="text-red-500 text-sm mt-1 block">{errors.email}</span>}
+        </div>
+        <div>
+          <label className="block text-sm mb-1 font-medium">
+            Subject <span className="text-red-500">*</span>
+          </label>
+          <input
+            type="text"
+            value={subject}
+            onChange={(e) => handleInputChange('subject', e.target.value)}
+            className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${
+              errors.subject ? 'border-red-500' : 'border-gray-300'
+            } focus:outline-none focus:ring-2 ${
+              errors.subject ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
+            }`}
+          />
+          {errors.subject && <span className="text-red-500 text-sm mt-1 block">{errors.subject}</span>}
+        </div>
+        <div>
+          <label className="block text-sm mb-1 font-medium">
+            Your Message <span className="text-red-500">*</span>
+          </label>
+          <textarea
+            value={message}
+            onChange={(e) => handleInputChange('message', e.target.value)}
+            className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${
+              errors.message ? 'border-red-500' : 'border-gray-300'
+            } focus:outline-none focus:ring-2 ${
+              errors.message ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
+            }`}
+            rows={4}
+          ></textarea>
+          {errors.message && <span className="text-red-500 text-sm mt-1 block">{errors.message}</span>}
+        </div>
+        <button
+          type="submit"
+          disabled={loading}
+          className={`bg-[#3F503B] text-white py-2 px-6 rounded-md mt-2 ${
+            loading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2f462f]'
+          }`}
+        >
+          {loading ? 'Sending...' : 'Send Now'}
+        </button>
+      </form>
+    </div>
+
+    {/* Map second */}
+    <div className="h-[300px] w-full">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=..."
+        className="w-full h-full border-0"
+        loading="lazy"
+        allowFullScreen
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
             </section>
 
             <section className="relative w-full overflow-hidden h-[500px]" data-aos="fade-up">
