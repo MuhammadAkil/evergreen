@@ -7,8 +7,10 @@ import Services from '../components/Services'
 import Industries from '../components/Industries'
 import About from '../components/About'
 import Pricing from '../components/Pricing'
-import PricingPage from '../components/PeiceDetail';
+import PricingPage from '../components/PriceDetail';
 import Slider from '../components/Slider';
+import Subscribe from '../components/Subscribe';
+import CallToAction from '../components/CallToAction';
 
 export default function HomePage() {
     return (
@@ -21,7 +23,8 @@ export default function HomePage() {
             <PricingPage />
             <Banner />
             <Slider />
-            <FAQ />
+            <Subscribe/>
+            <CallToAction/>
         </>
     )
 }

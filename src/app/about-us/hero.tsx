@@ -182,58 +182,55 @@ export default function Hero() {
                 </div>
             </section>
 
-            <section className="relative bg-[#374932] text-white py-16 md:pb-[120px] overflow-hidden" data-aos="zoom-in-up">
-                <img
-                    src="/assets/images/3rdsection.png"
-                    alt="Layout Background"
-                    className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[300px] md:w-[600px] z-0 pointer-events-none"
-                />
+            <section
+      className="relative bg-[#374932] text-white py-16 md:pb-[120px] overflow-hidden"
+      data-aos="zoom-in-up"
+    >
+      <img
+        src="/assets/images/3rdsection.png"
+        alt="Layout Background"
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[300px] md:w-[600px] z-0 pointer-events-none"
+      />
 
-                <div className="relative z-10 max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
-                    <div className="bg-white p-6 rounded-lg shadow-lg">
-                        <h2 className="text-5xl text-black">3400+</h2>
-                        <p className="mt-2 text-[#4CAF50] font-instrument font-bold text-base sm:text-lg md:text-xl lg:text-2xl">
-                            Septic Systems Serviced
-                        </p>
-
-                        <span className="block mt-2 text-gray-500 font-instrument text-sm sm:text-base md:text-lg">
-                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </span>
-
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-lg md:relative md:top-[96px]">
-                        <h2 className="text-5xl text-black">6820</h2>
-                        <p className="mt-2 text-[#4CAF50] font-instrument font-bold text-base sm:text-lg md:text-xl lg:text-2xl">
-                            Satisfied Customers
-                        </p>
-
-                        <span className="block mt-2 text-gray-500 font-instrument text-sm sm:text-base md:text-lg">
-                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </span>
-
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-lg">
-                        <h2 className="text-5xl text-black">270+</h2>
-                        <p className="mt-2 text-[#4CAF50] font-instrument font-bold text-base sm:text-lg md:text-xl lg:text-2xl">
-                            Advanced Equipment
-                        </p>
-                        <span className="block mt-2 text-gray-500 font-instrument text-sm sm:text-base md:text-lg">
-                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </span>
-
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-lg md:relative md:top-[96px]">
-                        <h2 className="text-5xl text-black">3568</h2>
-                        <p className="mt-2 text-[#4CAF50] font-instrument font-bold text-base sm:text-lg md:text-xl lg:text-2xl">
-                            System Inspections
-                        </p>
-                        <span className="block mt-2 text-gray-500 font-instrument text-sm sm:text-base md:text-lg">
-                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </span>
-
-                    </div>
-                </div>
-            </section>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="bg-white p-6 rounded-lg shadow-lg">
+          <h2 className="text-5xl text-black">3400+</h2>
+          <p className="mt-2 text-[#4CAF50] font-instrument font-bold text-base sm:text-lg md:text-xl lg:text-2xl">
+            Septic Systems Serviced
+          </p>
+          <span className="block mt-2 text-gray-500 font-instrument text-sm sm:text-base md:text-lg">
+            Over 3,400 septic systems maintained and repaired with expert care in the Lake Geneva region.
+          </span>
+        </div>
+        <div className="bg-white p-6 rounded-lg shadow-lg md:relative md:top-[96px]">
+          <h2 className="text-5xl text-black">6820</h2>
+          <p className="mt-2 text-[#4CAF50] font-instrument font-bold text-base sm:text-lg md:text-xl lg:text-2xl">
+            Satisfied Customers
+          </p>
+          <span className="block mt-2 text-gray-500 font-instrument text-sm sm:text-base md:text-lg">
+            6,820 happy clients trust us for reliable and eco-friendly septic solutions.
+          </span>
+        </div>
+        <div className="bg-white p-6 rounded-lg shadow-lg">
+          <h2 className="text-5xl text-black">270+</h2>
+          <p className="mt-2 text-[#4CAF50] font-instrument font-bold text-base sm:text-lg md:text-xl lg:text-2xl">
+            Advanced Equipment
+          </p>
+          <span className="block mt-2 text-gray-500 font-instrument text-sm sm:text-base md:text-lg">
+            Utilizing over 270 advanced tools to ensure efficient and precise septic services.
+          </span>
+        </div>
+        <div className="bg-white p-6 rounded-lg shadow-lg md:relative md:top-[96px]">
+          <h2 className="text-5xl text-black">3568</h2>
+          <p className="mt-2 text-[#4CAF50] font-instrument font-bold text-base sm:text-lg md:text-xl lg:text-2xl">
+            System Inspections
+          </p>
+          <span className="block mt-2 text-gray-500 font-instrument text-sm sm:text-base md:text-lg">
+            Conducted 3,568 thorough inspections to keep septic systems compliant and functional.
+          </span>
+        </div>
+      </div>
+    </section>
 
             <section className="bg-white py-16" data-aos="zoom-in-down">
                 <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
@@ -390,309 +387,6 @@ export default function Hero() {
 
                 </div>
             </section>
-
-            <section className='max-w-4xl mx-auto p-6 mt-10 mb-10 font-sans' data-aos="fade-up">
-                <div className="bg-[#F0F0F0] rounded-lg p-4 md:p-6 mb-6">
-                    <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6">
-
-                        <div className="flex items-start p-3 rounded-md w-full md:w-auto bg-[#F0F0F0]">
-                            <div className="bg-[#e9f3e6] p-2 rounded-md mr-3 flex-shrink-0">
-                                <Mail className="h-7 w-7 text-[#3F503B]" />
-                            </div>
-                            <div className="flex flex-col w-full overflow-hidden">
-                                <div className="font-semibold text-base md:text-lg">
-                                    Mail Us
-                                </div>
-                                <Link
-                                    href="mailto:evergreensepticservicellc@gmail.com"
-                                    className="text-gray-700 text-sm md:text-base break-words overflow-wrap break-word w-full">
-                                    evergreensepticservicellc@gmail.com
-                                </Link>
-
-                            </div>
-                        </div>
-
-
-                        <div className="flex items-center p-3 rounded-md w-full md:w-auto">
-                            <div className="bg-[#e9f3e6] p-2 rounded-md mr-3">
-                                <Phone className="h-7 w-7 text-[#3F503B]" />
-                            </div>
-                            <div>
-                                <div className="font-semibold text-base md:text-lg">Call Us</div>
-                                <Link href="tel:+1 262-248-4711" className="text-gray-700 text-sm md:text-base">+1 262-248-4711</Link>
-                            </div>
-                        </div>
-
-                        <Link href="/contact-us" className="w-full md:w-auto">
-                            <Button className="w-full md:w-auto bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-md flex items-center justify-center gap-2">
-                                <Rocket className="h-5 w-5" /> GET A FREE QUOTE
-                            </Button>
-                        </Link>
-
-                    </div>
-                </div>
-
-
-                <div className="text-center font-inter font-medium text-base sm:text-lg md:text-[24px] leading-[26px] sm:leading-[28px] md:leading-[30px] text-gray-700">
-                    <p>Phone: 262-248-4711 (during normal business hours, Monday-Friday, 8 AM to 4 PM)</p>
-                    <p>Emergency Number: 262-949-3555</p>
-                </div>
-
-            </section>
-
-            <section>
-                <div className="relative" data-aos="fade-up"
-                    data-aos-anchor-placement="top-bottom">
-                    <div className="relative h-[500px] w-full">
-                        <Image
-                            src="/assets/images/Banner/bgImage.png"
-                            alt="Septic system maintenance"
-                            fill
-                            className="object-cover brightness-[0.85]"
-                            priority
-                        />
-
-                        <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-20 hidden md:block">
-                            <svg width="200" height="200" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M8 2V5M16 2V5M3.5 9.09H20.5M21 8.5V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V8.5C3 5.5 4.5 3.5 8 3.5H16C19.5 3.5 21 5.5 21 8.5Z"
-                                    stroke="white"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                />
-                                <path
-                                    d="M15.6947 13.7H15.7037M15.6947 16.7H15.7037M11.9955 13.7H12.0045M11.9955 16.7H12.0045M8.29431 13.7H8.30329M8.29431 16.7H8.30329"
-                                    stroke="white"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                />
-                            </svg>
-                        </div>
-
-                        <div className="absolute inset-0 flex flex-col justify-center px-6 md:px-12 lg:px-16">
-                            <h1 className="text-white text-3xl md:text-4xl lg:text-5xl max-w-3xl leading-tight font-instrument font-medium">
-                                Maintain your septic system with our reliable and efficient solutions.
-                            </h1>
-
-                            <Link href="/contact-us">
-                                <div className="mt-8">
-                                    <Button className="bg-red-500 cursor-pointer hover:bg-red-600 text-white px-6 py-6 rounded-md text-[24px] font-instrument font-bold leading-[100%] md:text-[24px]">
-                                        <Rocket className="mr-2 h-5 w-5" />
-                                        GET A FREE QUOTE
-                                    </Button>
-
-                                </div>
-                            </Link>
-                        </div>
-                    </div>
-
-                    <div className="relative mx-auto max-w-4xl -mt-16 px-4">
-                        <div className="bg-white rounded-lg shadow-lg p-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                            <div className="flex flex-col">
-                                <span className="text-3xl md:text-4xl font-bold text-gray-800">3400+</span>
-                                <span className="text-sm text-gray-500 mt-1 font-instrument">Complete Projects</span>
-                            </div>
-
-                            <div className="flex flex-col">
-                                <span className="text-3xl md:text-4xl font-bold text-gray-800">6,820</span>
-                                <span className="text-sm text-gray-500 mt-1 font-instrument">Happy Clients</span>
-                            </div>
-
-                            <div className="flex flex-col">
-                                <span className="text-3xl md:text-4xl font-bold text-gray-800">270+</span>
-                                <span className="text-sm text-gray-500 mt-1 font-instrument">Dealer Equipments</span>
-                            </div>
-
-                            <div className="flex flex-col">
-                                <span className="text-3xl md:text-4xl font-bold text-gray-800">15+</span>
-                                <span className="text-sm text-gray-500 mt-1 font-instrument">Years of Experience</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section className="relative bg-white py-16" data-aos="fade-up"
-                data-aos-anchor-placement="top-bottom">
-                <div className="absolute top-0 right-0 z-0">
-                    <img src="/assets/images/Union.png" alt="Design" className="w-[300px] md:h-[165px]" />
-                </div>
-
-                <div className="max-w-7xl mx-auto px-4 relative z-10">
-                    <p className="text-sm font-instrument font-bold text-[#3F503B] uppercase mb-2 text-[20px] md:text-[20px]">
-                        Testimonials
-                    </p>
-
-                    <h2 className="font-instrument font-normal text-[32px] text-black mb-12 md:text-[48px] lg:text-[54px]">
-                        What Our Clients Say
-                    </h2>
-
-                    <div className="w-full">
-                        <div className="overflow-hidden" ref={emblaRef}>
-                            <div className="flex">
-
-                                <div className="flex-[0_0_100%] md:flex-[0_0_33.3333%] p-3">
-                                    <div className="group bg-white border border-transparent p-6 rounded-lg shadow-sm hover:bg-[#e8f3e6] hover:border-[#3F503B] hover:shadow-md transition-all duration-300 h-full">
-                                        <h3 className="font-gilroy font-bold text-[#000000] text-[20.38px] sm:text-[18px] leading-[25.94px] group-hover:text-[#3F503B] mb-3">
-                                            The Best Septic Services
-                                        </h3>
-                                        <p className="font-instrument text-[#696969] text-[16.67px] leading-[27.79px] mb-6 sm:text-[14px] sm:leading-[22px]">
-                                            "I highly recommend this company. Jon and his crew provided outstanding service when they came
-                                            out to help my parents with their septic tank. They were very honest and open to work with! Thank
-                                            you for your help!"
-                                        </p>
-                                        <div className="flex items-center gap-3">
-                                            <img
-                                                src="https://randomuser.me/api/portraits/women/65.jpg"
-                                                className="w-10 h-10 rounded-full"
-                                                alt="Giovanni C"
-                                            />
-                                            <div>
-                                                <p className="font-semibold text-sm text-black group-hover:text-[#3F503B]">Giovanni C</p>
-                                                <p className="text-xs text-gray-500">Brooklyns NY</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="flex-[0_0_100%] md:flex-[0_0_33.3333%] p-3">
-                                    <div className="group bg-white border border-transparent p-6 rounded-lg shadow-sm hover:bg-[#e8f3e6] hover:border-[#3F503B] hover:shadow-md transition-all duration-300 h-full">
-                                        <h3 className="font-gilroy font-bold text-[#000000] text-[20.38px] sm:text-[18px] leading-[25.94px] group-hover:text-[#3F503B] mb-3">
-                                            The Best Septic Services
-                                        </h3>
-                                        <p className="font-instrument text-[#696969] text-[16.67px] leading-[27.79px] mb-6 sm:text-[14px] sm:leading-[22px]">
-                                            "I highly recommend this company. Jon and his crew provided outstanding service when they came
-                                            out to help my parents with their septic tank. They were very honest and open to work with! Thank
-                                            you for your help!"
-                                        </p>
-                                        <div className="flex items-center gap-3">
-                                            <img
-                                                src="https://randomuser.me/api/portraits/women/65.jpg"
-                                                className="w-10 h-10 rounded-full"
-                                                alt="Giovanni C"
-                                            />
-                                            <div>
-                                                <p className="font-semibold text-sm text-black group-hover:text-[#3F503B]">Giovanni C</p>
-                                                <p className="text-xs text-gray-500">Brooklyns NY</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="flex-[0_0_100%] md:flex-[0_0_33.3333%] p-3">
-                                    <div className="group bg-white border border-transparent p-6 rounded-lg shadow-sm hover:bg-[#e8f3e6] hover:border-[#3F503B] hover:shadow-md transition-all duration-300 h-full">
-                                        <h3 className="font-gilroy font-bold text-[#000000] text-[20.38px] sm:text-[18px] leading-[25.94px] group-hover:text-[#3F503B] mb-3">
-                                            The Best Septic Services
-                                        </h3>
-                                        <p className="font-instrument text-[#696969] text-[16.67px] leading-[27.79px] mb-6 sm:text-[14px] sm:leading-[22px]">
-                                            "I highly recommend this company. Jon and his crew provided outstanding service when they came
-                                            out to help my parents with their septic tank. They were very honest and open to work with! Thank
-                                            you for your help!"
-                                        </p>
-                                        <div className="flex items-center gap-3">
-                                            <img
-                                                src="https://randomuser.me/api/portraits/women/65.jpg"
-                                                className="w-10 h-10 rounded-full"
-                                                alt="Giovanni C"
-                                            />
-                                            <div>
-                                                <p className="font-semibold text-sm text-black group-hover:text-[#3F503B]">Giovanni C</p>
-                                                <p className="text-xs text-gray-500">Brooklyns NY</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="flex-[0_0_100%] md:flex-[0_0_33.3333%] p-3">
-                                    <div className="group bg-white border border-transparent p-6 rounded-lg shadow-sm hover:bg-[#e8f3e6] hover:border-[#3F503B] hover:shadow-md transition-all duration-300 h-full">
-                                        <h3 className="font-gilroy font-bold text-[#000000] text-[20.38px] sm:text-[18px] leading-[25.94px] group-hover:text-[#3F503B] mb-3">
-                                            The Best Septic Services
-                                        </h3>
-                                        <p className="font-instrument text-[#696969] text-[16.67px] leading-[27.79px] mb-6 sm:text-[14px] sm:leading-[22px]">
-                                            "I highly recommend this company. Jon and his crew provided outstanding service when they came
-                                            out to help my parents with their septic tank. They were very honest and open to work with! Thank
-                                            you for your help!"
-                                        </p>
-                                        <div className="flex items-center gap-3">
-                                            <img
-                                                src="https://randomuser.me/api/portraits/women/65.jpg"
-                                                className="w-10 h-10 rounded-full"
-                                                alt="Giovanni C"
-                                            />
-                                            <div>
-                                                <p className="font-semibold text-sm text-black group-hover:text-[#3F503B]">Giovanni C</p>
-                                                <p className="text-xs text-gray-500">Brooklyns NY</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="flex-[0_0_100%] md:flex-[0_0_33.3333%] p-3">
-                                    <div className="group bg-white border border-transparent p-6 rounded-lg shadow-sm hover:bg-[#e8f3e6] hover:border-[#3F503B] hover:shadow-md transition-all duration-300 h-full">
-                                        <h3 className="font-gilroy font-bold text-[#000000] text-[20.38px] sm:text-[18px] leading-[25.94px] group-hover:text-[#3F503B] mb-3">
-                                            The Best Septic Services
-                                        </h3>
-                                        <p className="font-instrument text-[#696969] text-[16.67px] leading-[27.79px] mb-6 sm:text-[14px] sm:leading-[22px]">
-                                            "I highly recommend this company. Jon and his crew provided outstanding service when they came
-                                            out to help my parents with their septic tank. They were very honest and open to work with! Thank
-                                            you for your help!"
-                                        </p>
-                                        <div className="flex items-center gap-3">
-                                            <img
-                                                src="https://randomuser.me/api/portraits/women/65.jpg"
-                                                className="w-10 h-10 rounded-full"
-                                                alt="Giovanni C"
-                                            />
-                                            <div>
-                                                <p className="font-semibold text-sm text-black group-hover:text-[#3F503B]">Giovanni C</p>
-                                                <p className="text-xs text-gray-500">Brooklyns NY</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="flex-[0_0_100%] md:flex-[0_0_33.3333%] p-3">
-                                    <div className="group bg-white border border-transparent p-6 rounded-lg shadow-sm hover:bg-[#e8f3e6] hover:border-[#3F503B] hover:shadow-md transition-all duration-300 h-full">
-                                        <h3 className="font-gilroy font-bold text-[#000000] text-[20.38px] sm:text-[18px] leading-[25.94px] group-hover:text-[#3F503B] mb-3">
-                                            The Best Septic Services
-                                        </h3>
-                                        <p className="font-instrument text-[#696969] text-[16.67px] leading-[27.79px] mb-6 sm:text-[14px] sm:leading-[22px]">
-                                            "I highly recommend this company. Jon and his crew provided outstanding service when they came
-                                            out to help my parents with their septic tank. They were very honest and open to work with! Thank
-                                            you for your help!"
-                                        </p>
-                                        <div className="flex items-center gap-3">
-                                            <img
-                                                src="https://randomuser.me/api/portraits/women/65.jpg"
-                                                className="w-10 h-10 rounded-full"
-                                                alt="Giovanni C"
-                                            />
-                                            <div>
-                                                <p className="font-semibold text-sm text-black group-hover:text-[#3F503B]">Giovanni C</p>
-                                                <p className="text-xs text-gray-500">Brooklyns NY</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div className="mt-10 w-full max-w-[40em] h-2 bg-gray-200 rounded-full overflow-hidden border" style={{ borderColor: '#AEAEAE' }}>
-                            <div
-                                className="h-full rounded-full transition-all duration-300"
-                                style={{
-                                    width: `${progress * 100}%`,
-                                    backgroundColor: '#484848'
-                                }}
-                            ></div>
-                        </div>
-                    </div>
-
-                </div>
-            </section >
 
         </>
     );

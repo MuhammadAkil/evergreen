@@ -134,17 +134,17 @@ export default function Home() {
     <main className="min-h-screen bg-[#3F503B] " data-aos="fade-up" data-aos-anchor-placement="top-bottom">
       <div className="container mx-auto px-4 py-12">
         <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-8 ml-4 md:ml-10">
-          <div className="text-white text-left w-full md:w-auto">
+          <div className="text-white text-left w-full">
             <p className="text-sm md:text-base font-instrument font-semibold leading-[100%] tracking-[0%] sm:text-[16px] md:text-[20px]">
-              EFFECTIVE April 1, 2025
+              Effective April 1, 2025
             </p>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-instrument my-2 leading-[100%]">
-              PRICING LIST
+            <h1 className="text-3xl sm:text-4xl md:text-5xl capitalize font-instrument my-2 leading-[100%]">
+              Pricing List
             </h1>
 
             <p className="text-lg sm:text-xl md:text-2xl mt-2 font-instrument font-medium leading-[100%]">
-              PRICE PER GALLON
+              Price Per Gallon
             </p>
           </div>
 

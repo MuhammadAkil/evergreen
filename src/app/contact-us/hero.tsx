@@ -443,32 +443,6 @@ export default function Hero() {
                     </div>
                 </div>
             </section>
-
-            <section className="bg-[#4CAF50] py-16 px-4" data-aos="fade-up">
-                <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
-                    <div className="md:w-1/2 text-white text-center md:text-left">
-                        <h2 className="text-3xl sm:text-4xl mb-2 font-instrument">Subscribe Our Newsletter</h2>
-                        <p className="text-sm sm:text-base font-instrument">
-                            Stay in touch with us to get latest news. Maximus mattis est facilisi. In sed pretium Proin pretium id urna sit amet tincidunt.
-                        </p>
-                    </div>
-                    <div className="md:w-1/2 w-full">
-                        <form className="flex flex-col sm:flex-row w-full max-w-md mx-auto">
-                            <input
-                                type="email"
-                                placeholder="your mail address here"
-                                className="flex-1 p-3 border border-white focus:outline-none placeholder-white text-white bg-transparent mb-4 sm:mb-0 sm:mr-2"
-                            />
-                            <button
-                                type="submit"
-                                className="bg-white text-[#3F503B] font-semibold px-6 py-3 rounded-md border border-white hover:bg-gray-100 transition w-full sm:w-auto"
-                            >
-                                Subscribe
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </section>
         </>
     );
 }

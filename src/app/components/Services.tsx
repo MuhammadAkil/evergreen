@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { FaPlusCircle } from "react-icons/fa";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Link from 'next/link';

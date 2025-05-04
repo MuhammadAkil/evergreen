@@ -90,10 +90,10 @@ export default function HerSection() {
             <div className="max-w-screen-xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                 {/* Left Section */}
                 <div className="text-white">
-                    <h1 className="text-4xl md:text-5xl font-bold leading-tight whitespace-pre-line font-instrument">
+                    <h1 className="text-shadow-lg text-4xl md:text-5xl font-bold leading-tight whitespace-pre-line font-instrument">
                         Reliable & Professional{"\n"}Septic Services
                     </h1>
-                    <p className="mt-4 text-[24px] font-instrument font-normal leading-[30px] tracking-[0%]">
+                    <p className="text-shadow-lg mt-4 text-[24px] font-instrument font-normal leading-[30px] tracking-[0%]">
                         Fast, Affordable & Trusted Septic Pumping,{" "}
                         <strong className="font-bold">
                             Inspections & Repairs in Walworth County

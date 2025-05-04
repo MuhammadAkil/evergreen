@@ -16,6 +16,7 @@ export default function Navbar() {
         { name: 'Our Services', path: '/our-services' },
         { name: 'Testimonials', path: '/testimonial' },
         { name: 'Pricing', path: '/pricing' },
+        { name: 'FAQ', path: '/frequently-asked-questions' },
         { name: 'Contact', path: '/contact-us' }
     ];
 
@@ -101,6 +102,7 @@ export default function Navbar() {
                         <Link
                             key={i}
                             href={path}
+                            onClick={() => setMenuOpen(false)}
                             className={`px-6 py-2 ${pathname === path ? 'bg-[#2f462f] rounded-sm' : 'hover:bg-[#5D7757]'}`}
                         >
                             {name}
