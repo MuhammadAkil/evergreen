@@ -86,6 +86,7 @@ export default function Hero() {
 
     const handleSubmitNoCors = async (e: React.FormEvent) => {
         e.preventDefault();
+        // toast.success('Toast test!');
 
         const formData = {
             name,
@@ -118,7 +119,7 @@ export default function Hero() {
                 }),
             });
 
-            toast.success('Data submitted successfully!');
+           toast.success('Request submitted successfully!');
             setName('');
             setEmail('');
             setSubject('');
@@ -200,7 +201,8 @@ export default function Hero() {
                             GET IN TOUCH
                         </p>
                         <h2 className="font-gilroy-medium font-normal text-2xl sm:text-4xl md:text-[54px] leading-tight md:relative md:top-0 relative top-[-4em]">
-                            Quality & Passion With Contact Form
+                            Expert Help, One Click Away
+                            {/* Talk to the Team */}
                         </h2>
                     </div>
                 </div>

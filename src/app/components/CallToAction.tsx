@@ -24,8 +24,8 @@ export default function CallToAction() {
                 <div className="font-semibold text-base md:text-lg">
                   Mail Us
                 </div>
-                <Link href="mailto:evergreensepticservicellc@gmail.com" className="text-gray-700 text-sm md:text-base break-words overflow-wrap break-word w-full">
-                  evergreensepticservicellc@gmail.com
+                <Link href="mailto:info@evergreenseptic.com" className="text-gray-700 text-sm md:text-base break-words overflow-wrap break-word w-full">
+                info@evergreenseptic.com
                 </Link>
 
               </div>

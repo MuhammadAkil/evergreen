@@ -127,7 +127,7 @@ const FAQSection = () => {
                                         href="mailto:info@evergreenseptics.com"
                                         className="font-instrument font-semibold text-[16px] text-[#3F503B] hover:underline"
                                     >
-                                        info@evergreenseptics.com
+                                        info@evergreenseptic.com
                                     </Link>
                                 </p>
 

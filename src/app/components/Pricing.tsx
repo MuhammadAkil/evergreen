@@ -54,6 +54,7 @@ export default function Home() {
 
   const [category, setCategory] = useState('holding');
   const [quantity, setQuantity] = useState('');
+  const [quantityError, setQuantityError] = useState('');
   const [price, setPrice] = useState<number | null>(null);
   const [showMoreHolding, setShowMoreHolding] = useState(false);
   const [showMoreSeptic, setShowMoreSeptic] = useState(false);
@@ -130,6 +131,22 @@ export default function Home() {
     { gallons: "4400", price: "590.00" },
   ];
 
+
+  const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+
+    if (value.length > 5) {
+      setQuantityError('Maximum 5 digits allowed');
+      return;
+    }
+
+    else {
+      setQuantityError('');
+    }
+
+    setQuantity(value);
+  };
+
   return (
     <main className="min-h-screen bg-[#3F503B] " data-aos="fade-up" data-aos-anchor-placement="top-bottom">
       <div className="container mx-auto px-4 py-12">
@@ -184,10 +201,15 @@ export default function Home() {
                       <input
                         type="number"
                         value={quantity}
-                        onChange={(e) => setQuantity(e.target.value)}
+                        // onChange={(e) => setQuantity(e.target.value)}
                         className="w-full p-3 rounded-md bg-gray-100"
                         placeholder="Enter gallons"
+                        onChange={handleQuantityChange}
                       />
+
+                      {quantityError && (
+                        <p className="text-red-500 text-sm">{quantityError}</p>
+                      )}
                     </div>
                   </div>
                 </div>

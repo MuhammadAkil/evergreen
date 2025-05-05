@@ -11,7 +11,7 @@ export default function Hero() {
 
     return (
         <>
-        <section className="py-16 bg-white relative overflow-hidden" data-aos="fade-right">
+            <section className="py-16 bg-white relative overflow-hidden" data-aos="fade-right">
                 <img
                     src="/assets/images/Union.png"
                     alt="Background Graphic"

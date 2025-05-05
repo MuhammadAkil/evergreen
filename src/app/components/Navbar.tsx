@@ -63,13 +63,13 @@ export default function Navbar() {
                             <div className="text-gray-500 text-xs">Lake Geneva, Wisconsin.</div>
                         </div>
                     </div>
-                    <div className="flex gap-2">
+                    {/* <div className="flex gap-2">
                         {[FaInstagram, FaFacebookF, FaTwitter, FaYelp].map((Icon, i) => (
                             <div key={i} className="bg-[#E9F4E6] w-[36px] h-[36px] flex items-center justify-center rounded-[8px]">
                                 <Icon className="text-[#3F503B]" />
                             </div>
                         ))}
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
@@ -110,13 +110,13 @@ export default function Navbar() {
                     ))}
                     </div>
 
-                    <div className="flex items-center justify-center gap-3 py-4">
+                    {/* <div className="flex items-center justify-center gap-3 py-4">
                         {[FaInstagram, FaFacebookF, FaTwitter, FaYelp].map((Icon, i) => (
                             <div key={i} className="bg-[#E9F4E6] w-[38px] h-[38px] flex items-center justify-center rounded-[8px]">
                                 <Icon className="text-[#3F503B]" />
                             </div>
                         ))}
-                    </div>
+                    </div> */}
 
                     <Link href="/about-us">
                         <div className="flex justify-center py-4">

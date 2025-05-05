@@ -7,14 +7,14 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row gap-8">
           <div className="md:w-1/3">
             <div className="flex items-center gap-2 mb-4">
-            <svg width="60" height="60" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-<mask id="mask0_105_240" style={{maskType:'alpha'}} maskUnits="userSpaceOnUse" x="0" y="0" width="72" height="72">
-<rect width="71.7832" height="71.7832" fill="white"/>
-</mask>
-<g mask="url(#mask0_105_240)">
-<path d="M38.8826 65.8018V56.8289H50.8464V65.8018H38.8826ZM20.9368 65.8018V53.8379H0L11.5152 35.8921H5.98193L26.9187 5.98242L47.8555 35.8921H42.3222L53.9122 53.8379H32.9006V65.8018H20.9368ZM57.5761 53.8379L47.8555 38.8831H53.6131L37.761 16.2265L44.8645 5.98242L65.8013 35.8921H60.268L71.7832 53.8379H57.5761Z" fill="white"/>
-</g>
-</svg>
+              <svg width="60" height="60" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_105_240" style={{ maskType: 'alpha' }} maskUnits="userSpaceOnUse" x="0" y="0" width="72" height="72">
+                  <rect width="71.7832" height="71.7832" fill="white" />
+                </mask>
+                <g mask="url(#mask0_105_240)">
+                  <path d="M38.8826 65.8018V56.8289H50.8464V65.8018H38.8826ZM20.9368 65.8018V53.8379H0L11.5152 35.8921H5.98193L26.9187 5.98242L47.8555 35.8921H42.3222L53.9122 53.8379H32.9006V65.8018H20.9368ZM57.5761 53.8379L47.8555 38.8831H53.6131L37.761 16.2265L44.8645 5.98242L65.8013 35.8921H60.268L71.7832 53.8379H57.5761Z" fill="white" />
+                </g>
+              </svg>
 
               <div>
                 <Link href='/'>
@@ -28,71 +28,6 @@ export default function Footer() {
               Providing reliable and professional septic services to keep your system running smoothly. Contact us for
               expert maintenance, repairs, and installations. Serving your community with trust and efficiency.
             </p>
-
-            <div className="flex gap-2">
-              <Link href="#" className="bg-white/20 p-2 rounded-md hover:bg-white/30 transition-colors">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-5 h-5"
-                >
-                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                </svg>
-              </Link>
-              <Link href="#" className="bg-white/20 p-2 rounded-md hover:bg-white/30 transition-colors">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-5 h-5"
-                >
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                </svg>
-              </Link>
-              <Link href="#" className="bg-white/20 p-2 rounded-md hover:bg-white/30 transition-colors">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-5 h-5"
-                >
-                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
-                </svg>
-              </Link>
-              <Link href="#" className="bg-white/20 p-2 rounded-md hover:bg-white/30 transition-colors">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="w-5 h-5"
-                >
-                  <path d="M19.2 17.8l-4.2-1.4c-.8 1-1.1 1.3-1.9 2.2l3.9 2.7c.7.5 1.6.3 2.1-.4s.4-1.6-.3-2.1zm-7.1-9.6l4.2-1.4c.7-.3 1.1-1.1.8-1.8s-1.1-1.1-1.8-.8l-4.2 1.4c-.7.3-1.1 1.1-.8 1.8.3.7 1.1 1.1 1.8.8zm-2.2 5.3l-4.2-1.4c-.7-.3-1.6 0-1.9.7s0 1.6.7 1.9l4.2 1.4c.7.3 1.6 0 1.9-.7.3-.7 0-1.6-.7-1.9zm10.5-5.3l-4.2 1.4c-.7.3-1.1 1.1-.8 1.8s1.1 1.1 1.8.8l4.2-1.4c.7-.3 1.1-1.1.8-1.8-.3-.7-1.1-1.1-1.8-.8zm-8.3 9.6c.7-.3 1.1-1.1.8-1.8l-1.4-4.2c-.3-.7-1.1-1.1-1.8-.8s-1.1 1.1-.8 1.8l1.4 4.2c.3.7 1.1 1.1 1.8.8z" />
-                </svg>
-              </Link>
-            </div>
           </div>
 
           {/* Middle section - Contact information */}
@@ -186,16 +121,6 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" className="hover:underline">
-                    Gallery
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/pricing" className="hover:underline">
-                    Offers
-                  </Link>
-                </li>
-                <li>
                   <Link href="/pricing" className="hover:underline">
                     Pricing
                   </Link>
@@ -225,16 +150,6 @@ export default function Footer() {
                     Contact Us
                   </Link>
                 </li>
-                <li>
-                  <Link href="/contact-us" className="hover:underline">
-                    Service Request
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/pricing" className="hover:underline">
-                    Estimation Calculator
-                  </Link>
-                </li>
               </ul>
             </div>
           </div>
@@ -242,13 +157,13 @@ export default function Footer() {
 
         {/* Copyright section */}
         <div className=" mt-8 pt-4 border-t border-[#3a4b3a] text-center text-sm">
-        
-        <div className="flex flex-col lg:flex-row w-full items-center mx-auto justify-between max-w-[450px]">
-          
-           <p>&copy; Copyright {new Date().getFullYear()} Evergreen Septic Service LLC.</p>
-           |
-          <p>All rights reserved.</p>
-        </div>
+
+          <div className="flex flex-col lg:flex-row w-full items-center mx-auto justify-between max-w-[450px]">
+
+            <p>&copy; Copyright {new Date().getFullYear()} Evergreen Septic Service LLC.</p>
+            |
+            <p>All rights reserved.</p>
+          </div>
         </div>
       </div>
     </footer>

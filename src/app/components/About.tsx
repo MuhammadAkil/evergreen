@@ -41,11 +41,11 @@ export default function About() {
                         <h4 className="text-sm font-instrument font-normal uppercase mb-2 text-[20px] leading-[100%] tracking-[0%] mb-2 sm:text-[16px] md:text-[18px] lg:text-[20px]">
                             Our History
                         </h4>
-                        <h2 className="font-instrument text-[54px] leading-[100%] tracking-[0%] mb-4 sm:text-[36px] md:text-[44px] lg:text-[54px]">
+                        <h2 className="font-instrument text-[34px] sm:text-[32px] md:text-[36px] lg:text-[54px] leading-[100%] tracking-[0%] mb-4">
                             About Evergreen Septic Service
                         </h2>
 
-                        <h2 className="font-instrument text-[32px] leading-[100%] tracking-[0%] mb-4 sm:text-[24px] md:text-[32px] lg:text-[32px]">
+                        <h2 className="font-instrument text-[34px] sm:text-[32px] md:text-[36px] leading-[100%] tracking-[0%] mb-4 sm:text-[24px] md:text-[32px] lg:text-[32px]">
                             Who We Are
                         </h2>
 
