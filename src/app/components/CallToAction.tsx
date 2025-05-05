@@ -38,7 +38,7 @@ export default function CallToAction() {
               </div>
               <div>
                 <div className="font-semibold text-base md:text-lg">Call Us</div>
-                <Link href='tel:+1 262-248-4711' className="text-gray-700 text-sm md:text-base">+1 262-248-4711</Link>
+                <Link href='tel:262-248-4711' className="text-gray-700 text-sm md:text-base">262-248-4711</Link>
               </div>
             </div>
 
@@ -55,7 +55,7 @@ export default function CallToAction() {
         <div className="text-center font-inter font-medium text-base sm:text-lg md:text-[24px] leading-[26px] sm:leading-[28px] md:leading-[30px] text-gray-700">
           <p> (during normal business hours, Monday-Friday, 8 AM to 4 PM)</p>
          <div className="flex justify-center gap-3 mt-2">
-           <p>Emergency Number:</p><Link href="tel:+1262-949-3555" className="hover:underline">1 262-949-3555</Link>
+           <p>Emergency Number:</p><Link href="tel:262-949-3555" className="hover:underline">262-949-3555</Link>
         </div>
         </div>
 

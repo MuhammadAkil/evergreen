@@ -90,7 +90,7 @@ export default function Navbar() {
                 <div>
                     <div className="cursor-pointer bg-[#EF4444] text-white px-5 py-2.5 rounded-md font-bold text-[20px] flex items-center gap-2 shadow-md">
                         <FaPhone className="text-[20px]" />
-                        <a href="tel:+1262-248-4711">+1262-248-4711</a>
+                        <a href="tel:262-248-4711">262-248-4711</a>
                     </div>
                 </div>
             </div>

@@ -143,8 +143,8 @@ export default function Footer() {
                 </div>
                 <div>
                   <div className="font-medium">Call Us</div>
-                  <Link href="tel:+12622484711" className="text-sm hover:underline">
-                    +1 262-248-4711
+                  <Link href="tel:2622484711" className="text-sm hover:underline">
+                    262-248-4711
                   </Link>
                 </div>
               </div>

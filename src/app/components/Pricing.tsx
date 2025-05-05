@@ -177,7 +177,7 @@ export default function Home() {
                     </div>
 
                     <div className="space-y-2">
-                      <p className="font-instrument font-normal text-[20px] sm:text-[24px] leading-[100%] tracking-[0%]">
+                      <p className="font-instrument font-normal text-[20px] sm:text-[24px] leading-[100%] tracking-[0%] whitespace-nowrap">
                         Quantity (Gallons)
                       </p>
 
