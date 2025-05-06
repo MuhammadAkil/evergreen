@@ -39,6 +39,7 @@ export default function Seo({
     'Eco-friendly septic service',
   ];
   const defaultOgImage = 'https://www.evergreensepticsvc.com/assets/images/HeroSection.png';
+  const defaultUrl = 'https://www.evergreensepticsvc.com/';
 
   return (
     <Head>
@@ -47,15 +48,16 @@ export default function Seo({
       <meta name="keywords" content={keywords?.join(', ') || defaultKeywords.join(', ')} />
       <meta property="og:title" content={ogTitle || defaultTitle} />
       <meta property="og:description" content={ogDescription || defaultDescription} />
-      <meta property="og:url" content={ogUrl || 'https://www.evergreensepticsvc.com/'} />
+      <meta property="og:url" content={ogUrl || defaultUrl} />
       <meta property="og:image" content={ogImage || defaultOgImage} />
       <meta property="og:site_name" content="Evergreen Septic Service LLC" />
       <meta property="og:locale" content="en_US" />
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content="website " />
       <meta name="twitter:card" content={twitterCard || 'summary_large_image'} />
       <meta name="twitter:title" content={twitterTitle || defaultTitle} />
       <meta name="twitter:description" content={twitterDescription || defaultDescription} />
       <meta name="twitter:image" content={twitterImage || defaultOgImage} />
+      <link rel="canonical" href={ogUrl || defaultUrl} />
       <link rel="icon" href="/fav.svg" type="image/svg+xml" />
     </Head>
   );

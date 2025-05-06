@@ -33,6 +33,9 @@ export const metadata: Metadata = {
         description: 'View detailed pricing for septic and holding tank services from Evergreen Septic Service LLC in Lake Geneva. Get accurate estimates for pumping and maintenance with our transparent pricing guide.',
         images: ['https://www.evergreensepticsvc.com/assets/images/HeroSection.png'],
     },
+    alternates: {
+        canonical: 'https://www.evergreensepticsvc.com/pricing',
+    },
 };
 
 export default function Pricing() {

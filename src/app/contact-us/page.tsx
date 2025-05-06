@@ -31,6 +31,9 @@ export const metadata: Metadata = {
         description: 'Ready to schedule a septic service or have questions? Contact Evergreen Septic Service LLC in Lake Geneva for prompt, professional assistance.',
         images: ['https://www.evergreensepticsvc.com/assets/images/HeroSection.png'],
     },
+        alternates: {
+        canonical: 'https://www.evergreensepticsvc.com/contact-us',
+    },
 };
 
 export default function ContactUsPage() {

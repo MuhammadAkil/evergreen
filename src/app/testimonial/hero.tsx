@@ -1,82 +1,31 @@
+'use client';
+
 import React, { useEffect } from 'react';
 import { MdAccessTime } from "react-icons/md";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Seo from '@/Seo';
-import { Metadata } from 'next';
 
-export const metadata: Metadata = {
-    title: 'Testimonials | Evergreen Septic Service LLC',
-    description: 'Read what our clients say about Evergreen Septic Service LLC’s reliable and professional septic services in Lake Geneva. Discover why we’re trusted for septic tank pumping, maintenance, and eco-friendly solutions.',
-    keywords: [
-        'Septic service testimonials',
-        'Evergreen Septic reviews',
-        'Lake Geneva septic services',
-        'Client feedback septic',
-        'Trusted septic company',
-    ],
-    openGraph: {
-        title: 'Testimonials | Evergreen Septic Service LLC',
-        description: 'Read what our clients say about Evergreen Septic Service LLC’s reliable and professional septic services in Lake Geneva. Discover why we’re trusted for septic tank pumping, maintenance, and eco-friendly solutions.',
-        url: 'https://www.evergreensepticsvc.com/testimonials',
-        images: [
-            {
-                url: 'https://www.evergreensepticsvc.com/assets/images/HeroSection.png',
-                width: 1200,
-                height: 630,
-            },
-        ],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Testimonials | Evergreen Septic Service LLC',
-        description: 'Read what our clients say about Evergreen Septic Service LLC’s reliable and professional septic services in Lake Geneva. Discover why we’re trusted for septic tank pumping, maintenance, and eco-friendly solutions.',
-        images: ['https://www.evergreensepticsvc.com/assets/images/HeroSection.png'],
-    },
-};
 export default function Hero() {
-
     useEffect(() => {
         AOS.init({ duration: 1000, once: false });
     }, []);
 
     return (
         <>
-             <Seo
-                title="Testimonials"
-                description="Read what our clients say about Evergreen Septic Service LLC’s reliable and professional septic services in Lake Geneva. Discover why we’re trusted for septic tank pumping, maintenance, and eco-friendly solutions."
-                keywords={[
-                    'Septic service testimonials',
-                    'Evergreen Septic reviews',
-                    'Lake Geneva septic services',
-                    'Client feedback septic',
-                    'Trusted septic company',
-                ]}
-                ogTitle="Testimonials | Evergreen Septic Service LLC"
-                ogDescription="Read what our clients say about Evergreen Septic Service LLC’s reliable and professional septic services in Lake Geneva. Discover why we’re trusted for septic tank pumping, maintenance, and eco-friendly solutions."
-                ogUrl="https://www.evergreensepticsvc.com/testimonials"
-                ogImage="https://www.evergreensepticsvc.com/assets/images/HeroSection.png"
-                twitterCard="summary_large_image"
-                twitterTitle="Testimonials | Evergreen Septic Service LLC"
-                twitterDescription="Read what our clients say about Evergreen Septic Service LLC’s reliable and professional septic services in Lake Geneva. Discover why we’re trusted for septic tank pumping, maintenance, and eco-friendly solutions."
-                twitterImage="https://www.evergreensepticsvc.com/assets/images/HeroSection.png"
-            />
             <section className="py-16 bg-white relative overflow-hidden" data-aos="fade-right">
                 <img
                     src="/assets/images/Union.png"
                     alt="Background Graphic"
                     className="absolute top-0 right-0 w-50 h-50 object-contain z-0"
                 />
-
                 <div className="flex flex-col items-center justify-center ml-10 text-black text-center z-20">
-                    <p className="text-sm mt-2 text-[#3F503B">TESTIMONIALS</p>
+                    <p className="text-sm mt-2 text-[#3F503B]">TESTIMONIALS</p>
                     <h1 className="text-5xl uppercase tracking-wide">What Our Clients Say</h1>
                 </div>
             </section>
 
             <section className="pt-10 bg-white" data-aos="fade-right">
                 <div className="max-w-4xl mx-auto px-4 grid md:grid-cols-2 gap-6">
-
                     <div className="rounded-lg overflow-hidden border shadow-sm">
                         <div className="relative">
                             <img
@@ -84,21 +33,14 @@ export default function Hero() {
                                 alt="Septic Service"
                                 className="w-full h-56 object-cover rounded-t-lg"
                             />
-                            {/* <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2">
-                                <button className="bg-[#4CAF50] text-white px-4 py-2 rounded-md shadow-md">
-                                    View More Photos
-                                </button>
-                            </div> */}
                         </div>
                         <div className="p-4 text-center">
                             <h3 className="font-[700] text-[22px] text-[#3F503B] mb-2 font-instrument font-medium md:text-[20px] sm:text-[18px] xs:text-[16px]">
                                 The Best Septic Services
                             </h3>
-
                             <p className="font-instrument font-[400] text-[18px] leading-[30px] text-[#696969] mb-4 md:text-[16px] sm:text-[14px] xs:text-[13px]">
                                 "I highly recommend this company. Jon and his crew provided outstanding service when they came out to help my parents with their septic tank. They were very honest and open to work with! Thank you for your help!!"
                             </p>
-
                             <div className="flex flex-col items-center">
                                 <img
                                     src="https://randomuser.me/api/portraits/women/65.jpg"
@@ -118,11 +60,6 @@ export default function Hero() {
                                 alt="Septic Service"
                                 className="w-full h-56 object-cover rounded-t-lg"
                             />
-                            {/* <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2">
-                                <button className="bg-[#4CAF50] text-white px-4 py-2 rounded-md shadow-md">
-                                    View More Photos
-                                </button>
-                            </div> */}
                         </div>
                         <div className="p-4 text-center">
                             <h3 className="font-[700] text-[22px] text-[#3F503B] mb-2 font-instrument font-medium md:text-[20px] sm:text-[18px] xs:text-[16px]">
@@ -142,13 +79,11 @@ export default function Hero() {
                             </div>
                         </div>
                     </div>
-
                 </div>
             </section>
 
             <section className="py-10 bg-white" data-aos="fade-right">
                 <div className="max-w-4xl mx-auto px-4 grid md:grid-cols-2 gap-6">
-
                     <div className="rounded-lg overflow-hidden border shadow-sm">
                         <div className="relative">
                             <img
@@ -156,21 +91,14 @@ export default function Hero() {
                                 alt="Septic Service"
                                 className="w-full h-56 object-cover rounded-t-lg"
                             />
-                            {/* <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2">
-                                <button className="bg-[#4CAF50] text-white px-4 py-2 rounded-md shadow-md">
-                                    View More Photos
-                                </button>
-                            </div> */}
                         </div>
                         <div className="p-4 text-center">
-
                             <h3 className="font-[700] text-[22px] text-[#3F503B] mb-2 font-instrument font-medium md:text-[20px] sm:text-[18px] xs:text-[16px]">
                                 The Best Septic Services
                             </h3>
                             <p className="font-instrument font-[400] text-[18px] leading-[30px] text-[#696969] mb-4 md:text-[16px] sm:text-[14px] xs:text-[13px]">
                                 "I highly recommend this company. Jon and his crew provided outstanding service when they came out to help my parents with their septic tank. They were very honest and open to work with! Thank you for your help!!"
                             </p>
-
                             <div className="flex flex-col items-center">
                                 <img
                                     src="https://randomuser.me/api/portraits/women/65.jpg"
@@ -190,11 +118,6 @@ export default function Hero() {
                                 alt="Septic Service"
                                 className="w-full h-56 object-cover rounded-t-lg"
                             />
-                            {/* <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2">
-                                <button className="bg-[#4CAF50] text-white px-4 py-2 rounded-md shadow-md">
-                                    View More Photos
-                                </button>
-                            </div> */}
                         </div>
                         <div className="p-4 text-center">
                             <h3 className="font-[700] text-[22px] text-[#3F503B] mb-2 font-instrument font-medium md:text-[20px] sm:text-[18px] xs:text-[16px]">
@@ -214,17 +137,7 @@ export default function Hero() {
                             </div>
                         </div>
                     </div>
-
                 </div>
-
-                {/* <div className="flex justify-center items-center my-10">
-                    <div className="flex items-center">
-                        <button className="bg-[#3F503B] text-white px-4 py-2 rounded-md shadow-md">
-                            View More Photos
-                        </button>
-                    </div>
-                </div> */}
-
             </section>
 
             <section data-aos="fade-up" className='pt-10'>
@@ -273,20 +186,16 @@ export default function Hero() {
                             <p className="text-sm">Evergreen Septic Service LLC's "20,000 Gallons Septic System" is a big, dependable septic setup for homes or businesses. It includes tanks, drain fields, and pipes, all installed with care to work well and be eco-friendly.</p>
                         </div>
                     </div>
-
                 </div>
             </section>
 
             <section className="bg-white py-16" data-aos="zoom-in-up">
-
                 <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
                     <div>
                         <h2 className="text-3xl mb-4">Why Choose Us</h2>
-
                         <p className="text-gray-600 mb-4 text-cxl">
                             At Evergreen Septics, we take pride in offering reliable, efficient, and environmentally responsible septic solutions. Our commitment to quality and customer satisfaction sets us apart. Here’s why homeowners and businesses trust us:
                         </p>
-
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 mt-8 text-sm text-center">
                             <div className="flex items-center">
                                 <div className="bg-[#E8F3E6] p-2 rounded-l-md shadow-md">
@@ -304,7 +213,6 @@ export default function Hero() {
                                     Affordable Pricing
                                 </div>
                             </div>
-
                             <div className="flex items-center">
                                 <div className="bg-[#E8F3E6] p-2 rounded-l-md shadow-md">
                                     <MdAccessTime className="text-[#3F503B] text-lg" />
@@ -321,17 +229,11 @@ export default function Hero() {
                                     Customer Satisfaction
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
-
                     <img src="/assets/images/About/AboutUSImage.png" alt="Team working" className="rounded-lg" />
                 </div>
-
-
             </section>
-
         </>
     );
 }

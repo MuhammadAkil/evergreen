@@ -9,7 +9,6 @@ import 'aos/dist/aos.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
-import Seo from '@/Seo';
 
 export default function AboutUsClient() {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
@@ -42,25 +41,6 @@ export default function AboutUsClient() {
 
     return (
         <>
-            <Seo
-                title="About Us"
-                description="Learn more about Evergreen Septic Service LLC — a trusted provider of eco-friendly, reliable septic system services in the Lake Geneva region."
-                keywords={[
-                    'About Evergreen Septic',
-                    'Septic system experts',
-                    'Lake Geneva septic services',
-                    'Septic company background',
-                    'Evergreen Septic team',
-                ]}
-                ogTitle="About Us | Evergreen Septic Service LLC"
-                ogDescription="Discover the mission, values, and expert team behind Evergreen Septic Service LLC, your trusted local septic provider."
-                ogUrl="https://www.evergreensepticsvc.com/about"
-                ogImage="https://www.evergreensepticsvc.com/assets/images/AboutHeroSection.png"
-                twitterCard="summary_large_image"
-                twitterTitle="About Us | Evergreen Septic Service LLC"
-                twitterDescription="Discover the mission, values, and expert team behind Evergreen Septic Service LLC, your trusted local septic provider."
-                twitterImage="https://www.evergreensepticsvc.com/assets/images/AboutHeroSection.png"
-            />
             <section className="bg-white py-12" data-aos="zoom-in">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="flex flex-col md:flex-row gap-6 items-start md:items-stretch">
