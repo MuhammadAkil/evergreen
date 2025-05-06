@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import { Instrument_Sans } from 'next/font/google';
 import { ToastContainer } from 'react-toastify'; 
 import 'react-toastify/dist/ReactToastify.css'; 
+import Seo from "../Seo";
 
 export const metadata: Metadata = {
   title: {
@@ -59,14 +60,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/fav.svg" type="image/svg+xml" />
         <link href="https://fonts.googleapis.com/css2?family=Gilroy:wght@400&display=swap" rel="stylesheet"/>
       </head>
       <body className={`${instrumentSans.className} font-sans`}>
+        <Seo />
         <Navbar />
         {children}
         <Footer />
-
         <ToastContainer 
           position="top-center"
           autoClose={3000}

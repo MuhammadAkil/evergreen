@@ -1,14 +1,37 @@
-import { CheckSquare } from "lucide-react"
+'use client';
+
+import { CheckSquare } from "lucide-react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import React, { useEffect } from 'react';
+import Seo from '@/Seo';
 
 export default function PricingPage() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: false });
   }, []);
+
   return (
     <>
+      <Seo
+          title="Pricing"
+          description="View pricing details for septic services at Evergreen Septic Services, including STDHT ($165.00), grease trap ($150.00 + $0.21/gallon), catch basin ($175.00 + $0.28/gallon), and emergency fees."
+          keywords={[
+              'Evergreen Septic Pricing',
+              'Septic service costs',
+              'STDHT pricing',
+              'Emergency septic fees',
+              'Septic pumping rates',
+          ]}
+          ogTitle="Pricing | Evergreen Septic Services"
+          ogDescription="View pricing details for septic services at Evergreen Septic Services, including STDHT ($165.00), grease trap ($150.00 + $0.21/gallon), catch basin ($175.00 + $0.28/gallon), and emergency fees."
+          ogUrl="https://www.evergreensepticsvc.com/pricing"
+          ogImage="https://www.evergreensepticsvc.com/assets/images/Pricing.png"
+          twitterCard="summary_large_image"
+          twitterTitle="Pricing | Evergreen Septic Services"
+          twitterDescription="View pricing details for septic services at Evergreen Septic Services, including STDHT ($165.00), grease trap ($150.00 + $0.21/gallon), catch basin ($175.00 + $0.28/gallon), and emergency fees."
+          twitterImage="https://www.evergreensepticsvc.com/assets/images/Pricing.png"
+      />
       <div className="max-w-3xl mx-auto p-6 mt-10 mb-10 font-sans" data-aos="fade-up"
         data-aos-anchor-placement="top-bottom">
         <div className="text-center mb-6">
@@ -32,7 +55,7 @@ export default function PricingPage() {
           ].map((item, index) => (
             <div
               key={index}
-              className="p-5 border  border-[#00BD00] rounded-lg shadow-lg bg-white min-w-[250px] font-instrument"
+              className="p-5 border border-[#00BD00] rounded-lg shadow-lg bg-white min-w-[250px] font-instrument"
               data-aos="fade-up"
               data-aos-delay={index * 150}
             >
@@ -71,5 +94,5 @@ export default function PricingPage() {
         </div>
       </div>
     </>
-  )
+  );
 }

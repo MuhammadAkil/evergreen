@@ -1,8 +1,11 @@
+'use client';
+
 import { Check, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import React, { useEffect, useState } from 'react';
+import Seo from '@/Seo';
 
 const pricingData = {
   holding: {
@@ -47,7 +50,7 @@ const pricingData = {
   },
 };
 
-export default function Home() {
+export default function Pricing() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: false });
   }, []);
@@ -131,16 +134,13 @@ export default function Home() {
     { gallons: "4400", price: "590.00" },
   ];
 
-
   const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
 
     if (value.length > 5) {
       setQuantityError('Maximum 5 digits allowed');
       return;
-    }
-
-    else {
+    } else {
       setQuantityError('');
     }
 
@@ -148,159 +148,178 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-[#3F503B] " data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-      <div className="container mx-auto px-4 py-12">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-8 ml-4 md:ml-10">
-          <div className="text-white text-left w-full">
-            <p className="text-sm md:text-base font-instrument font-semibold leading-[100%] tracking-[0%] sm:text-[16px] md:text-[20px]">
-              Effective April 1, 2025
-            </p>
+    <>
+      <Seo
+          title="Pricing List"
+          description="Check the pricing list for holding and septic tanks at Evergreen Septic Services. Get an estimate for your septic needs starting from $150.00 for holding tanks and $250.00 for septic tanks."
+          keywords={[
+              'Evergreen Septic Pricing',
+              'Holding tank prices',
+              'Septic tank prices',
+              'Septic service estimate',
+              'Lake Geneva septic pricing',
+          ]}
+          ogTitle="Pricing List | Evergreen Septic Services"
+          ogDescription="Check the pricing list for holding and septic tanks at Evergreen Septic Services. Get an estimate for your septic needs starting from $150.00 for holding tanks and $250.00 for septic tanks."
+          ogUrl="https://www.evergreensepticsvc.com/pricing-list"
+          ogImage="https://www.evergreensepticsvc.com/assets/images/PricingList.png"
+          twitterCard="summary_large_image"
+          twitterTitle="Pricing List | Evergreen Septic Services"
+          twitterDescription="Check the pricing list for holding and septic tanks at Evergreen Septic Services. Get an estimate for your septic needs starting from $150.00 for holding tanks and $250.00 for septic tanks."
+          twitterImage="https://www.evergreensepticsvc.com/assets/images/PricingList.png"
+      />
+      <main className="min-h-screen bg-[#3F503B] " data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        <div className="container mx-auto px-4 py-12">
+          <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-8 ml-4 md:ml-10">
+            <div className="text-white text-left w-full">
+              <p className="text-sm md:text-base font-instrument font-semibold leading-[100%] tracking-[0%] sm:text-[16px] md:text-[20px]">
+                Effective April 1, 2025
+              </p>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl capitalize font-instrument my-2 leading-[100%]">
-              Pricing List
-            </h1>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl capitalize font-instrument my-2 leading-[100%]">
+                Pricing List
+              </h1>
 
-            <p className="text-lg sm:text-xl md:text-2xl mt-2 font-instrument font-medium leading-[100%]">
-              Price Per Gallon
-            </p>
-          </div>
+              <p className="text-lg sm:text-xl md:text-2xl mt-2 font-instrument font-medium leading-[100%]">
+                Price Per Gallon
+              </p>
+            </div>
 
-          <div className="flex flex-col w-full">
-            <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 md:p-8 max-w-full md:max-w-3xl mx-auto mb-8 md:mb-12">
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-                <div className="space-y-4 flex-1 w-full">
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-instrument font-semibold text-[#3b5741] leading-[100%] tracking-[0%]">
-                    Get Your Estimate!
-                  </h2>
+            <div className="flex flex-col w-full">
+              <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 md:p-8 max-w-full md:max-w-3xl mx-auto mb-8 md:mb-12">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                  <div className="space-y-4 flex-1 w-full">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-instrument font-semibold text-[#3b5741] leading-[100%] tracking-[0%]">
+                      Get Your Estimate!
+                    </h2>
 
-                  <p className="text-gray-600 font-instrument font-normal text-[16px] sm:text-[18px] leading-[100%]">
-                    Get your own estimate by finding best offer for you!
-                  </p>
+                    <p className="text-gray-600 font-instrument font-normal text-[16px] sm:text-[18px] leading-[100%]">
+                      Get your own estimate by finding best offer for you!
+                    </p>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <p className="font-instrument font-normal text-[20px] sm:text-[24px] leading-[100%] tracking-[0%]">
-                        Category
-                      </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <p className="font-instrument font-normal text-[20px] sm:text-[24px] leading-[100%] tracking-[0%]">
+                          Category
+                        </p>
 
-                      <select
-                        value={category}
-                        onChange={(e) => setCategory(e.target.value)}
-                        className="w-full p-3 rounded-md bg-gray-100"
-                      >
-                        <option value="holding">Holding Tanks</option>
-                        <option value="septic">Septic Tanks</option>
-                      </select>
+                        <select
+                          value={category}
+                          onChange={(e) => setCategory(e.target.value)}
+                          className="w-full p-3 rounded-md bg-gray-100"
+                        >
+                          <option value="holding">Holding Tanks</option>
+                          <option value="septic">Septic Tanks</option>
+                        </select>
+                      </div>
+
+                      <div className="space-y-2">
+                        <p className="font-instrument font-normal text-[20px] sm:text-[24px] leading-[100%] tracking-[0%] whitespace-nowrap">
+                          Quantity (Gallons)
+                        </p>
+
+                        <input
+                          type="number"
+                          value={quantity}
+                          className="w-full p-3 rounded-md bg-gray-100"
+                          placeholder="Enter gallons"
+                          onChange={handleQuantityChange}
+                        />
+
+                        {quantityError && (
+                          <p className="text-red-500 text-sm">{quantityError}</p>
+                        )}
+                      </div>
                     </div>
+                  </div>
 
-                    <div className="space-y-2">
-                      <p className="font-instrument font-normal text-[20px] sm:text-[24px] leading-[100%] tracking-[0%] whitespace-nowrap">
-                        Quantity (Gallons)
-                      </p>
-
-                      <input
-                        type="number"
-                        value={quantity}
-                        // onChange={(e) => setQuantity(e.target.value)}
-                        className="w-full p-3 rounded-md bg-gray-100"
-                        placeholder="Enter gallons"
-                        onChange={handleQuantityChange}
-                      />
-
-                      {quantityError && (
-                        <p className="text-red-500 text-sm">{quantityError}</p>
-                      )}
+                  <div className="flex flex-col items-center gap-4 w-full md:w-auto">
+                    <div className="text-[#4CAF50] text-2xl sm:text-3xl md:text-4xl font-bold">
+                      {price !== null ? `$ ${price.toFixed(2)}` : '--'}
                     </div>
+                    <Button
+                      onClick={handleEstimate}
+                      className="bg-[#4CAF50] hover:bg-green-600 text-white px-6 sm:px-8 w-full md:w-auto"
+                    >
+                      Get Now
+                    </Button>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
 
-                <div className="flex flex-col items-center gap-4 w-full md:w-auto">
-                  <div className="text-[#4CAF50] text-2xl sm:text-3xl md:text-4xl font-bold">
-                    {price !== null ? `$ ${price.toFixed(2)}` : '--'}
-                  </div>
-                  <Button
-                    onClick={handleEstimate}
-                    className="bg-[#4CAF50] hover:bg-green-600 text-white px-6 sm:px-8 w-full md:w-auto"
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="bg-white rounded-xl overflow-hidden shadow-lg self-start">
+              <div className="bg-[#4CAF50] text-white p-4 text-center font-bold text-xl">
+                <div className="flex justify-between">
+                  <span className="font-inter font-semibold text-[20px] sm:text-[24px] leading-[30px] tracking-[0%]">
+                    HOLDING
+                  </span>
+                  <span className="font-inter font-semibold text-[20px] sm:text-[24px] leading-[30px] tracking-[0%]">
+                    TANKS
+                  </span>
+                </div>
+              </div>
+              <div className="divide-y">
+                {holdingData.slice(0, showMoreHolding ? holdingData.length : 7).map((item, index) => (
+                  <div
+                    key={index}
+                    className={`flex justify-between p-4 ${index % 2 === 0 ? "bg-gray-100" : "bg-white"}`}
                   >
-                    Get Now
-                  </Button>
+                    <span className="font-medium text-sm sm:text-base">{item.gallons}</span>
+                    <span className="font-medium text-sm sm:text-base">{item.price}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="p-4 flex justify-center">
+                <Button
+                  variant="ghost"
+                  className="text-gray-500 flex items-center gap-1"
+                  onClick={() => setShowMoreHolding(!showMoreHolding)}
+                >
+                  {showMoreHolding ? "View Less" : "View More"}
+                  {showMoreHolding ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                </Button>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl overflow-hidden shadow-lg self-start">
+              <div className="bg-[#4CAF50] text-white p-4 text-center font-bold text-xl">
+                <div className="flex justify-between">
+                  <span className="font-inter font-semibold text-[20px] sm:text-[24px] leading-[30px] tracking-[0%]">
+                    SEPTIC
+                  </span>
+                  <span className="font-inter font-semibold text-[20px] sm:text-[24px] leading-[30px] tracking-[0%]">
+                    TANKS
+                  </span>
                 </div>
+              </div>
+              <div className="divide-y">
+                {septicData.slice(0, showMoreSeptic ? septicData.length : 7).map((item, index) => (
+                  <div
+                    key={index}
+                    className={`flex justify-between p-4 ${index % 2 === 0 ? "bg-gray-100" : "bg-white"}`}
+                  >
+                    <span className="font-medium text-sm sm:text-base">{item.gallons}</span>
+                    <span className="font-medium text-sm sm:text-base">{item.price}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="p-4 flex justify-center">
+                <Button
+                  variant="ghost"
+                  className="text-gray-500 flex items-center gap-1"
+                  onClick={() => setShowMoreSeptic(!showMoreSeptic)}
+                >
+                  {showMoreSeptic ? "View Less" : "View More"}
+                  {showMoreSeptic ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                </Button>
               </div>
             </div>
           </div>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="bg-white rounded-xl overflow-hidden shadow-lg self-start">
-            <div className="bg-[#4CAF50] text-white p-4 text-center font-bold text-xl">
-              <div className="flex justify-between">
-                <span className="font-inter font-semibold text-[20px] sm:text-[24px] leading-[30px] tracking-[0%]">
-                  HOLDING
-                </span>
-                <span className="font-inter font-semibold text-[20px] sm:text-[24px] leading-[30px] tracking-[0%]">
-                  TANKS
-                </span>
-              </div>
-            </div>
-            <div className="divide-y">
-              {holdingData.slice(0, showMoreHolding ? holdingData.length : 7).map((item, index) => (
-                <div
-                  key={index}
-                  className={`flex justify-between p-4 ${index % 2 === 0 ? "bg-gray-100" : "bg-white"}`}
-                >
-                  <span className="font-medium text-sm sm:text-base">{item.gallons}</span>
-                  <span className="font-medium text-sm sm:text-base">{item.price}</span>
-                </div>
-              ))}
-            </div>
-            <div className="p-4 flex justify-center">
-              <Button
-                variant="ghost"
-                className="text-gray-500 flex items-center gap-1"
-                onClick={() => setShowMoreHolding(!showMoreHolding)}
-              >
-                {showMoreHolding ? "View Less" : "View More"}
-                {showMoreHolding ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
-              </Button>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-xl overflow-hidden shadow-lg self-start">
-            <div className="bg-[#4CAF50] text-white p-4 text-center font-bold text-xl">
-              <div className="flex justify-between">
-                <span className="font-inter font-semibold text-[20px] sm:text-[24px] leading-[30px] tracking-[0%]">
-                  SEPTIC
-                </span>
-                <span className="font-inter font-semibold text-[20px] sm:text-[24px] leading-[30px] tracking-[0%]">
-                  TANKS
-                </span>
-              </div>
-            </div>
-            <div className="divide-y">
-              {septicData.slice(0, showMoreSeptic ? septicData.length : 7).map((item, index) => (
-                <div
-                  key={index}
-                  className={`flex justify-between p-4 ${index % 2 === 0 ? "bg-gray-100" : "bg-white"}`}
-                >
-                  <span className="font-medium text-sm sm:text-base">{item.gallons}</span>
-                  <span className="font-medium text-sm sm:text-base">{item.price}</span>
-                </div>
-              ))}
-            </div>
-            <div className="p-4 flex justify-center">
-              <Button
-                variant="ghost"
-                className="text-gray-500 flex items-center gap-1"
-                onClick={() => setShowMoreSeptic(!showMoreSeptic)}
-              >
-                {showMoreSeptic ? "View Less" : "View More"}
-                {showMoreSeptic ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
-              </Button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </main>
+      </main>
+    </>
   );
 }

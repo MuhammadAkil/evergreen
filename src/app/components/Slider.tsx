@@ -2,9 +2,11 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import React, { useEffect, useState, useCallback } from 'react';
+import { Metadata } from 'next';
 import useEmblaCarousel from 'embla-carousel-react';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Seo from '@/Seo';
 
 const testimonials = [
     {
@@ -85,7 +87,7 @@ const testimonials = [
         'The crew kept us updated throughout the pumping process. Their transparency and friendliness made the experience stress-free.',
       name: 'Thomas W.',
       location: 'Fontana, WI',
-      image: 'https://randomuser.me/api/portraits/men/64.jpg',
+      image: 'https://://randomuser.me/api/portraits/men/64.jpg',
     },
     {
       title: 'Expert Septic Solutions',
@@ -111,7 +113,37 @@ const testimonials = [
       location: 'Walworth, WI',
       image: 'https://randomuser.me/api/portraits/women/56.jpg',
     },
-  ];
+];
+
+export const metadata: Metadata = {
+    title: 'Testimonials | Evergreen Septic Services',
+    description: 'Read what our satisfied clients say about Evergreen Septic Services. We provide top-quality septic solutions with honesty, efficiency, and care in the Lake Geneva region.',
+    keywords: [
+        'Evergreen Septic Services',
+        'Septic testimonials',
+        'Lake Geneva septic reviews',
+        'Septic maintenance feedback',
+        'Septic service reviews',
+    ],
+    openGraph: {
+        title: 'Testimonials | Evergreen Septic Services',
+        description: 'Read what our satisfied clients say about Evergreen Septic Services. We provide top-quality septic solutions with honesty, efficiency, and care in the Lake Geneva region.',
+        url: 'https://www.evergreensepticsvc.com/testimonials',
+        images: [
+            {
+                url: 'https://www.evergreensepticsvc.com/assets/images/ContactUs/bgImage.png',
+                width: 1200,
+                height: 630,
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Testimonials | Evergreen Septic Services',
+        description: 'Read what our satisfied clients say about Evergreen Septic Services. We provide top-quality septic solutions with honesty, efficiency, and care in the Lake Geneva region.',
+        images: ['https://www.evergreensepticsvc.com/assets/images/ContactUs/bgImage.png'],
+    },
+};
 
 export default function Slider() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
@@ -145,7 +177,7 @@ export default function Slider() {
     if (emblaApi) {
       emblaApi.on('select', updateProgress);
       emblaApi.on('reInit', updateProgress);
-      updateProgress(); 
+      updateProgress();
     }
 
     return () => {
@@ -154,78 +186,99 @@ export default function Slider() {
   }, [emblaApi, updateProgress]);
 
   return (
-    <section className="relative bg-white py-16" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-      <div className="absolute top-0 right-0 z-0">
-        <img src="/assets/images/Union.png" alt="Decorative Background" className="w-[300px] md:h-[165px]" />
-      </div>
+    <>
+      <Seo
+        title="Testimonials"
+        description="Read what our satisfied clients say about Evergreen Septic Services. We provide top-quality septic solutions with honesty, efficiency, and care in the Lake Geneva region."
+        keywords={[
+          'Evergreen Septic Services',
+          'Septic testimonials',
+          'Lake Geneva septic reviews',
+          'Septic maintenance feedback',
+          'Septic service reviews',
+        ]}
+        ogTitle="Testimonials | Evergreen Septic Services"
+        ogDescription="Read what our satisfied clients say about Evergreen Septic Services. We provide top-quality septic solutions with honesty, efficiency, and care in the Lake Geneva region."
+        ogUrl="https://www.evergreensepticsvc.com/testimonials"
+        ogImage="https://www.evergreensepticsvc.com/assets/images/ContactUs/bgImage.png"
+        twitterCard="summary_large_image"
+        twitterTitle="Testimonials | Evergreen Septic Services"
+        twitterDescription="Read what our satisfied clients say about Evergreen Septic Services. We provide top-quality septic solutions with honesty, efficiency, and care in the Lake Geneva region."
+        twitterImage="https://www.evergreensepticsvc.com/assets/images/ContactUs/bgImage.png"
+      />
+      <section className="relative bg-white py-16" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        <div className="absolute top-0 right-0 z-0">
+          <img src="/assets/images/Union.png" alt="Decorative Background" className="w-[300px] md:h-[165px]" />
+        </div>
 
-      <div className="max-w-7xl mx-auto px-4 relative z-10">
-        <p className="text-sm font-instrument font-bold text-[#3F503B] uppercase mb-2 text-[20px] md:text-[20px]">
-          Testimonials
-        </p>
-        <h2 className="font-instrument font-normal text-[32px] text-black mb-12 md:text-[48px] lg:text-[54px]">
-          What Our Clients Say
-        </h2>
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <p className="text-sm font-instrument font-bold text-[#3F503B] uppercase mb-2 text-[20px] md:text-[20px]">
+            Testimonials
+          </p>
+          <h2 className="font-instrument font-normal text-[32px] text-black mb-12 md:text-[48px] lg:text-[54px]">
+            What Our Clients Say
+          </h2>
 
-        <div className="w-full">
-          <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex">
-              {testimonials.map((testimonial, index) => (
-                <div key={index} className="flex-[0_0_100%] md:flex-[0_0_33.3333%] p-3">
-                  <div className="group bg-white border border-transparent p-6 rounded-lg shadow-sm hover:bg-[#e8f3e6] hover:border-[#3F503B] hover:shadow-md transition-all duration-300 h-full">
-                    <h3 className="font-gilroy font-bold text-[#000000] text-[20.38px] sm:text-[18px] leading-[25.94px] group-hover:text-[#3F503B] mb-3">
-                      {testimonial.title}
-                    </h3>
-                    <p className="font-instrument text-[#696969] text-[16.67px] leading-[27.79px] mb-6 sm:text-[14px] sm:leading-[22px]">
-                      {testimonial.quote}
-                    </p>
-                    <div className="flex items-center gap-3">
-                      <img
-                        src={testimonial.image}
-                        className="w-10 h-10 rounded-full"
-                        alt={`${testimonial.name}'s profile`}
-                      />
-                      <div>
-                        <p className="font-semibold text-sm text-black group-hover:text-[#3F503B]">
-                          {testimonial.name}
-                        </p>
-                        <p className="text-xs text-gray-500">{testimonial.location}</p>
+          <div className="w-full">
+            <div className="overflow-hidden" ref={emblaRef}>
+              <div className="flex">
+                {testimonials.map((testimonial, index) => (
+                  <div key={index} className="flex-[0_0_100%] md:flex-[0_0_33.3333%] p-3">
+                    <div className="group bg-white border border-transparent p-6 rounded-lg shadow-sm hover:bg-[#e8f3e6] hover:border-[#3F503B] hover:shadow-md transition-all duration-300 h-full">
+                      <h3 className="font-gilroy font-bold text-[#000000] text-[20.38px] sm:text-[18px] leading-[25.94px] group-hover:text-[#3F503B] mb-3">
+                        {testimonial.title}
+                      </h3>
+                      <p className="font-instrument text-[#696969] text-[16.67px] leading-[27.79px] mb-6 sm:text-[14px] sm:leading-[22px]">
+                        {testimonial.quote}
+                      </p>
+                      <div className="flex items-center gap-3">
+                        <img
+                          src={testimonial.image}
+                          className="w-10 h-10 rounded-full"
+                          alt={`${testimonial.name}'s profile`}
+                        />
+                        <div>
+                          <p className="font-semibold text-sm text-black group-hover:text-[#3F503B]">
+                            {testimonial.name}
+                          </p>
+                          <p className="text-xs text-gray-500">{testimonial.location}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+
+            <div className="flex items-center justify-end gap-4 mt-6">
+              <Button
+                onClick={scrollPrev}
+                className="bg-[#3F503B] hover:bg-[#4CAF50] text-white p-2 rounded-full"
+                aria-label="Previous testimonial"
+              >
+                <ChevronLeft className="h-6 w-6" />
+              </Button>
+              <Button
+                onClick={scrollNext}
+                className="bg-[#3F503B] hover:bg-[#4CAF50] text-white p-2 rounded-full"
+                aria-label="Next testimonial"
+              >
+                <ChevronRight className="h-6 w-6" />
+              </Button>
+            </div>
+
+            <div className="-mt-4 w-full max-w-[40em] h-2 bg-gray-200 rounded-full overflow-hidden border" style={{ borderColor: '#AEAEAE' }}>
+              <div
+                className="h-full rounded-full transition-all duration-300"
+                style={{
+                  width: `${progress}%`,
+                  backgroundColor: '#484848',
+                }}
+              ></div>
             </div>
           </div>
-
-          <div className="flex items-center justify-end gap-4 mt-6">
-            <Button
-              onClick={scrollPrev}
-              className="bg-[#3F503B] hover:bg-[#4CAF50] text-white p-2 rounded-full"
-              aria-label="Previous testimonial"
-            >
-              <ChevronLeft className="h-6 w-6" />
-            </Button>
-            <Button
-              onClick={scrollNext}
-              className="bg-[#3F503B] hover:bg-[#4CAF50] text-white p-2 rounded-full"
-              aria-label="Next testimonial"
-            >
-              <ChevronRight className="h-6 w-6" />
-            </Button>
-          </div>
-
-          <div className="-mt-4 w-full max-w-[40em] h-2 bg-gray-200 rounded-full overflow-hidden border" style={{ borderColor: '#AEAEAE' }}>
-            <div
-              className="h-full rounded-full transition-all duration-300"
-              style={{
-                width: `${progress}%`,
-                backgroundColor: '#484848',
-              }}
-            ></div>
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

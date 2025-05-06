@@ -1,8 +1,59 @@
 import React from 'react';
+import Seo from '@/Seo';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Our Projects | Evergreen Septic Service LLC',
+    description: 'Explore the successful septic projects completed by Evergreen Septic Service LLC, showcasing our expertise in reliable, eco-friendly septic solutions for homes and businesses in Lake Geneva.',
+    keywords: [
+        'Septic system projects',
+        'Evergreen Septic Services',
+        'Lake Geneva septic solutions',
+        'Eco-friendly septic systems',
+        'Septic project portfolio',
+    ],
+    openGraph: {
+        title: 'Our Projects | Evergreen Septic Service LLC',
+        description: 'Explore the successful septic projects completed by Evergreen Septic Service LLC, showcasing our expertise in reliable, eco-friendly septic solutions for homes and businesses in Lake Geneva.',
+        url: 'https://www.evergreensepticsvc.com/projects',
+        images: [
+            {
+                url: 'https://www.evergreensepticsvc.com/assets/images/HeroSection.png',
+                width: 1200,
+                height: 630,
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Our Projects | Evergreen Septic Service LLC',
+        description: 'Explore the successful septic projects completed by Evergreen Septic Service LLC, showcasing our expertise in reliable, eco-friendly septic solutions for homes and businesses in Lake Geneva.',
+        images: ['https://www.evergreensepticsvc.com/assets/images/HeroSection.png'],
+    },
+};
 
 export default function Hero() {
     return (
         <>
+            <Seo
+                title="Our Projects"
+                description="Explore the successful septic projects completed by Evergreen Septic Service LLC, showcasing our expertise in reliable, eco-friendly septic solutions for homes and businesses in Lake Geneva."
+                keywords={[
+                    'Septic system projects',
+                    'Evergreen Septic Services',
+                    'Lake Geneva septic solutions',
+                    'Eco-friendly septic systems',
+                    'Septic project portfolio',
+                ]}
+                ogTitle="Our Projects | Evergreen Septic Service LLC"
+                ogDescription="Explore the successful septic projects completed by Evergreen Septic Service LLC, showcasing our expertise in reliable, eco-friendly septic solutions for homes and businesses in Lake Geneva."
+                ogUrl="https://www.evergreensepticsvc.com/projects"
+                ogImage="https://www.evergreensepticsvc.com/assets/images/HeroSection.png"
+                twitterCard="summary_large_image"
+                twitterTitle="Our Projects | Evergreen Septic Service LLC"
+                twitterDescription="Explore the successful septic projects completed by Evergreen Septic Service LLC, showcasing our expertise in reliable, eco-friendly septic solutions for homes and businesses in Lake Geneva."
+                twitterImage="https://www.evergreensepticsvc.com/assets/images/HeroSection.png"
+            />
             <section data-aos="fade-up">
                 <div className="relative w-full bg-[#3F503B] py-10">
                     <div className="relative mx-auto max-w-4xl -mt-16 px-4">
@@ -28,7 +79,6 @@ export default function Hero() {
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <div className="relative w-full bg-[#3F503B] py-10 text-white" data-aos="fade-up">
                     <div className="max-w-2xl mx-auto px-4 text-center">
@@ -67,7 +117,6 @@ export default function Hero() {
                         </div>
                     </div>
                 </div>
-
             </section>
         </>
     );

@@ -2,6 +2,8 @@ import { FaBuilding, FaHotel, FaSchool, FaHome } from "react-icons/fa";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import React, { useEffect } from 'react';
+import { Metadata } from 'next';
+import Seo from '@/Seo';
 
 const industryData = [
     { title: "Residential", icon: <FaHome /> },
@@ -10,12 +12,61 @@ const industryData = [
     { title: "Education", icon: <FaSchool /> },
 ];
 
+export const metadata: Metadata = {
+    title: 'Industries We Serve | Evergreen Septic Services',
+    description: 'Evergreen Septic Services provides expert septic solutions for residential, commercial, hospitality, and education sectors in the Lake Geneva region.',
+    keywords: [
+        'Evergreen Septic Industries',
+        'Septic services residential',
+        'Septic services commercial',
+        'Septic services hospitality',
+        'Septic services education',
+    ],
+    openGraph: {
+        title: 'Industries We Serve | Evergreen Septic Services',
+        description: 'Evergreen Septic Services provides expert septic solutions for residential, commercial, hospitality, and education sectors in the Lake Geneva region.',
+        url: 'https://www.evergreensepticsvc.com/industries',
+        images: [
+            {
+                url: 'https://www.evergreensepticsvc.com/assets/images/Industries/BgSVG.svg',
+                width: 1200,
+                height: 630,
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Industries We Serve | Evergreen Septic Services',
+        description: 'Evergreen Septic Services provides expert septic solutions for residential, commercial, hospitality, and education sectors in the Lake Geneva region.',
+        images: ['https://www.evergreensepticsvc.com/assets/images/Industries/BgSVG.svg'],
+    },
+};
+
 export default function Industries() {
     useEffect(() => {
         AOS.init({ duration: 1000, once: false });
     }, []);
     return (
         <>
+            <Seo
+                title="Industries We Serve"
+                description="Evergreen Septic Services provides expert septic solutions for residential, commercial, hospitality, and education sectors in the Lake Geneva region."
+                keywords={[
+                    'Evergreen Septic Industries',
+                    'Septic services residential',
+                    'Septic services commercial',
+                    'Septic services hospitality',
+                    'Septic services education',
+                ]}
+                ogTitle="Industries We Serve | Evergreen Septic Services"
+                ogDescription="Evergreen Septic Services provides expert septic solutions for residential, commercial, hospitality, and education sectors in the Lake Geneva region."
+                ogUrl="https://www.evergreensepticsvc.com/industries"
+                ogImage="https://www.evergreensepticsvc.com/assets/images/Industries/BgSVG.svg"
+                twitterCard="summary_large_image"
+                twitterTitle="Industries We Serve | Evergreen Septic Services"
+                twitterDescription="Evergreen Septic Services provides expert septic solutions for residential, commercial, hospitality, and education sectors in the Lake Geneva region."
+                twitterImage="https://www.evergreensepticsvc.com/assets/images/Industries/BgSVG.svg"
+            />
             <section className="relative bg-white py-16 px-4" data-aos="fade-up"
                 data-aos-anchor-placement="top-bottom">
                 <img
@@ -33,12 +84,11 @@ export default function Industries() {
                         Industries We Serve
                     </h2>
 
-
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                         {industryData.map((item, index) => (
                             <div
                                 key={index}
-                                className="relative bg-white rounded-lg shadow-md group hover:bg-[#3F503B] transition-all duration-300 p-6 text-center border-t-6  cursor-pointer"
+                                className="relative bg-white rounded-lg shadow-md group hover:bg-[#3F503B] transition-all duration-300 p-6 text-center border-t-6 cursor-pointer"
                                 style={{ borderTopColor: "#3F503B" }}
                             >
                                 <div className="flex justify-center items-center text-[#3F503B] text-6xl mb-6 group-hover:text-white transition-all duration-300">
@@ -49,18 +99,14 @@ export default function Industries() {
                                     {item.title}
                                 </h3>
 
-
                                 <p className="font-zoho-puvi font-medium text-sm text-gray-600 leading-[140%] tracking-[0%] group-hover:text-white transition-all duration-300">
                                     Just tell us what you need and we’ll take care of the rest.
                                 </p>
-
                             </div>
-
                         ))}
                     </div>
                 </div>
             </section>
-
         </>
     )
 }
