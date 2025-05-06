@@ -9,20 +9,27 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function HerSection() {
     const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [service, setService] = useState('');
     const [bestTime, setBestTime] = useState('');
-    const [errors, setErrors] = useState<{ name?: string; phone?: string }>({});
+    const [errors, setErrors] = useState<{ name?: string; phone?: string; email?: string }>({});
     const [loading, setLoading] = useState(false);
+    const [address, setAddress] = useState('');
 
     useEffect(() => {
         AOS.init({ duration: 1000, once: false });
     }, []);
 
     const validateForm = () => {
-        const newErrors: { name?: string; phone?: string } = {};
+        const newErrors: { name?: string; phone?: string; email?: string } = {};
         if (!name.trim()) newErrors.name = 'Name is required.';
         if (!phone.trim()) newErrors.phone = 'Phone number is required.';
+        if (!email.trim()) {
+            newErrors.email = 'Email is required.';
+        } else if (!/\S+@\S+\.\S+/.test(email)) {
+            newErrors.email = 'Email is invalid.';
+        }
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     };
@@ -150,6 +157,23 @@ export default function HerSection() {
                             {errors.name && <span className="text-red-500 text-sm">{errors.name}</span>}
                         </div>
 
+                        {/* Email Input */}
+                        <div className="flex flex-col">
+                            <label className="font-instrument font-medium mb-1 text-[17px] leading-[32px]">
+                                Email <span className="text-red-500">*</span>
+                            </label>
+                            <input
+                                type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                placeholder="Enter your email"
+                                className={`border rounded-md px-4 py-2 ${errors.email ? 'border-red-500' : 'border-gray-300'
+                                    } focus:outline-none focus:ring-2 ${errors.email ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'}`}
+                            />
+                            {errors.email && <span className="text-red-500 text-sm">{errors.email}</span>}
+                        </div>
+
+
                         {/* Phone Input */}
                         <div className="flex flex-col">
                             <label className="font-instrument font-medium mb-1 text-[17px] leading-[32px]">
@@ -205,6 +229,19 @@ export default function HerSection() {
                                     </label>
                                 ))}
                             </div>
+                        </div>
+
+                        <div className="flex flex-col">
+                            <label className="font-instrument font-medium mb-1 text-[17px] leading-[32px]">
+                                Address <span className="text-red-500">*</span>
+                            </label>
+                            <input
+                                type="text"
+                                value={address}
+                                onChange={(e) => setAddress(e.target.value)}
+                                placeholder="Enter your Address"
+                                className="border rounded-md px-4 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3F503B]"
+                                />
                         </div>
 
                         {/* Submit Button */}
