@@ -46,8 +46,9 @@ export default function Hero() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [subject, setSubject] = useState('');
+    const [phone, setPhone] = useState('');
     const [message, setMessage] = useState('');
-    const [errors, setErrors] = useState<{ name?: string; email?: string; subject?: string; message?: string }>({});
+    const [errors, setErrors] = useState<{ name?: string; email?: string; subject?: string; phone?: string; message?: string }>({});
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -62,15 +63,17 @@ export default function Hero() {
             else if (!/\S+@\S+\.\S+/.test(value)) error = 'Email is invalid.';
         }
         if (field === 'subject' && !value.trim()) error = 'Subject is required.';
+        if (field === 'phone' && !value.trim()) error = 'Phone is required.';
         if (field === 'message' && !value.trim()) error = 'Message is required.';
         return error;
     };
 
     const validateForm = () => {
-        const newErrors: { name?: string; email?: string; subject?: string; message?: string } = {};
+        const newErrors: { name?: string; email?: string; subject?: string; phone?: string; message?: string } = {};
         newErrors.name = validateField('name', name);
         newErrors.email = validateField('email', email);
         newErrors.subject = validateField('subject', subject);
+        newErrors.phone = validateField('phone', phone);
         newErrors.message = validateField('message', message);
         setErrors(newErrors);
         return !Object.values(newErrors).some((error) => error);
@@ -82,6 +85,7 @@ export default function Hero() {
         if (field === 'name') setName(value);
         if (field === 'email') setEmail(value);
         if (field === 'subject') setSubject(value);
+        if (field === 'phone') setPhone(value);
         if (field === 'message') setMessage(value);
     };
 
@@ -93,6 +97,7 @@ export default function Hero() {
             name,
             email,
             subject,
+            phone,
             message,
         };
 
@@ -100,7 +105,7 @@ export default function Hero() {
         setLoading(true);
 
         try {
-            const response = await fetch('https://script.google.com/macros/s/AKfycbxYADsssSqfkvwYd9oRjicCHMst-bePgLLNr4zY-avRd8uBmfaZwKFGWVQLDMY3UitWVw/exec', {
+            const response = await fetch('https://script.google.com/macros/s/AKfycbxItpzCiaJC2QLFwB1qHb1RaejxweTl9i1Txfl22BRgVfNXiwgUWVFppb3K9uy-WGZT/exec', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -120,7 +125,7 @@ export default function Hero() {
                 }),
             });
 
-           toast.success('Request submitted successfully!');
+            toast.success('Request submitted successfully!');
             setName('');
             setEmail('');
             setSubject('');
@@ -138,7 +143,7 @@ export default function Hero() {
 
     return (
         <>
-             <Seo
+            <Seo
                 title="Contact Us"
                 description="Get in touch with Evergreen Septic Service LLC for septic pumping and inspection inquiries in the foothills."
                 keywords={[
@@ -281,6 +286,20 @@ export default function Hero() {
                                         onChange={(e) => handleInputChange('subject', e.target.value)}
                                         className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.subject ? 'border-red-500' : 'border-gray-300'
                                             } focus:outline-none focus:ring-2 ${errors.subject ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
+                                            }`}
+                                    />
+                                    {errors.subject && <span className="text-red-500 text-sm mt-1 block">{errors.subject}</span>}
+                                </div>
+                                <div>
+                                    <label className="block text-sm mb-1 font-medium">
+                                        Phone <span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="number"
+                                        value={phone}
+                                        onChange={(e) => handleInputChange('phone', e.target.value)}
+                                        className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.phone ? 'border-red-500' : 'border-gray-300'
+                                            } focus:outline-none focus:ring-2 ${errors.phone ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
                                             }`}
                                     />
                                     {errors.subject && <span className="text-red-500 text-sm mt-1 block">{errors.subject}</span>}

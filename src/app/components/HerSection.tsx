@@ -175,18 +175,7 @@ export default function HerSection() {
                                 ))}
                             </div>
 
-                            <div className="flex flex-col">
-                                <label className="font-instrument font-medium mb-1 text-[17px] leading-[32px]">
-                                    Address <span className="text-red-500">*</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    value={address}
-                                    onChange={(e) => setAddress(e.target.value)}
-                                    placeholder="Enter your Address"
-                                    className="border rounded-md px-4 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3F503B]"
-                                />
-                            </div>
+                           
                             <div className="flex flex-col items-start gap-3">
                                 <span className="text-white font-instrument font-semibold text-[24px] leading-[100%]">
                                     Get a Free Quote!
@@ -221,6 +210,22 @@ export default function HerSection() {
                                         } focus:outline-none focus:ring-2 ${errors.name ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'}`}
                                 />
                                 {errors.name && <span className="text-red-500 text-sm">{errors.name}</span>}
+                            </div>
+
+                            {/* Email Input */}
+                            <div className="flex flex-col">
+                                <label className="font-instrument font-medium mb-1 text-[17px] leading-[32px]">
+                                    Email <span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    placeholder="Enter your email"
+                                    className={`border rounded-md px-4 py-2 ${errors.email ? 'border-red-500' : 'border-gray-300'
+                                        } focus:outline-none focus:ring-2 ${errors.email ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'}`}
+                                />
+                                {errors.email && <span className="text-red-500 text-sm">{errors.email}</span>}
                             </div>
 
 
@@ -279,6 +284,19 @@ export default function HerSection() {
                                         </label>
                                     ))}
                                 </div>
+                            </div>
+
+                            <div className="flex flex-col">
+                                <label className="font-instrument font-medium mb-1 text-[17px] leading-[32px]">
+                                    Address <span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    value={address}
+                                    onChange={(e) => setAddress(e.target.value)}
+                                    placeholder="Enter your Address"
+                                    className="border rounded-md px-4 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3F503B]"
+                                />
                             </div>
 
                             {/* Submit Button */}
