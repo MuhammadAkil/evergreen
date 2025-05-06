@@ -240,7 +240,7 @@ export default function Hero() {
         <div className="relative hidden md:block h-[500px] w-full mt-10">
           {/* Map in Background */}
           <iframe
-            src="https://www.google.com/maps/embed?pb=..." // Replace with actual Google Maps embed URL
+            src="https://www.google.com/maps/embed?pb=..." 
             className="absolute inset-0 w-full h-full border-0"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
