@@ -72,7 +72,7 @@ export default function Industries() {
                 <img
                     src="/assets/images/Industries/BgSVG.svg"
                     alt="Industry Illustration"
-                    className="absolute -top-24 md:-top-36 left-0 w-[80px] md:w-[120px] object-contain"
+                    className="absolute -top-24 md:-top-36 left-0 w-[80px] md:w-[120px] object-contain hidden"
                 />
 
                 <div className="max-w-screen-xl mx-auto text-center">
