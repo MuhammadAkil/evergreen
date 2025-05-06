@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Metadata } from 'next';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Seo from '@/Seo';
 
@@ -108,16 +108,7 @@ export default function Subscribe() {
         twitterImage="https://www.evergreensepticsvc.com/assets/images/ContactUs/bgImage.png"
       />
       <section className="bg-[#4CAF50] py-16 px-4" data-aos="fade-up">
-        <ToastContainer
-          position="top-center"
-          autoClose={3000}
-          hideProgressBar={false}
-          closeOnClick
-          pauseOnHover
-          draggable
-          theme="colored"
-        />
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
+       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
           <div className="md:w-1/2 text-white text-center md:text-left">
             <h2 className="text-3xl sm:text-4xl mb-2 font-instrument">
               Subscribe to Our Newsletter

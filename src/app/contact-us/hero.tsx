@@ -250,7 +250,7 @@ export default function Hero() {
                             <form className="space-y-4" onSubmit={handleSubmitNoCors}>
                                 <div>
                                     <label className="block text-sm mb-1 font-medium">
-                                        Full Name <span className="text-red-500">*</span>
+                                        Name <span className="text-red-500">*</span>
                                     </label>
                                     <input
                                         type="text"
@@ -264,7 +264,7 @@ export default function Hero() {
                                 </div>
                                 <div>
                                     <label className="block text-sm mb-1 font-medium">
-                                        Your E-mail <span className="text-red-500">*</span>
+                                        Email <span className="text-red-500">*</span>
                                     </label>
                                     <input
                                         type="email"
@@ -306,7 +306,7 @@ export default function Hero() {
                                 </div>
                                 <div>
                                     <label className="block text-sm mb-1 font-medium">
-                                        Your Message <span className="text-red-500">*</span>
+                                        Message <span className="text-red-500">*</span>
                                     </label>
                                     <textarea
                                         value={message}
