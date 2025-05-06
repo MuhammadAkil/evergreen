@@ -10,7 +10,7 @@ import Seo from "../Seo";
 export const metadata: Metadata = {
   title: {
     default: "Evergreen Septic Service LLC",
-    template: "%s | Evergreen Septic Service LLC",
+    template: "%s ",
   },
   description:
     "Reliable, eco-conscious septic pumping and certified inspections in the foothills. Evergreen Septics delivers expert service with a personal touch.",
