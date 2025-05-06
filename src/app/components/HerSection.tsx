@@ -44,12 +44,12 @@ export default function HerSection() {
             return;
         }
 
-        const formData = { name, phone, service, bestTime };
+        const formData = { name, email, phone, service, bestTime, address };
         console.log('Form data to send:', formData);
         setLoading(true);
 
         try {
-            await fetch('https://script.google.com/a/macros/superior.edu.pk/s/AKfycbwPK-cGgI8fAWucdy9onAteY73NGAR8iaGdJ8dwMuCTyoOcY5Oa3eS3tH81MLc3joKY/exec', {
+            await fetch('https://script.google.com/macros/s/AKfycbwcDFw2vgTaKHc32zPvB_am8RZoCrs45x_WDiqn3__QHp4OZosavx6E1UKG3SuxaAEV/exec', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -74,6 +74,8 @@ export default function HerSection() {
             setPhone('');
             setService('');
             setBestTime('');
+            setAddress('');
+            setEmail('');
             setErrors({});
         }
 
@@ -241,7 +243,7 @@ export default function HerSection() {
                                 onChange={(e) => setAddress(e.target.value)}
                                 placeholder="Enter your Address"
                                 className="border rounded-md px-4 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3F503B]"
-                                />
+                            />
                         </div>
 
                         {/* Submit Button */}
