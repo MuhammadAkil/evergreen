@@ -47,7 +47,7 @@ export default function HerSection() {
     const [bestTime, setBestTime] = useState('');
     const [errors, setErrors] = useState<{ name?: string; phone?: string; email?: string }>({});
     const [loading, setLoading] = useState(false);
-    const [message, setMessage] = useState('');
+    const [address, setAddress] = useState('');
 
     useEffect(() => {
         AOS.init({ duration: 1000, once: false });
@@ -76,7 +76,7 @@ export default function HerSection() {
             return;
         }
 
-        const formData = { name, email, phone, service, bestTime, message };
+        const formData = { name, email, phone, service, bestTime, address };
         console.log('Form data to send:', formData);
         setLoading(true);
 
@@ -106,7 +106,7 @@ export default function HerSection() {
             setPhone('');
             setService('');
             setBestTime('');
-            setMessage('');
+            setAddress('');
             setEmail('');
             setErrors({});
         }
@@ -288,15 +288,14 @@ export default function HerSection() {
 
                             <div className="flex flex-col">
                                 <label className="font-instrument font-medium mb-1 text-[17px] leading-[32px]">
-                                    Message <span className="text-red-500">*</span>
+                                    Address <span className="text-red-500">*</span>
                                 </label>
-                              
-                                <textarea value={message}
-                                    onChange={(e) => setMessage(e.target.value)}
-                                    className="border rounded-md px-4 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3F503B]"
 
-                                    rows={2}
-                                ></textarea>
+                                <input
+                                    value={address}
+                                    onChange={(e) => setAddress(e.target.value)}
+                                    className="border rounded-md px-4 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3F503B]"
+                                />
                             </div>
 
                             {/* Submit Button */}
