@@ -8,6 +8,7 @@ import 'aos/dist/aos.css';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { toast } from 'react-toastify';
+import Seo from '@/Seo';
 
 export const metadata: Metadata = {
     title: 'Contact Us',
@@ -127,6 +128,7 @@ export default function Hero() {
 
         }
 
+
         catch (error) {
             console.error(error);
             toast.error('Failed to send message.');
@@ -136,6 +138,24 @@ export default function Hero() {
 
     return (
         <>
+             <Seo
+                title="Contact Us"
+                description="Get in touch with Evergreen Septic Service LLC for septic pumping and inspection inquiries in the foothills."
+                keywords={[
+                    'Contact Evergreen Septic',
+                    'Septic service inquiries',
+                    'Foothills septic contact',
+                    'Evergreen Septic support',
+                ]}
+                ogTitle="Contact Us | Evergreen Septic Service LLC"
+                ogDescription="Contact Evergreen Septic Service LLC for septic pumping and inspection inquiries."
+                ogUrl="https://www.evergreensepticsvc.com/contact"
+                ogImage="https://www.evergreensepticsvc.com/assets/images/HeroSection.png"
+                twitterCard="summary_large_image"
+                twitterTitle="Contact Us | Evergreen Septic Service LLC"
+                twitterDescription="Contact Evergreen Septic Service LLC for septic pumping and inspection inquiries."
+                twitterImage="https://www.evergreensepticsvc.com/assets/images/HeroSection.png"
+            />
             <section className="py-16 bg-white relative overflow-hidden" data-aos="fade-up">
                 <img
                     src="/assets/images/Union.png"

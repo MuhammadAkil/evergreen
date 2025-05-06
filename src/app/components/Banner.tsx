@@ -7,7 +7,38 @@ import Link from "next/link"
 import Image from "next/image"
 import useEmblaCarousel from "embla-carousel-react";
 import CountUp from 'react-countup';
+import { Metadata } from 'next';
+import Seo from '@/Seo';
 
+export const metadata: Metadata = {
+    title: 'Success Banner | Evergreen Septic Services',
+    description: 'Maintain your septic system with our reliable and efficient solutions. Learn about our completed projects, happy clients, dealer equipments, and years of experience.',
+    keywords: [
+        'Evergreen Septic Services',
+        'Septic system maintenance',
+        'Reliable septic solutions',
+        'Septic service success',
+        'Septic company achievements',
+    ],
+    openGraph: {
+        title: 'Success Banner | Evergreen Septic Services',
+        description: 'Maintain your septic system with our reliable and efficient solutions. Learn about our completed projects, happy clients, dealer equipments, and years of experience.',
+        url: 'https://www.evergreensepticsvc.com/success',
+        images: [
+            {
+                url: 'https://www.evergreensepticsvc.com/assets/images/Banner/bgImage.png',
+                width: 1200,
+                height: 630,
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Success Banner | Evergreen Septic Services',
+        description: 'Maintain your septic system with our reliable and efficient solutions. Learn about our completed projects, happy clients, dealer equipments, and years of experience.',
+        images: ['https://www.evergreensepticsvc.com/assets/images/Banner/bgImage.png'],
+    },
+};
 
 export default function SuccessBanner() {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
@@ -40,6 +71,25 @@ export default function SuccessBanner() {
 
     return (
         <>
+            <Seo
+                title="Success Banner"
+                description="Maintain your septic system with our reliable and efficient solutions. Learn about our completed projects, happy clients, dealer equipments, and years of experience."
+                keywords={[
+                    'Evergreen Septic Services',
+                    'Septic system maintenance',
+                    'Reliable septic solutions',
+                    'Septic service success',
+                    'Septic company achievements',
+                ]}
+                ogTitle="Success Banner | Evergreen Septic Services"
+                ogDescription="Maintain your septic system with our reliable and efficient solutions. Learn about our completed projects, happy clients, dealer equipments, and years of experience."
+                ogUrl="https://www.evergreensepticsvc.com/success"
+                ogImage="https://www.evergreensepticsvc.com/assets/images/Banner/bgImage.png"
+                twitterCard="summary_large_image"
+                twitterTitle="Success Banner | Evergreen Septic Services"
+                twitterDescription="Maintain your septic system with our reliable and efficient solutions. Learn about our completed projects, happy clients, dealer equipments, and years of experience."
+                twitterImage="https://www.evergreensepticsvc.com/assets/images/Banner/bgImage.png"
+            />
             <section>
                 <div className="relative" data-aos="fade-up"
                     data-aos-anchor-placement="top-bottom">
@@ -82,7 +132,6 @@ export default function SuccessBanner() {
                                         <Rocket className="mr-2 h-5 w-5" />
                                         GET A FREE QUOTE
                                     </Button>
-
                                 </div>
                             </Link>
                         </div>
@@ -118,7 +167,6 @@ export default function SuccessBanner() {
                                 <span className="text-sm text-gray-500 mt-1 font-instrument">Years of Experience</span>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>

@@ -5,6 +5,38 @@ import { FaTree, FaInstagram, FaFacebookF, FaTwitter, FaYelp, FaPhone, FaBars, F
 import { HiOutlineMail, HiOutlineLocationMarker } from "react-icons/hi";
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { Metadata } from 'next';
+import Seo from '@/Seo';
+
+export const metadata: Metadata = {
+    title: 'Navigation | Evergreen Septic Services',
+    description: 'Navigate through Evergreen Septic Services. Contact us at info@evergreenseptic.com or call 262-248-4711. Serving Lake Geneva, Wisconsin.',
+    keywords: [
+        'Evergreen Septic Navigation',
+        'Septic services menu',
+        'Lake Geneva septic',
+        'Septic contact',
+        'Septic quick links',
+    ],
+    openGraph: {
+        title: 'Navigation | Evergreen Septic Services',
+        description: 'Navigate through Evergreen Septic Services. Contact us at info@evergreenseptic.com or call 262-248-4711. Serving Lake Geneva, Wisconsin.',
+        url: 'https://www.evergreensepticsvc.com',
+        images: [
+            {
+                url: 'https://www.evergreensepticsvc.com/assets/images/Logo.png',
+                width: 1200,
+                height: 630,
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Navigation | Evergreen Septic Services',
+        description: 'Navigate through Evergreen Septic Services. Contact us at info@evergreenseptic.com or call 262-248-4711. Serving Lake Geneva, Wisconsin.',
+        images: ['https://www.evergreensepticsvc.com/assets/images/Logo.png'],
+    },
+};
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -22,113 +54,115 @@ export default function Navbar() {
 
     return (
         <>
-        <div
-            className="w-full bg-white z-50 shadow-sm"
-            style={{ position: 'fixed', top: 0, left: 0, width: '100%' }}
-        >
-
-            <div className="top-0 z-50 bg-white max-w-screen-xl mx-auto px-4 py-4 flex justify-between items-center text-sm text-gray-800">
-                <Link href='/'>
-                    <div className="flex items-center gap-3">
-                        <FaTree className="w-10 h-10 text-[#3F503B]" />
-                        <div className="leading-tight">
-                            <div className="text-xl font-bold text-[#3F503B]">EVERGREEN</div>
-                            <div className="text-[13px] text-gray-700">Septic Services LLC</div>
-                        </div>
-                    </div>
-                </Link>
-
-                <div className="md:hidden flex items-center">
-                    <button onClick={() => setMenuOpen(!menuOpen)} className="text-[#3F503B] text-2xl">
-                        {menuOpen ? <FaTimes /> : <FaBars />}
-                    </button>
-                </div>
-
-                <div className="hidden md:flex items-center gap-6">
-                    <div className="flex items-center gap-2">
-                        <div className="bg-[#E9F4E6] w-[36px] h-[36px] flex items-center justify-center rounded-[8px]">
-                            <HiOutlineLocationMarker className="text-[#3F503B] text-xl" />
-                        </div>
-                        <div>
-                            <div className="font-medium text-sm">Lake Geneva, Wisconsin.</div>
-                            <div className="text-gray-500 text-xs">Lake Geneva, Wisconsin.</div>
-                        </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <div className="bg-[#E9F4E6] w-[36px] h-[36px] flex items-center justify-center rounded-[8px]">
-                            <HiOutlineMail className="text-[#3F503B] text-xl" />
-                        </div>
-                        <div>
-                            <div className="font-medium text-sm"><a href="mailto:info@evergreenseptic.com">info@evergreenseptic.com</a></div>
-                            <div className="text-gray-500 text-xs">Lake Geneva, Wisconsin.</div>
-                        </div>
-                    </div>
-                    {/* <div className="flex gap-2">
-                        {[FaInstagram, FaFacebookF, FaTwitter, FaYelp].map((Icon, i) => (
-                            <div key={i} className="bg-[#E9F4E6] w-[36px] h-[36px] flex items-center justify-center rounded-[8px]">
-                                <Icon className="text-[#3F503B]" />
-                            </div>
-                        ))}
-                    </div> */}
-                </div>
-            </div>
-
-            <div className="hidden md:flex max-w-screen-xl mx-auto justify-between items-center h-[36px] bg-[#3F503B] rounded-md relative top-[13px] border border-[#5D7757]">
-                <div className="flex text-white text-[14px] font-medium divide-x divide-[#5D7757]">
-                    {navLinks.map(({ name, path }, i) => (
-                        <Link
-                            key={i}
-                            href={path}
-                            className={`px-6 py-2 ${pathname === path ? 'bg-[#2f462f] rounded-sm' : 'hover:bg-[#5D7757]'}`}
-                        >
-                            {name}
-                        </Link>
-                    ))}
-
-                </div>
-
-                <div>
-                    <div className="cursor-pointer bg-[#EF4444] text-white px-5 py-2.5 rounded-md font-bold text-[20px] flex items-center gap-2 shadow-md">
-                        <FaPhone className="text-[20px]" />
-                        <a href="tel:262-248-4711">262-248-4711</a>
-                    </div>
-                </div>
-            </div>
-
-            {menuOpen && (
-                <div className="md:hidden bg-[#3F503B] text-white w-full">
-                    <div className="flex flex-col divide-y divide-[#5D7757] font-medium text-[14px]">
-                    {navLinks.map(({ name, path }, i) => (
-                        <Link
-                            key={i}
-                            href={path}
-                            onClick={() => setMenuOpen(false)}
-                            className={`px-6 py-2 ${pathname === path ? 'bg-[#2f462f] rounded-sm' : 'hover:bg-[#5D7757]'}`}
-                        >
-                            {name}
-                        </Link>
-                    ))}
-                    </div>
-
-                    {/* <div className="flex items-center justify-center gap-3 py-4">
-                        {[FaInstagram, FaFacebookF, FaTwitter, FaYelp].map((Icon, i) => (
-                            <div key={i} className="bg-[#E9F4E6] w-[38px] h-[38px] flex items-center justify-center rounded-[8px]">
-                                <Icon className="text-[#3F503B]" />
-                            </div>
-                        ))}
-                    </div> */}
-
-                    <Link href="/about-us">
-                        <div className="flex justify-center py-4">
-                            <div className="bg-[#EF4444] text-white px-5 py-3 rounded-md font-bold text-[16px] flex items-center gap-2 shadow-md">
-                                <FaPhone className="text-[18px]" />
-                                <a href="tel:262-248-4711">262-248-4711</a>
+            <Seo
+                title="Navigation"
+                description="Navigate through Evergreen Septic Services. Contact us at info@evergreenseptic.com or call 262-248-4711. Serving Lake Geneva, Wisconsin."
+                keywords={[
+                    'Evergreen Septic Navigation',
+                    'Septic services menu',
+                    'Lake Geneva septic',
+                    'Septic contact',
+                    'Septic quick links',
+                ]}
+                ogTitle="Navigation | Evergreen Septic Services"
+                ogDescription="Navigate through Evergreen Septic Services. Contact us at info@evergreenseptic.com or call 262-248-4711. Serving Lake Geneva, Wisconsin."
+                ogUrl="https://www.evergreensepticsvc.com"
+                ogImage="https://www.evergreensepticsvc.com/assets/images/Logo.png"
+                twitterCard="summary_large_image"
+                twitterTitle="Navigation | Evergreen Septic Services"
+                twitterDescription="Navigate through Evergreen Septic Services. Contact us at info@evergreenseptic.com or call 262-248-4711. Serving Lake Geneva, Wisconsin."
+                twitterImage="https://www.evergreensepticsvc.com/assets/images/Logo.png"
+            />
+            <div
+                className="w-full bg-white z-50 shadow-sm"
+                style={{ position: 'fixed', top: 0, left: 0, width: '100%' }}
+            >
+                <div className="top-0 z-50 bg-white max-w-screen-xl mx-auto px-4 py-4 flex justify-between items-center text-sm text-gray-800">
+                    <Link href='/'>
+                        <div className="flex items-center gap-3">
+                            <FaTree className="w-10 h-10 text-[#3F503B]" />
+                            <div className="leading-tight">
+                                <div className="text-xl font-bold text-[#3F503B]">EVERGREEN</div>
+                                <div className="text-[13px] text-gray-700">Septic Services LLC</div>
                             </div>
                         </div>
                     </Link>
+
+                    <div className="md:hidden flex items-center">
+                        <button onClick={() => setMenuOpen(!menuOpen)} className="text-[#3F503B] text-2xl">
+                            {menuOpen ? <FaTimes /> : <FaBars />}
+                        </button>
+                    </div>
+
+                    <div className="hidden md:flex items-center gap-6">
+                        <div className="flex items-center gap-2">
+                            <div className="bg-[#E9F4E6] w-[36px] h-[36px] flex items-center justify-center rounded-[8px]">
+                                <HiOutlineLocationMarker className="text-[#3F503B] text-xl" />
+                            </div>
+                            <div>
+                                <div className="font-medium text-sm">Lake Geneva, Wisconsin.</div>
+                                <div className="text-gray-500 text-xs">Lake Geneva, Wisconsin.</div>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <div className="bg-[#E9F4E6] w-[36px] h-[36px] flex items-center justify-center rounded-[8px]">
+                                <HiOutlineMail className="text-[#3F503B] text-xl" />
+                            </div>
+                            <div>
+                                <div className="font-medium text-sm"><a href="mailto:info@evergreenseptic.com">info@evergreenseptic.com</a></div>
+                                <div className="text-gray-500 text-xs">Lake Geneva, Wisconsin.</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            )}
-        </div>
+
+                <div className="hidden md:flex max-w-screen-xl mx-auto justify-between items-center h-[36px] bg-[#3F503B] rounded-md relative top-[13px] border border-[#5D7757]">
+                    <div className="flex text-white text-[14px] font-medium divide-x divide-[#5D7757]">
+                        {navLinks.map(({ name, path }, i) => (
+                            <Link
+                                key={i}
+                                href={path}
+                                className={`px-6 py-2 ${pathname === path ? 'bg-[#2f462f] rounded-sm' : 'hover:bg-[#5D7757]'}`}
+                            >
+                                {name}
+                            </Link>
+                        ))}
+                    </div>
+
+                    <div>
+                        <div className="cursor-pointer bg-[#EF4444] text-white px-5 py-2.5 rounded-md font-bold text-[20px] flex items-center gap-2 shadow-md">
+                            <FaPhone className="text-[20px]" />
+                            <a href="tel:262-248-4711">262-248-4711</a>
+                        </div>
+                    </div>
+                </div>
+
+                {menuOpen && (
+                    <div className="md:hidden bg-[#3F503B] text-white w-full">
+                        <div className="flex flex-col divide-y divide-[#5D7757] font-medium text-[14px]">
+                            {navLinks.map(({ name, path }, i) => (
+                                <Link
+                                    key={i}
+                                    href={path}
+                                    onClick={() => setMenuOpen(false)}
+                                    className={`px-6 py-2 ${pathname === path ? 'bg-[#2f462f] rounded-sm' : 'hover:bg-[#5D7757]'}`}
+                                >
+                                    {name}
+                                </Link>
+                            ))}
+                        </div>
+
+                        <Link href="/about-us">
+                            <div className="flex justify-center py-4">
+                                <div className="bg-[#EF4444] text-white px-5 py-3 rounded-md font-bold text-[16px] flex items-center gap-2 shadow-md">
+                                    <FaPhone className="text-[18px]" />
+                                    <a href="tel:262-248-4711">262-248-4711</a>
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
+                )}
+            </div>
         </>
     );
 }

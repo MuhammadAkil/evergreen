@@ -1,12 +1,13 @@
-'use client'
-import React, { useState, useEffect } from 'react'
+'use client';
+
+import React, { useState, useEffect } from 'react';
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import HeroTop from '../components/HeroTop';
-
+import Seo from '@/Seo';
 
 const FAQSection = () => {
     const [open, setOpen] = useState(null);
@@ -66,22 +67,40 @@ const FAQSection = () => {
           answer:
             "You can call us directly or use the request form on our website. We’re available 24/7 to answer questions or dispatch a technician.",
         },
-      ];
-      
-      
+    ];
 
     useEffect(() => {
         AOS.init({ duration: 1000, once: false });
     }, []);
 
-
     return (
         <>
-        <HeroTop title={'frequently asked questions'} description={'Find answers to common questions about septic system maintenance, pumping, inspections, and eco-friendly solutions with Evergreen Septic Service LLC in the Lake Geneva region.'}/>
-            <section className="w-full bg-[#F2F2F2]  py-16 px-4" data-aos="fade-up"
-                data-aos-anchor-placement="top-bottom">
+            <Seo
+                title="Frequently Asked Questions"
+                description="Find answers to common questions about septic system maintenance, pumping, inspections, and eco-friendly solutions with Evergreen Septic Service LLC in the Lake Geneva region."
+                keywords={[
+                    'Septic system FAQ',
+                    'Septic maintenance questions',
+                    'Evergreen Septic Services',
+                    'Lake Geneva septic',
+                    'Septic emergency services',
+                ]}
+                ogTitle="Frequently Asked Questions | Evergreen Septic Service LLC"
+                ogDescription="Find answers to common questions about septic system maintenance, pumping, inspections, and eco-friendly solutions with Evergreen Septic Service LLC in the Lake Geneva region."
+                ogUrl="https://www.evergreensepticsvc.com/faq"
+                ogImage="https://www.evergreensepticsvc.com/assets/images/HeroSection.png"
+                twitterCard="summary_large_image"
+                twitterTitle="Frequently Asked Questions | Evergreen Septic Service LLC"
+                twitterDescription="Find answers to common questions about septic system maintenance, pumping, inspections, and eco-friendly solutions with Evergreen Septic Service LLC in the Lake Geneva region."
+                twitterImage="https://www.evergreensepticsvc.com/assets/images/HeroSection.png"
+            />
+            <HeroTop 
+                title={'Frequently Asked Questions'} 
+                description={'Find answers to common questions about septic system maintenance, pumping, inspections, and eco-friendly solutions with Evergreen Septic Service LLC in the Lake Geneva region.'}
+            />
+            <section className="w-full bg-[#F2F2F2] py-16 px-4" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                 <div className="max-w-screen-xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-[#3F503B] mb-10"><span className=' border-black border-b'>FAQ's</span></h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-[#3F503B] mb-10"><span className='border-black border-b'>FAQ's</span></h2>
 
                     <div className="space-y-4">
                         {faqData.map((item, index) => (
@@ -110,14 +129,13 @@ const FAQSection = () => {
                     </div>
                 </div>
 
-                <div className=" flex items-center justify-center  bg-[#F2F2F2] mt-10 p-4">
+                <div className="flex items-center justify-center bg-[#F2F2F2] mt-10 p-4">
                     <div className="w-full max-w-7xl bg-white rounded-lg shadow-lg border p-6 md:p-8">
                         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                             <div className="text-left">
                                 <h2 className="font-instrument font-semibold text-gray-800 text-[24px] sm:text-[20px] md:text-[24px] lg:text-[28px]">
                                     Didn't find your answer?
                                 </h2>
-
                                 <p className="font-instrument text-gray-600 text-[14px] sm:text-[16px] md:text-[14px] mt-1">
                                     We are here to help!
                                 </p>
@@ -130,7 +148,6 @@ const FAQSection = () => {
                                         info@evergreenseptic.com
                                     </Link>
                                 </p>
-
                             </div>
                             <Link href='/contact-us'>
                                 <Button
@@ -143,8 +160,6 @@ const FAQSection = () => {
                                 >
                                     CONTACT CUSTOMER CARE
                                 </Button>
-
-
                             </Link>
                         </div>
                     </div>
@@ -152,8 +167,6 @@ const FAQSection = () => {
             </section>
         </>
     );
-
-
 }
 
 export default FAQSection;

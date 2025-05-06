@@ -2,6 +2,38 @@ import React, { useEffect } from 'react'
 import { FaCheckCircle } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Metadata } from 'next';
+import Seo from '@/Seo';
+
+export const metadata: Metadata = {
+    title: 'About Evergreen Septic Service',
+    description: 'For over 15 years, Evergreen Septic Service has been providing top-notch septic solutions to homeowners and businesses in the Lake Geneva region. We are a licensed, insured, and certified septic service provider dedicated to keeping your system running efficiently.',
+    keywords: [
+        'About Evergreen Septic',
+        'Septic system experts',
+        'Lake Geneva septic services',
+        'Septic company background',
+        'Evergreen Septic team',
+    ],
+    openGraph: {
+        title: 'About Evergreen Septic Service',
+        description: 'For over 15 years, Evergreen Septic Service has been providing top-notch septic solutions to homeowners and businesses in the Lake Geneva region. We are a licensed, insured, and certified septic service provider dedicated to keeping your system running efficiently.',
+        url: 'https://www.evergreensepticsvc.com/about',
+        images: [
+            {
+                url: 'https://www.evergreensepticsvc.com/assets/images/AboutHeroSection.png',
+                width: 1200,
+                height: 630,
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'About Evergreen Septic Service',
+        description: 'For over 15 years, Evergreen Septic Service has been providing top-notch septic solutions to homeowners and businesses in the Lake Geneva region. We are a licensed, insured, and certified septic service provider dedicated to keeping your system running efficiently.',
+        images: ['https://www.evergreensepticsvc.com/assets/images/AboutHeroSection.png'],
+    },
+};
 
 export default function About() {
     useEffect(() => {
@@ -10,9 +42,28 @@ export default function About() {
 
     return (
         <>
-            <section className="w-full bg-[#3F503B] py-16  relative overflow-hidden" data-aos="fade-up"
+            <Seo
+                title="About Evergreen Septic Service"
+                description="For over 15 years, Evergreen Septic Service has been providing top-notch septic solutions to homeowners and businesses in the Lake Geneva region. We are a licensed, insured, and certified septic service provider dedicated to keeping your system running efficiently."
+                keywords={[
+                    'About Evergreen Septic',
+                    'Septic system experts',
+                    'Lake Geneva septic services',
+                    'Septic company background',
+                    'Evergreen Septic team',
+                ]}
+                ogTitle="About Evergreen Septic Service"
+                ogDescription="For over 15 years, Evergreen Septic Service has been providing top-notch septic solutions to homeowners and businesses in the Lake Geneva region. We are a licensed, insured, and certified septic service provider dedicated to keeping your system running efficiently."
+                ogUrl="https://www.evergreensepticsvc.com/about"
+                ogImage="https://www.evergreensepticsvc.com/assets/images/AboutHeroSection.png"
+                twitterCard="summary_large_image"
+                twitterTitle="About Evergreen Septic Service"
+                twitterDescription="For over 15 years, Evergreen Septic Service has been providing top-notch septic solutions to homeowners and businesses in the Lake Geneva region. We are a licensed, insured, and certified septic service provider dedicated to keeping your system running efficiently."
+                twitterImage="https://www.evergreensepticsvc.com/assets/images/AboutHeroSection.png"
+            />
+            <section className="w-full bg-[#3F503B] py-16 relative overflow-hidden" data-aos="fade-up"
                 data-aos-anchor-placement="center-bottom">
-                <div className="max-w-screen-xl grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative z-10">
+                <div className="max-w-screen-xl grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative z-10 mx-auto px-4">
 
                     <div className="flex flex-row gap-4">
                         <img
@@ -33,8 +84,6 @@ export default function About() {
                                 <span className='text-xs'>Years of Experienced</span>
                             </div>
                         </div>
-
-
                     </div>
 
                     <div className="text-white pl-10 relative z-10">
@@ -50,10 +99,8 @@ export default function About() {
                         </h2>
 
                         <p className="font-instrument font-normal text-gray-200 text-[18px] leading-[160%] tracking-[0%] mb-4">
-                            For over 15 years, Evergreen Septic Service has been providing top-notch septic solutions to homeowners and businesses in [Service Area]. We are a licensed, insured, and certified septic service provider dedicated to keeping your system running efficiently.
+                            For over 15 years, Evergreen Septic Service has been providing top-notch septic solutions to homeowners and businesses in the Lake Geneva region. We are a licensed, insured, and certified septic service provider dedicated to keeping your system running efficiently.
                         </p>
-
-
 
                         <div className="mt-6 flex flex-wrap gap-4">
                             <div className="flex items-center">
@@ -94,15 +141,13 @@ export default function About() {
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
 
                 <img
                     src="/assets/images/About/BgImage.png"
                     alt="Layout Background"
-                    className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[300px] md:w-[600px] z-999999 pointer-events-none"
+                    className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[300px] md:w-[600px] z-0 pointer-events-none"
                 />
             </section>
         </>

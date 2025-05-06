@@ -4,7 +4,38 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Metadata } from 'next';
+import Seo from '@/Seo';
 
+export const metadata: Metadata = {
+    title: 'FAQ | Evergreen Septic Services',
+    description: 'Find answers to common questions about Evergreen Septic Services, including our location, services, septic system basics, emergency response, pricing, and how to schedule a service.',
+    keywords: [
+        'Evergreen Septic FAQ',
+        'Septic services FAQ',
+        'Septic system questions',
+        'Emergency septic services',
+        'Septic pumping cost',
+    ],
+    openGraph: {
+        title: 'FAQ | Evergreen Septic Services',
+        description: 'Find answers to common questions about Evergreen Septic Services, including our location, services, septic system basics, emergency response, pricing, and how to schedule a service.',
+        url: 'https://www.evergreensepticsvc.com/faq',
+        images: [
+            {
+                url: 'https://www.evergreensepticsvc.com/assets/images/FAQSection.png',
+                width: 1200,
+                height: 630,
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'FAQ | Evergreen Septic Services',
+        description: 'Find answers to common questions about Evergreen Septic Services, including our location, services, septic system basics, emergency response, pricing, and how to schedule a service.',
+        images: ['https://www.evergreensepticsvc.com/assets/images/FAQSection.png'],
+    },
+};
 
 const FAQSection = () => {
     const [open, setOpen] = useState(null);
@@ -64,17 +95,33 @@ const FAQSection = () => {
           answer:
             "You can call us directly or use the request form on our website. We’re available 24/7 to answer questions or dispatch a technician.",
         },
-      ];
-      
-      
+    ];
 
     useEffect(() => {
         AOS.init({ duration: 1000, once: false });
     }, []);
 
-
     return (
         <>
+            <Seo
+                title="FAQ"
+                description="Find answers to common questions about Evergreen Septic Services, including our location, services, septic system basics, emergency response, pricing, and how to schedule a service."
+                keywords={[
+                    'Evergreen Septic FAQ',
+                    'Septic services FAQ',
+                    'Septic system questions',
+                    'Emergency septic services',
+                    'Septic pumping cost',
+                ]}
+                ogTitle="FAQ | Evergreen Septic Services"
+                ogDescription="Find answers to common questions about Evergreen Septic Services, including our location, services, septic system basics, emergency response, pricing, and how to schedule a service."
+                ogUrl="https://www.evergreensepticsvc.com/faq"
+                ogImage="https://www.evergreensepticsvc.com/assets/images/FAQSection.png"
+                twitterCard="summary_large_image"
+                twitterTitle="FAQ | Evergreen Septic Services"
+                twitterDescription="Find answers to common questions about Evergreen Septic Services, including our location, services, septic system basics, emergency response, pricing, and how to schedule a service."
+                twitterImage="https://www.evergreensepticsvc.com/assets/images/FAQSection.png"
+            />
             <section className="w-full bg-[#F2F2F2] py-16 px-4" data-aos="fade-up"
                 data-aos-anchor-placement="top-bottom">
                 <div className="max-w-screen-xl mx-auto text-center">
@@ -107,7 +154,7 @@ const FAQSection = () => {
                     </div>
                 </div>
 
-                <div className=" flex items-center justify-center  bg-[#F2F2F2]  p-4">
+                <div className="flex items-center justify-center bg-[#F2F2F2] p-4">
                     <div className="w-full max-w-7xl bg-white rounded-lg shadow-sm p-6 md:p-8">
                         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                             <div className="text-left">
@@ -127,7 +174,6 @@ const FAQSection = () => {
                                         info@evergreenseptic.com
                                     </Link>
                                 </p>
-
                             </div>
                             <Link href='/contact-us'>
                                 <Button
@@ -140,8 +186,6 @@ const FAQSection = () => {
                                 >
                                     CONTACT CUSTOMER CARE
                                 </Button>
-
-
                             </Link>
                         </div>
                     </div>
@@ -149,8 +193,6 @@ const FAQSection = () => {
             </section>
         </>
     );
-
-
 }
 
 export default FAQSection;
