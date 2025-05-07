@@ -1,5 +1,6 @@
 import CallToAction from "../components/CallToAction";
 import HeroTop from "../components/HeroTop";
+import Slider from "../components/Slider";
 import Hero from "./hero";
 import type { Metadata } from "next";
 
@@ -144,6 +145,7 @@ export default function TestimonialsPage() {
         title="Testimonials"
         description="See testimonials from satisfied clients of Evergreen Septic Service LLC in Lake Geneva. Trusted for septic pumping, inspections, maintenance, and eco-friendly solutions."
       />
+      <Slider/>
       <Hero />
       <CallToAction />
       <script

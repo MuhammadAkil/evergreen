@@ -12,7 +12,7 @@ export default function Hero() {
 
     return (
         <>
-            <section className="py-16 bg-white relative overflow-hidden" data-aos="fade-right">
+            {/* <section className="py-16 bg-white relative overflow-hidden" data-aos="fade-right">
                 <img
                     src="/assets/images/Union.png"
                     alt="Background Graphic"
@@ -139,7 +139,7 @@ export default function Hero() {
                     </div>
                 </div>
             </section>
-
+*/}
             <section data-aos="fade-up" className='pt-10'>
                 <div className="relative w-full bg-[#3F503B] py-10">
                     <div className="relative mx-auto max-w-4xl -mt-16 px-4">
@@ -187,7 +187,7 @@ export default function Hero() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> 
 
             <section className="bg-white py-16" data-aos="zoom-in-up">
                 <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
