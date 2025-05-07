@@ -7,36 +7,6 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Seo from '@/Seo';
 
-export const metadata: Metadata = {
-    title: 'Newsletter Subscription | Evergreen Septic Services',
-    description: 'Subscribe to Evergreen Septic Services’ newsletter for the latest septic maintenance tips, eco-friendly solutions, and exclusive promotions in the Lake Geneva region.',
-    keywords: [
-        'Evergreen Septic Services',
-        'Septic newsletter',
-        'Lake Geneva septic tips',
-        'Eco-friendly septic solutions',
-        'Septic maintenance promotions',
-    ],
-    openGraph: {
-        title: 'Newsletter Subscription | Evergreen Septic Services',
-        description: 'Subscribe to Evergreen Septic Services’ newsletter for the latest septic maintenance tips, eco-friendly solutions, and exclusive promotions in the Lake Geneva region.',
-        url: 'https://www.evergreensepticsvc.com/newsletter',
-        images: [
-            {
-                url: 'https://www.evergreensepticsvc.com/assets/images/ContactUs/bgImage.png',
-                width: 1200,
-                height: 630,
-            },
-        ],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Newsletter Subscription | Evergreen Septic Services',
-        description: 'Subscribe to Evergreen Septic Services’ newsletter for the latest septic maintenance tips, eco-friendly solutions, and exclusive promotions in the Lake Geneva region.',
-        images: ['https://www.evergreensepticsvc.com/assets/images/ContactUs/bgImage.png'],
-    },
-};
-
 export default function Subscribe() {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -88,26 +58,7 @@ export default function Subscribe() {
 
   return (
     <>
-      <Seo
-        title="Newsletter Subscription"
-        description="Subscribe to Evergreen Septic Services’ newsletter for the latest septic maintenance tips, eco-friendly solutions, and exclusive promotions in the Lake Geneva region."
-        keywords={[
-          'Evergreen Septic Services',
-          'Septic newsletter',
-          'Lake Geneva septic tips',
-          'Eco-friendly septic solutions',
-          'Septic maintenance promotions',
-        ]}
-        ogTitle="Newsletter Subscription | Evergreen Septic Services"
-        ogDescription="Subscribe to Evergreen Septic Services’ newsletter for the latest septic maintenance tips, eco-friendly solutions, and exclusive promotions in the Lake Geneva region."
-        ogUrl="https://www.evergreensepticsvc.com/newsletter"
-        ogImage="https://www.evergreensepticsvc.com/assets/images/ContactUs/bgImage.png"
-        twitterCard="summary_large_image"
-        twitterTitle="Newsletter Subscription | Evergreen Septic Services"
-        twitterDescription="Subscribe to Evergreen Septic Services’ newsletter for the latest septic maintenance tips, eco-friendly solutions, and exclusive promotions in the Lake Geneva region."
-        twitterImage="https://www.evergreensepticsvc.com/assets/images/ContactUs/bgImage.png"
-      />
-      <section className="bg-[#4CAF50] py-16 px-4" data-aos="fade-up">
+     <section className="bg-[#4CAF50] py-16 px-4" data-aos="fade-up">
        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
           <div className="md:w-1/2 text-white text-center md:text-left">
             <h2 className="text-3xl sm:text-4xl mb-2 font-instrument">

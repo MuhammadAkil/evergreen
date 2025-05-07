@@ -5,38 +5,7 @@ import { FaTree, FaInstagram, FaFacebookF, FaTwitter, FaYelp, FaPhone, FaBars, F
 import { HiOutlineMail, HiOutlineLocationMarker } from "react-icons/hi";
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { Metadata } from 'next';
-import Seo from '@/Seo';
 
-export const metadata: Metadata = {
-    title: 'Navigation | Evergreen Septic Services',
-    description: 'Navigate through Evergreen Septic Services. Contact us at info@evergreenseptic.com or call 262-248-4711. Serving Lake Geneva, Wisconsin.',
-    keywords: [
-        'Evergreen Septic Navigation',
-        'Septic services menu',
-        'Lake Geneva septic',
-        'Septic contact',
-        'Septic quick links',
-    ],
-    openGraph: {
-        title: 'Navigation | Evergreen Septic Services',
-        description: 'Navigate through Evergreen Septic Services. Contact us at info@evergreenseptic.com or call 262-248-4711. Serving Lake Geneva, Wisconsin.',
-        url: 'https://www.evergreensepticsvc.com',
-        images: [
-            {
-                url: 'https://www.evergreensepticsvc.com/assets/images/Logo.png',
-                width: 1200,
-                height: 630,
-            },
-        ],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Navigation | Evergreen Septic Services',
-        description: 'Navigate through Evergreen Septic Services. Contact us at info@evergreenseptic.com or call 262-248-4711. Serving Lake Geneva, Wisconsin.',
-        images: ['https://www.evergreensepticsvc.com/assets/images/Logo.png'],
-    },
-};
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -54,25 +23,6 @@ export default function Navbar() {
 
     return (
         <>
-            <Seo
-                title="Navigation"
-                description="Navigate through Evergreen Septic Services. Contact us at info@evergreenseptic.com or call 262-248-4711. Serving Lake Geneva, Wisconsin."
-                keywords={[
-                    'Evergreen Septic Navigation',
-                    'Septic services menu',
-                    'Lake Geneva septic',
-                    'Septic contact',
-                    'Septic quick links',
-                ]}
-                ogTitle="Navigation | Evergreen Septic Services"
-                ogDescription="Navigate through Evergreen Septic Services. Contact us at info@evergreenseptic.com or call 262-248-4711. Serving Lake Geneva, Wisconsin."
-                ogUrl="https://www.evergreensepticsvc.com"
-                ogImage="https://www.evergreensepticsvc.com/assets/images/Logo.png"
-                twitterCard="summary_large_image"
-                twitterTitle="Navigation | Evergreen Septic Services"
-                twitterDescription="Navigate through Evergreen Septic Services. Contact us at info@evergreenseptic.com or call 262-248-4711. Serving Lake Geneva, Wisconsin."
-                twitterImage="https://www.evergreensepticsvc.com/assets/images/Logo.png"
-            />
             <div
                 className="w-full bg-white z-50 shadow-sm"
                 style={{ position: 'fixed', top: 0, left: 0, width: '100%' }}

@@ -3,29 +3,31 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Instrument_Sans } from 'next/font/google';
-import { ToastContainer } from 'react-toastify'; 
-import 'react-toastify/dist/ReactToastify.css'; 
-import Seo from "../Seo";
+import ClientToastContainer from "./components/ClientToastContainer";
 
 export const metadata: Metadata = {
   title: {
-    default: "Evergreen Septic Service LLC",
-    template: "%s ",
+    default: "Top Septic Pumping & Inspection in Lake Geneva - Evergreen Septic Service LLC",
+    template: "%s | Evergreen Septic Service LLC",
   },
   description:
-    "Reliable, eco-conscious septic pumping and certified inspections in the foothills. Evergreen Septics delivers expert service with a personal touch.",
+    "Evergreen Septic Service LLC offers top-rated septic pumping, certified inspections, maintenance, and emergency services in Lake Geneva and the foothills. Contact us for expert, eco-friendly solutions!",
   keywords: [
-    "Septic pumping",
-    "Septic inspections",
-    "Foothills septic service",
-    "Evergreen Septics",
-    "Certified septic inspection",
-    "Eco-friendly septic service",
+    "septic pumping Lake Geneva",
+    "certified septic inspection Lake Geneva",
+    "septic maintenance services",
+    "emergency septic repair Lake Geneva",
+    "eco-friendly septic solutions",
+    "septic tank cleaning Lake Geneva",
+    "septic system inspection",
+    "holding tank services Lake Geneva",
+    "drain field repair Lake Geneva",
+    "Evergreen Septic Service LLC",
   ],
   openGraph: {
-    title: "Evergreen Septic Service LLC",
+    title: "Top Septic Pumping & Inspection in Lake Geneva - Evergreen Septic Service LLC",
     description:
-      "Reliable, eco-conscious septic pumping and certified inspections in the foothills. Evergreen Septics delivers expert service with a personal touch.",
+      "Evergreen Septic Service LLC offers top-rated septic pumping, certified inspections, maintenance, and emergency services in Lake Geneva and the foothills. Contact us for expert, eco-friendly solutions!",
     url: "https://www.evergreensepticsvc.com/",
     siteName: "Evergreen Septic Service LLC",
     images: [
@@ -33,6 +35,7 @@ export const metadata: Metadata = {
         url: "https://www.evergreensepticsvc.com/assets/images/HeroSection.png",
         width: 1200,
         height: 630,
+        alt: "Evergreen Septic Service LLC in Lake Geneva",
       },
     ],
     locale: "en_US",
@@ -40,11 +43,31 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Evergreen Septic Service LLC",
+    title: "Top Septic Pumping & Inspection in Lake Geneva - Evergreen Septic Service LLC",
     description:
-      "Top-rated septic pumping and inspections with an emphasis on education, customer care, and environmental responsibility.",
-    images: ["https://www.evergreensepticsvc.com/assets/images/HeroSection.png"],
+      "Get expert septic pumping, inspections, and emergency services in Lake Geneva with Evergreen Septic Service LLC—eco-friendly and reliable!",
+    images: [
+      {
+        url: "https://www.evergreensepticsvc.com/assets/images/HeroSection.png",
+        alt: "Evergreen Septic Service LLC in Lake Geneva",
+      },
+    ],
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://www.evergreensepticsvc.com/",
+  },
+  metadataBase: new URL("https://www.evergreensepticsvc.com/"),
 };
 
 const instrumentSans = Instrument_Sans({
@@ -60,24 +83,50 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link href="https://fonts.googleapis.com/css2?family=Gilroy:wght@400&display=swap" rel="stylesheet"/>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Gilroy:wght@400&display=swap"
+          rel="stylesheet"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "Evergreen Septic Service LLC",
+              description:
+                "Evergreen Septic Service LLC offers top-rated septic pumping, certified inspections, maintenance, and emergency services in Lake Geneva and the foothills, with expert care.",
+              url: "https://www.evergreensepticsvc.com/",
+              telephone: "262-949-3555",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "123 Septic Lane",
+                addressLocality: "Lake Geneva",
+                addressRegion: "WI",
+                postalCode: "53147",
+                addressCountry: "US",
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 42.5912,
+                longitude: -88.4331,
+              },
+              openingHours: "Mo-Fr 08:00-17:00",
+              sameAs: [
+                "https://www.facebook.com/evergreensepticsvc",
+                "https://www.instagram.com/evergreensepticsvc",
+              ],
+              image: "https://www.evergreensepticsvc.com/assets/images/HeroSection.png",
+              priceRange: "$$",
+            }),
+          }}
+        />
       </head>
       <body className={`${instrumentSans.className} font-sans`}>
-        <Seo />
         <Navbar />
         {children}
         <Footer />
-        <ToastContainer 
-          position="top-center"
-          autoClose={3000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-        />
+        <ClientToastContainer />
       </body>
     </html>
   );

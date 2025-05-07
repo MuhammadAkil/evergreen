@@ -4,7 +4,6 @@ import { CheckSquare } from "lucide-react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import React, { useEffect } from 'react';
-import Seo from '@/Seo';
 
 export default function PricingPage() {
   useEffect(() => {
@@ -13,26 +12,7 @@ export default function PricingPage() {
 
   return (
     <>
-      <Seo
-          title="Pricing"
-          description="View pricing details for septic services at Evergreen Septic Services, including STDHT ($165.00), grease trap ($150.00 + $0.21/gallon), catch basin ($175.00 + $0.28/gallon), and emergency fees."
-          keywords={[
-              'Evergreen Septic Pricing',
-              'Septic service costs',
-              'STDHT pricing',
-              'Emergency septic fees',
-              'Septic pumping rates',
-          ]}
-          ogTitle="Pricing | Evergreen Septic Services"
-          ogDescription="View pricing details for septic services at Evergreen Septic Services, including STDHT ($165.00), grease trap ($150.00 + $0.21/gallon), catch basin ($175.00 + $0.28/gallon), and emergency fees."
-          ogUrl="https://www.evergreensepticsvc.com/pricing"
-          ogImage="https://www.evergreensepticsvc.com/assets/images/Pricing.png"
-          twitterCard="summary_large_image"
-          twitterTitle="Pricing | Evergreen Septic Services"
-          twitterDescription="View pricing details for septic services at Evergreen Septic Services, including STDHT ($165.00), grease trap ($150.00 + $0.21/gallon), catch basin ($175.00 + $0.28/gallon), and emergency fees."
-          twitterImage="https://www.evergreensepticsvc.com/assets/images/Pricing.png"
-      />
-      <div className="max-w-3xl mx-auto p-6 mt-10 mb-10 font-sans" data-aos="fade-up"
+     <div className="max-w-3xl mx-auto p-6 mt-10 mb-10 font-sans" data-aos="fade-up"
         data-aos-anchor-placement="top-bottom">
         <div className="text-center mb-6">
           <h1 className="text-center text-[#00BD00] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-inter font-bold mb-2" style={{ fontWeight: 700, letterSpacing: '0%' }}>

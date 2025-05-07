@@ -1,9 +1,9 @@
+"use client"
 import React, { useEffect } from 'react'
 import { FaCheckCircle } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Metadata } from 'next';
-import Seo from '@/Seo';
 
 export const metadata: Metadata = {
     title: 'About Evergreen Septic Service',
@@ -42,26 +42,7 @@ export default function About() {
 
     return (
         <>
-            <Seo
-                title="About Evergreen Septic Service"
-                description="For over 15 years, Evergreen Septic Service has been providing top-notch septic solutions to homeowners and businesses in the Lake Geneva region. We are a licensed, insured, and certified septic service provider dedicated to keeping your system running efficiently."
-                keywords={[
-                    'About Evergreen Septic',
-                    'Septic system experts',
-                    'Lake Geneva septic services',
-                    'Septic company background',
-                    'Evergreen Septic team',
-                ]}
-                ogTitle="About Evergreen Septic Service"
-                ogDescription="For over 15 years, Evergreen Septic Service has been providing top-notch septic solutions to homeowners and businesses in the Lake Geneva region. We are a licensed, insured, and certified septic service provider dedicated to keeping your system running efficiently."
-                ogUrl="https://www.evergreensepticsvc.com/about"
-                ogImage="https://www.evergreensepticsvc.com/assets/images/AboutHeroSection.png"
-                twitterCard="summary_large_image"
-                twitterTitle="About Evergreen Septic Service"
-                twitterDescription="For over 15 years, Evergreen Septic Service has been providing top-notch septic solutions to homeowners and businesses in the Lake Geneva region. We are a licensed, insured, and certified septic service provider dedicated to keeping your system running efficiently."
-                twitterImage="https://www.evergreensepticsvc.com/assets/images/AboutHeroSection.png"
-            />
-            <section className="w-full bg-[#3F503B] py-16 relative overflow-hidden" data-aos="fade-up"
+          <section className="w-full bg-[#3F503B] py-16 relative overflow-hidden" data-aos="fade-up"
                 data-aos-anchor-placement="center-bottom">
                 <div className="max-w-screen-xl grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative z-10 mx-auto px-4">
 

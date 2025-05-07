@@ -2,11 +2,9 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import React, { useEffect, useState, useCallback } from 'react';
-import { Metadata } from 'next';
 import useEmblaCarousel from 'embla-carousel-react';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import Seo from '@/Seo';
 
 const testimonials = [
     {
@@ -115,35 +113,6 @@ const testimonials = [
     },
 ];
 
-export const metadata: Metadata = {
-    title: 'Testimonials | Evergreen Septic Services',
-    description: 'Read what our satisfied clients say about Evergreen Septic Services. We provide top-quality septic solutions with honesty, efficiency, and care in the Lake Geneva region.',
-    keywords: [
-        'Evergreen Septic Services',
-        'Septic testimonials',
-        'Lake Geneva septic reviews',
-        'Septic maintenance feedback',
-        'Septic service reviews',
-    ],
-    openGraph: {
-        title: 'Testimonials | Evergreen Septic Services',
-        description: 'Read what our satisfied clients say about Evergreen Septic Services. We provide top-quality septic solutions with honesty, efficiency, and care in the Lake Geneva region.',
-        url: 'https://www.evergreensepticsvc.com/testimonials',
-        images: [
-            {
-                url: 'https://www.evergreensepticsvc.com/assets/images/ContactUs/bgImage.png',
-                width: 1200,
-                height: 630,
-            },
-        ],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Testimonials | Evergreen Septic Services',
-        description: 'Read what our satisfied clients say about Evergreen Septic Services. We provide top-quality septic solutions with honesty, efficiency, and care in the Lake Geneva region.',
-        images: ['https://www.evergreensepticsvc.com/assets/images/ContactUs/bgImage.png'],
-    },
-};
 
 export default function Slider() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
@@ -187,26 +156,7 @@ export default function Slider() {
 
   return (
     <>
-      <Seo
-        title="Testimonials"
-        description="Read what our satisfied clients say about Evergreen Septic Services. We provide top-quality septic solutions with honesty, efficiency, and care in the Lake Geneva region."
-        keywords={[
-          'Evergreen Septic Services',
-          'Septic testimonials',
-          'Lake Geneva septic reviews',
-          'Septic maintenance feedback',
-          'Septic service reviews',
-        ]}
-        ogTitle="Testimonials | Evergreen Septic Services"
-        ogDescription="Read what our satisfied clients say about Evergreen Septic Services. We provide top-quality septic solutions with honesty, efficiency, and care in the Lake Geneva region."
-        ogUrl="https://www.evergreensepticsvc.com/testimonials"
-        ogImage="https://www.evergreensepticsvc.com/assets/images/ContactUs/bgImage.png"
-        twitterCard="summary_large_image"
-        twitterTitle="Testimonials | Evergreen Septic Services"
-        twitterDescription="Read what our satisfied clients say about Evergreen Septic Services. We provide top-quality septic solutions with honesty, efficiency, and care in the Lake Geneva region."
-        twitterImage="https://www.evergreensepticsvc.com/assets/images/ContactUs/bgImage.png"
-      />
-      <section className="relative bg-white py-16" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+     <section className="relative bg-white py-16" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
         <div className="absolute top-0 right-0 z-0">
           <img src="/assets/images/Union.png" alt="Decorative Background" className="w-[300px] md:h-[165px]" />
         </div>

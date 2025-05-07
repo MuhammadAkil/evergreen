@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import React, { useEffect, useState } from 'react';
-import Seo from '@/Seo';
 
 const pricingData = {
   holding: {
@@ -149,26 +148,7 @@ export default function Pricing() {
 
   return (
     <>
-      <Seo
-          title="Pricing List"
-          description="Check the pricing list for holding and septic tanks at Evergreen Septic Services. Get an estimate for your septic needs starting from $150.00 for holding tanks and $250.00 for septic tanks."
-          keywords={[
-              'Evergreen Septic Pricing',
-              'Holding tank prices',
-              'Septic tank prices',
-              'Septic service estimate',
-              'Lake Geneva septic pricing',
-          ]}
-          ogTitle="Pricing List | Evergreen Septic Services"
-          ogDescription="Check the pricing list for holding and septic tanks at Evergreen Septic Services. Get an estimate for your septic needs starting from $150.00 for holding tanks and $250.00 for septic tanks."
-          ogUrl="https://www.evergreensepticsvc.com/pricing-list"
-          ogImage="https://www.evergreensepticsvc.com/assets/images/PricingList.png"
-          twitterCard="summary_large_image"
-          twitterTitle="Pricing List | Evergreen Septic Services"
-          twitterDescription="Check the pricing list for holding and septic tanks at Evergreen Septic Services. Get an estimate for your septic needs starting from $150.00 for holding tanks and $250.00 for septic tanks."
-          twitterImage="https://www.evergreensepticsvc.com/assets/images/PricingList.png"
-      />
-      <main className="min-h-screen bg-[#3F503B] " data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+     <main className="min-h-screen bg-[#3F503B] " data-aos="fade-up" data-aos-anchor-placement="top-bottom">
         <div className="container mx-auto px-4 py-12">
           <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-8 ml-4 md:ml-10">
             <div className="text-white text-left w-full">

@@ -1,60 +1,9 @@
 import Link from "next/link"
-import { Metadata } from 'next';
-import Seo from '@/Seo';
-
-export const metadata: Metadata = {
-    title: 'Footer | Evergreen Septic Services',
-    description: 'Contact Evergreen Septic Services in Lake Geneva, Wisconsin for reliable septic solutions. Explore our services, FAQ, testimonials, and more.',
-    keywords: [
-        'Evergreen Septic Services',
-        'Septic services footer',
-        'Lake Geneva septic',
-        'Septic contact',
-        'Septic quick links',
-    ],
-    openGraph: {
-        title: 'Footer | Evergreen Septic Services',
-        description: 'Contact Evergreen Septic Services in Lake Geneva, Wisconsin for reliable septic solutions. Explore our services, FAQ, testimonials, and more.',
-        url: 'https://www.evergreensepticsvc.com',
-        images: [
-            {
-                url: 'https://www.evergreensepticsvc.com/assets/images/FooterLogo.png',
-                width: 1200,
-                height: 630,
-            },
-        ],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Footer | Evergreen Septic Services',
-        description: 'Contact Evergreen Septic Services in Lake Geneva, Wisconsin for reliable septic solutions. Explore our services, FAQ, testimonials, and more.',
-        images: ['https://www.evergreensepticsvc.com/assets/images/FooterLogo.png'],
-    },
-};
 
 export default function Footer() {
   return (
     <>
-      <Seo
-          title="Footer"
-          description="Contact Evergreen Septic Services in Lake Geneva, Wisconsin for reliable septic solutions. Explore our services, FAQ, testimonials, and more."
-          keywords={[
-              'Evergreen Septic Services',
-              'Septic services footer',
-              'Lake Geneva septic',
-              'Septic contact',
-              'Septic quick links',
-          ]}
-          ogTitle="Footer | Evergreen Septic Services"
-          ogDescription="Contact Evergreen Septic Services in Lake Geneva, Wisconsin for reliable septic solutions. Explore our services, FAQ, testimonials, and more."
-          ogUrl="https://www.evergreensepticsvc.com"
-          ogImage="https://www.evergreensepticsvc.com/assets/images/FooterLogo.png"
-          twitterCard="summary_large_image"
-          twitterTitle="Footer | Evergreen Septic Services"
-          twitterDescription="Contact Evergreen Septic Services in Lake Geneva, Wisconsin for reliable septic solutions. Explore our services, FAQ, testimonials, and more."
-          twitterImage="https://www.evergreensepticsvc.com/assets/images/FooterLogo.png"
-      />
-      <footer className="bg-[#2a3b2a] text-white px-8 py-8">
+     <footer className="bg-[#2a3b2a] text-white px-8 py-8">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row gap-8">
             <div className="md:w-1/3">

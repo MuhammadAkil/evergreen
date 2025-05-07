@@ -1,68 +1,113 @@
 import HeroTop from '../components/HeroTop';
-import Seo from '@/Seo';
-import { Metadata } from 'next';
 import FAQSection from './FAQSection';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Frequently Asked Questions | Evergreen Septic Service LLC',
-    description: 'Find answers to common questions about septic system maintenance, pumping, inspections, and eco-friendly solutions with Evergreen Septic Service LLC in the Lake Geneva region.',
-    keywords: [
-        'Septic system FAQ',
-        'Septic maintenance questions',
-        'Evergreen Septic Services',
-        'Lake Geneva septic',
-        'Septic emergency services',
+  title: {
+    default: "Septic System FAQs in Lake Geneva - Evergreen Septic Service LLC",
+    template: "%s | Evergreen Septic Service LLC",
+  },
+  description:
+    "Get answers to FAQs about septic system maintenance, pumping, inspections, and eco-friendly solutions with Evergreen Septic Service LLC in Lake Geneva.",
+  keywords: [
+    "septic system FAQs Lake Geneva",
+    "septic maintenance questions",
+    "Evergreen Septic Service FAQ",
+    "Lake Geneva septic FAQs",
+    "septic pumping FAQ",
+    "septic inspections questions",
+    "eco-friendly septic solutions FAQ",
+    "septic emergency services FAQ",
+    "septic tank care Lake Geneva",
+    "Evergreen Septic support",
+  ],
+  openGraph: {
+    title: "Septic System FAQs in Lake Geneva - Evergreen Septic Service LLC",
+    description:
+      "Get answers to FAQs about septic system maintenance, pumping, inspections, and eco-friendly solutions with Evergreen Septic Service LLC in Lake Geneva.",
+    url: "https://www.evergreensepticsvc.com/faq",
+    siteName: "Evergreen Septic Service LLC",
+    images: [
+      {
+        url: "https://www.evergreensepticsvc.com/assets/images/HeroSection.png",
+        width: 1200,
+        height: 630,
+        alt: "Septic System FAQs in Lake Geneva",
+      },
     ],
-    openGraph: {
-        title: 'Frequently Asked Questions | Evergreen Septic Service LLC',
-        description: 'Find answers to common questions about septic system maintenance, pumping, inspections, and eco-friendly solutions with Evergreen Septic Service LLC in the Lake Geneva region.',
-        url: 'https://www.evergreensepticsvc.com/faq',
-        images: [
-            {
-                url: 'https://www.evergreensepticsvc.com/assets/images/HeroSection.png',
-                width: 1200,
-                height: 630,
-            },
-        ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Septic System FAQs in Lake Geneva - Evergreen Septic Service LLC",
+    description:
+      "Find answers to septic system FAQs with Evergreen Septic Service LLC in Lake Geneva—maintenance, pumping, inspections, and more!",
+    images: [
+      {
+        url: "https://www.evergreensepticsvc.com/assets/images/HeroSection.png",
+        alt: "Septic System FAQs in Lake Geneva",
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Frequently Asked Questions | Evergreen Septic Service LLC',
-        description: 'Find answers to common questions about septic system maintenance, pumping, inspections, and eco-friendly solutions with Evergreen Septic Service LLC in the Lake Geneva region.',
-        images: ['https://www.evergreensepticsvc.com/assets/images/HeroSection.png'],
-    },
-    alternates: {
-        canonical: 'https://www.evergreensepticsvc.com/faq',
-    },
+  },
+  alternates: {
+    canonical: "https://www.evergreensepticsvc.com/faq",
+  },
+  metadataBase: new URL("https://www.evergreensepticsvc.com/"),
 };
 
 export default function FAQPage() {
-    return (
-        <>
-            <Seo
-                title="Frequently Asked Questions"
-                description="Find answers to common questions about septic system maintenance, pumping, inspections, and eco-friendly solutions with Evergreen Septic Service LLC in the Lake Geneva region."
-                keywords={[
-                    'Septic system FAQ',
-                    'Septic maintenance questions',
-                    'Evergreen Septic Services',
-                    'Lake Geneva septic',
-                    'Septic emergency services',
-                ]}
-                ogTitle="Frequently Asked Questions | Evergreen Septic Service LLC"
-                ogDescription="Find answers to common questions about septic system maintenance, pumping, inspections, and eco-friendly solutions with Evergreen Septic Service LLC in the Lake Geneva region."
-                ogUrl="https://www.evergreensepticsvc.com/faq"
-                ogImage="https://www.evergreensepticsvc.com/assets/images/HeroSection.png"
-                twitterCard="summary_large_image"
-                twitterTitle="Frequently Asked Questions | Evergreen Septic Service LLC"
-                twitterDescription="Find answers to common questions about septic system maintenance, pumping, inspections, and eco-friendly solutions with Evergreen Septic Service LLC in the Lake Geneva region."
-                twitterImage="https://www.evergreensepticsvc.com/assets/images/HeroSection.png"
-            />
-            <HeroTop 
-                title={'Frequently Asked Questions'} 
-                description={'Find answers to common questions about septic system maintenance, pumping, inspections, and eco-friendly solutions with Evergreen Septic Service LLC in the Lake Geneva region.'}
-            />
-            <FAQSection />
-        </>
-    );
+  // Example FAQ data to generate structured data (replace with actual data from FAQSection if available)
+  const faqData = [
+    {
+      question: "How often should I pump my septic tank?",
+      answer: "We recommend pumping your septic tank every 3-5 years, depending on usage, to prevent issues.",
+    },
+    {
+      question: "What does a septic inspection involve?",
+      answer: "Our inspections include a thorough check of your tank, drain field, and system components, with a detailed report.",
+    },
+    {
+      question: "Are your services eco-friendly?",
+      answer: "Yes, we use environmentally safe methods and products to protect your property and the local ecosystem.",
+    },
+  ];
+
+  return (
+    <>
+      <HeroTop
+        title="Frequently Asked Questions"
+        description="Get answers to FAQs about septic system maintenance, pumping, inspections, and eco-friendly solutions with Evergreen Septic Service LLC in Lake Geneva."
+      />
+      <FAQSection />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqData.map((faq) => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.answer,
+              },
+            })),
+          }),
+        }}
+      />
+    </>
+  );
 }

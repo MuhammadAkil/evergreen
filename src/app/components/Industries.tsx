@@ -1,3 +1,4 @@
+'use client';
 import { FaBuilding, FaHotel, FaSchool, FaHome } from "react-icons/fa";
 import AOS from 'aos';
 import 'aos/dist/aos.css';

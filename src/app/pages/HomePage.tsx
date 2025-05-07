@@ -1,8 +1,4 @@
-'use client';
-
 import Banner from '../components/Banner';
-import React from 'react';
-import FAQ from '../components/Faq';
 import HeroSection from '../components/HerSection';
 import Services from '../components/Services';
 import Industries from '../components/Industries';
@@ -12,71 +8,105 @@ import PricingPage from '../components/PriceDetail';
 import Slider from '../components/Slider';
 import Subscribe from '../components/Subscribe';
 import CallToAction from '../components/CallToAction';
-import Seo from '@/Seo';
-import { Metadata } from 'next';
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: 'Evergreen Septic Service LLC | Septic Solutions in Lake Geneva',
-    description: 'Evergreen Septic Service LLC provides expert septic services in Lake Geneva, including pumping, inspections, maintenance, and eco-friendly solutions for residential and commercial properties.',
-    keywords: [
-        'Septic services Lake Geneva',
-        'Septic tank pumping',
-        'Septic system maintenance',
-        'Eco-friendly septic solutions',
-        'Evergreen Septic Service',
+  title: {
+    default: "Septic & Holding Tank Experts in Lake Geneva - Evergreen Septic Service LLC",
+    template: "%s | Evergreen Septic Service LLC",
+  },
+  description:
+    "Evergreen Septic Service LLC offers expert septic and holding tank services in Lake Geneva—pumping, inspections, maintenance, and eco-friendly solutions for homes and businesses.",
+  keywords: [
+    "septic services Lake Geneva",
+    "holding tank pumping Lake Geneva",
+    "septic tank pumping",
+    "septic system maintenance",
+    "eco-friendly septic solutions",
+    "Evergreen Septic Service LLC",
+    "septic inspections Lake Geneva",
+    "septic repairs Lake Geneva",
+    "drain field restoration",
+    "emergency septic services Lake Geneva",
+    "septic installation Lake Geneva",
+  ],
+  openGraph: {
+    title: "Septic & Holding Tank Experts in Lake Geneva - Evergreen Septic Service LLC",
+    description:
+      "Evergreen Septic Service LLC offers expert septic and holding tank services in Lake Geneva—pumping, inspections, maintenance, and eco-friendly solutions for homes and businesses.",
+    url: "https://www.evergreensepticsvc.com",
+    siteName: "Evergreen Septic Service LLC",
+    images: [
+      {
+        url: "https://www.evergreensepticsvc.com/assets/images/HeroSection.png",
+        width: 1200,
+        height: 630,
+        alt: "Septic and holding tank services in Lake Geneva",
+      },
     ],
-    openGraph: {
-        title: 'Evergreen Septic Service LLC | Septic Solutions in Lake Geneva',
-        description: 'Evergreen Septic Service LLC provides expert septic services in Lake Geneva, including pumping, inspections, maintenance, and eco-friendly solutions for residential and commercial properties.',
-        url: 'https://www.evergreensepticsvc.com',
-        images: [
-            {
-                url: 'https://www.evergreensepticsvc.com/assets/images/HeroSection.png',
-                width: 1200,
-                height: 630,
-            },
-        ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Septic & Holding Tank Experts in Lake Geneva - Evergreen Septic Service LLC",
+    description:
+      "Need septic services in Lake Geneva? Evergreen Septic Service LLC offers pumping, inspections, and eco-friendly solutions—contact us today!",
+    images: [
+      {
+        url: "https://www.evergreensepticsvc.com/assets/images/HeroSection.png",
+        alt: "Septic and holding tank services in Lake Geneva",
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Evergreen Septic Service LLC | Septic Solutions in Lake Geneva',
-        description: 'Evergreen Septic Service LLC provides expert septic services in Lake Geneva, including pumping, inspections, maintenance, and eco-friendly solutions for residential and commercial properties.',
-        images: ['https://www.evergreensepticsvc.com/assets/images/HeroSection.png'],
-    },
+  },
+  alternates: {
+    canonical: "https://www.evergreensepticsvc.com",
+  },
+  metadataBase: new URL("https://www.evergreensepticsvc.com/"),
 };
 
 export default function HomePage() {
-    return (
-        <>
-            <Seo
-                title="Evergreen Septic Service LLC | Septic Solutions in Lake Geneva"
-                description="Evergreen Septic Service LLC provides expert septic services in Lake Geneva, including pumping, inspections, maintenance, and eco-friendly solutions for residential and commercial properties."
-                keywords={[
-                    'Septic services Lake Geneva',
-                    'Septic tank pumping',
-                    'Septic system maintenance',
-                    'Eco-friendly septic solutions',
-                    'Evergreen Septic Service',
-                ]}
-                ogTitle="Evergreen Septic Service LLC | Septic Solutions in Lake Geneva"
-                ogDescription="Evergreen Septic Service LLC provides expert septic services in Lake Geneva, including pumping, inspections, maintenance, and eco-friendly solutions for residential and commercial properties."
-                ogUrl="https://www.evergreensepticsvc.com"
-                ogImage="https://www.evergreensepticsvc.com/assets/images/HeroSection.png"
-                twitterCard="summary_large_image"
-                twitterTitle="Evergreen Septic Service LLC | Septic Solutions in Lake Geneva"
-                twitterDescription="Evergreen Septic Service LLC provides expert septic services in Lake Geneva, including pumping, inspections, maintenance, and eco-friendly solutions for residential and commercial properties."
-                twitterImage="https://www.evergreensepticsvc.com/assets/images/HeroSection.png"
-            />
-            <HeroSection />
-            <Services />
-            <About />
-            <Industries />
-            <Pricing />
-            <PricingPage />
-            <Banner />
-            <Slider />
-            <Subscribe />
-            <CallToAction />
-        </>
-    );
+  return (
+    <>
+      <HeroSection />
+      <Services />
+      <About />
+      <Industries />
+      <Pricing />
+      <PricingPage />
+      <Banner />
+      <Slider />
+      <Subscribe />
+      <CallToAction />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            url: "https://www.evergreensepticsvc.com",
+            name: "Evergreen Septic Service LLC",
+            description:
+              "Evergreen Septic Service LLC offers expert septic and holding tank services in Lake Geneva—pumping, inspections, maintenance, and eco-friendly solutions for homes and businesses.",
+            potentialAction: {
+              "@type": "SearchAction",
+              target: "https://www.evergreensepticsvc.com/search?q={search_term_string}",
+              "query-input": "required name=search_term_string",
+            },
+          }),
+        }}
+      />
+    </>
+  );
 }
