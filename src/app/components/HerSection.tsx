@@ -6,38 +6,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Metadata } from 'next';
-import Seo from '@/Seo';
-
-export const metadata: Metadata = {
-    title: 'Hero Section | Evergreen Septic Services',
-    description: 'Reliable and professional septic services in Walworth County. Get a free quote for septic pumping, inspections, repairs, and more from Evergreen Septic Services.',
-    keywords: [
-        'Evergreen Septic Services',
-        'Septic services Walworth',
-        'Septic pumping',
-        'Septic inspections',
-        'Septic repairs',
-    ],
-    openGraph: {
-        title: 'Hero Section | Evergreen Septic Services',
-        description: 'Reliable and professional septic services in Walworth County. Get a free quote for septic pumping, inspections, repairs, and more from Evergreen Septic Services.',
-        url: 'https://www.evergreensepticsvc.com',
-        images: [
-            {
-                url: 'https://www.evergreensepticsvc.com/assets/images/Home/HeroSection.png',
-                width: 1200,
-                height: 630,
-            },
-        ],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Hero Section | Evergreen Septic Services',
-        description: 'Reliable and professional septic services in Walworth County. Get a free quote for septic pumping, inspections, repairs, and more from Evergreen Septic Services.',
-        images: ['https://www.evergreensepticsvc.com/assets/images/Home/HeroSection.png'],
-    },
-};
 
 export default function HerSection() {
     const [name, setName] = useState('');
@@ -123,25 +91,6 @@ export default function HerSection() {
 
     return (
         <>
-            <Seo
-                title="Hero Section"
-                description="Reliable and professional septic services in Walworth County. Get a free quote for septic pumping, inspections, repairs, and more from Evergreen Septic Services."
-                keywords={[
-                    'Evergreen Septic Services',
-                    'Septic services Walworth',
-                    'Septic pumping',
-                    'Septic inspections',
-                    'Septic repairs',
-                ]}
-                ogTitle="Hero Section | Evergreen Septic Services"
-                ogDescription="Reliable and professional septic services in Walworth County. Get a free quote for septic pumping, inspections, repairs, and more from Evergreen Septic Services."
-                ogUrl="https://www.evergreensepticsvc.com"
-                ogImage="https://www.evergreensepticsvc.com/assets/images/Home/HeroSection.png"
-                twitterCard="summary_large_image"
-                twitterTitle="Hero Section | Evergreen Septic Services"
-                twitterDescription="Reliable and professional septic services in Walworth County. Get a free quote for septic pumping, inspections, repairs, and more from Evergreen Septic Services."
-                twitterImage="https://www.evergreensepticsvc.com/assets/images/Home/HeroSection.png"
-            />
             <div
                 className="w-full min-h-screen flex items-center justify-center bg-cover bg-center px-4 py-25 md:pb-20 md:pt-50"
                 style={{ backgroundImage: "url('/assets/images/Home/HeroSection.png')" }}
