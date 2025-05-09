@@ -13,18 +13,25 @@ export default function HerSection() {
     const [phone, setPhone] = useState('');
     const [service, setService] = useState('');
     const [bestTime, setBestTime] = useState('');
-    const [errors, setErrors] = useState<{ name?: string; phone?: string; email?: string }>({});
+    const [errors, setErrors] = useState<{ name?: string; phone?: string; email?: string; city?: string; state?: string; zipCode?: string; address?: string; }>({});
     const [loading, setLoading] = useState(false);
     const [address, setAddress] = useState('');
+    const [city, setCity] = useState('');
+    const [state, setState] = useState('');
+    const [zipCode, setZipCode] = useState('');
 
     useEffect(() => {
         AOS.init({ duration: 1000, once: false });
     }, []);
 
     const validateForm = () => {
-        const newErrors: { name?: string; phone?: string; email?: string } = {};
+        const newErrors: { name?: string; phone?: string; email?: string; address?: string; city?: string; state?: string; zipCode?: string } = {};
         if (!name.trim()) newErrors.name = 'Name is required.';
         if (!phone.trim()) newErrors.phone = 'Phone number is required.';
+        if (!address.trim()) newErrors.address = 'Address is required.';
+        if (!city.trim()) newErrors.city = 'city is required.';
+        if (!state.trim()) newErrors.state = 'state is required.';
+        if (!zipCode.trim()) newErrors.zipCode = 'zipCode is required.';
         if (!email.trim()) {
             newErrors.email = 'Email is required.';
         } else if (!/\S+@\S+\.\S+/.test(email)) {
@@ -44,12 +51,12 @@ export default function HerSection() {
             return;
         }
 
-        const formData = { name, email, phone, service, bestTime, address };
+        const formData = { name, email, phone, service, bestTime, address, city, state, zipCode };
         console.log('Form data to send:', formData);
         setLoading(true);
 
         try {
-            await fetch('https://script.google.com/macros/s/AKfycbwcDFw2vgTaKHc32zPvB_am8RZoCrs45x_WDiqn3__QHp4OZosavx6E1UKG3SuxaAEV/exec', {
+            await fetch('https://script.google.com/macros/s/AKfycbw2ZvmAld75Q7qaxp9q3irhFr0X8anYmsLKDYnpVdDO5zPQiN0DsGahhvDiJwpptT9nfg/exec', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -76,6 +83,9 @@ export default function HerSection() {
             setBestTime('');
             setAddress('');
             setEmail('');
+            setCity('');
+            setState('');
+            setZipCode('');
             setErrors({});
         }
 
@@ -178,42 +188,45 @@ export default function HerSection() {
                             </div>
 
 
-                            {/* Phone Input */}
-                            <div className="flex flex-col">
-                                <label className="font-instrument font-medium mb-1 text-[17px] leading-[32px]">
-                                    Phone Number <span className="text-red-500">*</span>
-                                </label>
-                                <input
-                                    type="tel"
-                                    value={phone}
-                                    onChange={(e) => setPhone(e.target.value)}
-                                    placeholder="Enter your phone number"
-                                    className={`border rounded-md px-4 py-2 ${errors.phone ? 'border-red-500' : 'border-gray-300'
-                                        } focus:outline-none focus:ring-2 ${errors.phone ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'}`}
-                                />
-                                {errors.phone && <span className="text-red-500 text-sm">{errors.phone}</span>}
+                            <div className="flex gap-4">
+                                {/* Phone Input */}
+                                <div className="w-1/2 flex flex-col">
+                                    <label className="font-instrument font-medium mb-1 text-[17px] leading-[32px]">
+                                        Phone Number
+                                        {/* <span className="text-red-500">*</span> */}
+                                    </label>
+                                    <input
+                                        type="tel"
+                                        value={phone}
+                                        onChange={(e) => setPhone(e.target.value)}
+                                        placeholder="Enter your number"
+                                        className={`border rounded-md px-4 py-2 ${errors.phone ? 'border-red-500' : 'border-gray-300'
+                                            } focus:outline-none focus:ring-2 ${errors.phone ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'}`}
+                                    />
+                                    {errors.phone && <span className="text-red-500 text-sm">{errors.phone}</span>}
+                                </div>
+
+                                {/* Service Dropdown */}
+                                <div className="w-1/2 flex flex-col">
+                                    <label className="font-instrument font-medium mb-1 text-[17px] leading-[32px]">
+                                        Service Type
+                                    </label>
+                                    <select
+                                        value={service}
+                                        onChange={(e) => setService(e.target.value)}
+                                        className="border border-gray-300 rounded-md px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#3F503B]"
+                                    >
+                                        <option value="">Select Service</option>
+                                        <option value="Pumping">Septic Pumping</option>
+                                        <option value="Inspection">Inspection</option>
+                                        <option value="Repair">Repair</option>
+                                        <option value="Installation">Installation</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
                             </div>
 
-                            {/* Service Dropdown */}
-                            <div className="flex flex-col">
-                                <label className="font-instrument font-medium mb-1 text-[17px] leading-[32px]">
-                                    Type of Service
-                                </label>
-                                <select
-                                    value={service}
-                                    onChange={(e) => setService(e.target.value)}
-                                    className="border border-gray-300 rounded-md px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#3F503B]"
-                                >
-                                    <option value="">Select a service</option>
-                                    <option value="Pumping">Septic Pumping</option>
-                                    <option value="Inspection">Inspection</option>
-                                    <option value="Repair">Repair</option>
-                                    <option value="Installation">Installation</option>
-                                    <option value="Other">Other</option>
-                                </select>
-                            </div>
 
-                            {/* Best Time Radio Buttons */}
                             <div className="flex flex-col">
                                 <label className="font-instrument font-medium mb-1 text-[17px] leading-[32px]">
                                     Best Time for Call
@@ -235,16 +248,60 @@ export default function HerSection() {
                                 </div>
                             </div>
 
-                            <div className="flex flex-col">
-                                <label className="font-instrument font-medium mb-1 text-[17px] leading-[32px]">
-                                    Address <span className="text-red-500">*</span>
-                                </label>
+                            <div className="flex gap-4">
+                                <div className="w-1/2">
+                                    <label className="font-instrument font-medium mb-1 text-[17px] leading-[32px]">
+                                        Address <span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        value={address}
+                                        onChange={(e) => setAddress(e.target.value)}
+                                        className={`w-full border rounded-md p-2 ${errors.address ? 'border-red-500' : 'border-gray-300'
+                                            } focus:outline-none focus:ring-2 ${errors.address ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'}`}
+                                    />
+                                    {errors.address && <span className="text-red-500 text-sm mt-1 block">{errors.address}</span>}
+                                </div>
 
-                                <input
-                                    value={address}
-                                    onChange={(e) => setAddress(e.target.value)}
-                                    className="border rounded-md px-4 py-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3F503B]"
-                                />
+                                <div className="w-1/2">
+                                    <label className="font-instrument font-medium mb-1 text-[17px] leading-[32px]">
+                                        City <span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        value={city}
+                                        onChange={(e) => setCity(e.target.value)}
+                                        className={`w-full border rounded-md p-2 ${errors.city ? 'border-red-500' : 'border-gray-300'
+                                            } focus:outline-none focus:ring-2 ${errors.city ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'}`}
+                                    />
+                                    {errors.city && <span className="text-red-500 text-sm mt-1 block">{errors.city}</span>}
+                                </div>
+                            </div>
+
+                            <div className="flex gap-4">
+                                <div className="w-1/2">
+                                    <label className="font-instrument font-medium mb-1 text-[17px] leading-[32px]">
+                                        State <span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        value={state}
+                                        onChange={(e) => setState(e.target.value)}
+                                        className={`w-full border rounded-md p-2 ${errors.state ? 'border-red-500' : 'border-gray-300'
+                                            } focus:outline-none focus:ring-2 ${errors.state ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'}`}
+                                    />
+                                    {errors.state && <span className="text-red-500 text-sm mt-1 block">{errors.state}</span>}
+                                </div>
+
+                                <div className="w-1/2">
+                                    <label className="font-instrument font-medium mb-1 text-[17px] leading-[32px]">
+                                        Zip Code <span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        value={zipCode}
+                                        onChange={(e) => setZipCode(e.target.value)}
+                                        className={`w-full border rounded-md p-2 ${errors.zipCode ? 'border-red-500' : 'border-gray-300'
+                                            } focus:outline-none focus:ring-2 ${errors.zipCode ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'}`}
+                                    />
+                                    {errors.zipCode && <span className="text-red-500 text-sm mt-1 block">{errors.zipCode}</span>}
+                                </div>
                             </div>
 
                             {/* Submit Button */}
