@@ -48,8 +48,22 @@ export default function Hero() {
   const [subject, setSubject] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
-  const [errors, setErrors] = useState<{ name?: string; email?: string; subject?: string; phone?: string; message?: string }>({});
+  const [errors, setErrors] = useState<{
+    name?: string;
+    email?: string;
+    subject?: string;
+    phone?: string;
+    message?: string;
+    addressStreet?: string;
+    city?: string;
+    state?: string;
+    zipCode?: string;
+  }>({});
   const [loading, setLoading] = useState(false);
+  const [addressStreet, setAddressStreet] = useState('');
+  const [city, setCity] = useState('');
+  const [state, setState] = useState('');
+  const [zipCode, setZipCode] = useState('');
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: false });
@@ -65,22 +79,45 @@ export default function Hero() {
     if (field === 'subject' && !value.trim()) error = 'Subject is required.';
     if (field === 'phone') {
       if (!value.trim()) error = 'Phone is required.';
-    //   else if (!/^\d{10}$/.test(value.replace(/\D/g, ''))) error = 'Phone number must be 10 digits.';
     }
     if (field === 'message' && !value.trim()) error = 'Message is required.';
+    if (field === 'addressStreet' && !value.trim()) error = 'Address Street is required.';
+    if (field === 'city' && !value.trim()) error = 'City is required.';
+    if (field === 'state' && !value.trim()) error = 'State is required.';
+    if (field === 'zipCode') {
+      if (!value.trim()) error = 'Zip Code is required.';
+      else if (!/^\d{5}(-\d{4})?$/.test(value)) error = 'Invalid Zip Code.';
+    }
     return error;
   };
 
   const validateForm = () => {
-    const newErrors: { name?: string; email?: string; subject?: string; phone?: string; message?: string } = {};
+    const newErrors: {
+      name?: string;
+      email?: string;
+      subject?: string;
+      phone?: string;
+      message?: string;
+      addressStreet?: string;
+      city?: string;
+      state?: string;
+      zipCode?: string;
+    } = {};
+
     newErrors.name = validateField('name', name);
     newErrors.email = validateField('email', email);
     newErrors.subject = validateField('subject', subject);
     newErrors.phone = validateField('phone', phone);
     newErrors.message = validateField('message', message);
+    newErrors.addressStreet = validateField('addressStreet', addressStreet);
+    newErrors.city = validateField('city', city);
+    newErrors.state = validateField('state', state);
+    newErrors.zipCode = validateField('zipCode', zipCode);
+
     setErrors(newErrors);
     return !Object.values(newErrors).some((error) => error);
   };
+
 
   const handleInputChange = (field: string, value: string) => {
     const error = validateField(field, value);
@@ -90,6 +127,10 @@ export default function Hero() {
     if (field === 'subject') setSubject(value);
     if (field === 'phone') setPhone(value);
     if (field === 'message') setMessage(value);
+    if (field === 'addressStreet') setAddressStreet(value);
+    if (field === 'city') setCity(value);
+    if (field === 'state') setState(value);
+    if (field === 'zipCode') setZipCode(value);
   };
 
   const handleSubmitNoCors = async (e: React.FormEvent) => {
@@ -105,6 +146,10 @@ export default function Hero() {
       email,
       subject,
       phone,
+      addressStreet,
+      city,
+      state,
+      zipCode,
       message,
     };
 
@@ -112,6 +157,15 @@ export default function Hero() {
     setLoading(true);
 
     try {
+      await fetch('https://script.google.com/macros/s/AKfycbwVWjaU0iuJPelxTCLZKiSMzcDeAQ3L30459utKxyKNuimNNjMJbL8HWNcRiDoZw9FN/exec', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+        mode: 'no-cors',
+      });
+
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
@@ -119,7 +173,7 @@ export default function Hero() {
         },
         body: JSON.stringify({
           ...formData,
-          access_key: '99760948-10ae-4676-b664-87235dfe2f80', 
+          access_key: '99760948-10ae-4676-b664-87235dfe2f80',
         }),
       });
 
@@ -138,6 +192,10 @@ export default function Hero() {
       setSubject('');
       setPhone('');
       setMessage('');
+      setAddressStreet('');
+      setCity('');
+      setState('');
+      setZipCode('');
       setErrors({});
     } catch (error) {
       console.error('Submission error:', error);
@@ -240,7 +298,7 @@ export default function Hero() {
         <div className="relative hidden md:block h-[500px] w-full mt-10">
           {/* Map in Background */}
           <iframe
-            src="https://www.google.com/maps/embed?pb=..." 
+            src="https://www.google.com/maps/embed?pb=..."
             className="absolute inset-0 w-full h-full border-0"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
@@ -261,62 +319,123 @@ export default function Hero() {
                     type="text"
                     value={name}
                     onChange={(e) => handleInputChange('name', e.target.value)}
-                    className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${
-                      errors.name ? 'border-red-500' : 'border-gray-300'
-                    } focus:outline-none focus:ring-2 ${
-                      errors.name ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
-                    }`}
+                    className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.name ? 'border-red-500' : 'border-gray-300'
+                      } focus:outline-none focus:ring-2 ${errors.name ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
+                      }`}
                   />
                   {errors.name && <span className="text-red-500 text-sm mt-1 block">{errors.name}</span>}
                 </div>
-                <div>
-                  <label className="block text-sm mb-1 font-medium">
-                    Email <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => handleInputChange('email', e.target.value)}
-                    className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${
-                      errors.email ? 'border-red-500' : 'border-gray-300'
-                    } focus:outline-none focus:ring-2 ${
-                      errors.email ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
-                    }`}
-                  />
-                  {errors.email && <span className="text-red-500 text-sm mt-1 block">{errors.email}</span>}
-                </div>
+
                 <div>
                   <label className="block text-sm mb-1 font-medium">
                     Subject <span className="text-red-500">*</span>
                   </label>
+
                   <input
                     type="text"
                     value={subject}
                     onChange={(e) => handleInputChange('subject', e.target.value)}
-                    className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${
-                      errors.subject ? 'border-red-500' : 'border-gray-300'
-                    } focus:outline-none focus:ring-2 ${
-                      errors.subject ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
-                    }`}
+                    className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.subject ? 'border-red-500' : 'border-gray-300'
+                      } focus:outline-none focus:ring-2 ${errors.subject ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
+                      }`}
                   />
                   {errors.subject && <span className="text-red-500 text-sm mt-1 block">{errors.subject}</span>}
                 </div>
+
+                <div className="flex gap-4">
+                  <div className="w-1/2">
+                    <label className="block text-sm mb-1 font-medium">
+                      Email <span className="text-red-500">*</span>
+                    </label>
+
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => handleInputChange('email', e.target.value)}
+                      className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.email ? 'border-red-500' : 'border-gray-300'
+                        } focus:outline-none focus:ring-2 ${errors.email ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
+                        }`}
+                    />
+                    {errors.email && <span className="text-red-500 text-sm mt-1 block">{errors.email}</span>}
+                  </div>
+
+
+                  <div className="w-1/2">
+                    <label className="block text-sm mb-1 font-medium">
+                      Phone <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="tel"
+                      value={phone}
+                      onChange={(e) => handleInputChange('phone', e.target.value)}
+                      className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.phone ? 'border-red-500' : 'border-gray-300'
+                        } focus:outline-none focus:ring-2 ${errors.phone ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
+                        }`}
+                    />
+                    {errors.phone && <span className="text-red-500 text-sm mt-1 block">{errors.phone}</span>}
+                  </div>
+                </div>
+
                 <div>
                   <label className="block text-sm mb-1 font-medium">
-                    Phone <span className="text-red-500">*</span>
+                    Address <span className="text-red-500">*</span>
                   </label>
                   <input
-                    type="tel"
-                    value={phone}
-                    onChange={(e) => handleInputChange('phone', e.target.value)}
-                    className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${
-                      errors.phone ? 'border-red-500' : 'border-gray-300'
-                    } focus:outline-none focus:ring-2 ${
-                      errors.phone ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
-                    }`}
+                    type="text"
+                    value={addressStreet}
+                    onChange={(e) => handleInputChange('addressStreet', e.target.value)}
+                    className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.addressStreet ? 'border-red-500' : 'border-gray-300'
+                      } focus:outline-none focus:ring-2 ${errors.addressStreet ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
+                      }`}
                   />
-                  {errors.phone && <span className="text-red-500 text-sm mt-1 block">{errors.phone}</span>}
+                  {errors.addressStreet && <span className="text-red-500 text-sm mt-1 block">{errors.addressStreet}</span>}
                 </div>
+
+                <div className="flex gap-4">
+                  <div className="w-1/3">
+                    <label className="block text-sm mb-1 font-medium">
+                      City <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      value={city}
+                      onChange={(e) => handleInputChange('city', e.target.value)}
+                      className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.city ? 'border-red-500' : 'border-gray-300'
+                        } focus:outline-none focus:ring-2 ${errors.city ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
+                        }`}
+                    />
+                    {errors.city && <span className="text-red-500 text-sm mt-1 block">{errors.city}</span>}
+                  </div>
+                  <div className="w-1/3">
+                    <label className="block text-sm mb-1 font-medium">
+                      State <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      value={state}
+                      onChange={(e) => handleInputChange('state', e.target.value)}
+                      className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.state ? 'border-red-500' : 'border-gray-300'
+                        } focus:outline-none focus:ring-2 ${errors.state ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
+                        }`}
+                    />
+                    {errors.state && <span className="text-red-500 text-sm mt-1 block">{errors.state}</span>}
+                  </div>
+                  <div className="w-1/3">
+                    <label className="block text-sm mb-1 font-medium">
+                      Zip Code <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      value={zipCode}
+                      onChange={(e) => handleInputChange('zipCode', e.target.value)}
+                      className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.zipCode ? 'border-red-500' : 'border-gray-300'
+                        } focus:outline-none focus:ring-2 ${errors.zipCode ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
+                        }`}
+                    />
+                    {errors.zipCode && <span className="text-red-500 text-sm mt-1 block">{errors.zipCode}</span>}
+                  </div>
+                </div>
+
                 <div>
                   <label className="block text-sm mb-1 font-medium">
                     Message <span className="text-red-500">*</span>
@@ -324,11 +443,9 @@ export default function Hero() {
                   <textarea
                     value={message}
                     onChange={(e) => handleInputChange('message', e.target.value)}
-                    className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${
-                      errors.message ? 'border-red-500' : 'border-gray-300'
-                    } focus:outline-none focus:ring-2 ${
-                      errors.message ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
-                    }`}
+                    className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.message ? 'border-red-500' : 'border-gray-300'
+                      } focus:outline-none focus:ring-2 ${errors.message ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
+                      }`}
                     rows={4}
                   ></textarea>
                   {errors.message && <span className="text-red-500 text-sm mt-1 block">{errors.message}</span>}
@@ -336,9 +453,8 @@ export default function Hero() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className={`bg-[#3F503B] text-white py-2 px-6 rounded-md mt-2 ${
-                    loading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2f462f]'
-                  }`}
+                  className={`bg-[#3F503B] text-white py-2 px-6 rounded-md mt-2 ${loading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2f462f]'
+                    }`}
                 >
                   {loading ? 'Sending...' : 'Send Now'}
                 </button>
@@ -347,9 +463,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Mobile Layout */}
         <div className="block md:hidden space-y-6">
-          {/* Form first */}
           <div className="bg-white p-6 rounded-lg shadow-xl border mx-4">
             <form className="space-y-4" onSubmit={handleSubmitNoCors}>
               <div>
@@ -360,27 +474,23 @@ export default function Hero() {
                   type="text"
                   value={name}
                   onChange={(e) => handleInputChange('name', e.target.value)}
-                  className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${
-                    errors.name ? 'border-red-500' : 'border-gray-300'
-                  } focus:outline-none focus:ring-2 ${
-                    errors.name ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
-                  }`}
+                  className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.name ? 'border-red-500' : 'border-gray-300'
+                    } focus:outline-none focus:ring-2 ${errors.name ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
+                    }`}
                 />
                 {errors.name && <span className="text-red-500 text-sm mt-1 block">{errors.name}</span>}
               </div>
               <div>
                 <label className="block text-sm mb-1 font-medium">
-                Email <span className="text-red-500">*</span>
+                  Email <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
-                  className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${
-                    errors.email ? 'border-red-500' : 'border-gray-300'
-                  } focus:outline-none focus:ring-2 ${
-                    errors.email ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
-                  }`}
+                  className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.email ? 'border-red-500' : 'border-gray-300'
+                    } focus:outline-none focus:ring-2 ${errors.email ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
+                    }`}
                 />
                 {errors.email && <span className="text-red-500 text-sm mt-1 block">{errors.email}</span>}
               </div>
@@ -392,11 +502,9 @@ export default function Hero() {
                   type="text"
                   value={subject}
                   onChange={(e) => handleInputChange('subject', e.target.value)}
-                  className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${
-                    errors.subject ? 'border-red-500' : 'border-gray-300'
-                  } focus:outline-none focus:ring-2 ${
-                    errors.subject ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
-                  }`}
+                  className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.subject ? 'border-red-500' : 'border-gray-300'
+                    } focus:outline-none focus:ring-2 ${errors.subject ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
+                    }`}
                 />
                 {errors.subject && <span className="text-red-500 text-sm mt-1 block">{errors.subject}</span>}
               </div>
@@ -408,14 +516,72 @@ export default function Hero() {
                   type="tel"
                   value={phone}
                   onChange={(e) => handleInputChange('phone', e.target.value)}
-                  className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${
-                    errors.phone ? 'border-red-500' : 'border-gray-300'
-                  } focus:outline-none focus:ring-2 ${
-                    errors.phone ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
-                  }`}
+                  className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.phone ? 'border-red-500' : 'border-gray-300'
+                    } focus:outline-none focus:ring-2 ${errors.phone ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
+                    }`}
                 />
                 {errors.phone && <span className="text-red-500 text-sm mt-1 block">{errors.phone}</span>}
               </div>
+              <div>
+                <label className="block text-sm mb-1 font-medium">
+                  Address Street <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  value={addressStreet}
+                  onChange={(e) => handleInputChange('addressStreet', e.target.value)}
+                  className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.addressStreet ? 'border-red-500' : 'border-gray-300'
+                    } focus:outline-none focus:ring-2 ${errors.addressStreet ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
+                    }`}
+                />
+                {errors.addressStreet && <span className="text-red-500 text-sm mt-1 block">{errors.addressStreet}</span>}
+              </div>
+
+              <div className="flex gap-4">
+                <div className="w-1/3">
+                  <label className="block text-sm mb-1 font-medium">
+                    City <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    value={city}
+                    onChange={(e) => handleInputChange('city', e.target.value)}
+                    className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.city ? 'border-red-500' : 'border-gray-300'
+                      } focus:outline-none focus:ring-2 ${errors.city ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
+                      }`}
+                  />
+                  {errors.city && <span className="text-red-500 text-sm mt-1 block">{errors.city}</span>}
+                </div>
+                <div className="w-1/3">
+                  <label className="block text-sm mb-1 font-medium">
+                    State <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    value={state}
+                    onChange={(e) => handleInputChange('state', e.target.value)}
+                    className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.state ? 'border-red-500' : 'border-gray-300'
+                      } focus:outline-none focus:ring-2 ${errors.state ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
+                      }`}
+                  />
+                  {errors.state && <span className="text-red-500 text-sm mt-1 block">{errors.state}</span>}
+                </div>
+                <div className="w-1/3">
+                  <label className="block text-sm mb-1 font-medium">
+                    Zip Code <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    value={zipCode}
+                    onChange={(e) => handleInputChange('zipCode', e.target.value)}
+                    className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.zipCode ? 'border-red-500' : 'border-gray-300'
+                      } focus:outline-none focus:ring-2 ${errors.zipCode ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
+                      }`}
+                  />
+                  {errors.zipCode && <span className="text-red-500 text-sm mt-1 block">{errors.zipCode}</span>}
+                </div>
+              </div>
+
               <div>
                 <label className="block text-sm mb-1 font-medium">
                   Message <span className="text-red-500">*</span>
@@ -423,11 +589,9 @@ export default function Hero() {
                 <textarea
                   value={message}
                   onChange={(e) => handleInputChange('message', e.target.value)}
-                  className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${
-                    errors.message ? 'border-red-500' : 'border-gray-300'
-                  } focus:outline-none focus:ring-2 ${
-                    errors.message ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
-                  }`}
+                  className={`w-full border rounded-md p-2 bg-[#EDF7E8] ${errors.message ? 'border-red-500' : 'border-gray-300'
+                    } focus:outline-none focus:ring-2 ${errors.message ? 'focus:ring-red-500' : 'focus:ring-[#3F503B]'
+                    }`}
                   rows={4}
                 ></textarea>
                 {errors.message && <span className="text-red-500 text-sm mt-1 block">{errors.message}</span>}
@@ -435,9 +599,8 @@ export default function Hero() {
               <button
                 type="submit"
                 disabled={loading}
-                className={`bg-[#3F503B] text-white py-2 px-6 rounded-md mt-2 ${
-                  loading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2f462f]'
-                }`}
+                className={`bg-[#3F503B] text-white py-2 px-6 rounded-md mt-2 ${loading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#2f462f]'
+                  }`}
               >
                 {loading ? 'Sending...' : 'Send Now'}
               </button>
@@ -447,7 +610,7 @@ export default function Hero() {
           {/* Map second */}
           <div className="h-[300px] w-full">
             <iframe
-              src="https://www.google.com/maps/embed?pb=..." 
+              src="https://www.google.com/maps/embed?pb=..."
               className="w-full h-full border-0"
               loading="lazy"
               allowFullScreen

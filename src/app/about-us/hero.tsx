@@ -148,54 +148,54 @@ export default function AboutUsClient() {
             </section>
 
             <section
-      className="relative bg-[#374932] text-white py-16 md:pb-[120px] overflow-hidden"
-      data-aos="zoom-in-up"
-    >
-      <img
-        src="/assets/images/3rdsection.png"
-        alt="Layout Background"
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[300px] md:w-[600px] z-0 pointer-events-none"
-      />
+                className="relative bg-[#374932] text-white py-16 md:pb-[120px] overflow-hidden"
+                data-aos="zoom-in-up"
+            >
+                <img
+                    src="/assets/images/3rdsection.png"
+                    alt="Layout Background"
+                    className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[300px] md:w-[600px] z-0 pointer-events-none"
+                />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div className="bg-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-5xl text-black">3400+</h2>
-          <p className="mt-2 text-[#4CAF50] font-instrument font-bold text-base sm:text-lg md:text-xl lg:text-2xl">
-            Septic Systems Serviced
-          </p>
-          <span className="block mt-2 text-gray-500 font-instrument text-sm sm:text-base md:text-lg">
-            Over 3,400 septic systems maintained and repaired with expert care in the Lake Geneva region.
-          </span>
-        </div>
-        <div className="bg-white p-6 rounded-lg shadow-lg md:relative md:top-[96px]">
-          <h2 className="text-5xl text-black">6820</h2>
-          <p className="mt-2 text-[#4CAF50] font-instrument font-bold text-base sm:text-lg md:text-xl lg:text-2xl">
-            Satisfied Customers
-          </p>
-          <span className="block mt-2 text-gray-500 font-instrument text-sm sm:text-base md:text-lg">
-            6,820 happy clients trust us for reliable and eco-friendly septic solutions.
-          </span>
-        </div>
-        <div className="bg-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-5xl text-black">270+</h2>
-          <p className="mt-2 text-[#4CAF50] font-instrument font-bold text-base sm:text-lg md:text-xl lg:text-2xl">
-            Advanced Equipment
-          </p>
-          <span className="block mt-2 text-gray-500 font-instrument text-sm sm:text-base md:text-lg">
-            Utilizing over 270 advanced tools to ensure efficient and precise septic services.
-          </span>
-        </div>
-        <div className="bg-white p-6 rounded-lg shadow-lg md:relative md:top-[96px]">
-          <h2 className="text-5xl text-black">3568</h2>
-          <p className="mt-2 text-[#4CAF50] font-instrument font-bold text-base sm:text-lg md:text-xl lg:text-2xl">
-            System Inspections
-          </p>
-          <span className="block mt-2 text-gray-500 font-instrument text-sm sm:text-base md:text-lg">
-            Conducted 3,568 thorough inspections to keep septic systems compliant and functional.
-          </span>
-        </div>
-      </div>
-    </section>
+                <div className="relative z-10 max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div className="bg-white p-6 rounded-lg shadow-lg">
+                        <h2 className="text-5xl text-black">3400+</h2>
+                        <p className="mt-2 text-[#4CAF50] font-instrument font-bold text-base sm:text-lg md:text-xl lg:text-2xl">
+                            Septic Systems Serviced
+                        </p>
+                        <span className="block mt-2 text-gray-500 font-instrument text-sm sm:text-base md:text-lg">
+                            Over 3,400 septic systems maintained and repaired with expert care in the Lake Geneva region.
+                        </span>
+                    </div>
+                    <div className="bg-white p-6 rounded-lg shadow-lg md:relative md:top-[96px]">
+                        <h2 className="text-5xl text-black">6820</h2>
+                        <p className="mt-2 text-[#4CAF50] font-instrument font-bold text-base sm:text-lg md:text-xl lg:text-2xl">
+                            Satisfied Customers
+                        </p>
+                        <span className="block mt-2 text-gray-500 font-instrument text-sm sm:text-base md:text-lg">
+                            6,820 happy clients trust us for reliable and eco-friendly septic solutions.
+                        </span>
+                    </div>
+                    <div className="bg-white p-6 rounded-lg shadow-lg">
+                        <h2 className="text-5xl text-black">270+</h2>
+                        <p className="mt-2 text-[#4CAF50] font-instrument font-bold text-base sm:text-lg md:text-xl lg:text-2xl">
+                            Advanced Equipment
+                        </p>
+                        <span className="block mt-2 text-gray-500 font-instrument text-sm sm:text-base md:text-lg">
+                            Utilizing over 270 advanced tools to ensure efficient and precise septic services.
+                        </span>
+                    </div>
+                    <div className="bg-white p-6 rounded-lg shadow-lg md:relative md:top-[96px]">
+                        <h2 className="text-5xl text-black">3568</h2>
+                        <p className="mt-2 text-[#4CAF50] font-instrument font-bold text-base sm:text-lg md:text-xl lg:text-2xl">
+                            System Inspections
+                        </p>
+                        <span className="block mt-2 text-gray-500 font-instrument text-sm sm:text-base md:text-lg">
+                            Conducted 3,568 thorough inspections to keep septic systems compliant and functional.
+                        </span>
+                    </div>
+                </div>
+            </section>
 
             <section className="bg-white py-16" data-aos="zoom-in-down">
                 <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
